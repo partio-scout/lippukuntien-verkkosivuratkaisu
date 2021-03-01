@@ -1,0 +1,57 @@
+@import "bootstrap-vars";
+@import '../node_modules/bootstrap/scss/bootstrap-grid.scss';
+@import "vars";
+@import "base/mixins";
+
+@import "fontawesome_helpers";
+@import "vendor/fontawesome/fontawesome";
+//@import "vendor/fontawesome/solid";
+//@import "vendor/fontawesome/light";
+@import "vendor/fontawesome/regular";
+@import "vendor/fontawesome/brands";
+
+$tinymce-bg-clr: #fff;
+$tinymce-text-clr: #000;
+
+html .mceContentBody {
+	/* font-size: 100%; */
+	max-width: 650px; /* template's content area width */
+	margin: 5px 5px;
+	background: $tinymce-bg-clr;
+	color: $tinymce-text-clr;
+	font: #{map-get($base-font-size,null)}/#{$base-line-height} $base-font-family;
+	@include font-size($base-font-size);
+	font-weight: normal;
+	
+	
+	* {
+		box-sizing: border-box;
+	}
+	
+	& > :last-child {
+		margin-bottom: 0;
+	}	
+	
+	& > :first-child {
+		margin-top: 0;
+	}	
+	
+	a {
+		text-decoration: underline;
+		&.button {
+			text-decoration: none;
+		}
+	}
+		
+}
+
+body {
+	height: 100%;
+}
+
+$screen-tablet: 1px;
+$screen-desktop: 1px;
+
+@import "base/helpers";
+@import "base/typography";
+@import "elements/all";

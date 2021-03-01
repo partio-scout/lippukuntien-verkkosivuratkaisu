@@ -1,0 +1,295 @@
+@include media-breakpoint-up(md) {
+
+}
+
+@include media-breakpoint-up(lg) {
+
+}
+
+@include media-breakpoint-up(xl) {
+
+}
+
+.site-header {
+    background-color: $clr-grey-4;
+
+    /* UNCOMMENT for fixed header
+    body.admin-bar & {
+        top: 46px;
+    }
+    @media screen and (min-width: 783px) {
+        body.admin-bar & {
+            top: 32px;
+        }
+    }
+    */
+
+    .container-lg {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .site-header-main {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        height: 60px; //Height of menubar
+
+        .site-branding {
+            display: flex;
+            align-items: center;
+        }
+
+        .hamburger {
+            display: inline-block;
+            padding: 0;
+
+            @include media-breakpoint-up(lg) {
+                display: none;
+            }
+
+            .hamburger-box {
+                width: 25px;
+                height: 20px;
+                display: block;
+                margin: auto auto;
+            }
+
+            .hamburger-inner {
+                width: 22px;
+                height: 3px;
+                background: $clr-white;
+                border-radius: 0;
+
+                &::after {
+                    width: 22px;
+                    height: 3px;
+                    top: -12px;
+                    background: $clr-white;
+                    border-radius: 0;
+                }
+
+                &::before {
+                    width: 22px;
+                    height: 3px;
+                    top: -6px;
+                    background: $clr-white;
+                    border-radius: 0;
+                }
+            }
+
+            &.is-active {                
+                .hamburger-inner {
+                    &::before, &::after {
+                        top: 0;
+                    }
+                }
+            }
+        }
+
+        .site-header-menu {  
+            position: absolute;
+            top: 60px; //Height of menubar
+            right: 0;
+            background: $clr-white;
+            width: 100%;
+            height: calc(100vw - 60px);
+            z-index: 10;
+            transform: translateX(100%);
+            transition: 0.25s;
+            visibility: hidden;
+
+            @include media-breakpoint-up(lg) {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                top: auto;
+                right: auto;
+                background: transparent;
+                width: auto;
+                height: auto;
+                transform: none;
+                transition: 0s;
+                visibility: visible;
+            }
+
+            &.open {
+                transform: translateX(0);
+                visibility: visible;
+            }
+
+            .main-navigation {
+                display: block;
+
+                //Mobile styles
+                @include media-breakpoint-down(md) {
+                    .primary-menu {
+                        padding: 15px 0;
+
+                        .menu-item {
+                            position: relative;
+                            user-select: none;
+
+                            &.menu-item-has-children {
+                                > .sub-menu-toggle {
+                                    display: block;
+                                    position: absolute;
+                                    right: 0;
+                                    top: 0;
+                                    height: 37px;
+                                    width: 37px;
+                                    border: 0;
+                                    background-color: transparent;
+
+                                    &::before {
+                                        @include fontawesome-icon('f078')
+                                    }
+                                }
+
+                                &.open {
+                                    >.sub-menu {
+                                        height: auto;
+                                    }
+
+                                    > .sub-menu-toggle {
+                                        &::before {
+                                            @include fontawesome-icon('f077')
+                                        }
+                                    }
+                                }
+                            }
+
+                            a {
+                                padding: 10px 15px;
+                                display: inline-block;
+                                color: $clr-black;
+                            }
+
+                            .sub-menu {
+                                overflow: hidden;
+                                height: 0;
+
+                                a {
+                                    margin-left: 15px;
+                                }
+
+                                .sub-menu {
+                                    a {
+                                        margin-left: 30px;
+                                    }
+                                }
+                            }
+                            
+                            &.current-menu-ancestor, &.current-menu-item {
+                                > a {
+                                    font-weight: bold;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                //Desktop styles
+                @include media-breakpoint-up(lg) {
+                    .primary-menu {
+                        display: flex;
+                        flex-direction: row;
+                        align-content: center;
+                        @include font-size($font-size-nav);
+
+                        //First level
+                        > .menu-item {
+                            margin: 0 15px;
+                            padding: 22px 0;
+                            position: relative;
+                            font-weight: 500;
+                            text-transform: uppercase;
+
+                            a {
+                                color: $clr-white;
+                            }
+
+                            //Second level
+                            .menu-item {                                
+                                width: 175px;
+                                text-transform: none;
+
+                                &:hover, &:focus-within {
+                                    background-color: $clr-grey-1;
+                                }
+
+                                a {
+                                    color: $clr-black;
+                                    padding: 10px 15px;
+                                    display: block;
+                                }
+                            }
+
+                            > .sub-menu {
+                                position: absolute;
+                                top: 60px;
+                                left: 0;
+
+                                //Third level
+                                > .menu-item {
+                                    position: relative;
+
+                                    > .sub-menu {
+                                        position: absolute;
+                                        top: 0;
+                                        right: 0;
+                                        transform: translateX(100%);
+                                        z-index: -1;
+                                    }
+                                }
+                            }
+
+                            //Add nth-last-of-type to classlist if you want to switch second level side. &:nth-last-of-type(1), &:nth-last-of-type(1) for example. You can give class align-left to top level menu-item in WordPress menu controls id you want to activate this manually.
+                            &.align-left, &:nth-last-of-type(1) {
+                                > .sub-menu {
+                                    left: auto;
+                                    right: 0;
+                                }
+                            }
+
+                            //Add nth-last-child to classlist if you want to switch third level side. &:nth-last-child(1), &:nth-last-child(2) for example. You can give class sub-menu-left to top level menu-item in WordPress menu controls id you want to activate this manually.
+                            &.sub-menu-left, &:nth-last-child(1) {
+                                > .sub-menu > .menu-item > .sub-menu {
+                                    right: auto;
+                                    left: 0;
+                                    transform: translateX(-100%);
+                                }
+                            }
+                        }
+
+                        //General
+                        .menu-item {
+                            .sub-menu-toggle {
+                                display: none;
+                            }
+
+                            .sub-menu {
+                                display: none;
+                                background-color: $clr-white;
+                                box-shadow: 1px 1px 3px #ccc;
+                            }
+
+                            &:hover, &:focus-within {
+                                > .sub-menu {
+                                    display: block;
+                                }
+                            }
+                            
+                            &.current-menu-ancestor, &.current-menu-item {
+                                > a {
+                                    font-weight: bold;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

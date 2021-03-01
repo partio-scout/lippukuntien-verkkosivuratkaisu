@@ -1,0 +1,134 @@
+.block-hero {
+    display: flex!important;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+
+    @include media-breakpoint-up(md) {
+        min-height: 900px;   
+    }
+
+    /* Do not load desktop image on mobile */
+    @include media-breakpoint-down(sm) {
+        background-image: none !important;
+        padding: 0;
+    }
+
+    &, .mobile-image {
+        background-size: cover;
+        background-position: center;
+    }
+
+    .mobile-image {
+        padding-top: 100px;
+        padding-bottom: 100px;
+        max-width: none;
+
+        @include media-breakpoint-down(sm) {
+            height: 100%;
+        }
+
+        /* Do not load mobile image on desktop */
+        @include media-breakpoint-up(md) {
+            background-image: none !important;
+        }
+    }
+
+    .hero-content-center {
+
+        .hero-title {
+            margin-bottom: 36px;
+        }
+
+        .hero-btn {
+            margin-top: 36px;
+        }
+    }
+}
+
+.block-hero-carousel.slick-initialized {
+
+    .row {
+
+        @include media-breakpoint-down(sm) {
+            justify-content: center!important;   
+        }
+    }
+
+    .slick-track {
+        display: flex;
+    }
+
+    .slick-slide {
+        height: auto;
+
+        & > div {
+            height: 100%;
+        }
+    }
+
+    .slick-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1;
+        background: transparent;
+        border: 0;
+        color: $clr-white;
+        font-size: 32px;
+
+        &::after {
+            @extend .far;
+        }
+
+        &.slick-prev {
+            left: 6px;
+            
+            @include media-breakpoint-up(md) {
+                left: 24px;
+            }
+
+            &::after {
+                content: fa-content($fa-var-angle-left);
+            }
+        }
+
+        &.slick-next {
+            right: 6px;
+            
+            @include media-breakpoint-up(md) {
+                right: 24px;
+            }
+
+            &::after {
+                content: fa-content($fa-var-angle-right);
+            }
+        }
+    }
+
+    .slick-dots {
+        text-align: center;
+        transform: translateY(-100%);
+
+        li {
+            margin: 0 8px;
+            display: inline-block;
+
+            button {
+                width: 16px;
+                height: 16px;
+                background: $clr-white;
+                border: 0;
+                padding: 0;
+                color: transparent;
+                border-radius: 50%;
+                opacity: 0.5;
+            }
+
+            &.slick-active button {
+                opacity: 1;
+            }
+        }
+    }
+}
+

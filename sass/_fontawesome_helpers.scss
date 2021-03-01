@@ -1,0 +1,27 @@
+$fa-font-path:                "../fonts/fontawesome";
+
+
+@mixin fontawesome-icon($icon, $style: 'far') {
+
+  content: #{'"\\' + $icon + '"'};
+
+
+  @if($style == 'fab') {
+    font-family: 'Font Awesome 5 Brands';
+  }
+  @else {
+    font-family: 'Font Awesome 5 Pro';
+  }
+
+  @if($style == 'fas') {
+    font-weight: 900;
+  }
+  @else if($style == 'fal') {
+    font-weight: 300;
+  }
+  @else {
+    font-weight: 400;
+  }
+
+  
+}

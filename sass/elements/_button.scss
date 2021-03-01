@@ -1,0 +1,39 @@
+.button,
+button.button,
+a.button,
+.wp-block-button__link,
+.wp-block-file a.wp-block-file__button {
+    display: inline-block;
+    background: $base-clr-text;
+    color: $clr-white!important;
+    @include font-size($font-size-s);
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.1;
+
+    text-transform: uppercase;
+    text-decoration: none!important;
+
+    padding: 0.6em 1.2em;
+    border-radius: 4px;
+    appearance: none;
+    border: 2px solid transparent;
+
+    &:hover {
+        color: $clr-white;
+        background: rgba($base-clr-text, 0.8);
+    }
+
+    /*
+    &.loading,
+    &.loading:hover {
+    color: rgba(0,0,0,0.0);
+    border-color: rgba(0,0,0,0.0);
+    background: transparent url('../images/ajax-loader.gif') no-repeat center center;
+    background-size: 36px auto;
+    min-height: 45px;
+    transition: none;
+    cursor: default;
+}
+    */
+}

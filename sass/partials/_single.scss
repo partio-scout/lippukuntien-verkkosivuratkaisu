@@ -1,0 +1,143 @@
+.single-post {
+
+    article {
+        margin-bottom: 64px;
+
+        .post-thumbnail {
+            margin-bottom: 32px;
+        }
+
+        .entry-header {
+            margin-bottom: 16px;
+        }
+
+        .entry-meta {
+            margin-bottom: 32px;
+
+            .author::before {
+                content: '\007c';
+                display: inline-block;
+                margin-right: 0.25em;
+            }
+        }
+
+        .entry-summary {
+            margin-bottom: 32px;
+            font-weight: bold;
+        }
+
+        .entry-content {
+            margin-bottom: 32px;
+        }
+
+        .entry-footer {
+
+            & > div:not(:last-of-type) {
+                margin-bottom: 16px;
+            }
+
+            .links-title {
+                font-weight: bold;
+            }
+
+            .back-to-blog {
+                margin-top: 32px;
+            }
+        }
+    }
+
+    .comments-area {
+        margin-bottom: 64px;
+    }
+    
+    .read-also-title {
+        margin-bottom: 32px;
+    }
+
+    .read-also-item {
+
+        article {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+            margin-bottom: 0;
+        }
+
+        .item-top {
+            margin-bottom: 24px;
+
+            .entry-thumbnail {
+                position: relative;
+                background-color: $clr-grey-4;
+                margin-bottom: 12px;
+
+                &::before {
+                    content: '';
+                    display: block;
+                    padding-bottom: 56.25%;
+                }
+
+                .thumb {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+
+                    background-size: cover;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                }
+            }
+
+            .entry-meta,
+            .entry-content {
+                @include font-size($font-size-s);
+            }
+
+            .entry-meta {
+                margin-bottom: 16px;
+            }
+
+            .entry-title {
+                @include font-size($font-size-base);
+            }
+            
+            .entry-content {
+                margin: 0;
+            }
+        }
+
+        .item-bottom {
+
+
+        }
+    }
+}
+
+/*
+
+// // 
+@media (min-width: $screen-tablet) {}
+@include media-breakpoint-up(md) {}
+
+// // 
+@media (min-width: $screen-desktop) { }
+@include media-breakpoint-up(lg) {}
+
+// // 
+@media (min-width: $screen-lg-desktop) { }
+@include media-breakpoint-up(xl) {}
+
+
+
+
+
+@include media-breakpoint-down(xs) { ... }
+
+@include media-breakpoint-only(sm) { ... }
+
+@include media-breakpoint-between(md, xl) { ... }
+
+*/

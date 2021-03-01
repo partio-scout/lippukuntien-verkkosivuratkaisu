@@ -1,0 +1,51 @@
+// Rulesets to normalize styles across all browsers.
+@import "base/normalize";
+
+// Font imports
+@import "base/fonts";
+
+@import "fontawesome_helpers";
+@import "vendor/fontawesome/fontawesome";
+//@import "vendor/fontawesome/solid";
+//@import "vendor/fontawesome/light";
+@import "vendor/fontawesome/regular";
+@import "vendor/fontawesome/brands";
+
+// Bootstrap
+@import "bootstrap-vars";
+//@import '../node_modules/bootstrap/scss/bootstrap.scss';
+@import "../node_modules/bootstrap/scss/bootstrap-grid.scss";
+//@import "../node_modules/bootstrap/scss/forms";
+
+// Libraries
+//@import '../node_modules/magnific-popup/src/css/main.scss';
+@import '../node_modules/slick-carousel/slick/slick.scss';
+@import '../node_modules/hamburgers/_sass/hamburgers/hamburgers.scss';
+
+// Project variables
+@import "vars";
+
+// Base
+@import "base/mixins";
+@import "base/base"; // body and base structure
+@import "base/helpers"; // miscellaneous helper stuff (clear float etc.)
+@import "base/typography";
+
+// Elements: button, table, etc.
+@import "elements/all";
+
+// Components
+@import "components/all";
+
+// Partials
+@import "partials/header";
+@import "partials/block-hero";
+@import "partials/footer";
+//content styles for posts, pages and custom post types
+@import "partials/content";
+
+@import "partials/news-archives";
+@import "partials/single";
+@import "partials/search";
+
+@import "partials/block-cookie-notification";

@@ -1,0 +1,134 @@
+//Basic helpers that are usually always good to have
+
+.cf {
+    &:before,
+    &:after {
+        content: " ";
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
+}
+
+.screen-reader-text {
+    position:absolute;
+    left:-10000px;
+    top:auto;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+}
+
+.hide, .hide-mobile {
+    display: none;
+}
+
+img.alignleft,
+iframe.alignleft,
+img.alignright,
+iframe.alignright,
+figure.alignleft,
+figure.alignright {
+    margin: 0 0 1em;
+}
+
+.alignleft,
+.alignright {
+    float: none;
+    display: block;
+}
+
+iframe {
+    max-width: 100%;
+}
+
+.wp-video {
+    width: 100% !important;
+    margin-bottom: 1em;
+}
+
+@include media-breakpoint-up(md) {
+    .alignleft {
+        float: left;
+    }
+
+    .alignright {
+        float: right;
+    }
+
+    img.alignleft,
+    iframe.alignleft,
+    figure.alignleft {
+        max-width: 46%;
+        margin: 0 5% 1em 0;
+    }
+
+    img.alignright,
+    iframe.alignright,
+    figure.alignright {
+        max-width: 46%;
+        margin: 0 0 1em 5%;
+    }
+
+    .wp-video {
+        margin-bottom: 1.3em;
+    }
+}
+
+.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.oembed {
+    overflow: hidden;
+
+    iframe,
+    video {
+        max-width: 100%;
+    }
+}
+
+.oembed-youtube,
+.oembed-vimeo {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0 !important;
+    width: 100% !important;
+
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .hide-mobile {
+        display: block;
+    }
+
+    .hide-desktop {
+        display: none;
+    }
+}
+
+@include media-breakpoint-up(xl) {
+}

@@ -1,0 +1,70 @@
+.blog,
+.archive {
+
+    .page-header {
+
+        .taxonomy-description {
+            margin-top: 19px;
+        }
+    }
+
+    .articles-sidebar {
+
+        .sidebar-item {
+
+            &:not(:last-of-type) {
+                margin-bottom: 52px;
+            }
+
+            .item-header,
+            ul li:not(:last-of-type) {
+                margin-bottom: 19px;
+            }
+        }
+    }
+}
+
+.blog,
+.archive,
+.search-results {
+
+    .page-header {
+        margin-bottom: 54px;
+    }
+    
+    .article-items {
+
+        article {
+
+            &:not(:last-of-type) {
+                margin-bottom: 48px;
+            }
+
+            .entry-meta,
+            .entry-header,
+            .item-top {
+                margin-bottom: 16px;
+            }
+
+            .entry-meta {
+
+                .author::before {
+                    content: '\007c';
+                    display: inline-block;
+                    margin-right: 0.25em;
+                }
+            }
+        }
+    }
+    
+    .not-found-item {
+        
+        .search-form {
+            margin-top: 32px;
+        }
+    }
+    
+    .pagination {
+        margin-top: 54px;
+    }
+}

@@ -1,0 +1,72 @@
+@import "bootstrap-vars";
+@import "fontawesome_helpers";
+@import "vendor/fontawesome/fontawesome";
+@import "vendor/fontawesome/regular";
+@import '../node_modules/bootstrap/scss/bootstrap-grid.scss';
+@import "vars";
+@import "base/mixins";
+
+.block-editor {
+    .interface-interface-skeleton__body, .block-editor-editor-skeleton__body {
+        .edit-post-visual-editor {
+            padding: 0;
+            font: #{map-get($base-font-size,null)}/#{$base-line-height} $base-font-family;
+            @include font-size($base-font-size);
+            font-weight: normal;
+            color: $base-clr-text;
+            background: $base-clr-body-bg;
+            position: relative;
+
+            .block-editor-writing-flow {
+                overflow-x: hidden;
+
+                //Page title
+                .edit-post-visual-editor__post-title-wrapper, .editor-post-title {
+                    border-bottom: 1px solid #f0f0f0;
+                    background-color: #fff;
+
+                    .wp-block {
+                        @extend .container;
+                    }
+
+                    .editor-post-title, .editor-post-title__block {
+                        margin-top: 0;
+                        padding-top: 2em;
+                    }
+                }
+
+                .editor-post-title {
+                    .editor-post-title__block {
+                        margin-top: 50px;
+                        padding-top: 2em;
+                    }
+                }
+
+                //Content editor
+                .block-editor-block-list__layout.is-root-container, .block-editor-block-list__layout {
+                    @extend .container;
+                    // Needs review: Import styles here to overwrite WordPress core styles in editor
+                    //@import "base/typography";
+
+                    .wp-block {
+                        max-width: inherit;
+                        // Import styles here to add custom elements to editor
+                        @import "base/helpers";
+                        @import "elements/forms";
+
+                        .acf-block-preview {
+                            // Import styles here to add ACF block styles to editor
+                            @import "elements/all";
+                            @import "components/all";
+
+                            // Needs review: does not work without base/typography
+                            //> div, > section {
+                            //    @extend .entry-content; //Not working for some reason
+                            //}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

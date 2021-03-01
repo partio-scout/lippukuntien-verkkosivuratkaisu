@@ -1,0 +1,7 @@
+yarn.lock binary
+package-lock.json binary
+dev/js/* binary
+dev/stylesheets/* binary
+dist/js/* binary
+dist/stylesheets/* binary
+acf-json/* binary

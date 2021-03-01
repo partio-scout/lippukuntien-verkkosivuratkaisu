@@ -1,0 +1,61 @@
+$cookies-clr-bg: $clr-grey-1;
+$cookies-clr-text: $clr-black;
+$cookies-clr-link: $clr-link;
+$cookies-clr-hover: $clr-black;
+
+.cookie-notification {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    color: $cookies-clr-text;
+    background: $cookies-clr-bg;
+    z-index: 9999;
+    padding: 25px 0 44px; //large bottom padding, so iOS devices dont force menu bar to show up, when user clicks accept button on bottom.
+
+    @include media-breakpoint-up(xl) {
+        padding: 25px 0;
+    }
+
+    &.active {
+        display: block;
+    }
+
+    .cookie-notification-content {
+
+        text-align: center;
+        padding-bottom: 1.5em;
+
+        & > :last-child {
+            margin-bottom: 0;
+        }
+
+        @include media-breakpoint-up(md) {
+            text-align: left;
+            padding-bottom: 0;
+            align-self: center;
+        }
+
+        a {
+            color: $cookies-clr-link;
+            text-decoration: underline;
+
+            &:hover {
+                color: $cookies-clr-hover;
+            }
+        }
+
+        p {
+            margin-bottom: 0.8em;
+        }
+    }
+
+    .cookie-notification-buttons {
+        text-align: center;
+
+        @include media-breakpoint-up(md) {
+            align-self: center;
+        }
+    }
+}

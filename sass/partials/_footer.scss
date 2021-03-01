@@ -1,0 +1,127 @@
+.site-footer {
+    background-color: $clr-grey-4;
+    color: $clr-white;
+    padding: 60px 0 90px;
+    line-height: 2em;
+
+    .footer-col {
+        margin-bottom: 45px;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+
+        @include media-breakpoint-up(lg) {
+            margin-bottom: 0;
+        }
+    }
+
+    .footer-contact-col {
+
+        .custom-logo-link {
+            display: inline-block;
+            margin-bottom: 30px;
+
+            img {
+                display: block;
+            }
+        }
+
+        .footer-contact {
+
+            strong {
+                display: inline-block;
+                margin-bottom: 5px;
+            }
+        }
+    }
+
+    .footer-nav-col {
+
+        @include media-breakpoint-up(md) {
+            padding-top: 69px; //Push second col down on tablet to compensate logo
+        }
+
+        @include media-breakpoint-up(lg) {
+            padding-top: 0;
+        }
+
+        .footer-menu {
+            display: flex;
+            flex-wrap: wrap;
+
+            .menu-item {
+
+                a {
+                    color: $clr-white;
+                }
+            }
+
+            > .menu-item {
+                flex: 0 0 100%;
+                max-width: 100%;
+                margin-bottom: 24px;
+
+                &:last-of-type {
+                    
+                    @include media-breakpoint-down(md) {
+                        margin-bottom: 0;
+                    }
+                }
+
+                @include media-breakpoint-up(lg) {
+                    flex: 0 0 50%;
+                    max-width: 50%;
+                    padding-right: 30px;
+                }
+
+                > a {
+                    margin-bottom: 5px;
+                    font-weight: bold;
+                    display: inline-block;
+                }
+            }
+        }
+    }
+
+    .footer-newsletter-some {
+        .social-icons {
+            .social-icon {
+                color: $clr-white;
+                margin-right: 30px;
+                margin-bottom: 15px;
+                @include font-size($font-size-social-icons);
+
+                &:last-of-type {
+                    margin-right: 0;
+                }
+
+                &.instagram {
+                    &::before {
+                        @include fontawesome-icon('f16d', 'fab');
+                    }
+                }
+                &.facebook {
+                    &::before {
+                        @include fontawesome-icon('f39e', 'fab');
+                    }
+                }
+                &.twitter {
+                    &::before {
+                        @include fontawesome-icon('f099', 'fab');
+                    }
+                }
+                &.youtube {
+                    &::before {
+                        @include fontawesome-icon('f167', 'fab');
+                    }
+                }
+                &.linkedin {
+                    &::before {
+                        @include fontawesome-icon('f0e1', 'fab');
+                    }
+                }
+            }
+        }
+    }
+}

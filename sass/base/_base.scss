@@ -1,0 +1,39 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font: #{map-get($base-font-size,null)}/#{$base-line-height} $base-font-family;
+	@include font-size($base-font-size);
+	font-weight: normal;
+	color: $base-clr-text;
+	background: $base-clr-body-bg;
+	min-height: 100vh;
+	position: relative;
+    overflow-x: hidden;
+}
+
+#page {
+	position: relative;
+}
+
+.container-fluid {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+
+    & > .container {
+        margin-bottom: 2rem;
+    }
+}
+
+@include media-breakpoint-up(md) {
+
+}
+
+@include media-breakpoint-up(lg) {
+	
+}
+
+@include media-breakpoint-up(xl) {
+	
+}

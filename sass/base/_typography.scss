@@ -1,0 +1,207 @@
+//"local" vars from base vars
+$clr-link: $clr-red;
+$clr-link-hover: $base-clr-text;
+
+//extend with this, if special font definitions are needed
+.antialiased {
+    //font-feature-settings: "kern", "liga" 0, "calt" 0;
+    //font-family: $font-font;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1,
+.h1 {
+    //@extend .antialiased;
+    @include font-size($font-size-h1);
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0;
+}
+
+h2,
+.h2 {
+    @include font-size($font-size-h2);
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0;
+}
+
+h3,
+.h3 {
+    @include font-size($font-size-h3);
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 0;
+}
+
+h4,
+.h4 {
+    @include font-size($font-size-h4);
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+p,
+ol,
+ul {
+    margin: 0;
+}
+
+p.lead,
+.entry-summary {
+    font-weight: 400;
+    @include font-size($font-size-l);
+}
+
+.text-l {
+    @include font-size($font-size-l);
+}
+
+.text-s {
+    @include font-size($font-size-s);
+}
+
+strong,
+b {
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+    color: $clr-link;
+    //transition: $transition-link;
+
+    &:hover {
+        color: $clr-link-hover;
+    }
+
+    img {
+        border: none;
+    }
+}
+
+//typography styles for content areas
+.entry-content,
+.mceContentBody {
+    a {
+        text-decoration: underline;
+        color: $clr-link;
+
+        &:hover {
+            color: $clr-link-hover;
+        }
+    }
+
+    ul {
+        list-style: disc;
+    }
+
+    ul,
+    ol {
+
+        &:not(.blocks-gallery-grid) {
+            padding-left: 1.4em;
+        }
+
+        li {
+            margin-bottom: 0.5em;
+        }
+
+        ul, ol {
+            margin: 0.5em 0 0;
+        }
+    }
+
+    h1,
+    .h1 {
+        margin: 1em auto;
+        clear: both;
+    }
+
+    h2,
+    .h2 {
+        margin: 1em auto;
+        clear: both;
+    }
+
+    h3,
+    .h3 {
+        margin: 1em auto;
+    }
+
+    h4,
+    .h4 {
+        margin: 1em auto;
+    }
+
+    p,
+    ul,
+    ol {
+        margin-bottom: 1.5em;
+    }
+
+    .wp-block-quote {
+        position: relative;
+        margin: 2em;
+
+        &::before {
+            content: '\0022';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: -10px;
+            transform: translateX(-100%);
+            font-size: 4em;
+            font-weight: 700;
+            line-height: 0.7;
+            color: $clr-link;
+        }
+
+        p {
+            @include font-size($font-size-h4);
+            margin-bottom: 12px;
+        }
+
+        cite {
+            font-style: normal;
+            @include font-size($font-size-s);
+        }
+    }
+
+    .wp-block-image {
+
+        figcaption {
+            @include font-size($font-size-s);
+            text-align: center;
+        }
+    }
+
+    .wp-block-embed {
+        margin: 2em 0;
+    }
+
+    figure.wp-caption {
+
+        .wp-caption-text {
+        }
+    }
+
+    & > :last-child {
+        margin-bottom: 0;
+    }
+
+    & > :first-child {
+        margin-top: 0;
+    }
+}
+
+img {
+    height: auto;
+    max-width: 100%;
+}

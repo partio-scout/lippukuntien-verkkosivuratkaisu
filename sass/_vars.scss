@@ -1,0 +1,104 @@
+// breakpoints, mobile first
+$screen-tablet: breakpoint(md);
+$screen-desktop: breakpoint(lg);
+$screen-lg-desktop: breakpoint(xl);
+
+
+// Fonts
+$font-times-new-roman: "Times New Roman", Times, Georgia, "DejaVu Serif", serif;
+$font-times:           Times, "Times New Roman", Georgia, "DejaVu Serif", serif;
+$font-georgia:         Georgia, "Times New Roman", "DejaVu Serif", serif;
+$font-verdana:         Verdana, Tahoma, "DejaVu Sans", sans-serif;
+$font-tahoma:          Tahoma, Verdana, "DejaVu Sans", sans-serif;
+$font-helvetica:       Helvetica, Arial, "Nimbus Sans L", sans-serif;
+$font-courier:         "Courier New", "DejaVu Sans Mono", monospace, sans-serif;
+$font-arial:           Arial, Helvetica, "Nimbus Sans L", sans-serif;
+
+$font-lato:            'Lato', sans-serif;
+
+//Font sizes
+
+//Responsive font sizes are created with mixin
+/*
+Example
+$font-size-base (
+	  null  : 12px,
+	  $screen-tablet : 16px,
+	  $screen-desktop : 16px,
+	  $screen-lg-desktop: 18px
+);
+//use font-size like this
+p { @include font-size($font-size-base); }
+*/
+
+// All font sizes should be defined here
+$font-size-s: (
+	  null  : 12px,
+	  $screen-tablet : 14px
+);
+
+$font-size-l: (
+	  null  : 20px,
+	  $screen-tablet : 24px
+);
+
+$font-size-base: (
+	  null  : 16px,
+	  $screen-tablet : 20px
+);
+
+$font-size-h4: (
+	  null  : 22px,
+	  $screen-tablet : 30px,
+);
+
+$font-size-h3: (
+	  null  : 26px,
+	  $screen-tablet : 40px
+);
+
+$font-size-h2: (
+	  null  : 33px,
+	  $screen-tablet : 50px
+);
+
+$font-size-h1: (
+	  null  : 40px,
+	  $screen-tablet : 60px
+);
+
+$font-size-nav: (
+	  null  : 16px,
+	  $screen-tablet : 14px
+);
+
+$font-size-social-icons: (
+	  null  : 20px,
+	  $screen-tablet : 20px
+);
+
+
+//Colors
+$clr-white:		#fff;
+$clr-black:		#000;
+$clr-red:       #FF4848;
+$clr-grey-6:	#161616;
+$clr-grey-5:	#404040;
+$clr-grey-4:	#7f7f7f;
+$clr-grey-3:	#a4a4a4;
+$clr-grey-2:	#dddddd;
+$clr-grey-1: 	#f2f2f2;
+
+$clr-grey: $clr-grey-1;
+
+//Transitions
+$transition-link: all 0.2s ease-in-out;
+
+
+//Base vars
+$base-font-size:   $font-size-base; // The font size set on the root html element.
+$base-line-height: 1.5; // This line-height determines the basic unit of vertical rhythm.
+$base-font-family: $font-lato; // The font family set on the html element.
+
+$base-clr-body-bg: $clr-white;
+$base-clr-text: $clr-black;

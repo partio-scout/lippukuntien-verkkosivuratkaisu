@@ -1,0 +1,27 @@
+@import "base/normalize";
+
+form,
+button,
+input,
+select,
+textarea,
+.navigation,
+.main-navigation,
+.social-navigation,
+.sidebar,
+.content-bottom-widgets,
+.header-image,
+.page-links,
+.edit-link,
+.comment-respond,
+.comment-edit-link,
+.comment-reply-link,
+.comment-metadata .edit-link,
+.pingback .edit-link {
+	display: none;
+}
+
+body,
+.site {
+	background: none !important; /* Brute force since user agents all print differently. */
+}

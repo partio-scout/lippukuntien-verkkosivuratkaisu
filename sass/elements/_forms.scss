@@ -1,0 +1,424 @@
+$heading-margin-bottom: 24px;
+$body-margin-bottom: 24px;
+$validation-margin-bottom: 24px;
+$field-margin-bottom: 24px;
+$field-gutter: 24px;
+
+$text-background: $clr-white;
+$text-border: $clr-grey-2;
+$text-border-radius: 5px;
+$text-color: $clr-black;
+$text-placeholder: $clr-grey-3;
+
+$check-background: $clr-grey-4;
+$check-border: $clr-grey-2;
+$check-border-radius: 5px;
+$check-color: $clr-white;
+$check-margin-bottom: 10px;
+$check-size: 24px;
+$check-space: 30px;
+
+$file-drop-background: $clr-grey-1;
+
+$validation-background: $clr-red;
+$validation-color: $clr-white;
+$error-color: $clr-red;
+$error-border: $clr-red;
+
+/* Bootstrap form classes
+   These are extended to Gravity Forms below */
+
+.form-group {
+    margin-bottom: $field-margin-bottom;
+}
+
+.form-control {
+    background-color: $text-background;
+    border: 1px solid $text-border;
+    border-radius: $text-border-radius;
+    color: $text-color;
+    display: block;
+    width: 100%;
+    padding: 0.5em;
+
+    &::placeholder {
+        color: $text-placeholder;
+    }
+}
+
+.form-check {
+    margin-bottom: $check-margin-bottom;
+    position: relative;
+
+    input {
+        @extend .screen-reader-text;
+    }
+    input:focus + label::before {
+        outline: auto;
+    }
+
+    label::before,
+    label::after {
+        display: inline-block;
+        position: absolute;
+        top: 0.2em;
+        left: 0;
+        width: $check-size;
+        height: $check-size;
+        border-radius: $check-border-radius;
+    }
+
+    label::before {
+        content: '';
+        border: 1px solid $check-border;
+    }
+
+    label::after {
+        font-size: 0.8em;
+    }
+
+    input:checked + label::after {
+        @extend .far;
+        content: fa-content($fa-var-check);
+        background-color: $check-background;
+        color: $check-color;
+        text-align: center;
+        line-height: $check-size;
+    }
+}
+
+.form-check + .form-group {
+    margin-top: $field-margin-bottom;
+}
+
+.form-check-label {
+    padding-left: $check-space;
+}
+
+.form-check-input[type="checkbox"] {
+    &:checked + label::after {
+        content: fa-content($fa-var-check);
+    }
+}
+
+.form-check-input[type="radio"] {
+    & + label::before, & + label::after {
+            border-radius: 50%;
+    }
+    &:checked + label::after {
+        content: fa-content($fa-var-circle);
+    }
+}
+
+
+/* Gravity Forms */
+
+.gform_wrapper {
+
+    form {
+        margin-bottom: 0;
+    }
+
+    .gform_heading {
+        margin-bottom: $heading-margin-bottom;
+    }
+
+    .gform_body {
+        margin-bottom: $body-margin-bottom;
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+        }
+    }
+
+    .validation_error {
+        padding: 12px;
+        margin-bottom: $validation-margin-bottom;
+        color: $validation-color;
+        background: $validation-background;
+    }
+
+    .validation_message {
+        display: none;
+    }
+
+    .button {
+        @extend .button;
+    }
+
+    .gform_fields {
+        display: flex;
+        flex-wrap: wrap;
+
+        .gfield {
+            flex: 0 0 100%;
+            max-width: 100%;
+            display: block;
+
+            &.width-50 {
+
+                @include media-breakpoint-up(lg) {
+                    flex: 0 0 50%;
+                    max-width: 50%;
+                    padding-right: $field-gutter;
+                }
+
+                & + .width-50 {
+
+                    @include media-breakpoint-up(lg) {
+                        padding-right: 0;
+                    }
+                }
+            }
+
+            &:not(:last-of-type) {
+                margin-bottom: $field-margin-bottom;
+            }
+
+            input[type="email"],
+            input[type="date"],
+            input[type="datetime"],
+            input[type="datetime-local"],
+            input[type="month"],
+            input[type="number"],
+            input[type="password"],
+            input[type="search"],
+            input[type="tel"],
+            input[type="text"],
+            input[type="time"],
+            input[type="week"],
+            input[type="url"],
+            select,
+            textarea {
+                @extend .form-control;
+
+                &.small {
+
+                    @include media-breakpoint-up(md) {
+                        width: 33.333%;
+                    }
+                }
+
+                &.medium {
+
+                    @include media-breakpoint-up(md) {
+                        width: 66.666%;
+                    }
+                }
+
+                &.large {
+
+                    @include media-breakpoint-up(md) {
+                        width: 100%;
+                    }
+                }
+            }
+
+            .gfield_required {
+                padding-left: 1px;
+            }
+
+            .gfield_description {
+                @include font-size($font-size-s);
+            }
+
+            .gfield_radio {
+
+                input[value=gf_other_choice] + input {
+                    display: inline-block;
+                }
+            }
+
+            .gfield_checkbox,
+            .gfield_radio {
+                @extend .form-check;
+
+                li {
+                    margin-bottom: $check-margin-bottom;
+                    padding-left: $check-space;
+                    position: relative;
+                }
+            }
+
+            .gfield_checkbox {
+                input {
+                    @extend .form-check-input[type="checkbox"];
+                }
+            }
+
+            .gfield_radio {
+                input {
+                    @extend .form-check-input[type="radio"];
+                }
+            }
+
+            .ginput_container_fileupload {
+
+                .gform_drop_area {
+                    position: relative;
+                    padding: 24px;
+                    background: $file-drop-background;
+
+                    input {
+                        margin-left: 12px;
+                    }
+                }
+
+                .ginput_preview {
+                    margin-top: 6px;
+
+                    strong {
+                        font-weight: 400;
+                    }
+                }
+            }
+
+            &.gfield_error {
+
+                .gfield_label {
+                    color: $error-color;
+                }
+
+                input:not(.button),
+                select,
+                label,
+                textarea {
+                    color: $error-color;
+                    border-color: $error-border;
+                }
+
+                .gform_drop_area {
+                    background: $validation-background;
+
+                    .gform_drop_instructions {
+                        color: $validation-color;
+                    }
+                }
+            }
+
+            &.field_description_below {
+
+                .gfield_description {
+                    margin-top: 6px;
+                }
+            }
+
+            &.field_description_above {
+
+                .gfield_description {
+                    margin-bottom: 6px;
+                }
+            }
+        }
+
+        &.top_label {
+
+            .gfield_label {
+                display: block;
+                margin-bottom: 12px;
+            }
+        }
+
+        &.left_label,
+        &.right_label {
+
+            .gfield {
+
+                @include media-breakpoint-up(md) {
+                    display: flex;
+                    align-items: flex-start;
+                    flex-wrap: wrap;
+                }
+
+                .gfield_label,
+                .ginput_container,
+                .gfield_description {
+
+                    @include media-breakpoint-up(md) {
+                        flex: 0 0 50%;
+                        max-width: 50%;
+                    }
+                }
+            }
+
+            input[type="email"],
+            input[type="date"],
+            input[type="datetime"],
+            input[type="datetime-local"],
+            input[type="month"],
+            input[type="number"],
+            input[type="password"],
+            input[type="search"],
+            input[type="tel"],
+            input[type="text"],
+            input[type="time"],
+            input[type="week"],
+            input[type="url"],
+            select,
+            textarea {
+
+                &,
+                &.small,
+                &.medium,
+                &.large {
+                    width: 100%;
+                }
+            }
+        }
+
+        &.left_label {
+
+            .gfield {
+
+                @include media-breakpoint-up(md) {
+                    justify-content: flex-end;
+                }
+            }
+        }
+
+        &.right_label {
+
+            .gfield {
+
+                @include media-breakpoint-up(md) {
+                    justify-content: flex-start;
+                }
+            }
+
+            .ginput_container {
+
+                @include media-breakpoint-up(md) {
+                    order: 1;
+                }
+            }
+
+            .gfield_label {
+
+                @include media-breakpoint-up(md) {
+                    order: 2;
+                    padding-left: $field-gutter;
+                }
+            }
+
+            .gfield_description {
+
+                @include media-breakpoint-up(md) {
+                    order: 3;
+                }
+            }
+        }
+    }
+}
+
+/* Hide Gravity Forms honeypot */
+.gform_validation_container,
+.gform_wrapper .gform_validation_container,
+body .gform_wrapper li.gform_validation_container,
+body .gform_wrapper .gform_body ul.gform_fields li.gfield.gform_validation_container,
+body .gform_wrapper ul.gform_fields li.gfield.gform_validation_container {
+    display: none !important;
+    position: absolute !important;
+    left: -9000px;
+}
