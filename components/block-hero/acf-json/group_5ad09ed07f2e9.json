@@ -1,9 +1,9 @@
 {
-    "key": "group_5ea6b75c08741",
-    "title": "Elementti \/ Kuva- ja tekstialue",
+    "key": "group_5ad09ed07f2e9",
+    "title": "Elementti \/ Otsikko ja tekstialue",
     "fields": [
         {
-            "key": "field_5ea6b764eae69",
+            "key": "field_5ad09f4c54a8e",
             "label": "Otsikko",
             "name": "title",
             "type": "text",
@@ -22,7 +22,7 @@
             "maxlength": ""
         },
         {
-            "key": "field_5ea6b774eae6a",
+            "key": "field_5ad09ed0847dc",
             "label": "Tekstialue",
             "name": "content",
             "type": "wysiwyg",
@@ -36,33 +36,9 @@
             },
             "default_value": "",
             "tabs": "all",
-            "toolbar": "basic",
+            "toolbar": "full",
             "media_upload": 1,
             "delay": 0
-        },
-        {
-            "key": "field_5ea6b790eae6b",
-            "label": "Kuva",
-            "name": "image",
-            "type": "image",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array",
-            "preview_size": "medium",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": ""
         }
     ],
     "location": [
@@ -70,17 +46,17 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/image-and-text"
+                "value": "acf\/block-content"
             }
         ]
     ],
     "menu_order": 0,
     "position": "normal",
-    "style": "default",
+    "style": "seamless",
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1596617119
+    "modified": 1596617127
 }

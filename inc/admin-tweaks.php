@@ -14,12 +14,21 @@ if (!is_admin()) {
 if( function_exists('acf_add_options_page') ) {
 
     acf_add_options_page(array(
+        'page_title'    => __('Teeman asetukset', 'ID_admin'),
+        'menu_title'    => __('Teeman asetukset', 'ID_admin'),
+        'menu_slug'     => 'theme-settings',
+        'capability'    => 'delete_pages',
+        'redirect'      => false,
+        'position'    => 2
+    ));
+
+    acf_add_options_page(array(
         'page_title'    => __('Yleiset sisällöt', 'ID_admin'),
         'menu_title'	=> __('Yleiset sisällöt', 'ID_admin'),
         'menu_slug'     => 'sitewide-content',
         'capability'	=> 'delete_pages',
         'redirect'		=> false,
-        'position'    => 2
+        'position'    => 3
     ));
 
 }
@@ -343,5 +352,23 @@ function ID_custom_excerpt_length( $length ) {
     return 15;
 }
 add_filter( 'excerpt_length', 'ID_custom_excerpt_length', 999 );
+
+
+
+
+
+add_action('admin_head', 'ID_admin_theme_colors');
+function ID_admin_theme_colors() {
+$theme_colors = get_field('theme_colors', 'option');
+  echo '<style>
+    :root {
+        --primary-color: ' . $theme_colors['primary_color'] . ';' .
+        '--secondary-color: ' . $theme_colors['secondary_color'] . ';' .
+        '--primary-text-color: ' . $theme_colors['text_color_primary'] . ';' .
+        '--secondary-text-color: ' . $theme_colors['text_color_secondary'] . ';
+    }
+  </style>';
+}
+
 
 ?>

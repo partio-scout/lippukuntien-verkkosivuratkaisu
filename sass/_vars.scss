@@ -14,7 +14,8 @@ $font-helvetica:       Helvetica, Arial, "Nimbus Sans L", sans-serif;
 $font-courier:         "Courier New", "DejaVu Sans Mono", monospace, sans-serif;
 $font-arial:           Arial, Helvetica, "Nimbus Sans L", sans-serif;
 
-$font-lato:            'Lato', sans-serif;
+$font-source-sans-pro: 'Source Sans Pro', sans-serif;
+$font-pt-sans: 		   'PT Sans', sans-serif;
 
 //Font sizes
 
@@ -78,6 +79,19 @@ $font-size-social-icons: (
 );
 
 
+//Default theme colors
+$default_clr_primary: #253764;
+$default_clr_primary_text: #fff;
+$default_clr_secondary: #1c769d;
+$default_clr_seconday_text: #fff;
+
+//Theme color overrides, edit from Theme settings page on admin side
+$clr_primary: var(--primary-color);
+$clr_primary_text: var(--primary-text-color);
+$clr_secondary: var(--secondary-color);
+$clr_seconday_text: var(--secondary-text-color);
+
+
 //Colors
 $clr-white:		#fff;
 $clr-black:		#000;
@@ -90,6 +104,7 @@ $clr-grey-2:	#dddddd;
 $clr-grey-1: 	#f2f2f2;
 
 $clr-grey: $clr-grey-1;
+$clr-font-grey: #2a2a2a;
 
 //Transitions
 $transition-link: all 0.2s ease-in-out;
@@ -98,7 +113,7 @@ $transition-link: all 0.2s ease-in-out;
 //Base vars
 $base-font-size:   $font-size-base; // The font size set on the root html element.
 $base-line-height: 1.5; // This line-height determines the basic unit of vertical rhythm.
-$base-font-family: $font-lato; // The font family set on the html element.
+$base-font-family: $font-pt-sans; // The font family set on the html element.
 
 $base-clr-body-bg: $clr-white;
-$base-clr-text: $clr-black;
+$base-clr-text: $clr-font-grey;

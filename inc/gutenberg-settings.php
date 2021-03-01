@@ -62,42 +62,80 @@ add_filter( 'block_categories', 'ID_custom_block_categories', 10, 2 );
 
 //Register ACF Gutenberg blocks
 add_action('acf/init', 'ID_acf_init');
-function ID_acf_init() {
-    if( function_exists('acf_register_block') ) {
-        //Register ACF Gutenberg blocks
-        //Remember to add blocks in allowed_block_types() function or they won't be visible! Example: 'acf/block-slug'
+function ID_acf_init()
+{
+  if (function_exists('acf_register_block')) {
+    //Register ACF Gutenberg blocks
+    //Remember to add blocks in allowed_block_types() function or they won't be visible! Example: 'acf/block-slug'
 
-        //ID_register_block($block_slug, $block_name, $block_category, $block_keywords[])
+    //ID_register_block($block_slug, $block_name, $block_category, $block_keywords[])
 
-        // Include blocks from components installed from library
-        if (function_exists('ID_component_list')) {
-            $components = ID_component_list();
-            $themedir = get_stylesheet_directory();
-            foreach ($components as $component) {
-                $info = ID_component_info($component);
-                $componentfile = "{$themedir}/components/{$component}/{$component}.php";
-                acf_register_block_type(array(
-                                            'name' => $component,
-                                            'title' => __($info['Component']),
-                                            'description' => __($info['Description']),
-                                            'render_template' => $componentfile,
-                                            //'render_callback' => 'ID_component_callback',
-                                            'category' => 'acf-blocks',
-                                            //'category' => 'id-components',
-                                            'icon' => 'align-left',
-                                            'keywords' => $info['Keywords'],
-                                            'example' => array(
-                                                'attributes' => array(
-                                                    'mode' => 'preview',
-                                                    'data' => array('preview' => true),
-                                                    )
-                                                ),
-                                            'mode' => 'auto',
-                                            ));
-            }
+    // Include blocks from components installed from library
+    if (function_exists('ID_component_list')) {
+      $components = ID_component_list();
+      $themedir = get_stylesheet_directory();
+      foreach ($components as $component) {
+        $info = ID_component_info($component);
+        $componentfile = "{$themedir}/components/{$component}/{$component}.php";
+
+        $args = array(
+          'name' => $component,
+          'title' => __($info['Component']),
+          'description' => __($info['Description']),
+          'render_template' => $componentfile,
+          'category' => 'acf-blocks',
+          'icon' => empty($info['Icon']) ? 'align-left' : $info['Icon'],
+          'keywords' => $info['Keywords'],
+        );
+
+
+        //error_log($component);
+        //error_log(json_encode($info));
+
+        if(array_key_exists('Parent', $info)) {
+          $parents = explode(", ", $info['Parent']);
+          $args['parent'] = $parents;
         }
+
+        if ($info['InnerBlocks']) {
+          $args['supports'] = array(
+            'align' => false,
+            'mode' => false,
+            'jsx' => true
+          );
+          $args['example'] = array(
+            'attributes' => array(
+              'mode' => 'preview',
+              'data' => array('preview' => true),
+            )
+          );
+          $args['mode'] = 'auto';
+
+          if(array_key_exists('InnerBlocksPreview', $info)) {
+            if($info['InnerBlocksPreview'] == true) {
+              $args['mode'] = 'preview';
+            }            
+          }
+        } else {
+          $args['example'] = array(
+            'attributes' => array(
+              'mode' => 'preview',
+              'data' => array('preview' => true),
+            )
+          );
+          $args['supports'] = array(
+            'align' => false,
+            'mode' => false,
+            'jsx' => false
+          );
+          $args['mode'] = 'auto';
+        }
+
+        acf_register_block_type($args);
+      }
     }
-}
+  }
+}  
 
 
 

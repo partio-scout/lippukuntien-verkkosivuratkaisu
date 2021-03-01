@@ -1,1 +1,29 @@
-.block-content {}
+.block-content {
+	padding: 58px 0;
+	position: relative;
+
+	svg {
+		display: block;
+		margin: 72px -100px 0 auto;
+		width: 350px;
+		height: auto;
+
+		@include media-breakpoint-up(xxl) {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			width: 350px;
+			margin: 0;
+		}
+
+		path {
+			@include secondary-color-fill();
+		}
+	}
+
+	.inner-blocks {
+		h1, h2, h3, h4, h5, h6 {
+			@include secondary-color-text();
+		}
+	}
+}

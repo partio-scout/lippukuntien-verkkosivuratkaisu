@@ -20,6 +20,12 @@ wp.domReady(function () {
   });
 });
 
+//Define ACF color picker swatches
+acf.add_filter('color_picker_args', function( args, $field ){
+    args.palettes = ['#253764', '#1c769d', '#e9c46a', '#0a0a0a', '#2f575d', '#1e2c50', '#1a622d', '#2a2a2a', '#8c2a2d', '#333333'];    
+    return args;            
+});
+
 /*
 // Register new block style that can be changed from Block-editor
 wp.blocks.registerBlockStyle( 'core/paragraph', {

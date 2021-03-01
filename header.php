@@ -9,6 +9,19 @@
         <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
         <?php endif; ?>
         <?php wp_head(); ?>
+
+        <style>
+            <?php 
+            $theme_colors = get_field('theme_colors', 'option');
+            ?>
+
+            :root {
+                --primary-color: <?php echo $theme_colors['primary_color']; ?>;
+                --secondary-color: <?php echo $theme_colors['secondary_color']; ?>;
+                --primary-text-color: <?php echo $theme_colors['text_color_primary']; ?>;
+                --secondary-text-color: <?php echo $theme_colors['text_color_secondary']; ?>;
+            }
+        </style>
     </head>
 
     <body <?php body_class(); ?>>

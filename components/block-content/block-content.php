@@ -1,34 +1,53 @@
 <?php
 /**
- * Component: Otsikko ja tekstialue
- * Description: Lisää otsikko ja tekstialue
+ * Component: Tekstinosto
+ * Description: Tekstinosto
+ * InnerBlocks: true
+ * InnerBlocksPreview: false
  * Keywords: 
  * @version 1.0
  */
-$title = get_field('title');
-$content = get_field('content');
 
+$allowed_blocks = array(
+    'core/paragraph',
+    'core/heading',
+    'core/buttons',
+);
+
+$template = array(
+	array('core/heading', array(
+        'placeholder' => 'Lorem ipsum dolor sit amet',
+	)),
+    array('core/paragraph', array(
+        'placeholder' => 'Quisque ligula eros ullamcorper quis, lacinia quis facilisis sed sapien.',
+	)),
+	array('core/buttons', array(), array(
+		array('core/button', array(
+			'placeholder' => 'Lorem ipsum'
+		)),
+	)),
+);
+
+$hide_figure = get_field('hide_figure');
 ?>
-<div class="container-fluid block-content">
-
-    <?php if ($title) { ?>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-sm-8 col-md-6">
-                <h2 class="title"><?php echo $title ?></h2>
-            </div>
-        </div>
-    </div>
-    <?php } ?>
-
-    <?php if ($content) { ?>
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <?php echo $content; ?>
-            </div>
-        </div>
-    </div>
-    <?php } ?>
-
+<div class="block-content full-width id-block">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col col-12 col-md-10 col-xxl-6">			
+				<div class="inner-blocks entry-content">
+					<InnerBlocks template="<?php echo esc_attr(wp_json_encode($template)); ?>" allowedBlocks="<?php echo esc_attr(wp_json_encode($allowed_blocks)); ?>" templateLock="false" />
+				</div>
+			</div>
+		</div>
+	</div>	
+	<?php if(!$hide_figure): ?>
+		<svg xmlns="http://www.w3.org/2000/svg" width="107" height="47.043" viewBox="0 0 107 47.043">
+		    <g>
+		        <path d="M29.916 6.541L23.349 0l-8.39 8.417L6.541 0 0 6.541l8.39 8.417L0 23.375l6.541 6.541 8.417-8.39 8.39 8.39 6.568-6.541-8.416-8.417z" transform="rotate(-90 23.522 23.521) translate(17.127)"/>
+		        <path d="M15.253 11.446A24.159 24.159 0 0 1 9.034 0L0 2.064a33.488 33.488 0 0 0 8.632 15.87l.08.08s.617.617 1.474 1.662l7.238-5.79c-1.099-1.341-1.93-2.198-2.171-2.44z" transform="rotate(-90 23.522 23.521) translate(.429 60.519)"/>
+		        <path d="M16.218 6.648L9.758 0A33.429 33.429 0 0 0 0 18.738l9.141 1.474a23.953 23.953 0 0 1 7.077-13.564z" transform="rotate(-90 23.522 23.521) translate(0 30.828)"/>
+		        <path d="M.161 3.163A21.712 21.712 0 0 1 1.5 10.481 19.441 19.441 0 0 1 0 17.907l8.578 3.538a28.792 28.792 0 0 0 2.2-10.964A30.739 30.739 0 0 0 8.873 0z" transform="rotate(-90 23.522 23.521) translate(15.285 85.555)"/>
+		    </g>
+		</svg>
+	<?php endif; ?>
 </div>

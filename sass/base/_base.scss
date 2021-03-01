@@ -17,12 +17,12 @@ body {
 	position: relative;
 }
 
-.container-fluid {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+.container-fluid, .container-lg {
+    padding-top: 0;
+    padding-bottom: 0;
 
     & > .container {
-        margin-bottom: 2rem;
+        margin-bottom: 0rem;
     }
 }
 

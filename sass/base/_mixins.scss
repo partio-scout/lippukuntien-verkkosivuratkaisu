@@ -11,3 +11,33 @@
     }
   }
 }
+
+@mixin primary-color() {
+  background: $default_clr_primary;
+  background: $clr-primary;
+}
+
+@mixin secondary-color() {
+  background: $default_clr_secondary;
+  background: $clr_secondary;
+}
+
+@mixin primary-text-color() {
+  color: $default_clr_primary_text;
+  color: $clr_primary_text;
+}
+
+@mixin secondary-text-color() {
+  color: $default_clr_secondary_text;
+  color: $clr_secondary_text;
+}
+
+@mixin secondary-color-fill() {
+  fill: $default_clr_secondary;
+  fill: $clr_secondary;
+}
+
+@mixin secondary-color-text() {
+  color: $default_clr_secondary;
+  color: $clr_secondary;
+}
