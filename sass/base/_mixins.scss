@@ -37,6 +37,11 @@
   fill: $clr_secondary;
 }
 
+@mixin primary-text-color-fill() {
+  fill: $default_clr_primary_text;
+  fill: $clr_primary_text;
+}
+
 @mixin secondary-color-text() {
   color: $default_clr_secondary;
   color: $clr_secondary;

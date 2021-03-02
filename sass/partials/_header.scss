@@ -10,8 +10,23 @@
 
 }
 
+body.admin-bar {
+    .site-header {
+        .site-header-main {
+            &.floating {
+                top: 46px;
+
+                @include media-breakpoint-up(md) {
+                    top: 32px;
+                }
+            }
+        }
+    }
+}
+
 .site-header {
-    background-color: $clr-grey-4;
+    z-index: 999;
+    position: relative;
 
     /* UNCOMMENT for fixed header
     body.admin-bar & {
@@ -29,73 +44,150 @@
         padding-bottom: 0;
     }
 
+
+    .header-desktop {
+        display: none;
+
+        @include media-breakpoint-up(lg) {
+            display: block;
+        }
+    }
+
+
+    .header-helper {
+        @include primary-color();
+        @include primary-text-color();
+        height: 44px;
+
+        @include media-breakpoint-up(lg) {
+            height: 52px;
+        }
+
+        .flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .secondary-menu {
+            display: flex;
+
+            .menu-item {
+                a {
+                    @include primary-text-color();
+                }
+            }
+        }
+
+        .language-selector {
+            position: relative;
+
+            &:hover {
+                .language {
+                    display: block !important;
+                }
+
+                .active-lang {
+                    .open-language-selector {
+                        &::after {
+                            transform: rotate(-180deg);
+                        }
+                    }
+                }
+            }
+
+            .active-lang {
+                position: relative;
+
+                .open-language-selector {
+                    background: transparent;
+                    border: 0;
+
+                    &::after {
+                        @include fontawesome-icon('f078', 'fal');
+                        transform: rotate(0);
+                        transition: transform 0.2s;
+                        display: block;
+                    }
+
+                    &.open {
+                        &::after {
+                            transform: rotate(-180deg);
+                        }
+                    }
+                }
+            }
+
+            .language:not(.open) {
+                display: none;
+            }
+
+            .language {
+                position: absolute;
+                bottom: 0;
+                background: $clr-white;
+                transform: translateY(100%);
+
+                li {
+                    margin: 16px 0;
+
+                    a {
+                        color: $clr-font-grey;
+                    }
+                }
+            }
+        }
+    }
+
+
     .site-header-main {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         height: 60px; //Height of menubar
+        background-color: $clr-white;
+        border-bottom: solid 1px rgba(0, 0, 0, 0.1);
+
+        &.floating {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        .flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
         .site-branding {
             display: flex;
             align-items: center;
+
+            a {
+                color: $clr-black;
+            }
         }
 
-        .hamburger {
-            display: inline-block;
-            padding: 0;
+        .nav-cta {
+            display: none;
 
             @include media-breakpoint-up(lg) {
-                display: none;
-            }
-
-            .hamburger-box {
-                width: 25px;
-                height: 20px;
-                display: block;
-                margin: auto auto;
-            }
-
-            .hamburger-inner {
-                width: 22px;
-                height: 3px;
-                background: $clr-white;
-                border-radius: 0;
-
-                &::after {
-                    width: 22px;
-                    height: 3px;
-                    top: -12px;
-                    background: $clr-white;
-                    border-radius: 0;
-                }
-
-                &::before {
-                    width: 22px;
-                    height: 3px;
-                    top: -6px;
-                    background: $clr-white;
-                    border-radius: 0;
-                }
-            }
-
-            &.is-active {                
-                .hamburger-inner {
-                    &::before, &::after {
-                        top: 0;
-                    }
-                }
+                display: inline-block;
             }
         }
+
 
         .site-header-menu {  
             position: absolute;
-            top: 60px; //Height of menubar
-            right: 0;
+            top: 0px; //Height of menubar
+            left: 0;
             background: $clr-white;
-            width: 100%;
-            height: calc(100vw - 60px);
+            width: 90vw;
+            height: calc(100vh);
             z-index: 10;
-            transform: translateX(100%);
+            transform: translateX(-100%);
             transition: 0.25s;
             visibility: hidden;
 
@@ -122,74 +214,6 @@
             .main-navigation {
                 display: block;
 
-                //Mobile styles
-                @include media-breakpoint-down(md) {
-                    .primary-menu {
-                        padding: 15px 0;
-
-                        .menu-item {
-                            position: relative;
-                            user-select: none;
-
-                            &.menu-item-has-children {
-                                > .sub-menu-toggle {
-                                    display: block;
-                                    position: absolute;
-                                    right: 0;
-                                    top: 0;
-                                    height: 37px;
-                                    width: 37px;
-                                    border: 0;
-                                    background-color: transparent;
-
-                                    &::before {
-                                        @include fontawesome-icon('f078')
-                                    }
-                                }
-
-                                &.open {
-                                    >.sub-menu {
-                                        height: auto;
-                                    }
-
-                                    > .sub-menu-toggle {
-                                        &::before {
-                                            @include fontawesome-icon('f077')
-                                        }
-                                    }
-                                }
-                            }
-
-                            a {
-                                padding: 10px 15px;
-                                display: inline-block;
-                                color: $clr-black;
-                            }
-
-                            .sub-menu {
-                                overflow: hidden;
-                                height: 0;
-
-                                a {
-                                    margin-left: 15px;
-                                }
-
-                                .sub-menu {
-                                    a {
-                                        margin-left: 30px;
-                                    }
-                                }
-                            }
-                            
-                            &.current-menu-ancestor, &.current-menu-item {
-                                > a {
-                                    font-weight: bold;
-                                }
-                            }
-                        }
-                    }
-                }
-
                 //Desktop styles
                 @include media-breakpoint-up(lg) {
                     .primary-menu {
@@ -207,7 +231,11 @@
                             text-transform: uppercase;
 
                             a {
-                                color: $clr-white;
+                                color: $clr-black;
+
+                                &:hover {
+                                    @include secondary-color-text();
+                                }
                             }
 
                             //Second level
@@ -224,55 +252,33 @@
                                     padding: 10px 15px;
                                     display: block;
                                 }
-                            }
 
-                            > .sub-menu {
-                                position: absolute;
-                                top: 60px;
-                                left: 0;
-
-                                //Third level
-                                > .menu-item {
-                                    position: relative;
-
-                                    > .sub-menu {
-                                        position: absolute;
-                                        top: 0;
-                                        right: 0;
-                                        transform: translateX(100%);
-                                        z-index: -1;
-                                    }
-                                }
-                            }
-
-                            //Add nth-last-of-type to classlist if you want to switch second level side. &:nth-last-of-type(1), &:nth-last-of-type(1) for example. You can give class align-left to top level menu-item in WordPress menu controls id you want to activate this manually.
-                            &.align-left, &:nth-last-of-type(1) {
-                                > .sub-menu {
-                                    left: auto;
-                                    right: 0;
-                                }
-                            }
-
-                            //Add nth-last-child to classlist if you want to switch third level side. &:nth-last-child(1), &:nth-last-child(2) for example. You can give class sub-menu-left to top level menu-item in WordPress menu controls id you want to activate this manually.
-                            &.sub-menu-left, &:nth-last-child(1) {
-                                > .sub-menu > .menu-item > .sub-menu {
-                                    right: auto;
-                                    left: 0;
-                                    transform: translateX(-100%);
+                                .sub-menu-toggle {
+                                    display: none;
                                 }
                             }
                         }
 
                         //General
-                        .menu-item {
+                        > .menu-item {
                             .sub-menu-toggle {
-                                display: none;
+                                display: inline-block;
+                                border: 0;
+                                background: transparent;
+
+                                &::after {
+                                    @include fontawesome-icon('f078', 'fal');
+                                    transform: rotate(0);
+                                    transition: transform 0.2s;
+                                    display: block;
+                                }
                             }
 
                             .sub-menu {
                                 display: none;
                                 background-color: $clr-white;
                                 box-shadow: 1px 1px 3px #ccc;
+                                position: absolute;
                             }
 
                             &:hover, &:focus-within {

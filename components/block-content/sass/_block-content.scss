@@ -1,8 +1,9 @@
 .block-content {
 	padding: 58px 0;
 	position: relative;
+	overflow: hidden;
 
-	svg {
+	.figure {
 		display: block;
 		margin: 72px -100px 0 auto;
 		width: 350px;

@@ -37,36 +37,9 @@
         ?>
         <div id="page" class="site">
             <div class="site-inner">
-                <header id="masthead" class="site-header" role="banner">
-                    <div class="container-lg">
-                        <div class="site-header-main">
-                            <div class="site-branding">
-                                <?php ID_the_custom_logo(); ?>
-                            </div><!-- .site-branding -->
-                            <?php if ( has_nav_menu( 'primary' ) ) : ?>
-                            <button class="hamburger hamburger--collapse" type="button" aria-label="<?php _e('Avaa päävalikko', 'ID'); ?>">
-                                <span class="hamburger-box">
-                                    <span class="hamburger-inner"></span>
-                                </span>
-                            </button>  
-                            <div id="site-header-menu" class="site-header-menu">
-                                <nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Päävalikko', 'ID' ); ?>">
-                                    <?php
-                                    wp_nav_menu( array(
-                                        'theme_location' => 'primary',
-                                        'menu_class'     => 'primary-menu',
-                                        'walker'         => new ID_menu_walker(),
-                                    ) );
-                                    ?>
-                                </nav><!-- .main-navigation -->
-                            </div><!-- .site-header-menu -->
-                            <?php endif; ?>
-                            <div class="site-search">
-                                <?php get_search_form(); ?>
-                            </div>
-                        </div><!-- .site-header-main -->
-                    </div>
-
+                <header id="masthead" class="site-header" role="banner">                    
+                    <?php get_template_part('template-parts/partial', 'header-desktop'); ?>
+                    <?php get_template_part('template-parts/partial', 'header-mobile'); ?>                
                 </header><!-- .site-header -->
 
                 <?php get_template_part('template-parts/block', 'hero'); ?>

@@ -11,6 +11,10 @@ body {
 	min-height: 100vh;
 	position: relative;
     overflow-x: hidden;
+
+    &.no-scrolling {
+    	overflow: hidden;
+    }
 }
 
 #page {
@@ -24,6 +28,12 @@ body {
     & > .container {
         margin-bottom: 0rem;
     }
+}
+
+#wpadminbar {
+	@include media-breakpoint-down(md) {
+		position: fixed;
+	}
 }
 
 @include media-breakpoint-up(md) {

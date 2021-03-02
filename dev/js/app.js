@@ -149,15 +149,19 @@ var livesearchresults = vue__WEBPACK_IMPORTED_MODULE_0__.default.component("live
 
 var $ = window.jQuery;
 $(document).ready(function () {
-  $('.hamburger').on('click', function (e) {
-    $(this).toggleClass('is-active');
-    $('.site-header-menu').toggleClass('open');
-
-    if ($(this).hasClass('is-active')) {
-      $(this).attr('aria-label', aria_close_menu);
-    } else {
-      $(this).attr('aria-label', aria_open_menu);
-    }
+  $('.open-language-selector').on('click', function (e) {
+    $(this).toggleClass('open');
+    $('.language').toggleClass('open');
+  });
+  $('.open-menu').on('click', function (e) {
+    $('.header-mobile .site-header-main').addClass('open');
+    $('.header-mobile .menu-overlay').addClass('open');
+    $('body').addClass('no-scrolling');
+  });
+  $('.close-menu').on('click', function (e) {
+    $('.header-mobile .site-header-main').removeClass('open');
+    $('.header-mobile .menu-overlay').removeClass('open');
+    $('body').removeClass('no-scrolling');
   });
   $('.current-menu-ancestor').each(function (e) {
     $(this).addClass('open');
@@ -170,6 +174,22 @@ $(document).ready(function () {
       $(this).attr('aria-label', aria_close_submenu);
     } else {
       $(this).attr('aria-label', aria_open_submenu);
+    }
+  }); //Float only main menu area
+
+  $(window).on('scroll', function (e) {
+    if ($(window).width() >= 992) {
+      if ($(window).scrollTop() >= 52) {
+        $('.site-header-main').addClass('floating');
+      } else {
+        $('.site-header-main').removeClass('floating');
+      }
+    } else {
+      if ($(window).scrollTop() >= 44) {
+        $('.site-header-main').addClass('floating');
+      } else {
+        $('.site-header-main').removeClass('floating');
+      }
     }
   });
 });

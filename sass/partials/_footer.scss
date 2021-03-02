@@ -1,8 +1,18 @@
 .site-footer {
-    background-color: $clr-grey-4;
-    color: $clr-white;
-    padding: 60px 0 90px;
-    line-height: 2em;
+    margin-top: 50px;
+
+    .footer-top {
+        background-color: $clr-white;
+
+        .container-lg {            
+            padding-bottom: 84px;
+
+            .border-top {
+                border-top: solid 1px #2a2a2a;
+                padding-top: 58px;
+            }
+        }
+    }
 
     .footer-col {
         margin-bottom: 45px;
@@ -17,22 +27,8 @@
     }
 
     .footer-contact-col {
-
-        .custom-logo-link {
-            display: inline-block;
-            margin-bottom: 30px;
-
-            img {
-                display: block;
-            }
-        }
-
-        .footer-contact {
-
-            strong {
-                display: inline-block;
-                margin-bottom: 5px;
-            }
+        a {
+            color: $clr-font-grey;
         }
     }
 
@@ -51,16 +47,14 @@
             flex-wrap: wrap;
 
             .menu-item {
-
                 a {
-                    color: $clr-white;
+                    color: $clr-font-grey;
                 }
             }
 
             > .menu-item {
                 flex: 0 0 100%;
                 max-width: 100%;
-                margin-bottom: 24px;
 
                 &:last-of-type {
                     
@@ -70,27 +64,45 @@
                 }
 
                 @include media-breakpoint-up(lg) {
-                    flex: 0 0 50%;
-                    max-width: 50%;
+                    flex: 0 0 33.333%;
+                    max-width: 33.333%;
                     padding-right: 30px;
                 }
 
                 > a {
-                    margin-bottom: 5px;
+                    margin-bottom: 14px;
                     font-weight: bold;
                     display: inline-block;
+                    @include secondary-color-text();
+                    @include font-size($font-size-l);
+                }
+
+                .menu-item {
+                    margin-bottom: 13px;
                 }
             }
         }
     }
 
-    .footer-newsletter-some {
+    .footer-some {
+        text-align: right;
+
         .social-icons {
+            display: inline-flex;
+            flex-wrap: wrap;
+
             .social-icon {
-                color: $clr-white;
-                margin-right: 30px;
-                margin-bottom: 15px;
+                margin-left: 4px;
+                margin-bottom: 4px;
                 @include font-size($font-size-social-icons);
+                @include primary-color();
+                @include primary-text-color();
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
+                width: 42px;
+                height: 42px;
 
                 &:last-of-type {
                     margin-right: 0;
@@ -123,5 +135,29 @@
                 }
             }
         }
+    }
+
+    .footer-bottom {
+        @include primary-color();
+        @include primary-text-color();
+        height: 64px;
+        display: flex;
+        align-items: center;
+
+        .partio-logo {
+            width: 74px;
+            height: auto;
+
+            path {
+                @include primary-text-color-fill();
+            }
+        }
+
+        .flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
     }
 }

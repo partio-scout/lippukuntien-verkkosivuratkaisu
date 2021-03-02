@@ -285,6 +285,7 @@ if (!function_exists('ID_setup')) :
     // Register menu locations.
     register_nav_menus(array(
       'primary' => __('Päävalikko', 'ID_admin'),
+      'secondary' => __('Apuvalikko', 'ID_admin'),
       'footer' => __('Footer', 'ID_admin'),
     ));
 

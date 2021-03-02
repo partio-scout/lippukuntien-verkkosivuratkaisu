@@ -27,11 +27,30 @@
             "mime_types": ""
         },
         {
+            "key": "field_603df6db359fe",
+            "label": "Logo teksti",
+            "name": "site_logo_text",
+            "type": "text",
+            "instructions": "Tämä näytetään jos sivuston logoa ei ole asetettu.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_603cc3daa7feb",
             "label": "Lippukunnan nimi",
             "name": "scouts_group_name",
             "type": "text",
-            "instructions": "Tämä näytetään jos sivuston logoa ei ole asetettu.",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -140,5 +159,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1614595170
+    "modified": 1614673656
 }

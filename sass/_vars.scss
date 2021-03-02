@@ -34,18 +34,18 @@ p { @include font-size($font-size-base); }
 
 // All font sizes should be defined here
 $font-size-s: (
-	  null  : 12px,
+	  null  : 14px,
 	  $screen-tablet : 14px
 );
 
 $font-size-l: (
-	  null  : 20px,
-	  $screen-tablet : 24px
+	  null  : 18px,
+	  $screen-tablet : 18px
 );
 
 $font-size-base: (
 	  null  : 16px,
-	  $screen-tablet : 20px
+	  $screen-tablet : 16px
 );
 
 $font-size-h4: (
@@ -83,13 +83,13 @@ $font-size-social-icons: (
 $default_clr_primary: #253764;
 $default_clr_primary_text: #fff;
 $default_clr_secondary: #1c769d;
-$default_clr_seconday_text: #fff;
+$default_clr_secondary_text: #fff;
 
 //Theme color overrides, edit from Theme settings page on admin side
 $clr_primary: var(--primary-color);
 $clr_primary_text: var(--primary-text-color);
 $clr_secondary: var(--secondary-color);
-$clr_seconday_text: var(--secondary-text-color);
+$clr_secondary_text: var(--secondary-text-color);
 
 
 //Colors

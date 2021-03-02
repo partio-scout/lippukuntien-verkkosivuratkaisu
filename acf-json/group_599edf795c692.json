@@ -3,8 +3,8 @@
     "title": "Yleiset sisällöt",
     "fields": [
         {
-            "key": "field_59d7403d5bf31",
-            "label": "Footer",
+            "key": "field_603df0f784ebe",
+            "label": "Valikko",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -19,10 +19,10 @@
             "endpoint": 0
         },
         {
-            "key": "field_5ee35532bf7e3",
-            "label": "Footer yhteystiedot",
-            "name": "footer_contact",
-            "type": "wysiwyg",
+            "key": "field_603df10784ebf",
+            "label": "Call to action -nappi",
+            "name": "nav_call_to_action",
+            "type": "link",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -31,11 +31,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "tabs": "all",
-            "toolbar": "basic",
-            "media_upload": 0,
-            "delay": 0
+            "return_format": "array"
         },
         {
             "key": "field_5ee354937399e",
@@ -260,25 +256,6 @@
                     "placeholder": ""
                 }
             ]
-        },
-        {
-            "key": "field_5f3faef4c053e",
-            "label": "Test",
-            "name": "test",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
         }
     ],
     "location": [
@@ -296,7 +273,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": 1,
+    "active": true,
     "description": "",
-    "modified": 1598009082
+    "modified": 1614691242
 }
