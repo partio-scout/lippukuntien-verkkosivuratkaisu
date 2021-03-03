@@ -17054,6 +17054,28 @@ __webpack_require__.r(__webpack_exports__);
 //import { analytics } from './modules/analytics'; // methods for tracking custom events and pageviews
 
 
+var $ = window.jQuery; //Article card image hover
+
+$('.article-card .read-more').on('mouseover', function (e) {
+  $(this).parent('.article-card').find('.image').addClass('hover');
+});
+$('.article-card .read-more').on('mouseleave', function (e) {
+  $(this).parent('.article-card').find('.image').removeClass('hover');
+}); //Article card image hover
+
+$('.block-image-beside-content .read-more').on('mouseover', function (e) {
+  $(this).closest('.block-image-beside-content').find('.image').addClass('hover');
+});
+$('.block-image-beside-content .read-more').on('mouseleave', function (e) {
+  $(this).closest('.block-image-beside-content').find('.image').removeClass('hover');
+}); //Article card image hover
+
+$('.block-image-beside-content .image-link').on('mouseover', function (e) {
+  $(this).closest('.block-image-beside-content').find('.read-more').addClass('hover');
+});
+$('.block-image-beside-content .image-link').on('mouseleave', function (e) {
+  $(this).closest('.block-image-beside-content').find('.read-more').removeClass('hover');
+});
 }();
 /******/ })()
 ;

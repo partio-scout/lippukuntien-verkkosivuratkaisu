@@ -6,8 +6,8 @@
 
 @import "fontawesome_helpers";
 @import "vendor/fontawesome/fontawesome";
-//@import "vendor/fontawesome/solid";
-//@import "vendor/fontawesome/light";
+@import "vendor/fontawesome/solid";
+@import "vendor/fontawesome/light";
 @import "vendor/fontawesome/regular";
 @import "vendor/fontawesome/brands";
 
@@ -47,5 +47,6 @@
 @import "partials/news-archives";
 @import "partials/single";
 @import "partials/search";
+@import "partials/article-card";
 
 @import "partials/block-cookie-notification";

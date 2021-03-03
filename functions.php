@@ -287,6 +287,7 @@ if (!function_exists('ID_setup')) :
       'primary' => __('Päävalikko', 'ID_admin'),
       'secondary' => __('Apuvalikko', 'ID_admin'),
       'footer' => __('Footer', 'ID_admin'),
+      'footer-extra' => __('Footer apuvalikko', 'ID_admin'),
     ));
 
     /*

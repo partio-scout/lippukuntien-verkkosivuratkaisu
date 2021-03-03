@@ -1,3 +1,39 @@
 .block-latest-articles {
-	
+	position: relative;
+	min-height: 400px;
+	padding: 64px 0;
+
+	.accent {
+		width: 100%;
+		height: 0;
+		padding-bottom: 366px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		@include primary-color();
+
+		@include media-breakpoint-up(md) {
+			padding-bottom: 275px;
+		}
+
+		@include media-breakpoint-up(lg) {
+			padding-bottom: 280px;
+		}
+
+		@include media-breakpoint-up(xl) {
+			padding-bottom: 300px;
+		}
+
+		@include media-breakpoint-up(xxl) {
+			padding-bottom: 366px;
+		}
+	}
+
+	.block-title {
+		@include primary-text-color();
+		@include font-size($font-size-block-title);
+		font-family: $font-source-sans-pro;
+		margin-top: 0;
+		margin-bottom: 48px;
+	}
 }

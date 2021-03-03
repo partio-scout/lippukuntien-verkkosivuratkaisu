@@ -3,7 +3,7 @@
 		<div class="container-lg">
 			<div class="flex">
 				<?php $group_name = get_field('scouts_group_name', 'option'); ?>
-				<p><?php echo $group_name; ?></p>
+				<p class="group-name"><?php echo $group_name; ?></p>
 
 				<div class="flex">
 					<nav id="helper-navigation" class="secondary-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Apuvalikko', 'ID' ); ?>">

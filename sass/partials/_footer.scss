@@ -15,31 +15,34 @@
     }
 
     .footer-col {
-        margin-bottom: 45px;
 
-        &:last-of-type {
-            margin-bottom: 0;
-        }
-
-        @include media-breakpoint-up(lg) {
-            margin-bottom: 0;
-        }
     }
 
-    .footer-contact-col {
+    .footer-brand-col {
+        font-weight: bold;
+        @include font-size($font-size-xl);
+        font-family: $font-source-sans-pro;
+
+        @include media-breakpoint-down(md) {
+            margin-bottom: 70px;
+        }
+
         a {
             color: $clr-font-grey;
+        }
+
+        img {
+            max-height: 43px;
+        }
+
+        p {
+            display: inline-block;
         }
     }
 
     .footer-nav-col {
-
-        @include media-breakpoint-up(md) {
-            padding-top: 69px; //Push second col down on tablet to compensate logo
-        }
-
-        @include media-breakpoint-up(lg) {
-            padding-top: 0;
+        @include media-breakpoint-down(md) {
+            margin-bottom: 15px;
         }
 
         .footer-menu {
@@ -49,15 +52,20 @@
             .menu-item {
                 a {
                     color: $clr-font-grey;
+
+                    &:hover {
+                        @include secondary-color-text();
+                        text-decoration: underline;
+                    }
                 }
             }
 
             > .menu-item {
                 flex: 0 0 100%;
                 max-width: 100%;
+                margin-bottom: 15px;
 
-                &:last-of-type {
-                    
+                &:last-of-type {                    
                     @include media-breakpoint-down(md) {
                         margin-bottom: 0;
                     }
@@ -85,7 +93,13 @@
     }
 
     .footer-some {
-        text-align: right;
+        @include media-breakpoint-down(md) {
+            margin-bottom: 30px;
+        }
+
+        @include media-breakpoint-up(lg) {
+            text-align: right;
+        }
 
         .social-icons {
             display: inline-flex;
@@ -103,9 +117,15 @@
                 border-radius: 50%;
                 width: 42px;
                 height: 42px;
+                transform: scale(1);
+                transition: transform 0.2s;
 
-                &:last-of-type {
-                    margin-right: 0;
+                &:first-of-type {
+                    margin-left: 0;
+                }
+
+                &:hover {
+                    transform: scale(0.9);
                 }
 
                 &.instagram {
@@ -159,5 +179,49 @@
             align-items: center;
         }
 
+        .footer-helper {
+            display: flex;
+
+            li {
+
+                a {
+                    @include primary-text-color();
+                    margin-left: 48px;
+                    @include primary-text-color()
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+
+    .footer-navigation, .footer-navigation-wrapper {
+        &.desktop {
+            display: none;
+
+            @include media-breakpoint-up(lg) {
+                display: block;
+            }
+        }
+
+        &.mobile {
+            display: block;
+
+            @include media-breakpoint-up(lg) {
+                display: none;
+            }
+
+            .footer-helper {
+                li {
+                    margin-bottom: 14px;
+
+                    a {
+                        color: $clr-font-grey;
+                    }
+                }
+            }
+        }
     }
 }

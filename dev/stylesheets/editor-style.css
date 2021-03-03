@@ -10320,7 +10320,7 @@ html .mceContentBody {
   font-weight: normal; }
   @media screen and (min-width: 768px) {
     html .mceContentBody {
-      font-size: 20px; } }
+      font-size: 16px; } }
   html .mceContentBody * {
     -webkit-box-sizing: border-box;
             box-sizing: border-box; }
@@ -10492,20 +10492,20 @@ ul {
 p.lead,
 .entry-summary {
   font-weight: 400;
-  font-size: 20px; }
+  font-size: 18px; }
   @media screen and (min-width: 768px) {
     p.lead,
     .entry-summary {
-      font-size: 24px; } }
+      font-size: 18px; } }
 
 .text-l {
-  font-size: 20px; }
+  font-size: 18px; }
   @media screen and (min-width: 768px) {
     .text-l {
-      font-size: 24px; } }
+      font-size: 18px; } }
 
 .text-s {
-  font-size: 12px; }
+  font-size: 14px; }
   @media screen and (min-width: 768px) {
     .text-s {
       font-size: 14px; } }
@@ -10618,7 +10618,7 @@ a {
   .entry-content .wp-block-quote cite,
   .mceContentBody .wp-block-quote cite {
     font-style: normal;
-    font-size: 12px; }
+    font-size: 14px; }
     @media screen and (min-width: 768px) {
       .entry-content .wp-block-quote cite,
       .mceContentBody .wp-block-quote cite {
@@ -10626,7 +10626,7 @@ a {
 
 .entry-content .wp-block-image figcaption,
 .mceContentBody .wp-block-image figcaption {
-  font-size: 12px;
+  font-size: 14px;
   text-align: center; }
   @media screen and (min-width: 768px) {
     .entry-content .wp-block-image figcaption,
@@ -10659,7 +10659,7 @@ a.button,
   display: inline-block;
   background: #2a2a2a;
   color: #fff !important;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: bold;
   text-align: center;
   line-height: 1.1;
@@ -10900,7 +10900,7 @@ a.button,
     .gform_wrapper .gform_fields .gfield .gfield_required {
       padding-left: 1px; }
     .gform_wrapper .gform_fields .gfield .gfield_description {
-      font-size: 12px; }
+      font-size: 14px; }
       @media screen and (min-width: 768px) {
         .gform_wrapper .gform_fields .gfield .gfield_description {
           font-size: 14px; } }

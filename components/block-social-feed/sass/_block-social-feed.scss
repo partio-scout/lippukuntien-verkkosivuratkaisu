@@ -1,0 +1,17 @@
+.block-social-feed {
+	position: relative;
+	padding: 64px 0;
+	@include primary-color();
+
+	.block-title {
+		@include primary-text-color();
+		@include font-size($font-size-block-title);
+		font-family: $font-source-sans-pro;
+		margin-top: 0;
+		margin-bottom: 48px;
+	}
+
+	&.admin {
+		@include primary-text-color();
+	}
+}

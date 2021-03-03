@@ -43,6 +43,11 @@ $font-size-l: (
 	  $screen-tablet : 18px
 );
 
+$font-size-xl: (
+	  null  : 20px,
+	  $screen-tablet : 20px
+);
+
 $font-size-base: (
 	  null  : 16px,
 	  $screen-tablet : 16px
@@ -76,6 +81,11 @@ $font-size-nav: (
 $font-size-social-icons: (
 	  null  : 20px,
 	  $screen-tablet : 20px
+);
+
+$font-size-block-title: (
+	  null  : 32px,
+	  $screen-tablet : 32px
 );
 
 
