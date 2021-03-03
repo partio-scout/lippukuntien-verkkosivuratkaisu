@@ -1,39 +1,30 @@
 <?php
 /**
- * Component: Tekstinosto
- * Description: Tekstinosto
+ * Component: Sisältöalue sivupalkilla
+ * Description: Sisältöalue sivupalkilla
  * InnerBlocks: true
  * InnerBlocksPreview: false
  * Keywords: 
  * @version 1.0
  */
 
-$allowed_blocks = array(
-    'core/paragraph',
-    'core/heading',
-    'core/buttons',
-);
+$allowed_blocks = ID_allowed_inner_blocks();
 
 $template = array(
-	array('core/heading', array(
-        'placeholder' => 'Lorem ipsum dolor sit amet',
-	)),
     array('core/paragraph', array(
         'placeholder' => 'Quisque ligula eros ullamcorper quis, lacinia quis facilisis sed sapien.',
-	)),
-	array('core/buttons', array(), array(
-		array('core/button', array(
-			'placeholder' => 'Lorem ipsum'
-		)),
 	)),
 );
 
 $hide_figure = get_field('hide_figure');
 ?>
-<div class="block-content full-width id-block">
+<div class="block-content-with-sidebar full-width id-block">
 	<div class="container-lg">
 		<div class="row justify-content-center">
-			<div class="col col-12 col-md-10 col-xxl-6">			
+			<div class="col col-12 col-lg-3">
+				Sivupalkki tähän
+			</div>
+			<div class="col col-12 col-lg-9">			
 				<div class="inner-blocks entry-content">
 					<InnerBlocks template="<?php echo esc_attr(wp_json_encode($template)); ?>" allowedBlocks="<?php echo esc_attr(wp_json_encode($allowed_blocks)); ?>" templateLock="false" />
 				</div>

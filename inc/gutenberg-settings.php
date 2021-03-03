@@ -3,6 +3,10 @@
 add_theme_support( 'align-wide' );
 add_theme_support( 'align-full' );
 remove_theme_support( 'core-block-patterns' ); //WP version > 5.5
+add_theme_support('editor-color-palette', []);
+add_theme_support( 'editor-gradient-presets', [] );
+add_theme_support( 'disable-custom-gradients' );
+add_theme_support( 'disable-custom-colors' );
 
 
 //Allowed Gutenberg blocks. Full list of core/blocks found at the bottom of this file
@@ -41,6 +45,24 @@ function allowed_block_types() {
     return $block_types;
 }
 
+
+function ID_allowed_inner_blocks()
+{
+
+  $all_blocks = allowed_block_types();
+  $allowed_blocks = array();
+
+  //filter blocks
+  foreach ($all_blocks as $blockname) {
+    if (strpos($blockname, 'acf/') === 0) {
+      continue;
+    }
+
+    $allowed_blocks[] = $blockname;
+  }
+
+  return $allowed_blocks;
+}
 
 
 // Custom Gutenberg block categories
@@ -230,3 +252,16 @@ console.log( block_names );
 "core/verse"
 "core/video"
 */
+
+
+function ID_register_page_template() {
+    $post_type_object = get_post_type_object( 'page' );
+    $post_type_object->template = array(
+        array( 'acf/block-content-with-sidebar', array(          
+        )),
+        array( 'core/paragraph', array(
+          'placeholder' => 'Lorem ipsum dolor sit amet'
+        )),
+    );
+}
+add_action( 'init', 'ID_register_page_template' );

@@ -36,4 +36,12 @@
 		margin-top: 0;
 		margin-bottom: 48px;
 	}
+
+	.article-card {
+		margin-bottom: 45px;
+
+		@include media-breakpoint-up(lg) {
+			margin-bottom: 0;
+		}
+	}
 }

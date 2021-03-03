@@ -58,6 +58,40 @@
                         @import "elements/forms";
 
                         .acf-block-preview {
+                            .block-editor-inner-blocks {
+                                border: 1px dashed transparent;
+                                position: relative;
+                                
+                                &:hover {
+                                    border: 1px dashed black;
+                                    
+                                    &::before {
+                                        display: inline-block;
+                                    }
+                                }
+                                
+                                &:focus-within {
+                                    border: 1px dashed black;
+                                    
+                                    &::before {
+                                        display: inline-block;
+                                    }
+                                }
+                                
+                                &::before {
+                                    content: 'InnerBlocks';
+                                    padding: 6px 12px;
+                                    border-radius: 2px 2px 0 0;
+                                    background-color: #007cba;
+                                    color: #fff;
+                                    transform: translateY(calc(-100% - 1px));
+                                    display: none;
+                                    position: absolute;
+                                    left: 0;
+                                    font-size: 13px;
+                                }
+                            }
+                            
                             // Import styles here to add ACF block styles to editor
                             @import "elements/all";
                             @import "components/all";
