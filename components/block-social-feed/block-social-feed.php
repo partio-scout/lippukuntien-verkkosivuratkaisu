@@ -3,7 +3,7 @@
  * Component: Sosiaalinen media
  * Description: Sosiaalinen media
  * InnerBlocks: false
- * InnerBlocksPreview: false
+ * InnerBlocksMode: preview
  * Keywords: 
  * @version 1.0
  */

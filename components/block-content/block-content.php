@@ -3,7 +3,7 @@
  * Component: Tekstinosto
  * Description: Tekstinosto
  * InnerBlocks: true
- * InnerBlocksPreview: false
+ * InnerBlocksMode: preview
  * Keywords: 
  * @version 1.0
  */
@@ -15,16 +15,10 @@ $allowed_blocks = array(
 );
 
 $template = array(
-	array('core/heading', array(
-        'placeholder' => 'Lorem ipsum dolor sit amet',
-	)),
-    array('core/paragraph', array(
-        'placeholder' => 'Quisque ligula eros ullamcorper quis, lacinia quis facilisis sed sapien.',
-	)),
+	array('core/heading', array()),
+    array('core/paragraph', array()),
 	array('core/buttons', array(), array(
-		array('core/button', array(
-			'placeholder' => 'Lorem ipsum'
-		)),
+		array('core/button', array()),
 	)),
 );
 

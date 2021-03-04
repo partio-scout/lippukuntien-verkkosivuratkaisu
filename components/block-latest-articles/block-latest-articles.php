@@ -3,7 +3,7 @@
  * Component: Viimeisimmät artikkelit
  * Description: Viimeisimmät artikkelit
  * InnerBlocks: false
- * InnerBlocksPreview: false
+ * InnerBlocksMode: preview
  * Keywords: 
  * @version 1.0
  */

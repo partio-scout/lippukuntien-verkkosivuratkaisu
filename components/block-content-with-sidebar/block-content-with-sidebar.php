@@ -3,17 +3,20 @@
  * Component: Sisältöalue sivupalkilla
  * Description: Sisältöalue sivupalkilla
  * InnerBlocks: true
- * InnerBlocksPreview: false
+ * InnerBlocksMode: preview
  * Keywords: 
  * @version 1.0
  */
 
-$allowed_blocks = ID_allowed_inner_blocks();
+$allowed_blocks = array_merge(ID_allowed_inner_blocks(), array(
+	'acf/block-map'
+));
 
 $template = array(
-    array('core/paragraph', array(
-        'placeholder' => 'Quisque ligula eros ullamcorper quis, lacinia quis facilisis sed sapien.',
+	array('core/heading', array(
+		'level' => 1,
 	)),
+    array('core/paragraph', array()),
 );
 
 $hide_figure = get_field('hide_figure');

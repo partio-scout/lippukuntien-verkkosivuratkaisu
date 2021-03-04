@@ -13,6 +13,7 @@ import "./modules/input-detection";
 import "./modules/menu";
 import { search } from "./modules/search";
 import { cookies } from './modules/cookies';
+import { initMap } from './modules/map';
 import "./modules/hero-carousel";
 //import './modules/googleanalytics'; // track links as events
 //import { analytics } from './modules/analytics'; // methods for tracking custom events and pageviews
@@ -20,7 +21,11 @@ import components from './components/all';
 
 const $ = window.jQuery;
 
-
+$(document).ready(function() {
+    $('.acf-map').each(function(){
+        initMap( $(this) );
+    });
+})
 
 //Article card image hover
 $('.article-card .read-more').on('mouseover', function(e) {

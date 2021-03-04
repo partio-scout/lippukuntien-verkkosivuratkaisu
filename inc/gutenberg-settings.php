@@ -114,6 +114,7 @@ function ID_acf_init()
         //error_log($component);
         //error_log(json_encode($info));
 
+        //Use comma separated list to limit where block can be inserted. For example you can only show custom block inside of another custom block or core/columns
         if(array_key_exists('Parent', $info)) {
           $parents = explode(", ", $info['Parent']);
           $args['parent'] = $parents;
@@ -133,10 +134,12 @@ function ID_acf_init()
           );
           $args['mode'] = 'auto';
 
-          if(array_key_exists('InnerBlocksPreview', $info)) {
-            if($info['InnerBlocksPreview'] == true) {
-              $args['mode'] = 'preview';
-            }            
+          //Possible modes, auto, preview, edit
+          //auto: Changes mode between preview and field groups automatically
+          //preview: Always in preview mode, field groups in sidebar
+          //edit: Always in field group mode
+          if(array_key_exists('InnerBlocksMode', $info)) {
+            $args['mode'] = $info['InnerBlocksMode'];           
           }
         } else {
           $args['example'] = array(
@@ -259,9 +262,7 @@ function ID_register_page_template() {
     $post_type_object->template = array(
         array( 'acf/block-content-with-sidebar', array(          
         )),
-        array( 'core/paragraph', array(
-          'placeholder' => 'Lorem ipsum dolor sit amet'
-        )),
+        array( 'core/paragraph', array()),
     );
 }
 add_action( 'init', 'ID_register_page_template' );

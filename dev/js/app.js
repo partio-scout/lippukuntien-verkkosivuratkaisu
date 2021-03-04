@@ -141,6 +141,124 @@ var livesearchresults = vue__WEBPACK_IMPORTED_MODULE_0__.default.component("live
 
 /***/ }),
 
+/***/ "./js/modules/map.js":
+/*!***************************!*\
+  !*** ./js/modules/map.js ***!
+  \***************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "initMap": function() { return /* binding */ initMap; }
+/* harmony export */ });
+var $ = window.jQuery;
+/**
+ * initMap
+ *
+ * Renders a Google Map onto the selected jQuery element
+ *
+ * @date    22/10/19
+ * @since   5.8.6
+ *
+ * @param   jQuery $el The jQuery element.
+ * @return  object The map instance.
+ */
+
+function initMap($el) {
+  // Find marker elements within map.
+  var $markers = $el.find('.marker'); // Create gerenic map.
+
+  var mapArgs = {
+    zoom: $el.data('zoom') || 16,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  };
+  var map = new google.maps.Map($el[0], mapArgs); // Add markers.
+
+  map.markers = [];
+  $markers.each(function () {
+    initMarker($(this), map);
+  }); // Center map based on markers.
+
+  centerMap(map); // Return map instance.
+
+  return map;
+}
+/**
+ * initMarker
+ *
+ * Creates a marker for the given jQuery element and map.
+ *
+ * @date    22/10/19
+ * @since   5.8.6
+ *
+ * @param   jQuery $el The jQuery element.
+ * @param   object The map instance.
+ * @return  object The marker instance.
+ */
+
+
+function initMarker($marker, map) {
+  // Get position from marker.
+  var lat = $marker.data('lat');
+  var lng = $marker.data('lng');
+  var latLng = {
+    lat: parseFloat(lat),
+    lng: parseFloat(lng)
+  }; // Create marker instance.
+
+  var marker = new google.maps.Marker({
+    position: latLng,
+    map: map
+  }); // Append to reference for later use.
+
+  map.markers.push(marker); // If marker contains HTML, add it to an infoWindow.
+
+  if ($marker.html()) {
+    // Create info window.
+    var infowindow = new google.maps.InfoWindow({
+      content: $marker.html()
+    }); // Show info window when marker is clicked.
+
+    google.maps.event.addListener(marker, 'click', function () {
+      infowindow.open(map, marker);
+    });
+  }
+}
+/**
+ * centerMap
+ *
+ * Centers the map showing all markers in view.
+ *
+ * @date    22/10/19
+ * @since   5.8.6
+ *
+ * @param   object The map instance.
+ * @return  void
+ */
+
+
+function centerMap(map) {
+  // Create map boundaries from all map markers.
+  var bounds = new google.maps.LatLngBounds();
+  map.markers.forEach(function (marker) {
+    bounds.extend({
+      lat: marker.position.lat(),
+      lng: marker.position.lng()
+    });
+  }); // Case: Single marker.
+
+  if (map.markers.length == 1) {
+    map.setCenter(bounds.getCenter()); // Case: Multiple markers.
+  } else {
+    map.fitBounds(bounds);
+  }
+}
+
+
+
+/***/ }),
+
 /***/ "./js/modules/menu.js":
 /*!****************************!*\
   !*** ./js/modules/menu.js ***!
@@ -17034,9 +17152,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_menu__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_modules_menu__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _modules_search__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/search */ "./js/modules/search.js");
 /* harmony import */ var _modules_cookies__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/cookies */ "./js/modules/cookies.js");
-/* harmony import */ var _modules_hero_carousel__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/hero-carousel */ "./js/modules/hero-carousel.js");
-/* harmony import */ var _components_all__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/all */ "./js/dummy/components/all.js");
-/* harmony import */ var _components_all__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_components_all__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _modules_map__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/map */ "./js/modules/map.js");
+/* harmony import */ var _modules_hero_carousel__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/hero-carousel */ "./js/modules/hero-carousel.js");
+/* harmony import */ var _components_all__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/all */ "./js/dummy/components/all.js");
+/* harmony import */ var _components_all__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_components_all__WEBPACK_IMPORTED_MODULE_6__);
 // Polyfills
 //import 'whatwg-fetch'; // polyfill fetch (<2017)
 //import 'promise-polyfill/src/polyfill'; // polyfill promises for fetch (IE11)
@@ -17050,11 +17169,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
  //import './modules/googleanalytics'; // track links as events
 //import { analytics } from './modules/analytics'; // methods for tracking custom events and pageviews
 
 
-var $ = window.jQuery; //Article card image hover
+var $ = window.jQuery;
+$(document).ready(function () {
+  $('.acf-map').each(function () {
+    (0,_modules_map__WEBPACK_IMPORTED_MODULE_4__.initMap)($(this));
+  });
+}); //Article card image hover
 
 $('.article-card .read-more').on('mouseover', function (e) {
   $(this).parent('.article-card').find('.image').addClass('hover');

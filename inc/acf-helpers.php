@@ -2,7 +2,7 @@
 /* ACF google maps api key */
 function ID_acf_google_map_api($api)
 {
-  $api['key'] = '';
+  $api['key'] = 'AIzaSyDU5fWMLds51kb-AxtLcTozIga7shuHge4';
   return $api;
 }
 add_filter('acf/fields/google_map/api', 'ID_acf_google_map_api');

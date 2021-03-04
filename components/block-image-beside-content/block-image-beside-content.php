@@ -3,7 +3,7 @@
  * Component: Sisältönosto
  * Description: Sisältönosto
  * InnerBlocks: true
- * InnerBlocksPreview: false
+ * InnerBlocksMode: preview
  * Keywords: 
  * @version 1.0
  */
@@ -16,12 +16,8 @@ $allowed_blocks = array(
 );
 
 $template = array(
-	array('core/heading', array(
-        'placeholder' => 'Lorem ipsum dolor sit amet',
-	)),
-    array('core/paragraph', array(
-        'placeholder' => 'Quisque ligula eros ullamcorper quis, lacinia quis facilisis sed sapien.',
-	)),
+	array('core/heading', array()),
+    array('core/paragraph', array()),
 );
 
 $image = get_field('image');
