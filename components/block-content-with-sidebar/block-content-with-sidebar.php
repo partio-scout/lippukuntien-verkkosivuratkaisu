@@ -20,11 +20,11 @@ $hide_figure = get_field('hide_figure');
 ?>
 <div class="block-content-with-sidebar full-width id-block">
 	<div class="container-lg">
-		<div class="row justify-content-center">
-			<div class="col col-12 col-lg-3">
-				Sivupalkki tähän
+		<div class="row">
+			<div class="col d-none d-lg-block col-lg-4 col-xxl-3">
+				<?php get_template_part('template-parts/partial' , 'sidebar'); ?>
 			</div>
-			<div class="col col-12 col-lg-9">			
+			<div class="col col-12 col-lg-8 col-xxl-7 offset-xxl-1">	
 				<div class="inner-blocks entry-content">
 					<InnerBlocks template="<?php echo esc_attr(wp_json_encode($template)); ?>" allowedBlocks="<?php echo esc_attr(wp_json_encode($allowed_blocks)); ?>" templateLock="false" />
 				</div>
