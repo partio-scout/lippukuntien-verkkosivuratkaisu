@@ -8,9 +8,25 @@
     
     #breadcrumbs {
         @include font-size($font-size-s);
+        padding: 12px 0;
+
+        a {
+            text-decoration: underline;
+            @include secondary-color-text();
+            margin-right: 5px;
+
+            &:hover {
+                color: $clr-font-grey;
+            }
+        }
         
         span.breadcrumb_last {
-            color: $clr-grey-3;
+            color: $clr-font-grey;
+            margin-left: 5px;
+        }
+
+        span.bullet {
+            font-size: 0.8em;
         }
     }
 }
@@ -28,6 +44,7 @@
 .error404 {
 
     .page-content {
+        margin: 100px 0;
 
         .search-form {
             margin-top: 32px;

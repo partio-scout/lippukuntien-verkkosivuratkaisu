@@ -27,6 +27,11 @@
   color: $clr_primary_text;
 }
 
+@mixin primary-border-color() {
+  border-color: $default_clr_primary_text;
+  border-color: $clr_primary_text;
+}
+
 @mixin secondary-text-color() {
   color: $default_clr_secondary_text;
   color: $clr_secondary_text;

@@ -7,7 +7,7 @@
   \************************************/
 /***/ (function() {
 
-
+//import '../../../components/block-social-feed/js/block-social-feed';
 
 /***/ }),
 

@@ -14,4 +14,144 @@
 	&.admin {
 		@include primary-text-color();
 	}
+
+	.juicer-feed {
+		padding: 0 !important;
+
+		@include media-breakpoint-down(xs) {
+			&:not(.more) {
+				.j-stack {
+					:nth-child(4), :nth-child(5), :nth-child(6) {
+						display: none;
+					}
+				}
+			}
+		}
+
+		@include media-breakpoint-down(md) {
+			.j-stack {
+				padding-left: 10px !important;
+				padding-right: 10px !important;
+			}
+		}
+
+		.referral {
+			display: none;
+		}
+
+		.feed-item {
+			border-width: 0px !important;
+
+			@include media-breakpoint-down(md) {
+				margin-bottom: 20px !important;
+			}
+
+			.card {
+				position: relative;
+
+				img {
+					width: 100%;
+					display: block;
+				}
+
+				.no-image {
+					height: 40px;
+				}
+
+				.content {
+					padding: 22px;
+
+					.excerpt {
+						margin-bottom: 25px;
+
+						:last-child {
+							margin-bottom: 0;
+						}
+					}
+
+					.user {
+						display: flex;
+
+						.poster-thumb {
+							width: 63px;
+							height: 63px;
+							border-radius: 50%;
+							margin-bottom: 0;
+							margin-right: 12px;
+							display: block;
+
+							@include media-breakpoint-down(md) {
+								width: 35px;
+								height: 35px;
+							}
+						}
+
+						.user-meta {
+							display: flex;
+							flex-direction: column;
+							justify-content: center;
+							@include font-size($font-size-s);
+							color: $clr-font-grey;
+
+							.username {
+								font-weight: bold;
+								@include font-size($font-size-base);
+								margin-bottom: 5px;
+								display: inline-block;
+
+								&:hover {
+									@include secondary-color-text();
+								}
+							}
+
+							.time {
+								margin: 0;
+							}
+						}
+					}
+				}
+
+				.socialmedia {
+					position: absolute;
+					top: 0;
+					left: 0;
+					padding: 6px;
+					@include secondary-color();
+					@include secondary-text-color();
+					font-weight: bold;
+					text-transform: uppercase;
+					font-family: $font-source-sans-pro;
+				}
+			}
+		}
+
+		.j-loading {
+			@include primary-border-color();
+		}
+
+		.j-loading:before {
+		 	@include primary-text-color();
+		}
+
+		.juicer-button {
+			margin-top: 0;
+			margin-bottom: 0;
+			font-family: $font-pt-sans;
+			padding: 16px 33px;
+			border-radius: 2px;
+			@include primary-border-color();
+			@include primary-text-color();
+			font-weight: bold;
+			text-transform: initial;
+			@include font-size($font-size-base);
+			width: auto;
+			max-width: 175px;
+
+			&:hover {
+				color: $clr-font-grey;
+				border-color: $clr-white;
+				background: $clr-white;
+			}
+		}
+	}
 }

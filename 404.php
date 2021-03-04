@@ -8,8 +8,8 @@
                     <header class="page-header">
                         <h1 class="page-title">404 - <?php _e( 'Sivua ei löytynyt', 'ID' ); ?></h1>
                     </header><!-- .page-header -->
-                    <div class="page-content">
-                        <p><?php _e( 'Hakemaasi sisältöä ei löytynyt. Kokeile hakua!', 'ID' ); ?></p>
+                    <div class="">
+                        <p><?php _e( 'Hakemaasi sisältöä ei löytynyt', 'ID' ); ?></p>
                     </div><!-- .page-content -->
                 </section><!-- .error-404 -->
             </div>
