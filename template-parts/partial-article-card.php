@@ -11,7 +11,7 @@ $title = get_the_title($ID);
 $link = get_the_permalink($ID);
 ?>
 
-<div class="article-card">
+<div class="article-card entry-content">
 	<a href="<?php echo $link; ?>">
 		<div class="image" style="background-image: url('<?php echo $image; ?>');"></div>
 	</a>

@@ -14,7 +14,7 @@ import "./modules/menu";
 import { search } from "./modules/search";
 import { cookies } from './modules/cookies';
 import { initMap } from './modules/map';
-import "./modules/hero-carousel";
+import "./modules/load-more";
 //import './modules/googleanalytics'; // track links as events
 //import { analytics } from './modules/analytics'; // methods for tracking custom events and pageviews
 import components from './components/all';
@@ -28,29 +28,28 @@ $(document).ready(function() {
 })
 
 //Article card image hover
-$('.article-card .read-more').on('mouseover', function(e) {
+$(document).on('mouseover', '.article-card .read-more', function(e) {
 	$(this).parent('.article-card').find('.image').addClass('hover');
-})
+});
 
-$('.article-card .read-more').on('mouseleave', function(e) {
+$(document).on('mouseleave', '.article-card .read-more', function(e) {
 	$(this).parent('.article-card').find('.image').removeClass('hover');
-})
-
+});
 
 //Article card image hover
 $('.block-image-beside-content .read-more').on('mouseover', function(e) {
 	$(this).closest('.block-image-beside-content').find('.image').addClass('hover');
-})
+});
 
 $('.block-image-beside-content .read-more').on('mouseleave', function(e) {
 	$(this).closest('.block-image-beside-content').find('.image').removeClass('hover');
-})
+});
 
 //Article card image hover
 $('.block-image-beside-content .image-link').on('mouseover', function(e) {
 	$(this).closest('.block-image-beside-content').find('.read-more').addClass('hover');
-})
+});
 
 $('.block-image-beside-content .image-link').on('mouseleave', function(e) {
 	$(this).closest('.block-image-beside-content').find('.read-more').removeClass('hover');
-})
+});

@@ -64,13 +64,13 @@ $font-size-h3: (
 );
 
 $font-size-h2: (
-	  null  : 33px,
-	  $screen-tablet : 50px
+	  null  : 30px,
+	  $screen-tablet : 45px
 );
 
 $font-size-h1: (
-	  null  : 40px,
-	  $screen-tablet : 60px
+	  null  : 32px,
+	  $screen-tablet : 48px
 );
 
 $font-size-nav: (
@@ -105,7 +105,7 @@ $clr_secondary_text: var(--secondary-text-color);
 //Colors
 $clr-white:		#fff;
 $clr-black:		#000;
-$clr-red:       #FF4848;
+$clr-red:       #ff0000;
 $clr-grey-6:	#161616;
 $clr-grey-5:	#404040;
 $clr-grey-4:	#7f7f7f;
@@ -115,6 +115,7 @@ $clr-grey-1: 	#f2f2f2;
 
 $clr-grey: $clr-grey-1;
 $clr-font-grey: #2a2a2a;
+$clr-form-grey: #444444;
 
 //Transitions
 $transition-link: all 0.2s ease-in-out;

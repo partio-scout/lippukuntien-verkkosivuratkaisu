@@ -48,3 +48,25 @@ function ID_delete_localized_versions_of_media_file($originalid)
   }
 }
 //add_action('delete_attachment', 'ID_delete_localized_versions_of_media_file');
+
+
+function acf_load_gravity_forms( $field ) {    
+    // reset choices
+    $field['choices'] = array();    
+    
+    //get all forms
+    $forms = GFAPI::get_forms();
+
+    // loop through array and add to field 'choices'
+    $field['choices'][ 0 ] = __('Valitse lomake', 'ID'); 
+    if( is_array($forms) ) {        
+        foreach( $forms as $form ) {            
+            $field['choices'][ $form['id'] ] = $form['title'];      
+        }        
+    }   
+
+    // return the field
+    return $field;    
+}
+
+add_filter('acf/load_field/name=gravity_forms', 'acf_load_gravity_forms');

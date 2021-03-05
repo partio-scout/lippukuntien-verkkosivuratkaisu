@@ -1,70 +1,30 @@
 .blog,
 .archive {
-
-    .page-header {
-
-        .taxonomy-description {
-            margin-top: 19px;
-        }
-    }
-
-    .articles-sidebar {
-
-        .sidebar-item {
-
-            &:not(:last-of-type) {
-                margin-bottom: 52px;
-            }
-
-            .item-header,
-            ul li:not(:last-of-type) {
-                margin-bottom: 19px;
-            }
-        }
-    }
-}
-
-.blog,
-.archive,
-.search-results {
-
     .page-header {
         margin-bottom: 54px;
-    }
-    
-    .article-items {
 
-        article {
-
-            &:not(:last-of-type) {
-                margin-bottom: 48px;
-            }
-
-            .entry-meta,
-            .entry-header,
-            .item-top {
-                margin-bottom: 16px;
-            }
-
-            .entry-meta {
-
-                .author::before {
-                    content: '\007c';
-                    display: inline-block;
-                    margin-right: 0.25em;
-                }
-            }
+        .page-title {
+            text-transform: uppercase;
+            @include primary-color-text();
         }
     }
-    
-    .not-found-item {
-        
-        .search-form {
-            margin-top: 32px;
+
+    .load-more-wrapper {
+        text-align: center;
+        padding-top: 48px;
+
+        .load-more {
+            padding: 16px 33px;
+            border-radius: 2px;
+            @include primary-color();
+            @include primary-text-color();
+            font-weight: bold;
+            border: 0;
+            transition: opacity 0.2s;
+
+            &:hover {
+                opacity: 0.84;
+            }
         }
-    }
-    
-    .pagination {
-        margin-top: 54px;
     }
 }

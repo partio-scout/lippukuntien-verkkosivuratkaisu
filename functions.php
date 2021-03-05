@@ -107,6 +107,15 @@ function ID_scripts()
   wp_localize_script('intodigital-script', 'aria_close_menu', __('Sulje päävalikko', 'ID'));
   wp_localize_script('intodigital-script', 'aria_open_submenu', __('Avaa alavalikko', 'ID'));
   wp_localize_script('intodigital-script', 'aria_close_submenu', __('Sulje alavalikko', 'ID'));
+
+  global $wp_query; 
+
+  wp_localize_script('intodigital-script', 'ID_load_more', array(
+    'posts' => json_encode( $wp_query->query_vars ), // everything about your loop is here
+    'current_page' => get_query_var( 'paged' ) ? get_query_var('paged') : 1,
+    'max_page' => $wp_query->max_num_pages
+  ));
+
   wp_enqueue_script('maps');
   wp_enqueue_script('intodigital-script');
 
@@ -382,3 +391,83 @@ function disable_search($query, $error = true)
 
 add_action('parse_query', 'disable_search');
 add_filter('get_search_form', function(){ return null; });
+
+/*
+//Disable default taxonomies
+function ID_unregister_taxonomy(){
+    register_taxonomy('post_tag', array());
+    register_taxonomy('category', array());
+}
+add_action('init', 'ID_unregister_taxonomy');
+*/
+
+
+
+//Disable comments
+add_action('admin_init', function () {
+    // Redirect any user trying to access comments page
+    global $pagenow;
+    
+    if ($pagenow === 'edit-comments.php') {
+        wp_redirect(admin_url());
+        exit;
+    }
+
+    // Remove comments metabox from dashboard
+    remove_meta_box('dashboard_recent_comments', 'dashboard', 'normal');
+
+    // Disable support for comments and trackbacks in post types
+    foreach (get_post_types() as $post_type) {
+        if (post_type_supports($post_type, 'comments')) {
+            remove_post_type_support($post_type, 'comments');
+            remove_post_type_support($post_type, 'trackbacks');
+        }
+    }
+});
+
+// Close comments on the front-end
+add_filter('comments_open', '__return_false', 20, 2);
+add_filter('pings_open', '__return_false', 20, 2);
+
+// Hide existing comments
+add_filter('comments_array', '__return_empty_array', 10, 2);
+
+// Remove comments page in menu
+add_action('admin_menu', function () {
+    remove_menu_page('edit-comments.php');
+});
+
+// Remove comments links from admin bar
+add_action('init', function () {
+    if (is_admin_bar_showing()) {
+        remove_action('admin_bar_menu', 'wp_admin_bar_comments_menu', 60);
+    }
+});
+
+
+
+
+
+
+
+function ID_loadmore_ajax_handler(){
+  $args = json_decode( stripslashes( $_POST['query'] ), true );
+  $args['paged'] = $_POST['page'] + 1;
+  $args['post_status'] = 'publish';
+ 
+  query_posts( $args );
+ 
+  if( have_posts() ) : 
+    while( have_posts() ): the_post();
+      echo '<div class="col col-12 col-md-4">';
+      get_template_part('template-parts/partial', 'article-card', array(
+        'ID' => get_the_ID(),
+      ));
+      echo '</div>';
+    endwhile; 
+  endif;
+  die;
+} 
+ 
+add_action('wp_ajax_loadmore', 'ID_loadmore_ajax_handler'); // wp_ajax_{action}
+add_action('wp_ajax_nopriv_loadmore', 'ID_loadmore_ajax_handler'); // wp_ajax_nopriv_{action}

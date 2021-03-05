@@ -100,3 +100,37 @@
 		}
 	}
 }
+
+.sidebar-posts {
+	.sidebar-title {
+		font-weight: bold;
+		@include font-size($font-size-l);
+		margin-bottom: 18px;
+	}
+
+	a {
+		@include secondary-color-text();
+
+		&:hover {
+			color: $clr-font-grey;
+		}
+	}
+
+	.latest {
+		margin-bottom: 24px;
+		list-style: none;
+		padding-left: 0 !important;
+
+		.article {
+			margin-bottom: 18px;
+
+			.date {
+				display: block;
+			}
+		}
+	}
+
+	.more {
+		font-weight: bold;
+	}
+}

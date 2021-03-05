@@ -5,10 +5,10 @@ $field-margin-bottom: 24px;
 $field-gutter: 24px;
 
 $text-background: $clr-white;
-$text-border: $clr-grey-2;
-$text-border-radius: 5px;
+$text-border: $clr-font-grey;
+$text-border-radius: 0px;
 $text-color: $clr-black;
-$text-placeholder: $clr-grey-3;
+$text-placeholder: $clr-form-grey;
 
 $check-background: $clr-grey-4;
 $check-border: $clr-grey-2;
@@ -34,56 +34,20 @@ $error-border: $clr-red;
 
 .form-control {
     background-color: $text-background;
-    border: 1px solid $text-border;
+    border: 0;
+    border-bottom: 1px solid $text-border;
     border-radius: $text-border-radius;
     color: $text-color;
     display: block;
     width: 100%;
-    padding: 0.5em;
+    padding-bottom: 16px;
+    padding-top: 10px;
+    font-weight: bold;
+    @include font-size($font-size-l);
 
     &::placeholder {
         color: $text-placeholder;
-    }
-}
-
-.form-check {
-    margin-bottom: $check-margin-bottom;
-    position: relative;
-
-    input {
-        @extend .screen-reader-text;
-    }
-    input:focus + label::before {
-        outline: auto;
-    }
-
-    label::before,
-    label::after {
-        display: inline-block;
-        position: absolute;
-        top: 0.2em;
-        left: 0;
-        width: $check-size;
-        height: $check-size;
-        border-radius: $check-border-radius;
-    }
-
-    label::before {
-        content: '';
-        border: 1px solid $check-border;
-    }
-
-    label::after {
-        font-size: 0.8em;
-    }
-
-    input:checked + label::after {
-        @extend .far;
-        content: fa-content($fa-var-check);
-        background-color: $check-background;
-        color: $check-color;
-        text-align: center;
-        line-height: $check-size;
+        font-weight: normal;
     }
 }
 
@@ -96,17 +60,91 @@ $error-border: $clr-red;
 }
 
 .form-check-input[type="checkbox"] {
-    &:checked + label::after {
-        content: fa-content($fa-var-check);
+    display: none;
+
+    & + label {
+        padding-left: 30px;
+        position: relative;
+        cursor: pointer;
+
+        &::before {
+            content: '';
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            border: 1px solid $clr-font-grey;
+            position: absolute;
+            left: 0;
+            top: 1px;
+            z-index: 1;
+        }
+
+        &::after {
+            content: '';
+            display: inline-flex;
+            width: 18px;
+            height: 18px;
+            border: 0;
+            position: absolute;            
+            left: 0;
+            top: 1px;
+            justify-content: center;
+            align-items: center;
+            font-size: 13px;
+        }
+    }
+
+    &:checked + label {
+        &::before {
+            @include secondary-border-color();
+        }
+
+        &::after {
+            @include secondary-color();
+            @include secondary-text-color();
+            @include fontawesome-icon('f00c', 'far');
+        }
     }
 }
 
 .form-check-input[type="radio"] {
-    & + label::before, & + label::after {
+    display: none;
+
+    & + label {
+        padding-left: 30px;
+        position: relative;
+        cursor: pointer;
+
+        &::before {
+            content: '';
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            border: 1px solid $clr-font-grey;
             border-radius: 50%;
+            position: absolute;
+            left: 0;
+            top: 1px;
+            z-index: 1;
+        }
+
+        &::after {
+            content: '';
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            border: 2px solid $clr-white;
+            border-radius: 50%;
+            position: absolute;            
+            left: 0;
+            top: 1px;
+        }
     }
-    &:checked + label::after {
-        content: fa-content($fa-var-circle);
+
+    &:checked + label {
+        &::after {
+            @include secondary-color();
+        }
     }
 }
 
@@ -141,11 +179,22 @@ $error-border: $clr-red;
     }
 
     .validation_message {
-        display: none;
+        color: $validation-background;
     }
 
     .button {
-        @extend .button;
+        padding: 16px 33px;
+        border-radius: 2px;
+        @include primary-color();
+        @include primary-text-color();
+        font-weight: bold;
+        border: 0;
+        transition: opacity 0.2s;
+        margin-top: 24px;
+
+        &:hover {
+            opacity: 0.84;
+        }
     }
 
     .gform_fields {
@@ -175,6 +224,23 @@ $error-border: $clr-red;
 
             &:not(:last-of-type) {
                 margin-bottom: $field-margin-bottom;
+            }
+
+            &.hidden_label {
+                .gfield_label {
+                    border: 0;
+                    clip: rect(0, 0, 0, 0);
+                    height: 1px;
+                    margin: -1px;
+                    overflow: hidden;
+                    padding: 0;
+                    position: absolute;
+                    width: 1px;
+                }
+
+                select[multiple="multiple"], textarea, .ginput_container_consent {
+                    margin-top: 16px;
+                }
             }
 
             input[type="email"],
@@ -216,6 +282,13 @@ $error-border: $clr-red;
                 }
             }
 
+            textarea, select[multiple="multiple"] {
+                border: 1px solid $text-border;
+                padding: 12px;
+                @include font-size($font-size-base);
+                font-weight: normal;
+            }
+
             .gfield_required {
                 padding-left: 1px;
             }
@@ -233,24 +306,23 @@ $error-border: $clr-red;
 
             .gfield_checkbox,
             .gfield_radio {
-                @extend .form-check;
-
                 li {
                     margin-bottom: $check-margin-bottom;
                     padding-left: $check-space;
                     position: relative;
+                    padding: 0;
                 }
             }
 
-            .gfield_checkbox {
+            .gfield_checkbox, .ginput_container_consent {
                 input {
-                    @extend .form-check-input[type="checkbox"];
+                    @extend .form-check-input[type="checkbox"] !optional;
                 }
             }
 
             .gfield_radio {
                 input {
-                    @extend .form-check-input[type="radio"];
+                    @extend .form-check-input[type="radio"] !optional;
                 }
             }
 
@@ -318,6 +390,7 @@ $error-border: $clr-red;
             .gfield_label {
                 display: block;
                 margin-bottom: 12px;
+                margin-top: 6px;
             }
         }
 

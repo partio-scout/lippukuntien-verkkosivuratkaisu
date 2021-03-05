@@ -3834,9 +3834,6 @@ p { @include font-size($font-size-base); }
 .fa,
 .fas,
 .far,
-.form-check input:checked + label::after,
-.gform_wrapper .gform_fields .gfield .gfield_checkbox input:checked + label::after,
-.gform_wrapper .gform_fields .gfield .gfield_radio input:checked + label::after,
 .fal,
 .fad,
 .fab {
@@ -3921,9 +3918,6 @@ p { @include font-size($font-size-base); }
 .fa.fa-pull-left,
 .fas.fa-pull-left,
 .far.fa-pull-left,
-.form-check input:checked + label.fa-pull-left::after,
-.gform_wrapper .gform_fields .gfield .gfield_checkbox input:checked + label.fa-pull-left::after,
-.gform_wrapper .gform_fields .gfield .gfield_radio input:checked + label.fa-pull-left::after,
 .fal.fa-pull-left,
 .fab.fa-pull-left {
   margin-right: .3em; }
@@ -3931,9 +3925,6 @@ p { @include font-size($font-size-base); }
 .fa.fa-pull-right,
 .fas.fa-pull-right,
 .far.fa-pull-right,
-.form-check input:checked + label.fa-pull-right::after,
-.gform_wrapper .gform_fields .gfield .gfield_checkbox input:checked + label.fa-pull-right::after,
-.gform_wrapper .gform_fields .gfield .gfield_radio input:checked + label.fa-pull-right::after,
 .fal.fa-pull-right,
 .fab.fa-pull-right {
   margin-left: .3em; }
@@ -10285,11 +10276,7 @@ readers do not read off random characters that represent icons */
   src: url("../fonts/fontawesome/fa-regular-400.eot");
   src: url("../fonts/fontawesome/fa-regular-400.eot?#iefix") format("embedded-opentype"), url("../fonts/fontawesome/fa-regular-400.woff2") format("woff2"), url("../fonts/fontawesome/fa-regular-400.woff") format("woff"), url("../fonts/fontawesome/fa-regular-400.ttf") format("truetype"), url("../fonts/fontawesome/fa-regular-400.svg#fontawesome") format("svg"); }
 
-
-.far,
-.form-check input:checked + label::after,
-.gform_wrapper .gform_fields .gfield .gfield_checkbox input:checked + label::after,
-.gform_wrapper .gform_fields .gfield .gfield_radio input:checked + label::after {
+.far {
   font-family: 'Font Awesome 5 Pro';
   font-weight: 400; }
 
@@ -10343,7 +10330,7 @@ body {
 .cf:after {
   clear: both; }
 
-.screen-reader-text, .form-check input, .gform_wrapper .gform_fields .gfield .gfield_checkbox input, .gform_wrapper .gform_fields .gfield .gfield_radio input {
+.screen-reader-text {
   position: absolute;
   left: -10000px;
   top: auto;
@@ -10438,25 +10425,25 @@ iframe {
 
 h1,
 .h1 {
-  font-size: 40px;
+  font-size: 32px;
   font-weight: 700;
   line-height: 1.2;
   margin: 0; }
   @media screen and (min-width: 768px) {
     h1,
     .h1 {
-      font-size: 60px; } }
+      font-size: 48px; } }
 
 h2,
 .h2 {
-  font-size: 33px;
+  font-size: 30px;
   font-weight: 700;
   line-height: 1.2;
   margin: 0; }
   @media screen and (min-width: 768px) {
     h2,
     .h2 {
-      font-size: 50px; } }
+      font-size: 45px; } }
 
 h3,
 .h3 {
@@ -10516,7 +10503,7 @@ b {
 
 a {
   text-decoration: none;
-  color: #FF4848; }
+  color: #ff0000; }
   a:hover {
     color: #2a2a2a; }
   a img {
@@ -10525,7 +10512,7 @@ a {
 .entry-content a,
 .mceContentBody a {
   text-decoration: underline;
-  color: #FF4848; }
+  color: #ff0000; }
   .entry-content a:hover,
   .mceContentBody a:hover {
     color: #2a2a2a; }
@@ -10606,7 +10593,7 @@ a {
     font-size: 4em;
     font-weight: 700;
     line-height: 0.7;
-    color: #FF4848; }
+    color: #ff0000; }
   .entry-content .wp-block-quote p,
   .mceContentBody .wp-block-quote p {
     font-size: 22px;
@@ -10649,11 +10636,9 @@ img {
   height: auto;
   max-width: 100%; }
 
-.button, .gform_wrapper .button,
+.button,
 button.button,
-.gform_wrapper button.button,
 a.button,
-.gform_wrapper a.button,
 .wp-block-button__link,
 .wp-block-file a.wp-block-file__button {
   display: inline-block;
@@ -10684,11 +10669,9 @@ a.button,
 }
     */ }
   @media screen and (min-width: 768px) {
-    .button, .gform_wrapper .button,
+    .button,
     button.button,
-    .gform_wrapper button.button,
     a.button,
-    .gform_wrapper a.button,
     .wp-block-button__link,
     .wp-block-file a.wp-block-file__button {
       font-size: 14px; } }
@@ -10721,20 +10704,45 @@ a.button,
 .gform_wrapper .gform_fields .gfield select,
 .gform_wrapper .gform_fields .gfield textarea {
   background-color: #fff;
-  border: 1px solid #dddddd;
-  border-radius: 5px;
+  border: 0;
+  border-bottom: 1px solid #2a2a2a;
+  border-radius: 0px;
   color: #000;
   display: block;
   width: 100%;
-  padding: 0.5em; }
+  padding-bottom: 16px;
+  padding-top: 10px;
+  font-weight: bold;
+  font-size: 18px; }
+  @media screen and (min-width: 768px) {
+    .form-control, .gform_wrapper .gform_fields .gfield input[type="email"],
+    .gform_wrapper .gform_fields .gfield input[type="date"],
+    .gform_wrapper .gform_fields .gfield input[type="datetime"],
+    .gform_wrapper .gform_fields .gfield input[type="datetime-local"],
+    .gform_wrapper .gform_fields .gfield input[type="month"],
+    .gform_wrapper .gform_fields .gfield input[type="number"],
+    .gform_wrapper .gform_fields .gfield input[type="password"],
+    .gform_wrapper .gform_fields .gfield input[type="search"],
+    .gform_wrapper .gform_fields .gfield input[type="tel"],
+    .gform_wrapper .gform_fields .gfield input[type="text"],
+    .gform_wrapper .gform_fields .gfield input[type="time"],
+    .gform_wrapper .gform_fields .gfield input[type="week"],
+    .gform_wrapper .gform_fields .gfield input[type="url"],
+    .gform_wrapper .gform_fields .gfield select,
+    .gform_wrapper .gform_fields .gfield textarea {
+      font-size: 18px; } }
   .form-control::-webkit-input-placeholder, .gform_wrapper .gform_fields .gfield input[type="email"]::-webkit-input-placeholder, .gform_wrapper .gform_fields .gfield input[type="date"]::-webkit-input-placeholder, .gform_wrapper .gform_fields .gfield input[type="datetime"]::-webkit-input-placeholder, .gform_wrapper .gform_fields .gfield input[type="datetime-local"]::-webkit-input-placeholder, .gform_wrapper .gform_fields .gfield input[type="month"]::-webkit-input-placeholder, .gform_wrapper .gform_fields .gfield input[type="number"]::-webkit-input-placeholder, .gform_wrapper .gform_fields .gfield input[type="password"]::-webkit-input-placeholder, .gform_wrapper .gform_fields .gfield input[type="search"]::-webkit-input-placeholder, .gform_wrapper .gform_fields .gfield input[type="tel"]::-webkit-input-placeholder, .gform_wrapper .gform_fields .gfield input[type="text"]::-webkit-input-placeholder, .gform_wrapper .gform_fields .gfield input[type="time"]::-webkit-input-placeholder, .gform_wrapper .gform_fields .gfield input[type="week"]::-webkit-input-placeholder, .gform_wrapper .gform_fields .gfield input[type="url"]::-webkit-input-placeholder, .gform_wrapper .gform_fields .gfield select::-webkit-input-placeholder, .gform_wrapper .gform_fields .gfield textarea::-webkit-input-placeholder {
-    color: #a4a4a4; }
+    color: #444444;
+    font-weight: normal; }
   .form-control::-moz-placeholder, .gform_wrapper .gform_fields .gfield input[type="email"]::-moz-placeholder, .gform_wrapper .gform_fields .gfield input[type="date"]::-moz-placeholder, .gform_wrapper .gform_fields .gfield input[type="datetime"]::-moz-placeholder, .gform_wrapper .gform_fields .gfield input[type="datetime-local"]::-moz-placeholder, .gform_wrapper .gform_fields .gfield input[type="month"]::-moz-placeholder, .gform_wrapper .gform_fields .gfield input[type="number"]::-moz-placeholder, .gform_wrapper .gform_fields .gfield input[type="password"]::-moz-placeholder, .gform_wrapper .gform_fields .gfield input[type="search"]::-moz-placeholder, .gform_wrapper .gform_fields .gfield input[type="tel"]::-moz-placeholder, .gform_wrapper .gform_fields .gfield input[type="text"]::-moz-placeholder, .gform_wrapper .gform_fields .gfield input[type="time"]::-moz-placeholder, .gform_wrapper .gform_fields .gfield input[type="week"]::-moz-placeholder, .gform_wrapper .gform_fields .gfield input[type="url"]::-moz-placeholder, .gform_wrapper .gform_fields .gfield select::-moz-placeholder, .gform_wrapper .gform_fields .gfield textarea::-moz-placeholder {
-    color: #a4a4a4; }
+    color: #444444;
+    font-weight: normal; }
   .form-control:-ms-input-placeholder, .gform_wrapper .gform_fields .gfield input[type="email"]:-ms-input-placeholder, .gform_wrapper .gform_fields .gfield input[type="date"]:-ms-input-placeholder, .gform_wrapper .gform_fields .gfield input[type="datetime"]:-ms-input-placeholder, .gform_wrapper .gform_fields .gfield input[type="datetime-local"]:-ms-input-placeholder, .gform_wrapper .gform_fields .gfield input[type="month"]:-ms-input-placeholder, .gform_wrapper .gform_fields .gfield input[type="number"]:-ms-input-placeholder, .gform_wrapper .gform_fields .gfield input[type="password"]:-ms-input-placeholder, .gform_wrapper .gform_fields .gfield input[type="search"]:-ms-input-placeholder, .gform_wrapper .gform_fields .gfield input[type="tel"]:-ms-input-placeholder, .gform_wrapper .gform_fields .gfield input[type="text"]:-ms-input-placeholder, .gform_wrapper .gform_fields .gfield input[type="time"]:-ms-input-placeholder, .gform_wrapper .gform_fields .gfield input[type="week"]:-ms-input-placeholder, .gform_wrapper .gform_fields .gfield input[type="url"]:-ms-input-placeholder, .gform_wrapper .gform_fields .gfield select:-ms-input-placeholder, .gform_wrapper .gform_fields .gfield textarea:-ms-input-placeholder {
-    color: #a4a4a4; }
+    color: #444444;
+    font-weight: normal; }
   .form-control::-ms-input-placeholder, .gform_wrapper .gform_fields .gfield input[type="email"]::-ms-input-placeholder, .gform_wrapper .gform_fields .gfield input[type="date"]::-ms-input-placeholder, .gform_wrapper .gform_fields .gfield input[type="datetime"]::-ms-input-placeholder, .gform_wrapper .gform_fields .gfield input[type="datetime-local"]::-ms-input-placeholder, .gform_wrapper .gform_fields .gfield input[type="month"]::-ms-input-placeholder, .gform_wrapper .gform_fields .gfield input[type="number"]::-ms-input-placeholder, .gform_wrapper .gform_fields .gfield input[type="password"]::-ms-input-placeholder, .gform_wrapper .gform_fields .gfield input[type="search"]::-ms-input-placeholder, .gform_wrapper .gform_fields .gfield input[type="tel"]::-ms-input-placeholder, .gform_wrapper .gform_fields .gfield input[type="text"]::-ms-input-placeholder, .gform_wrapper .gform_fields .gfield input[type="time"]::-ms-input-placeholder, .gform_wrapper .gform_fields .gfield input[type="week"]::-ms-input-placeholder, .gform_wrapper .gform_fields .gfield input[type="url"]::-ms-input-placeholder, .gform_wrapper .gform_fields .gfield select::-ms-input-placeholder, .gform_wrapper .gform_fields .gfield textarea::-ms-input-placeholder {
-    color: #a4a4a4; }
+    color: #444444;
+    font-weight: normal; }
   .form-control::placeholder, .gform_wrapper .gform_fields .gfield input[type="email"]::placeholder,
   .gform_wrapper .gform_fields .gfield input[type="date"]::placeholder,
   .gform_wrapper .gform_fields .gfield input[type="datetime"]::placeholder,
@@ -10750,54 +10758,91 @@ a.button,
   .gform_wrapper .gform_fields .gfield input[type="url"]::placeholder,
   .gform_wrapper .gform_fields .gfield select::placeholder,
   .gform_wrapper .gform_fields .gfield textarea::placeholder {
-    color: #a4a4a4; }
+    color: #444444;
+    font-weight: normal; }
 
-.form-check, .gform_wrapper .gform_fields .gfield .gfield_checkbox,
-.gform_wrapper .gform_fields .gfield .gfield_radio {
-  margin-bottom: 10px;
-  position: relative; }
-  .form-check input:focus + label::before, .gform_wrapper .gform_fields .gfield .gfield_checkbox input:focus + label::before, .gform_wrapper .gform_fields .gfield .gfield_radio input:focus + label::before {
-    outline: auto; }
-  .form-check label::before, .gform_wrapper .gform_fields .gfield .gfield_checkbox label::before, .gform_wrapper .gform_fields .gfield .gfield_radio label::before,
-  .form-check label::after,
-  .gform_wrapper .gform_fields .gfield .gfield_checkbox label::after,
-  .gform_wrapper .gform_fields .gfield .gfield_radio label::after {
-    display: inline-block;
-    position: absolute;
-    top: 0.2em;
-    left: 0;
-    width: 24px;
-    height: 24px;
-    border-radius: 5px; }
-  .form-check label::before, .gform_wrapper .gform_fields .gfield .gfield_checkbox label::before, .gform_wrapper .gform_fields .gfield .gfield_radio label::before {
-    content: '';
-    border: 1px solid #dddddd; }
-  
-  .form-check label::after,
-  .gform_wrapper .gform_fields .gfield .gfield_checkbox label::after,
-  .gform_wrapper .gform_fields .gfield .gfield_radio label::after {
-    font-size: 0.8em; }
-  .form-check input:checked + label::after, .gform_wrapper .gform_fields .gfield .gfield_checkbox input:checked + label::after, .gform_wrapper .gform_fields .gfield .gfield_radio input:checked + label::after {
-    content: "\f00c";
-    background-color: #7f7f7f;
-    color: #fff;
-    text-align: center;
-    line-height: 24px; }
-
-.form-check + .form-group, .gform_wrapper .gform_fields .gfield .gfield_checkbox + .form-group, .gform_wrapper .gform_fields .gfield .gfield_radio + .form-group {
+.form-check + .form-group {
   margin-top: 24px; }
 
 .form-check-label {
   padding-left: 30px; }
 
-.form-check-input[type="checkbox"]:checked + label::after, .gform_wrapper .gform_fields .gfield .gfield_checkbox input:checked + label::after {
-  content: "\f00c"; }
+.form-check-input[type="checkbox"], .gform_wrapper .gform_fields .gfield .gfield_checkbox input, .gform_wrapper .gform_fields .gfield .ginput_container_consent input {
+  display: none; }
+  .form-check-input[type="checkbox"] + label, .gform_wrapper .gform_fields .gfield .gfield_checkbox input + label, .gform_wrapper .gform_fields .gfield .ginput_container_consent input + label {
+    padding-left: 30px;
+    position: relative;
+    cursor: pointer; }
+    .form-check-input[type="checkbox"] + label::before, .gform_wrapper .gform_fields .gfield .gfield_checkbox input + label::before, .gform_wrapper .gform_fields .gfield .ginput_container_consent input + label::before {
+      content: '';
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      border: 1px solid #2a2a2a;
+      position: absolute;
+      left: 0;
+      top: 1px;
+      z-index: 1; }
+    .form-check-input[type="checkbox"] + label::after, .gform_wrapper .gform_fields .gfield .gfield_checkbox input + label::after, .gform_wrapper .gform_fields .gfield .ginput_container_consent input + label::after {
+      content: '';
+      display: -webkit-inline-box;
+      display: -ms-inline-flexbox;
+      display: inline-flex;
+      width: 18px;
+      height: 18px;
+      border: 0;
+      position: absolute;
+      left: 0;
+      top: 1px;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      font-size: 13px; }
+  .form-check-input[type="checkbox"]:checked + label::before, .gform_wrapper .gform_fields .gfield .gfield_checkbox input:checked + label::before, .gform_wrapper .gform_fields .gfield .ginput_container_consent input:checked + label::before {
+    border-color: #1c769d;
+    border-color: var(--secondary-color); }
+  .form-check-input[type="checkbox"]:checked + label::after, .gform_wrapper .gform_fields .gfield .gfield_checkbox input:checked + label::after, .gform_wrapper .gform_fields .gfield .ginput_container_consent input:checked + label::after {
+    background: #1c769d;
+    background: var(--secondary-color);
+    color: #fff;
+    color: var(--secondary-text-color);
+    content: "\f00c";
+    font-family: 'Font Awesome 5 Pro';
+    font-weight: 400; }
 
-.form-check-input[type="radio"] + label::before, .gform_wrapper .gform_fields .gfield .gfield_radio input + label::before, .form-check-input[type="radio"] + label::after, .gform_wrapper .gform_fields .gfield .gfield_radio input + label::after {
-  border-radius: 50%; }
-
-.form-check-input[type="radio"]:checked + label::after, .gform_wrapper .gform_fields .gfield .gfield_radio input:checked + label::after {
-  content: "\f111"; }
+.form-check-input[type="radio"], .gform_wrapper .gform_fields .gfield .gfield_radio input {
+  display: none; }
+  .form-check-input[type="radio"] + label, .gform_wrapper .gform_fields .gfield .gfield_radio input + label {
+    padding-left: 30px;
+    position: relative;
+    cursor: pointer; }
+    .form-check-input[type="radio"] + label::before, .gform_wrapper .gform_fields .gfield .gfield_radio input + label::before {
+      content: '';
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      border: 1px solid #2a2a2a;
+      border-radius: 50%;
+      position: absolute;
+      left: 0;
+      top: 1px;
+      z-index: 1; }
+    .form-check-input[type="radio"] + label::after, .gform_wrapper .gform_fields .gfield .gfield_radio input + label::after {
+      content: '';
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      position: absolute;
+      left: 0;
+      top: 1px; }
+  .form-check-input[type="radio"]:checked + label::after, .gform_wrapper .gform_fields .gfield .gfield_radio input:checked + label::after {
+    background: #1c769d;
+    background: var(--secondary-color); }
 
 /* Gravity Forms */
 .gform_wrapper form {
@@ -10817,10 +10862,26 @@ a.button,
   padding: 12px;
   margin-bottom: 24px;
   color: #fff;
-  background: #FF4848; }
+  background: #ff0000; }
 
 .gform_wrapper .validation_message {
-  display: none; }
+  color: #ff0000; }
+
+.gform_wrapper .button {
+  padding: 16px 33px;
+  border-radius: 2px;
+  background: #253764;
+  background: var(--primary-color);
+  color: #fff;
+  color: var(--primary-text-color);
+  font-weight: bold;
+  border: 0;
+  -webkit-transition: opacity 0.2s;
+  -o-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+  margin-top: 24px; }
+  .gform_wrapper .button:hover {
+    opacity: 0.84; }
 
 .gform_wrapper .gform_fields {
   display: -webkit-box;
@@ -10846,6 +10907,17 @@ a.button,
         padding-right: 0; } }
     .gform_wrapper .gform_fields .gfield:not(:last-of-type) {
       margin-bottom: 24px; }
+    .gform_wrapper .gform_fields .gfield.hidden_label .gfield_label {
+      border: 0;
+      clip: rect(0, 0, 0, 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px; }
+    .gform_wrapper .gform_fields .gfield.hidden_label select[multiple="multiple"], .gform_wrapper .gform_fields .gfield.hidden_label textarea, .gform_wrapper .gform_fields .gfield.hidden_label .ginput_container_consent {
+      margin-top: 16px; }
     @media (min-width: 768px) {
       .gform_wrapper .gform_fields .gfield input[type="email"].small,
       .gform_wrapper .gform_fields .gfield input[type="date"].small,
@@ -10897,6 +10969,14 @@ a.button,
       .gform_wrapper .gform_fields .gfield select.large,
       .gform_wrapper .gform_fields .gfield textarea.large {
         width: 100%; } }
+    .gform_wrapper .gform_fields .gfield textarea, .gform_wrapper .gform_fields .gfield select[multiple="multiple"] {
+      border: 1px solid #2a2a2a;
+      padding: 12px;
+      font-size: 16px;
+      font-weight: normal; }
+      @media screen and (min-width: 768px) {
+        .gform_wrapper .gform_fields .gfield textarea, .gform_wrapper .gform_fields .gfield select[multiple="multiple"] {
+          font-size: 16px; } }
     .gform_wrapper .gform_fields .gfield .gfield_required {
       padding-left: 1px; }
     .gform_wrapper .gform_fields .gfield .gfield_description {
@@ -10910,7 +10990,8 @@ a.button,
     .gform_wrapper .gform_fields .gfield .gfield_radio li {
       margin-bottom: 10px;
       padding-left: 30px;
-      position: relative; }
+      position: relative;
+      padding: 0; }
     .gform_wrapper .gform_fields .gfield .ginput_container_fileupload .gform_drop_area {
       position: relative;
       padding: 24px;
@@ -10922,15 +11003,15 @@ a.button,
       .gform_wrapper .gform_fields .gfield .ginput_container_fileupload .ginput_preview strong {
         font-weight: 400; }
     .gform_wrapper .gform_fields .gfield.gfield_error .gfield_label {
-      color: #FF4848; }
+      color: #ff0000; }
     .gform_wrapper .gform_fields .gfield.gfield_error input:not(.button),
     .gform_wrapper .gform_fields .gfield.gfield_error select,
     .gform_wrapper .gform_fields .gfield.gfield_error label,
     .gform_wrapper .gform_fields .gfield.gfield_error textarea {
-      color: #FF4848;
-      border-color: #FF4848; }
+      color: #ff0000;
+      border-color: #ff0000; }
     .gform_wrapper .gform_fields .gfield.gfield_error .gform_drop_area {
-      background: #FF4848; }
+      background: #ff0000; }
       .gform_wrapper .gform_fields .gfield.gfield_error .gform_drop_area .gform_drop_instructions {
         color: #fff; }
     .gform_wrapper .gform_fields .gfield.field_description_below .gfield_description {
@@ -10939,7 +11020,8 @@ a.button,
       margin-bottom: 6px; }
   .gform_wrapper .gform_fields.top_label .gfield_label {
     display: block;
-    margin-bottom: 12px; }
+    margin-bottom: 12px;
+    margin-top: 6px; }
   @media (min-width: 768px) {
     .gform_wrapper .gform_fields.left_label .gfield, .gform_wrapper .gform_fields.right_label .gfield {
       display: -webkit-box;

@@ -266,3 +266,14 @@ function ID_register_page_template() {
     );
 }
 add_action( 'init', 'ID_register_page_template' );
+
+
+function ID_register_post_template() {
+    $post_type_object = get_post_type_object( 'post' );
+    $post_type_object->template = array(
+        array( 'acf/block-article-content', array(          
+        )),
+        array( 'core/paragraph', array()),
+    );
+}
+add_action( 'init', 'ID_register_post_template' );

@@ -32,6 +32,11 @@
   border-color: $clr_primary_text;
 }
 
+@mixin secondary-border-color() {
+  border-color: $default_clr_secondary;
+  border-color: $clr_secondary;
+}
+
 @mixin secondary-text-color() {
   color: $default_clr_secondary_text;
   color: $clr_secondary_text;
@@ -50,4 +55,9 @@
 @mixin secondary-color-text() {
   color: $default_clr_secondary;
   color: $clr_secondary;
+}
+
+@mixin primary-color-text() {
+  color: $default_clr_primary;
+  color: $clr_primary;
 }
