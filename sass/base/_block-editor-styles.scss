@@ -1,0 +1,35 @@
+.wp-block[data-type^="acf/"]:not(.is-selected) {
+    //@import "base/typography";
+}
+
+.wp-block[data-type^="acf/"] {
+	.acf-block-preview {
+		@import "base/typography";
+	}
+}
+
+h1.wp-block[data-type^="core/"] {
+    @include font-size($font-size-h1);
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 24px;
+    font-family: $font-tondu;
+    text-transform: uppercase;
+    letter-spacing: 1.34px;    
+    @include primary-color-text();
+}
+
+h1.wp-block[data-type^="core/"],
+h2.wp-block[data-type^="core/"],
+h3.wp-block[data-type^="core/"],
+h4.wp-block[data-type^="core/"],
+h5.wp-block[data-type^="core/"],
+h6.wp-block[data-type^="core/"] {
+    &.is-style-primary {
+        @include primary-color-text();
+    }
+
+    &.is-style-secondary {
+        @include secondary-color-text();
+    }
+}

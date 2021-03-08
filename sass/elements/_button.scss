@@ -4,36 +4,37 @@ a.button,
 .wp-block-button__link,
 .wp-block-file a.wp-block-file__button {
     display: inline-block;
-    background: $base-clr-text;
-    color: $clr-white!important;
-    @include font-size($font-size-s);
+    @include primary-text-color(true);
+    @include primary-color();
+    @include font-size($font-size-base);
     font-weight: bold;
     text-align: center;
     line-height: 1.1;
-
-    text-transform: uppercase;
     text-decoration: none!important;
-
-    padding: 0.6em 1.2em;
-    border-radius: 4px;
+    padding: 16px 32px;
+    border-radius: 2px;
     appearance: none;
-    border: 2px solid transparent;
+    border: solid 2px;
+    @include primary-border-color();
+    transition: 0.2s;
 
     &:hover {
-        color: $clr-white;
-        background: rgba($base-clr-text, 0.8);
+        opacity: 0.84;
     }
-
-    /*
-    &.loading,
-    &.loading:hover {
-    color: rgba(0,0,0,0.0);
-    border-color: rgba(0,0,0,0.0);
-    background: transparent url('../images/ajax-loader.gif') no-repeat center center;
-    background-size: 36px auto;
-    min-height: 45px;
-    transition: none;
-    cursor: default;
 }
-    */
+
+.wp-block-button {
+    &.is-style-outline {
+        .wp-block-button__link {
+            background-color: transparent;
+            border-color: $clr-font-grey;
+            color: $clr-font-grey !important;
+
+            &:hover {
+                @include primary-text-color(true);
+                @include primary-color(true);
+                @include primary-border-color(true);
+            }
+        }
+    }
 }

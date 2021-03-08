@@ -8,6 +8,12 @@
 	&.has-bg {
 		@include primary-color();
 		@include primary-text-color();
+
+		.inner-blocks {
+			h1, h2, h3, h4, h5, h6 {
+				@include primary-text-color();
+			}
+		}
 	}
 
 	&.image-on-right {
@@ -66,6 +72,12 @@
 
 		@include media-breakpoint-up(lg) {
 			padding-left: 100px;
+		}
+	}
+
+	.inner-blocks {
+		h1, h2, h3, h4, h5, h6 {
+			@include secondary-color-text();
 		}
 	}
 }

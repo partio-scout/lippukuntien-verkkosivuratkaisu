@@ -27,6 +27,7 @@ function allowed_block_types() {
         'core/embed',
         //'core/shortcode'
         'core/buttons',
+        'core/button',
         'core/columns',
         'core/block',
         'gravityforms/form',
@@ -129,7 +130,9 @@ function ID_acf_init()
           $args['example'] = array(
             'attributes' => array(
               'mode' => 'preview',
-              'data' => array('preview' => true),
+              'data' => array(
+                'preview' => true,
+              ),
             )
           );
           $args['mode'] = 'auto';

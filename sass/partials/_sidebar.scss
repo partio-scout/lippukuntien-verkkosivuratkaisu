@@ -110,6 +110,7 @@
 
 	a {
 		@include secondary-color-text();
+		text-decoration: underline;
 
 		&:hover {
 			color: $clr-font-grey;

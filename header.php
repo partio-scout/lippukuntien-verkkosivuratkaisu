@@ -11,6 +11,10 @@
         <?php wp_head(); ?>
 
         <style>
+            /*
+            This CSS resource incorporates links to font software which is the valuable copyrighted property of Monotype and/or its suppliers. You may not attempt to copy, install, redistribute, convert, modify or reverse engineer this font software. Please contact Monotype with any questions regarding Web Fonts: http://www.fonts.com
+            */
+            
             <?php 
             $theme_colors = get_field('theme_colors', 'option');
             ?>

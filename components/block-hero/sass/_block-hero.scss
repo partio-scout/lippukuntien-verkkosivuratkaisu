@@ -93,6 +93,14 @@
 				width: auto;
 				padding: 0 116px 0 68px;
 			}
+
+			h1, h2 {
+				@include font-size($font-size-hero-h1);
+			}
+
+			h1, h2, h3, h4, h5, h6 {
+				@include primary-text-color();
+			}
 		}
 	}	
 }

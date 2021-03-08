@@ -18,6 +18,34 @@ wp.domReady(function () {
       wp.blocks.unregisterBlockVariation('core/embed', blockVariation.name);
     }
   });
+
+  wp.blocks.registerBlockStyle('core/paragraph', {
+    name: 'ingress',
+    label: 'Ingressi'
+  });
+
+  wp.blocks.registerBlockStyle('core/heading', {
+    name: 'primary',
+    label: 'Pääväri'
+  });
+
+  wp.blocks.registerBlockStyle('core/heading', {
+    name: 'secondary',
+    label: 'Apuväri'
+  });
+
+  wp.blocks.registerBlockStyle('core/heading', {
+    name: 'secondary',
+    label: 'Apuväri'
+  });
+
+  wp.blocks.unregisterBlockStyle( 'core/button', 'outline' );
+  wp.blocks.unregisterBlockStyle( 'core/button', 'fill' );
+
+  wp.blocks.registerBlockStyle('core/button', {
+    name: 'outline',
+    label: 'Reunukset'
+  });
 });
 
 //Define ACF color picker swatches

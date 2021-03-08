@@ -12,52 +12,56 @@
   }
 }
 
-@mixin primary-color() {
-  background: $default_clr_primary;
-  background: $clr-primary;
+@function if-important($important){
+  @return #{if($important, '!important', '')};
 }
 
-@mixin secondary-color() {
-  background: $default_clr_secondary;
-  background: $clr_secondary;
+@mixin primary-color($important: false) {
+  background: $default_clr_primary if-important($important);
+  background: $clr-primary if-important($important);
 }
 
-@mixin primary-text-color() {
-  color: $default_clr_primary_text;
-  color: $clr_primary_text;
+@mixin secondary-color($important: false) {
+  background: $default_clr_secondary if-important($important);
+  background: $clr_secondary if-important($important);
 }
 
-@mixin primary-border-color() {
-  border-color: $default_clr_primary_text;
-  border-color: $clr_primary_text;
+@mixin primary-text-color($important: false) {
+  color: $default_clr_primary_text if-important($important);
+  color: $clr_primary_text if-important($important);
 }
 
-@mixin secondary-border-color() {
-  border-color: $default_clr_secondary;
-  border-color: $clr_secondary;
+@mixin primary-border-color($important: false) {
+  border-color: $default_clr_primary if-important($important);
+  border-color: $clr_primary if-important($important);
 }
 
-@mixin secondary-text-color() {
-  color: $default_clr_secondary_text;
-  color: $clr_secondary_text;
+@mixin secondary-border-color($important: false) {
+  border-color: $default_clr_secondary if-important($important);
+  border-color: $clr_secondary if-important($important);
 }
 
-@mixin secondary-color-fill() {
-  fill: $default_clr_secondary;
-  fill: $clr_secondary;
+@mixin secondary-text-color($important: false) {
+  color: $default_clr_secondary_text if-important($important);
+  color: $clr_secondary_text if-important($important);
 }
 
-@mixin primary-text-color-fill() {
-  fill: $default_clr_primary_text;
-  fill: $clr_primary_text;
+@mixin secondary-color-fill($important: false) {
+  fill: $default_clr_secondary if-important($important);
+  fill: $clr_secondary if-important($important);
 }
 
-@mixin secondary-color-text() {
-  color: $default_clr_secondary;
-  color: $clr_secondary;
+@mixin primary-text-color-fill($important: false) {
+  fill: $default_clr_primary_text if-important($important);
+  fill: $clr_primary_text if-important($important);
 }
 
-@mixin primary-color-text() {
-  color: $default_clr_primary;
-  color: $clr_primary;
+@mixin secondary-color-text($important: false) {
+  color: $default_clr_secondary if-important($important);
+  color: $clr_secondary if-important($important);
+}
+
+@mixin primary-color-text($important: false) {
+  color: $default_clr_primary if-important($important);
+  color: $clr_primary if-important($important);
 }

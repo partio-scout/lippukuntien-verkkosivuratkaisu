@@ -16,6 +16,27 @@
 		@include primary-color-text();
 	}
 
+	.entry-content {
+		h1 {
+			@include font-size($font-size-content-h1);
+		}
+
+		h2 {
+			@include font-size($font-size-content-h2);
+			color: $clr-font-grey;
+		}
+
+		h3 {
+			@include font-size($font-size-content-h3);
+			color: $clr-font-grey;
+		}
+
+		h4 {
+			@include font-size($font-size-content-h4);
+			color: $clr-font-grey;
+		}
+	}
+
 	.figures {
 		display: flex;
 		justify-content: space-between;

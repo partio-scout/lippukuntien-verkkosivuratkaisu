@@ -16,6 +16,7 @@ $font-arial:           Arial, Helvetica, "Nimbus Sans L", sans-serif;
 
 $font-source-sans-pro: 'Source Sans Pro', sans-serif;
 $font-pt-sans: 		   'PT Sans', sans-serif;
+$font-tondu:			Tondu W05 Beta, sans-serif;
 
 //Font sizes
 
@@ -54,23 +55,23 @@ $font-size-base: (
 );
 
 $font-size-h4: (
-	  null  : 22px,
-	  $screen-tablet : 30px,
+	  null  : 24px,
+	  $screen-tablet : 24px,
 );
 
 $font-size-h3: (
-	  null  : 26px,
-	  $screen-tablet : 40px
+	  null  : 28px,
+	  $screen-tablet : 32px
 );
 
 $font-size-h2: (
-	  null  : 30px,
-	  $screen-tablet : 45px
+	  null  : 32px,
+	  $screen-tablet : 48px
 );
 
 $font-size-h1: (
-	  null  : 32px,
-	  $screen-tablet : 48px
+	  null  : 48px,
+	  $screen-tablet : 56px
 );
 
 $font-size-nav: (
@@ -88,6 +89,30 @@ $font-size-block-title: (
 	  $screen-tablet : 32px
 );
 
+$font-size-hero-h1: (
+	null  : 48px,
+	$screen-tablet : 56px
+);
+
+$font-size-content-h1: (
+	null  : 32px,
+	$screen-tablet : 48px
+);
+
+$font-size-content-h2: (
+	null  : 28px,
+	$screen-tablet : 32px
+);
+
+$font-size-content-h3: (
+	null  : 20px,
+	$screen-tablet : 20px
+);
+
+$font-size-content-h4: (
+	null  : 18px,
+	$screen-tablet : 18px
+);
 
 //Default theme colors
 $default_clr_primary: #253764;

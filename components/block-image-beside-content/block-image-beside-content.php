@@ -42,7 +42,12 @@ $background_color = get_field('background_color');
 			<div class="col col-12 col-lg-6">
 				<div class="align-content">
 					<div class="inner-blocks entry-content">
-						<InnerBlocks template="<?php echo esc_attr(wp_json_encode($template)); ?>" allowedBlocks="<?php echo esc_attr(wp_json_encode($allowed_blocks)); ?>" templateLock="false" />
+						<?php if ( $is_preview && !empty($block['data']['preview']) ): ?>
+							<h1>Lorem ipsum dolor sit amet</h1>
+							<p>Mauris sed libero. Suspendisse facilisis nulla in lacinia laoreet, lorem velit accumsan velit vel mattis libero nisl et sem.</p>						
+						<?php else: ?>
+							<InnerBlocks template="<?php echo esc_attr(wp_json_encode($template)); ?>" allowedBlocks="<?php echo esc_attr(wp_json_encode($allowed_blocks)); ?>" templateLock="false" />
+						<?php endif; ?>
 					</div>
 					<?php if(!empty($link)): ?>
 						<div>

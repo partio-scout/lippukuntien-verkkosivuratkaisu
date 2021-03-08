@@ -31,7 +31,12 @@ $hide_figure = get_field('hide_figure');
 				<p class="entry-date"><?php echo _x('Julkaistu', 'artikkeli', 'ID') . ' ' . get_the_date('j.n.Y', $post_id); ?></p>
 				<h1 class="entry-title"><?php echo get_the_title($post_id); ?></h1>
 				<div class="inner-blocks entry-content">
-					<InnerBlocks template="<?php echo esc_attr(wp_json_encode($template)); ?>" allowedBlocks="<?php echo esc_attr(wp_json_encode($allowed_blocks)); ?>" templateLock="false" />
+					<?php if ( $is_preview && !empty($block['data']['preview']) ): ?>
+						<h1>Lorem ipsum dolor sit amet</h1>
+						<p>Mauris sed libero. Suspendisse facilisis nulla in lacinia laoreet, lorem velit accumsan velit vel mattis libero nisl et sem.</p>						
+					<?php else: ?>
+						<InnerBlocks template="<?php echo esc_attr(wp_json_encode($template)); ?>" allowedBlocks="<?php echo esc_attr(wp_json_encode($allowed_blocks)); ?>" templateLock="false" />
+					<?php endif; ?>
 				</div>
 			</div>
 		</div>

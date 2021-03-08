@@ -1,71 +1,16 @@
-.block-image-beside-content {
-	padding: 72px 0;
+.block-form {
+	padding: 58px 0;
 
-	@include media-breakpoint-up(lg) {
-		padding: 116px 0;
-	}
+	.entry-content {
+		padding-bottom: 48px;
 
-	&.has-bg {
-		@include primary-color();
-		@include primary-text-color();
-	}
-
-	&.image-on-right {
-		.align-content {
-			@include media-breakpoint-up(lg) {
-				padding-right: 100px;
-				padding-left: 0;
-			}
-		}
-	}
-
-	&:not(.has-bg) + .block-image-beside-content:not(.has-bg) {
-		padding-top: 0;
-	}
-
-	&.has-bg + .block-image-beside-content.has-bg {
-		padding-top: 0;
-	}
-
-	.image {
-		width: 100%;
-		height: 0;
-		padding-bottom: 66.7%;
-		background-color: $clr-grey-1;
-		background-position: center;
-		background-repeat: no-repeat;
-		background-size: 100%;
-		transition: background-size 0.25s ease-in-out;
-
-		&:hover, &.hover {
-			background-size: 110%;
-		}
-	}
-
-	.read-more {
-		margin-top: 48px;
-	}
-
-	.align-image {
-		height: 100%;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		padding-bottom: 42px;
-
-		@include media-breakpoint-up(lg) {
+		@include media-breakpoint-up(xl) {
+			padding-right: 100px;
 			padding-bottom: 0;
 		}
-	}
 
-	.align-content {
-		height: 100%;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-
-		@include media-breakpoint-up(lg) {
-			padding-left: 100px;
+		h1, h2, h3, h4, h5, h6 {
+			@include secondary-color-text();
 		}
 	}
 }

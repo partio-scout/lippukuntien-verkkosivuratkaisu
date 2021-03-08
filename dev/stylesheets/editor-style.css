@@ -10423,49 +10423,63 @@ iframe {
 .antialiased {
   -webkit-font-smoothing: antialiased; }
 
+h1.is-style-primary, h2.is-style-primary, h3.is-style-primary, h4.is-style-primary, h5.is-style-primary, h6.is-style-primary {
+  color: #253764 !important;
+  color: var(--primary-color) !important; }
+
+h1.is-style-secondary, h2.is-style-secondary, h3.is-style-secondary, h4.is-style-secondary, h5.is-style-secondary, h6.is-style-secondary {
+  color: #1c769d !important;
+  color: var(--secondary-color) !important; }
+
 h1,
 .h1 {
-  font-size: 32px;
+  font-size: 48px;
   font-weight: 700;
   line-height: 1.2;
-  margin: 0; }
+  margin: 0 0 24px;
+  font-family: Tondu W05 Beta, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1.34px;
+  color: #253764 ;
+  color: var(--primary-color) ; }
   @media screen and (min-width: 768px) {
     h1,
     .h1 {
-      font-size: 48px; } }
+      font-size: 56px; } }
 
 h2,
 .h2 {
-  font-size: 30px;
-  font-weight: 700;
+  font-size: 32px;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 900;
   line-height: 1.2;
   margin: 0; }
   @media screen and (min-width: 768px) {
     h2,
     .h2 {
-      font-size: 45px; } }
+      font-size: 48px; } }
 
 h3,
 .h3 {
-  font-size: 26px;
-  font-weight: 400;
+  font-size: 28px;
+  font-weight: 900;
   line-height: 1.2;
   margin: 0; }
   @media screen and (min-width: 768px) {
     h3,
     .h3 {
-      font-size: 40px; } }
+      font-size: 32px; } }
 
 h4,
 .h4 {
-  font-size: 22px;
-  font-weight: 400;
+  font-size: 24px;
+  font-weight: 900;
   line-height: 1.2;
   margin: 0; }
   @media screen and (min-width: 768px) {
     h4,
     .h4 {
-      font-size: 30px; } }
+      font-size: 24px; } }
 
 ul {
   list-style: none;
@@ -10503,7 +10517,9 @@ b {
 
 a {
   text-decoration: none;
-  color: #ff0000; }
+  color: #1c769d ;
+  color: var(--secondary-color) ;
+  font-weight: bold; }
   a:hover {
     color: #2a2a2a; }
   a img {
@@ -10512,7 +10528,9 @@ a {
 .entry-content a,
 .mceContentBody a {
   text-decoration: underline;
-  color: #ff0000; }
+  color: #1c769d ;
+  color: var(--secondary-color) ;
+  font-weight: bold; }
   .entry-content a:hover,
   .mceContentBody a:hover {
     color: #2a2a2a; }
@@ -10542,11 +10560,31 @@ a {
 .mceContentBody ol ol {
   margin: 0.5em 0 0; }
 
+.entry-content h1.is-style-primary, .entry-content h2.is-style-primary, .entry-content h3.is-style-primary, .entry-content h4.is-style-primary, .entry-content h5.is-style-primary, .entry-content h6.is-style-primary,
+.mceContentBody h1.is-style-primary,
+.mceContentBody h2.is-style-primary,
+.mceContentBody h3.is-style-primary,
+.mceContentBody h4.is-style-primary,
+.mceContentBody h5.is-style-primary,
+.mceContentBody h6.is-style-primary {
+  color: #253764 !important;
+  color: var(--primary-color) !important; }
+
+.entry-content h1.is-style-secondary, .entry-content h2.is-style-secondary, .entry-content h3.is-style-secondary, .entry-content h4.is-style-secondary, .entry-content h5.is-style-secondary, .entry-content h6.is-style-secondary,
+.mceContentBody h1.is-style-secondary,
+.mceContentBody h2.is-style-secondary,
+.mceContentBody h3.is-style-secondary,
+.mceContentBody h4.is-style-secondary,
+.mceContentBody h5.is-style-secondary,
+.mceContentBody h6.is-style-secondary {
+  color: #1c769d !important;
+  color: var(--secondary-color) !important; }
+
 .entry-content h1,
 .entry-content .h1,
 .mceContentBody h1,
 .mceContentBody .h1 {
-  margin: 1em auto;
+  margin: 0 auto 24px;
   clear: both; }
 
 .entry-content h2,
@@ -10576,6 +10614,14 @@ a {
 .mceContentBody ol {
   margin-bottom: 1.5em; }
 
+.entry-content p.is-style-ingress,
+.mceContentBody p.is-style-ingress {
+  font-size: 18px; }
+  @media screen and (min-width: 768px) {
+    .entry-content p.is-style-ingress,
+    .mceContentBody p.is-style-ingress {
+      font-size: 18px; } }
+
 .entry-content .wp-block-quote,
 .mceContentBody .wp-block-quote {
   position: relative;
@@ -10592,16 +10638,15 @@ a {
             transform: translateX(-100%);
     font-size: 4em;
     font-weight: 700;
-    line-height: 0.7;
-    color: #ff0000; }
+    line-height: 0.7; }
   .entry-content .wp-block-quote p,
   .mceContentBody .wp-block-quote p {
-    font-size: 22px;
+    font-size: 24px;
     margin-bottom: 12px; }
     @media screen and (min-width: 768px) {
       .entry-content .wp-block-quote p,
       .mceContentBody .wp-block-quote p {
-        font-size: 30px; } }
+        font-size: 24px; } }
   .entry-content .wp-block-quote cite,
   .mceContentBody .wp-block-quote cite {
     font-style: normal;
@@ -10642,46 +10687,51 @@ a.button,
 .wp-block-button__link,
 .wp-block-file a.wp-block-file__button {
   display: inline-block;
-  background: #2a2a2a;
   color: #fff !important;
-  font-size: 14px;
+  color: var(--primary-text-color) !important;
+  background: #253764 ;
+  background: var(--primary-color) ;
+  font-size: 16px;
   font-weight: bold;
   text-align: center;
   line-height: 1.1;
-  text-transform: uppercase;
   text-decoration: none !important;
-  padding: 0.6em 1.2em;
-  border-radius: 4px;
+  padding: 16px 32px;
+  border-radius: 2px;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  border: 2px solid transparent;
-  /*
-    &.loading,
-    &.loading:hover {
-    color: rgba(0,0,0,0.0);
-    border-color: rgba(0,0,0,0.0);
-    background: transparent url('../images/ajax-loader.gif') no-repeat center center;
-    background-size: 36px auto;
-    min-height: 45px;
-    transition: none;
-    cursor: default;
-}
-    */ }
+  border: solid 2px;
+  border-color: #253764 ;
+  border-color: var(--primary-color) ;
+  -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s; }
   @media screen and (min-width: 768px) {
     .button,
     button.button,
     a.button,
     .wp-block-button__link,
     .wp-block-file a.wp-block-file__button {
-      font-size: 14px; } }
+      font-size: 16px; } }
   .button:hover,
   button.button:hover,
   a.button:hover,
   .wp-block-button__link:hover,
   .wp-block-file a.wp-block-file__button:hover {
-    color: #fff;
-    background: rgba(42, 42, 42, 0.8); }
+    opacity: 0.84; }
+
+.wp-block-button.is-style-outline .wp-block-button__link {
+  background-color: transparent;
+  border-color: #2a2a2a;
+  color: #2a2a2a !important; }
+  .wp-block-button.is-style-outline .wp-block-button__link:hover {
+    color: #fff !important;
+    color: var(--primary-text-color) !important;
+    background: #253764 !important;
+    background: var(--primary-color) !important;
+    border-color: #253764 !important;
+    border-color: var(--primary-color) !important; }
 
 /* Bootstrap form classes
    These are extended to Gravity Forms below */
@@ -10713,7 +10763,8 @@ a.button,
   padding-bottom: 16px;
   padding-top: 10px;
   font-weight: bold;
-  font-size: 18px; }
+  font-size: 18px;
+  outline-offset: 3px; }
   @media screen and (min-width: 768px) {
     .form-control, .gform_wrapper .gform_fields .gfield input[type="email"],
     .gform_wrapper .gform_fields .gfield input[type="date"],
@@ -10768,7 +10819,15 @@ a.button,
   padding-left: 30px; }
 
 .form-check-input[type="checkbox"], .gform_wrapper .gform_fields .gfield .gfield_checkbox input, .gform_wrapper .gform_fields .gfield .ginput_container_consent input {
-  display: none; }
+  opacity: 0;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px; }
   .form-check-input[type="checkbox"] + label, .gform_wrapper .gform_fields .gfield .gfield_checkbox input + label, .gform_wrapper .gform_fields .gfield .ginput_container_consent input + label {
     padding-left: 30px;
     position: relative;
@@ -10801,20 +10860,31 @@ a.button,
           -ms-flex-align: center;
               align-items: center;
       font-size: 13px; }
+  .form-check-input[type="checkbox"]:focus + label, .gform_wrapper .gform_fields .gfield .gfield_checkbox input:focus + label, .gform_wrapper .gform_fields .gfield .ginput_container_consent input:focus + label {
+    outline: auto 5px -webkit-focus-ring-color;
+    outline-offset: 3px; }
   .form-check-input[type="checkbox"]:checked + label::before, .gform_wrapper .gform_fields .gfield .gfield_checkbox input:checked + label::before, .gform_wrapper .gform_fields .gfield .ginput_container_consent input:checked + label::before {
-    border-color: #1c769d;
-    border-color: var(--secondary-color); }
+    border-color: #1c769d ;
+    border-color: var(--secondary-color) ; }
   .form-check-input[type="checkbox"]:checked + label::after, .gform_wrapper .gform_fields .gfield .gfield_checkbox input:checked + label::after, .gform_wrapper .gform_fields .gfield .ginput_container_consent input:checked + label::after {
-    background: #1c769d;
-    background: var(--secondary-color);
-    color: #fff;
-    color: var(--secondary-text-color);
+    background: #1c769d ;
+    background: var(--secondary-color) ;
+    color: #fff ;
+    color: var(--secondary-text-color) ;
     content: "\f00c";
     font-family: 'Font Awesome 5 Pro';
     font-weight: 400; }
 
 .form-check-input[type="radio"], .gform_wrapper .gform_fields .gfield .gfield_radio input {
-  display: none; }
+  opacity: 0;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px; }
   .form-check-input[type="radio"] + label, .gform_wrapper .gform_fields .gfield .gfield_radio input + label {
     padding-left: 30px;
     position: relative;
@@ -10840,9 +10910,12 @@ a.button,
       position: absolute;
       left: 0;
       top: 1px; }
+  .form-check-input[type="radio"]:focus + label, .gform_wrapper .gform_fields .gfield .gfield_radio input:focus + label {
+    outline: auto 5px -webkit-focus-ring-color;
+    outline-offset: 3px; }
   .form-check-input[type="radio"]:checked + label::after, .gform_wrapper .gform_fields .gfield .gfield_radio input:checked + label::after {
-    background: #1c769d;
-    background: var(--secondary-color); }
+    background: #1c769d ;
+    background: var(--secondary-color) ; }
 
 /* Gravity Forms */
 .gform_wrapper form {
@@ -10870,16 +10943,17 @@ a.button,
 .gform_wrapper .button {
   padding: 16px 33px;
   border-radius: 2px;
-  background: #253764;
-  background: var(--primary-color);
-  color: #fff;
-  color: var(--primary-text-color);
+  background: #253764 ;
+  background: var(--primary-color) ;
+  color: #fff ;
+  color: var(--primary-text-color) ;
   font-weight: bold;
   border: 0;
   -webkit-transition: opacity 0.2s;
   -o-transition: opacity 0.2s;
   transition: opacity 0.2s;
-  margin-top: 24px; }
+  margin-top: 24px;
+  outline-offset: 3px; }
   .gform_wrapper .button:hover {
     opacity: 0.84; }
 
@@ -11182,6 +11256,33 @@ a.button,
       -webkit-box-ordinal-group: 4;
           -ms-flex-order: 3;
               order: 3; } }
+
+.gform_confirmation_wrapper .gform_confirmation_message {
+  margin-top: 48px; }
+  @media (min-width: 992px) {
+    .gform_confirmation_wrapper .gform_confirmation_message {
+      margin-top: 0; } }
+  .gform_confirmation_wrapper .gform_confirmation_message strong {
+    color: #1c769d ;
+    color: var(--secondary-color) ;
+    font-size: 18px; }
+    @media screen and (min-width: 768px) {
+      .gform_confirmation_wrapper .gform_confirmation_message strong {
+        font-size: 18px; } }
+  .gform_confirmation_wrapper .gform_confirmation_message::after {
+    content: "\f00c";
+    font-family: 'Font Awesome 5 Pro';
+    font-weight: 900;
+    color: #1c769d ;
+    color: var(--secondary-color) ;
+    font-size: 170px;
+    display: block;
+    line-height: 1;
+    margin-top: 30px;
+    text-align: center; }
+    @media (min-width: 768px) {
+      .gform_confirmation_wrapper .gform_confirmation_message::after {
+        text-align: left; } }
 
 /* Hide Gravity Forms honeypot */
 .gform_validation_container,

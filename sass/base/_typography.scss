@@ -9,19 +9,34 @@ $clr-link-hover: $base-clr-text;
     -webkit-font-smoothing: antialiased;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    &.is-style-primary {
+        @include primary-color-text(true);
+    }
+
+    &.is-style-secondary {
+        @include secondary-color-text(true);
+    }
+}
+
 h1,
 .h1 {
     //@extend .antialiased;
     @include font-size($font-size-h1);
     font-weight: 700;
     line-height: 1.2;
-    margin: 0;
+    margin: 0 0 24px;
+    font-family: $font-tondu;
+    text-transform: uppercase;
+    letter-spacing: 1.34px;
+    @include primary-color-text();
 }
 
 h2,
 .h2 {
     @include font-size($font-size-h2);
-    font-weight: 700;
+    font-family: $font-source-sans-pro;
+    font-weight: 900;
     line-height: 1.2;
     margin: 0;
 }
@@ -29,7 +44,7 @@ h2,
 h3,
 .h3 {
     @include font-size($font-size-h3);
-    font-weight: 400;
+    font-weight: 900;
     line-height: 1.2;
     margin: 0;
 }
@@ -37,7 +52,7 @@ h3,
 h4,
 .h4 {
     @include font-size($font-size-h4);
-    font-weight: 400;
+    font-weight: 900;
     line-height: 1.2;
     margin: 0;
 }
@@ -74,8 +89,8 @@ b {
 
 a {
     text-decoration: none;
-    color: $clr-link;
-    //transition: $transition-link;
+    @include secondary-color-text();
+    font-weight: bold;
 
     &:hover {
         color: $clr-link-hover;
@@ -91,7 +106,8 @@ a {
 .mceContentBody {
     a {
         text-decoration: underline;
-        color: $clr-link;
+        @include secondary-color-text();
+        font-weight: bold;
 
         &:hover {
             color: $clr-link-hover;
@@ -118,9 +134,19 @@ a {
         }
     }
 
+    h1, h2, h3, h4, h5, h6 {
+        &.is-style-primary {
+            @include primary-color-text(true);
+        }
+
+        &.is-style-secondary {
+            @include secondary-color-text(true);
+        }
+    }
+
     h1,
     .h1 {
-        margin: 1em auto;
+        margin: 0 auto 24px;
         clear: both;
     }
 
@@ -146,6 +172,10 @@ a {
         margin-bottom: 1.5em;
     }
 
+    p.is-style-ingress {
+        @include font-size($font-size-l);
+    }
+
     .wp-block-quote {
         position: relative;
         margin: 2em;
@@ -160,7 +190,6 @@ a {
             font-size: 4em;
             font-weight: 700;
             line-height: 0.7;
-            color: $clr-link;
         }
 
         p {

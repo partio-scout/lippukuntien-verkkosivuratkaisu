@@ -9,6 +9,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,900;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
+@font-face{
+    font-family: "Tondu W05 Beta";
+    src: url("../fonts/Tondu/46dab5de-4f4f-47f3-bb3f-00027f6aa56c.woff2") format("woff2"), url("../fonts/Tondu/b25433a0-4ac7-4aa8-9d73-703ac130d5df.woff") format("woff");
+}
+
 .block-editor {
     .interface-interface-skeleton__body, .block-editor-editor-skeleton__body {
         .edit-post-visual-editor {
@@ -45,67 +50,91 @@
                     }
                 }
 
-                //Content editor
-                .block-editor-block-list__layout.is-root-container, .block-editor-block-list__layout {
-                    @extend .container;
-                    // Needs review: Import styles here to overwrite WordPress core styles in editor
-                    //@import "base/typography";
-
-                    .wp-block {
-                        max-width: inherit;
-                        // Import styles here to add custom elements to editor
-                        @import "base/helpers";
-                        @import "elements/forms";
-
-                        .acf-block-preview {
-                            .block-editor-inner-blocks {
-                                border: 1px dashed transparent;
-                                position: relative;
-                                
-                                &:hover {
-                                    border: 1px dashed black;
-                                    
-                                    &::before {
-                                        display: inline-block;
-                                    }
-                                }
-                                
-                                &:focus-within {
-                                    border: 1px dashed black;
-                                    
-                                    &::before {
-                                        display: inline-block;
-                                    }
-                                }
-                                
-                                &::before {
-                                    content: 'InnerBlocks';
-                                    padding: 6px 12px;
-                                    border-radius: 2px 2px 0 0;
-                                    background-color: #007cba;
-                                    color: #fff;
-                                    transform: translateY(calc(-100% - 1px));
-                                    display: none;
-                                    position: absolute;
-                                    left: 0;
-                                    font-size: 13px;
-                                }
-                            }
-                            
-                            // Import styles here to add ACF block styles to editor
-                            @import "elements/all";
-                            @import "components/all";
-                            @import "partials/article-card";
-                            @import "partials/sidebar";
-
-                            // Needs review: does not work without base/typography
-                            //> div, > section {
-                            //    @extend .entry-content; //Not working for some reason
-                            //}
-                        }
-                    }
-                }
+                //Original place of content editor, moved to bottom as test for block preview images
             }
         }
     }
 }
+
+
+.block-editor-inserter__preview-container {
+    width: 576px !important;
+
+    .block-editor-inserter__preview-content {
+        width: 576px !important;  
+        transform: scale(1);      
+
+        .id-block {
+            &.full-width {
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+        }
+    }
+}
+
+
+
+//Content editor
+.block-editor-block-list__layout.is-root-container, .block-editor-block-list__layout {
+    @extend .container;
+    // Needs review: Import styles here to overwrite WordPress core styles in editor
+    //@import "base/typography";
+    @import "base/block-editor-styles";
+
+    .wp-block {
+        max-width: inherit;
+        // Import styles here to add custom elements to editor
+        @import "base/helpers";
+        @import "elements/forms";
+
+        .acf-block-preview {
+            .block-editor-inner-blocks {
+                border: 1px dashed transparent;
+                position: relative;
+
+                &:hover {
+                    border: 1px dashed black;
+
+                    &::before {
+                        display: inline-block;
+                    }
+                }
+
+                &:focus-within {
+                    border: 1px dashed black;
+
+                    &::before {
+                        display: inline-block;
+                    }
+                }
+
+                &::before {
+                    content: 'InnerBlocks';
+                    padding: 6px 12px;
+                    border-radius: 2px 2px 0 0;
+                    background-color: #007cba;
+                    color: #fff;
+                    transform: translateY(calc(-100% - 1px));
+                    display: none;
+                    position: absolute;
+                    left: 0;
+                    font-size: 13px;
+                }
+            }
+
+            // Import styles here to add ACF block styles to editor
+            @import "elements/all";
+            @import "components/all";
+            @import "partials/article-card";
+            @import "partials/sidebar";
+
+            // Needs review: does not work without base/typography
+            //> div, > section {
+                //    @extend .entry-content; //Not working for some reason
+                //}
+            }
+        }
+    }
