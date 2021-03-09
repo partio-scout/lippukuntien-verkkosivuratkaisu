@@ -107,6 +107,7 @@ function ID_scripts()
   wp_localize_script('intodigital-script', 'aria_close_menu', __('Sulje päävalikko', 'ID'));
   wp_localize_script('intodigital-script', 'aria_open_submenu', __('Avaa alavalikko', 'ID'));
   wp_localize_script('intodigital-script', 'aria_close_submenu', __('Sulje alavalikko', 'ID'));
+  wp_localize_script('intodigital-script', 'aria_socialmedia_image', __('Sosiaalisen median kuva', 'ID'));
 
   global $wp_query; 
 

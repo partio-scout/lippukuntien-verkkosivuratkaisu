@@ -101,6 +101,16 @@
 			h1, h2, h3, h4, h5, h6 {
 				@include primary-text-color();
 			}
+
+			.wp-block-buttons {
+				.wp-block-button {
+					.wp-block-button__link {
+						background-color: $clr-white;
+						border-color: $clr-white;
+						color: $clr-font-grey !important;
+					}
+				}
+			}
 		}
 	}	
 }

@@ -16,8 +16,18 @@ if(empty($title)) {
 }
 ?>
 
+<?php 
+if ( $is_preview && !empty($block['data']['preview']) ): 
+$blockName = substr($block['name'], 4);
+?>
+<img src="<?php echo ID_get_theme_uri() . 'components/' . $blockName . '/screenshot.png'; ?>">
+<?php
+return;
+endif; 
+?>
+
 <?php if(!empty($feed_id)): ?>
-<div class="block-social-feed full-width id-block admin">
+<div class="block-social-feed full-width id-block admin<?php if(isset($block['className'])) echo ' ' . $block['className']; ?>">
 	<div class="container-lg">
 		<div class="row">
 			<div class="col">
@@ -42,6 +52,7 @@ if(empty($title)) {
 
 							if($(this).find('.j-text').length !== 0) {
 								$(this).data('message', JSON.stringify($(this).find('.j-message').html()));
+								$(this).data('alt', JSON.stringify($(this).find('.j-message').text()));
 								$(this).data('socialmedia', $(this).find('.j-social').attr('aria-label'));
 							}
 
@@ -52,10 +63,10 @@ if(empty($title)) {
 								$(this).data('date', JSON.stringify($(this).find('.j-date').html()));
 							}
 
-							let juicer_item = '<div class="card">';
+							let juicer_item = '<div class="card">';							
 
 							if($(this).data('image').length !== 0) {
-								juicer_item += '<a target="_blank" rel="no-referer" href="' + $(this).data('image-link') + '"><img class="thumbnail" src="' + $(this).data('image') + '"></a>';
+								juicer_item += '<a target="_blank" rel="no-referer" href="' + $(this).data('image-link') + '"><img class="thumbnail" src="' + $(this).data('image') + '" alt="' + JSON.parse($(this).data('alt')) + '"></a>';
 							} else {
 								juicer_item += '<div class="no-image"></div>';
 							}
@@ -63,7 +74,7 @@ if(empty($title)) {
 							juicer_item += '<div class="content">';
 							juicer_item += '<div class="excerpt">' + JSON.parse($(this).data('message')) + '</div>';
 							juicer_item += '<div class="user">';
-							juicer_item += '<img class="poster-thumb" src="' + $(this).data('poster-thumb') + '">';
+							juicer_item += '<img class="poster-thumb" src="' + $(this).data('poster-thumb') + '" alt="">';
 							juicer_item += '<div class="user-meta">';
 							juicer_item += '<div><a target="_blank" rel="no-referer" href="' + $(this).data('poster-link') + '" class="username">' + JSON.parse($(this).data('poster-name')) + '</a></div>';
 							juicer_item += '<p class="time">' + JSON.parse($(this).data('date')) + '</p>';

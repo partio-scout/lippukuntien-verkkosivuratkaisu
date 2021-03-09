@@ -137,4 +137,54 @@
                 //}
             }
         }
+
+        .wp-block-table {
+            @import "elements/table";
+        }
+
+        div[data-type="core/file"].wp-block-file {
+            @import "elements/table";
+
+            .wp-block-file__textlink {
+                font-weight: bold;
+                text-decoration: underline;
+            }
+        }
+
+        div[data-type="core/button"].wp-block-button {
+            .wp-block-button__link {
+                display: inline-block;
+                @include primary-text-color(true);
+                @include primary-color();
+                @include font-size($font-size-base);
+                font-weight: bold;
+                text-align: center;
+                line-height: 1.1;
+                text-decoration: none!important;
+                padding: 16px 32px;
+                border-radius: 2px;
+                appearance: none;
+                border: solid 2px;
+                @include primary-border-color();
+                transition: 0.2s;
+
+                &:hover {
+                    opacity: 0.84;
+                }
+            }
+
+            &.is-style-outline {
+                .wp-block-button__link {
+                    background-color: transparent;
+                    border-color: $clr-font-grey;
+                    color: $clr-font-grey !important;
+
+                    &:hover {
+                        @include primary-text-color(true);
+                        @include primary-color(true);
+                        @include primary-border-color(true);
+                    }
+                }
+            }
+        }
     }

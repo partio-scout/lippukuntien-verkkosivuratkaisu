@@ -12214,7 +12214,7 @@ img {
 button.button,
 a.button,
 .wp-block-button__link,
-.wp-block-file a.wp-block-file__button {
+.wp-block-file a.wp-block-file__button, .wp-block-file__button {
   display: inline-block;
   color: #fff !important;
   color: var(--primary-text-color) !important;
@@ -12241,20 +12241,20 @@ a.button,
     button.button,
     a.button,
     .wp-block-button__link,
-    .wp-block-file a.wp-block-file__button {
+    .wp-block-file a.wp-block-file__button, .wp-block-file__button {
       font-size: 16px; } }
   .button:hover,
   button.button:hover,
   a.button:hover,
   .wp-block-button__link:hover,
-  .wp-block-file a.wp-block-file__button:hover {
+  .wp-block-file a.wp-block-file__button:hover, .wp-block-file__button:hover {
     opacity: 0.84; }
 
-.wp-block-button.is-style-outline a.wp-block-button__link {
+.wp-block-button.is-style-outline .wp-block-button__link {
   background-color: transparent;
   border-color: #2a2a2a;
   color: #2a2a2a !important; }
-  .wp-block-button.is-style-outline a.wp-block-button__link:hover {
+  .wp-block-button.is-style-outline .wp-block-button__link:hover {
     color: #fff !important;
     color: var(--primary-text-color) !important;
     background: #253764 !important;
@@ -12832,11 +12832,13 @@ table {
   table thead td,
   table th {
     font-weight: bold;
-    background: #161616; }
+    background: #253764 ;
+    background: var(--primary-color) ; }
     table thead td, table thead td a,
     table th,
     table th a {
-      color: #fff; }
+      color: #fff ;
+      color: var(--primary-text-color) ; }
   table tbody tr:nth-of-type(2n + 1) {
     background-color: #f2f2f2; }
   table td,
@@ -12852,7 +12854,22 @@ table {
       table th {
         padding: 4px 15px; } }
   table tfoot tr {
-    background-color: #a4a4a4; }
+    background: #253764 ;
+    background: var(--primary-color) ; }
+    table tfoot tr, table tfoot tr a {
+      color: #fff ;
+      color: var(--primary-text-color) ; }
+  table thead, table tfoot {
+    border-top: 0;
+    border-bottom: 0; }
+  table + figcaption {
+    font-style: italic;
+    font-size: 16px;
+    text-align: left;
+    color: #2a2a2a; }
+    @media screen and (min-width: 768px) {
+      table + figcaption {
+        font-size: 16px; } }
 
 .block-hero {
   padding: 0 0 58px; }
@@ -12945,6 +12962,10 @@ table {
       .block-hero .flex .inner-blocks h1, .block-hero .flex .inner-blocks h2, .block-hero .flex .inner-blocks h3, .block-hero .flex .inner-blocks h4, .block-hero .flex .inner-blocks h5, .block-hero .flex .inner-blocks h6 {
         color: #fff ;
         color: var(--primary-text-color) ; }
+      .block-hero .flex .inner-blocks .wp-block-buttons .wp-block-button .wp-block-button__link {
+        background-color: #fff;
+        border-color: #fff;
+        color: #2a2a2a !important; }
 
 .block-content-with-sidebar {
   position: relative;
@@ -13056,7 +13077,8 @@ table {
 .block-content {
   padding: 58px 0;
   position: relative;
-  overflow: hidden; }
+  overflow: hidden;
+  margin-bottom: 58px; }
   .block-content .figure {
     display: block;
     margin: 72px -100px 0 auto;
@@ -13130,6 +13152,18 @@ table {
     .block-image-beside-content.has-bg .inner-blocks h1, .block-image-beside-content.has-bg .inner-blocks h2, .block-image-beside-content.has-bg .inner-blocks h3, .block-image-beside-content.has-bg .inner-blocks h4, .block-image-beside-content.has-bg .inner-blocks h5, .block-image-beside-content.has-bg .inner-blocks h6 {
       color: #fff ;
       color: var(--primary-text-color) ; }
+    .block-image-beside-content.has-bg .inner-blocks .wp-block-buttons .wp-block-button .wp-block-button__link {
+      background-color: #fff;
+      border-color: #fff;
+      color: #2a2a2a !important; }
+    .block-image-beside-content.has-bg .read-more.button {
+      background-color: transparent;
+      border-color: #fff;
+      color: #fff !important; }
+      .block-image-beside-content.has-bg .read-more.button:hover {
+        background: #fff;
+        border-color: #fff;
+        color: #2a2a2a !important; }
   @media (min-width: 992px) {
     .block-image-beside-content.image-on-right .align-content {
       padding-right: 100px;
@@ -13153,6 +13187,17 @@ table {
       background-size: 110%; }
   .block-image-beside-content .read-more {
     margin-top: 48px; }
+    .block-image-beside-content .read-more.button {
+      border-color: #2a2a2a;
+      background: transparent;
+      color: #2a2a2a !important; }
+      .block-image-beside-content .read-more.button:hover {
+        background: #253764 ;
+        background: var(--primary-color) ;
+        border-color: #253764 ;
+        border-color: var(--primary-color) ;
+        color: #fff !important;
+        color: var(--primary-text-color) !important; }
   .block-image-beside-content .align-image {
     height: 100%;
     display: -webkit-box;
@@ -13311,7 +13356,12 @@ table {
       text-transform: initial;
       font-size: 16px;
       width: auto;
-      max-width: 175px; }
+      max-width: 175px;
+      background-color: transparent;
+      border-color: #fff ;
+      border-color: var(--primary-text-color) ;
+      color: #fff ;
+      color: var(--primary-text-color) ; }
       @media screen and (min-width: 768px) {
         .block-social-feed .juicer-feed .juicer-button {
           font-size: 16px; } }
@@ -13408,12 +13458,14 @@ body.admin-bar .site-header .site-header-main.floating {
         margin-left: 24px; }
         .site-header .header-helper .secondary-menu .menu-item a {
           color: #fff ;
-          color: var(--primary-text-color) ; }
+          color: var(--primary-text-color) ;
+          font-weight: normal; }
           .site-header .header-helper .secondary-menu .menu-item a:hover {
             text-decoration: underline; }
     .site-header .header-helper .language-selector {
       position: relative;
-      margin-left: 24px; }
+      margin-left: 24px;
+      font-weight: bold; }
       .site-header .header-helper .language-selector:hover .language {
         display: block !important; }
       .site-header .header-helper .language-selector:hover .active-lang .open-language-selector::after {

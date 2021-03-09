@@ -13,6 +13,28 @@
 			h1, h2, h3, h4, h5, h6 {
 				@include primary-text-color();
 			}
+
+			.wp-block-buttons {
+				.wp-block-button {
+					.wp-block-button__link {
+						background-color: $clr-white;
+						border-color: $clr-white;
+						color: $clr-font-grey !important;
+					}
+				}
+			}
+		}
+
+		.read-more.button {
+			background-color: transparent;
+			border-color: $clr-white;
+			color: $clr-white !important;
+
+			&:hover {
+				background: $clr-white;
+				border-color: $clr-white;
+				color: $clr-font-grey !important;
+			}
 		}
 	}
 
@@ -50,6 +72,18 @@
 
 	.read-more {
 		margin-top: 48px;
+
+		&.button {
+			border-color: $clr-font-grey;
+			background: transparent;
+			color: $clr-font-grey !important;
+
+			&:hover {
+				@include primary-color();
+				@include primary-border-color();
+				@include primary-text-color(true);
+			}
+		}
 	}
 
 	.align-image {

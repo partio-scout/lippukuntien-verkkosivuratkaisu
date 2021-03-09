@@ -2,7 +2,7 @@
 button.button,
 a.button,
 .wp-block-button__link,
-.wp-block-file a.wp-block-file__button {
+.wp-block-file a.wp-block-file__button, .wp-block-file__button {
     display: inline-block;
     @include primary-text-color(true);
     @include primary-color();

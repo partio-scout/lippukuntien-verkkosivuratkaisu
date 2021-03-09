@@ -7,6 +7,7 @@ add_theme_support('editor-color-palette', []);
 add_theme_support( 'editor-gradient-presets', [] );
 add_theme_support( 'disable-custom-gradients' );
 add_theme_support( 'disable-custom-colors' );
+add_theme_support( 'editor-font-sizes', array() );
 
 
 //Allowed Gutenberg blocks. Full list of core/blocks found at the bottom of this file
@@ -18,9 +19,9 @@ function allowed_block_types() {
         //'core/video', // requires video file or url, does not support embedding
         'core/heading',
         'core/list',
-        'core/quote',
-        'core/freeform',
-        'core/subhead',
+        //'core/quote',
+        //'core/freeform',
+        //'core/subhead',
         'core/gallery',
         'core/table',
         'core/file',
@@ -280,3 +281,13 @@ function ID_register_post_template() {
     );
 }
 add_action( 'init', 'ID_register_post_template' );
+
+
+//Disable drop cap
+add_filter(
+    'block_editor_settings',
+    function ($editor_settings) {
+        $editor_settings['__experimentalFeatures']['global']['typography']['dropCap'] = false;
+        return $editor_settings;
+    }
+);

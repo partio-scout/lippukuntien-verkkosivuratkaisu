@@ -21,7 +21,18 @@ $template = array(
 
 $hide_figure = get_field('hide_figure');
 ?>
-<div class="block-content-with-sidebar full-width id-block">
+
+<?php 
+if ( $is_preview && !empty($block['data']['preview']) ): 
+$blockName = substr($block['name'], 4);
+?>
+<img src="<?php echo ID_get_theme_uri() . 'components/' . $blockName . '/screenshot.png'; ?>">
+<?php
+return;
+endif; 
+?>
+
+<div class="block-content-with-sidebar full-width id-block<?php if(isset($block['className'])) echo ' ' . $block['className']; ?>">
 	<div class="container-lg">
 		<div class="row">
 			<div class="col d-none d-lg-block col-lg-4 col-xxl-3">

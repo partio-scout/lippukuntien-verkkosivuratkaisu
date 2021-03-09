@@ -12,10 +12,10 @@ table {
     thead td,
     th {
         font-weight: bold;
-        background: $clr-grey-6;
+       @include primary-color();
 
         &, a {
-            color: $clr-white;
+            @include primary-text-color();
         }
     }
 
@@ -46,7 +46,23 @@ table {
     tfoot {
 
         tr {
-            background-color: $clr-grey-3;
+            @include primary-color();
+
+            &, a {
+                @include primary-text-color();
+            }
         }
+    }
+
+    thead, tfoot {
+        border-top: 0;
+        border-bottom: 0;
+    }
+
+    & + figcaption {
+        font-style: italic;
+        @include font-size($font-size-base);
+        text-align: left;
+        color: $clr-font-grey;
     }
 }

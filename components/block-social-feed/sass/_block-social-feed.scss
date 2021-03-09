@@ -147,6 +147,10 @@
 			width: auto;
 			max-width: 175px;
 
+			background-color: transparent;
+			@include primary-text-color-border();
+			@include primary-text-color();
+
 			&:hover {
 				color: $clr-font-grey;
 				border-color: $clr-white;

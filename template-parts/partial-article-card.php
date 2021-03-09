@@ -13,7 +13,7 @@ $link = get_the_permalink($ID);
 
 <div class="article-card entry-content">
 	<a href="<?php echo $link; ?>">
-		<div class="image" style="background-image: url('<?php echo $image; ?>');"></div>
+		<div class="image" style="background-image: url('<?php echo $image; ?>');" aria-label="<?php echo $title . ' - ' . __('Lue lisää', 'ID'); ?>"></div>
 	</a>
 	<div class="meta">
 		<span class="date"><?php echo _x('Julkaistu', 'Artikkeli kortti', 'ID') . ' ' . get_the_date(); ?></span>	

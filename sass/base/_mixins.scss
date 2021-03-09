@@ -56,6 +56,17 @@
   fill: $clr_primary_text if-important($important);
 }
 
+@mixin primary-text-color-bg($important: false) {
+  background: $default_clr_primary_text if-important($important);
+  background: $clr_primary_text if-important($important);
+}
+
+@mixin primary-text-color-border($important: false) {
+  border-color: $default_clr_primary_text if-important($important);
+  border-color: $clr_primary_text if-important($important);
+}
+
+
 @mixin secondary-color-text($important: false) {
   color: $default_clr_secondary if-important($important);
   color: $clr_secondary if-important($important);

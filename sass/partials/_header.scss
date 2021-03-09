@@ -84,6 +84,7 @@ body.admin-bar {
 
                 a {
                     @include primary-text-color();
+                    font-weight: normal;
 
                     &:hover {
                         text-decoration: underline;
@@ -95,6 +96,7 @@ body.admin-bar {
         .language-selector {
             position: relative;
             margin-left: 24px;
+            font-weight: bold;
 
             &:hover {
                 .language {

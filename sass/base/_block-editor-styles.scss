@@ -3,6 +3,9 @@
 }
 
 .wp-block[data-type^="acf/"] {
+    margin-top: 0;
+    margin-bottom: 0;
+
 	.acf-block-preview {
 		@import "base/typography";
 	}

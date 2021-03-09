@@ -1,4 +1,8 @@
 <?php
+function ID_get_theme_uri() {
+	return get_home_url() . '/wp-content/themes/partio/';
+}
+
 /**
  * Create link list based on yoast settings
  */

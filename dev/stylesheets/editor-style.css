@@ -10685,7 +10685,7 @@ img {
 button.button,
 a.button,
 .wp-block-button__link,
-.wp-block-file a.wp-block-file__button {
+.wp-block-file a.wp-block-file__button, .wp-block-file__button {
   display: inline-block;
   color: #fff !important;
   color: var(--primary-text-color) !important;
@@ -10712,13 +10712,13 @@ a.button,
     button.button,
     a.button,
     .wp-block-button__link,
-    .wp-block-file a.wp-block-file__button {
+    .wp-block-file a.wp-block-file__button, .wp-block-file__button {
       font-size: 16px; } }
   .button:hover,
   button.button:hover,
   a.button:hover,
   .wp-block-button__link:hover,
-  .wp-block-file a.wp-block-file__button:hover {
+  .wp-block-file a.wp-block-file__button:hover, .wp-block-file__button:hover {
     opacity: 0.84; }
 
 .wp-block-button.is-style-outline .wp-block-button__link {
@@ -11303,11 +11303,13 @@ table {
   table thead td,
   table th {
     font-weight: bold;
-    background: #161616; }
+    background: #253764 ;
+    background: var(--primary-color) ; }
     table thead td, table thead td a,
     table th,
     table th a {
-      color: #fff; }
+      color: #fff ;
+      color: var(--primary-text-color) ; }
   table tbody tr:nth-of-type(2n + 1) {
     background-color: #f2f2f2; }
   table td,
@@ -11323,6 +11325,21 @@ table {
       table th {
         padding: 4px 15px; } }
   table tfoot tr {
-    background-color: #a4a4a4; }
+    background: #253764 ;
+    background: var(--primary-color) ; }
+    table tfoot tr, table tfoot tr a {
+      color: #fff ;
+      color: var(--primary-text-color) ; }
+  table thead, table tfoot {
+    border-top: 0;
+    border-bottom: 0; }
+  table + figcaption {
+    font-style: italic;
+    font-size: 16px;
+    text-align: left;
+    color: #2a2a2a; }
+    @media screen and (min-width: 768px) {
+      table + figcaption {
+        font-size: 16px; } }
 
 /*# sourceMappingURL=sourcemaps/editor-style.css.map */
