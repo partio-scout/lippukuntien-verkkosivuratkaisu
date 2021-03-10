@@ -24,6 +24,8 @@ a.button,
 }
 
 .wp-block-button {
+    margin-right: 24px !important;
+
     &.is-style-outline {
         .wp-block-button__link {
             background-color: transparent;

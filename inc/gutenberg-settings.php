@@ -31,6 +31,7 @@ function allowed_block_types() {
         'core/button',
         'core/columns',
         'core/block',
+        'core/spacer',
         'gravityforms/form',
         'gravityforms/block',
         'gravityforms/mailchimp',
@@ -40,6 +41,14 @@ function allowed_block_types() {
     if (function_exists('ID_component_list')) {
         $components = ID_component_list();
         foreach ($components as $component) {
+            
+            if(get_post_type() == 'post' && $component === 'block-content-with-sidebar') {
+              continue;
+            }
+            if(get_post_type() == 'page' && $component === 'block-article-content') {
+              continue;
+            }            
+
             $block_types[] = 'acf/' . $component;
         }
     }
@@ -281,13 +290,3 @@ function ID_register_post_template() {
     );
 }
 add_action( 'init', 'ID_register_post_template' );
-
-
-//Disable drop cap
-add_filter(
-    'block_editor_settings',
-    function ($editor_settings) {
-        $editor_settings['__experimentalFeatures']['global']['typography']['dropCap'] = false;
-        return $editor_settings;
-    }
-);

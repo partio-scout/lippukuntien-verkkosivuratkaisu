@@ -20,4 +20,8 @@
         	//padding-left: 23px;
         }
     }
+
+    &:not(.has-bg) + .id-block:not(.has-bg):not(.has-partial):not(.block-content-with-sidebar):not(.block-article-content), &.has-partial-bg + .id-block:not(.has-bg), {
+        padding-top: 0;
+    }
 }

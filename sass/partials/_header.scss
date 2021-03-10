@@ -186,6 +186,7 @@ body.admin-bar {
                         padding: 10px 21px;
                         display: block;
                         min-width: 110px;
+                        font-weight: normal;
 
                         &:hover {
                             @include secondary-color();
@@ -316,6 +317,7 @@ body.admin-bar {
                                     color: $clr-black;
                                     padding: 10px 15px;
                                     display: block;
+                                    font-weight: normal;
 
                                     &:hover {
                                         @include secondary-color-text();

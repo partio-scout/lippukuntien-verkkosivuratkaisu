@@ -23,8 +23,8 @@ html {
 .container-xl,
 .container-xxl {
   width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 24px;
+  padding-left: 24px;
   margin-right: auto;
   margin-left: auto; }
 
@@ -54,8 +54,8 @@ html {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px; }
+  margin-right: -24px;
+  margin-left: -24px; }
 
 .no-gutters {
   margin-right: 0;
@@ -74,8 +74,8 @@ html {
 .col-xxl-auto {
   position: relative;
   width: 100%;
-  padding-right: 15px;
-  padding-left: 15px; }
+  padding-right: 24px;
+  padding-left: 24px; }
 
 .col {
   -ms-flex-preferred-size: 0;
@@ -10302,7 +10302,7 @@ html .mceContentBody {
   margin: 5px 5px;
   background: #fff;
   color: #000;
-  font: 16px/1.5 "PT Sans", sans-serif;
+  font: 16px/1.7 "PT Sans", sans-serif;
   font-size: 16px;
   font-weight: normal; }
   @media screen and (min-width: 768px) {
@@ -10453,7 +10453,8 @@ h2,
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 900;
   line-height: 1.2;
-  margin: 0; }
+  margin: 0;
+  font-family: "Source Sans Pro", sans-serif; }
   @media screen and (min-width: 768px) {
     h2,
     .h2 {
@@ -10464,7 +10465,8 @@ h3,
   font-size: 28px;
   font-weight: 900;
   line-height: 1.2;
-  margin: 0; }
+  margin: 0;
+  font-family: "Source Sans Pro", sans-serif; }
   @media screen and (min-width: 768px) {
     h3,
     .h3 {
@@ -10475,11 +10477,36 @@ h4,
   font-size: 24px;
   font-weight: 900;
   line-height: 1.2;
-  margin: 0; }
+  margin: 0;
+  font-family: "Source Sans Pro", sans-serif; }
   @media screen and (min-width: 768px) {
     h4,
     .h4 {
       font-size: 24px; } }
+
+h5,
+.h5 {
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 1.2;
+  margin: 0;
+  font-family: "Source Sans Pro", sans-serif; }
+  @media screen and (min-width: 768px) {
+    h5,
+    .h5 {
+      font-size: 18px; } }
+
+h6,
+.h6 {
+  font-size: 16px;
+  font-weight: 900;
+  line-height: 1.2;
+  margin: 0;
+  font-family: "Source Sans Pro", sans-serif; }
+  @media screen and (min-width: 768px) {
+    h6,
+    .h6 {
+      font-size: 16px; } }
 
 ul {
   list-style: none;
@@ -10524,6 +10551,12 @@ a {
     color: #2a2a2a; }
   a img {
     border: none; }
+
+.entry-content .wp-block-buttons,
+.mceContentBody .wp-block-buttons {
+  margin-bottom: 1em;
+  padding-right: 0;
+  padding-left: 0; }
 
 .entry-content a,
 .mceContentBody a {
@@ -10622,6 +10655,11 @@ a {
     .mceContentBody p.is-style-ingress {
       font-size: 18px; } }
 
+.entry-content p.has-drop-cap:not(:focus):first-letter,
+.mceContentBody p.has-drop-cap:not(:focus):first-letter {
+  font-size: 4em;
+  font-weight: 900; }
+
 .entry-content .wp-block-quote,
 .mceContentBody .wp-block-quote {
   position: relative;
@@ -10668,6 +10706,15 @@ a {
 .entry-content .wp-block-embed,
 .mceContentBody .wp-block-embed {
   margin: 2em 0; }
+
+.entry-content .wp-block-column,
+.mceContentBody .wp-block-column {
+  padding-left: 0;
+  padding-right: 0; }
+  @media (min-width: 782px) {
+    .entry-content .wp-block-column + .wp-block-column,
+    .mceContentBody .wp-block-column + .wp-block-column {
+      margin-left: 68px; } }
 
 .entry-content > :last-child,
 .mceContentBody > :last-child {
@@ -10721,17 +10768,19 @@ a.button,
   .wp-block-file a.wp-block-file__button:hover, .wp-block-file__button:hover {
     opacity: 0.84; }
 
-.wp-block-button.is-style-outline .wp-block-button__link {
-  background-color: transparent;
-  border-color: #2a2a2a;
-  color: #2a2a2a !important; }
-  .wp-block-button.is-style-outline .wp-block-button__link:hover {
-    color: #fff !important;
-    color: var(--primary-text-color) !important;
-    background: #253764 !important;
-    background: var(--primary-color) !important;
-    border-color: #253764 !important;
-    border-color: var(--primary-color) !important; }
+.wp-block-button {
+  margin-right: 24px !important; }
+  .wp-block-button.is-style-outline .wp-block-button__link {
+    background-color: transparent;
+    border-color: #2a2a2a;
+    color: #2a2a2a !important; }
+    .wp-block-button.is-style-outline .wp-block-button__link:hover {
+      color: #fff !important;
+      color: var(--primary-text-color) !important;
+      background: #253764 !important;
+      background: var(--primary-color) !important;
+      border-color: #253764 !important;
+      border-color: var(--primary-color) !important; }
 
 /* Bootstrap form classes
    These are extended to Gravity Forms below */

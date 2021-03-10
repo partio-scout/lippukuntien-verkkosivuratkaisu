@@ -25,6 +25,11 @@
             background: $base-clr-body-bg;
             position: relative;
 
+            .editor-styles-wrapper {
+                padding-left: 0;
+                padding-right: 0;
+            }
+
             .block-editor-writing-flow {
                 overflow-x: hidden;
 
@@ -94,6 +99,8 @@
             .block-editor-inner-blocks {
                 border: 1px dashed transparent;
                 position: relative;
+                margin-left: -15px;
+                margin-right: -15px;
 
                 &:hover {
                     border: 1px dashed black;

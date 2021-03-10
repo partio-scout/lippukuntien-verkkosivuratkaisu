@@ -41,7 +41,7 @@
 	&.image-on-right {
 		.align-content {
 			@include media-breakpoint-up(lg) {
-				padding-right: 100px;
+				padding-right: 68px;
 				padding-left: 0;
 			}
 		}
@@ -105,7 +105,7 @@
 		justify-content: center;
 
 		@include media-breakpoint-up(lg) {
-			padding-left: 100px;
+			padding-left: 68px;
 		}
 	}
 

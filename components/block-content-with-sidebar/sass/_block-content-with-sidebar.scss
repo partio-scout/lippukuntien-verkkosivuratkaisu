@@ -1,7 +1,11 @@
 .block-content-with-sidebar {
 	position: relative;
 	overflow: hidden;
-	padding: 30px 0;
+	padding: 50px 0 72px;
+
+	@include media-breakpoint-up(lg) {
+		padding-bottom: 86px;
+	}
 
 	.figure {
 		display: block;
@@ -36,6 +40,18 @@
 		h4 {
 			@include font-size($font-size-content-h4);
 			color: $clr-font-grey;
+		}
+	}
+}
+
+body:not(.home) {
+	.page-content {
+		article {
+			> .entry-content {
+				.block-content-with-sidebar:first-child {
+					padding-top: 10px;
+				}
+			}
 		}
 	}
 }

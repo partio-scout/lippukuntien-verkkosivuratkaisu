@@ -23,9 +23,15 @@ endif;
 ?>
 
 <div class="block-map id-block<?php if(isset($block['className'])) echo ' ' . $block['className']; ?>">
+	<?php if(!is_admin()): ?>
 	<div class="acf-map" data-zoom="14">
 		<?php if(!empty($location)): ?>
 			<div class="marker" data-lat="<?php echo esc_attr($location['lat']); ?>" data-lng="<?php echo esc_attr($location['lng']); ?>"></div>
 		<?php endif; ?>
     </div>
+    <?php else: ?>
+    	<div class="admin-preview">
+    		<?php _ex('Kartta', 'kartta', 'ID_admin'); ?>
+    	</div>
+    <?php endif; ?>
 </div>

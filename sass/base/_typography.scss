@@ -39,6 +39,7 @@ h2,
     font-weight: 900;
     line-height: 1.2;
     margin: 0;
+    font-family: $font-source-sans-pro;
 }
 
 h3,
@@ -47,6 +48,7 @@ h3,
     font-weight: 900;
     line-height: 1.2;
     margin: 0;
+    font-family: $font-source-sans-pro;
 }
 
 h4,
@@ -55,6 +57,25 @@ h4,
     font-weight: 900;
     line-height: 1.2;
     margin: 0;
+    font-family: $font-source-sans-pro;
+}
+
+h5,
+.h5 {
+    @include font-size($font-size-l);
+    font-weight: 900;
+    line-height: 1.2;
+    margin: 0;
+    font-family: $font-source-sans-pro;
+}
+
+h6,
+.h6 {
+    @include font-size($font-size-base);
+    font-weight: 900;
+    line-height: 1.2;
+    margin: 0;
+    font-family: $font-source-sans-pro;
 }
 
 ul {
@@ -104,6 +125,12 @@ a {
 //typography styles for content areas
 .entry-content,
 .mceContentBody {
+    .wp-block-buttons {
+        margin-bottom: 1em;
+        padding-right: 0;
+        padding-left: 0;
+    }
+
     a {
         text-decoration: underline;
         @include secondary-color-text();
@@ -176,6 +203,13 @@ a {
         @include font-size($font-size-l);
     }
 
+    p.has-drop-cap {
+        &:not(:focus):first-letter {
+            font-size: 4em;
+            font-weight: 900;
+        }
+    }
+
     .wp-block-quote {
         position: relative;
         margin: 2em;
@@ -213,6 +247,17 @@ a {
 
     .wp-block-embed {
         margin: 2em 0;
+    }
+
+    .wp-block-column {
+        padding-left: 0;
+        padding-right: 0;
+
+        @media(min-width: 782px) {
+            & + .wp-block-column {
+                margin-left: 68px;
+            }
+        }
     }
 
     figure.wp-caption {

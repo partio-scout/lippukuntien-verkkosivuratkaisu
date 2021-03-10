@@ -27,7 +27,7 @@ endif;
 ?>
 
 <?php if(!empty($feed_id)): ?>
-<div class="block-social-feed full-width id-block admin<?php if(isset($block['className'])) echo ' ' . $block['className']; ?>">
+<div class="block-social-feed full-width has-bg id-block admin<?php if(isset($block['className'])) echo ' ' . $block['className']; ?>">
 	<div class="container-lg">
 		<div class="row">
 			<div class="col">

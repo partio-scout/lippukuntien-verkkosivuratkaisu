@@ -6,4 +6,13 @@
 		height: 0;
 		padding-bottom: 66.3%;
 	}
+
+	.admin-preview {
+		width: 100%;
+		height: auto;
+		@include primary-color;
+		@include primary-text-color();
+		text-align: center;
+		padding: 50px;
+	}
 }

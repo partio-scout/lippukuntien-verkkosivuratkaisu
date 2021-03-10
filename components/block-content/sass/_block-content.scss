@@ -4,6 +4,10 @@
 	overflow: hidden;
 	margin-bottom: 58px;
 
+	&.no-figure {
+		margin-bottom: 0;
+	}
+
 	.figure {
 		display: block;
 		margin: 72px -100px 0 auto;

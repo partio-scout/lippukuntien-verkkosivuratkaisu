@@ -25,7 +25,7 @@ return;
 endif; 
 ?>
 
-<div class="block-latest-articles full-width id-block<?php if(isset($block['className'])) echo ' ' . $block['className']; ?>">
+<div class="block-latest-articles has-bg has-partial-bg full-width id-block<?php if(isset($block['className'])) echo ' ' . $block['className']; ?>">
 	<div class="accent"></div>
 	<div class="container-lg">
 		<div class="row">

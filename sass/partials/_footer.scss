@@ -52,6 +52,7 @@
             .menu-item {
                 a {
                     color: $clr-font-grey;
+                    font-weight: normal;
 
                     &:hover {
                         @include secondary-color-text();
@@ -135,7 +136,7 @@
                 }
                 &.facebook {
                     &::before {
-                        @include fontawesome-icon('f39e', 'fab');
+                        @include fontawesome-icon('f09a', 'fab');
                     }
                 }
                 &.twitter {
@@ -151,6 +152,16 @@
                 &.linkedin {
                     &::before {
                         @include fontawesome-icon('f0e1', 'fab');
+                    }
+                }
+                &.snapchat {
+                    &::before {
+                        @include fontawesome-icon('fa2c', 'fab');
+                    }
+                }
+                &.tiktok {
+                    &::before {
+                        @include fontawesome-icon('e07b', 'fab');
                     }
                 }
             }
@@ -188,6 +199,7 @@
                     @include primary-text-color();
                     margin-left: 48px;
                     @include primary-text-color()
+                    font-weight: normal;
 
                     &:hover {
                         text-decoration: underline;

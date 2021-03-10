@@ -3,6 +3,10 @@
 	min-height: 400px;
 	padding: 64px 0;
 
+	@include media-breakpoint-up(lg) {
+		padding: 64px 0 116px;
+	}
+
 	.accent {
 		width: 100%;
 		height: 0;

@@ -11,6 +11,19 @@
 	}
 }
 
+.wp-block[data-type="core/spacer"] {
+    .components-resizable-box__container {
+        background: rgba(0,0,0,.1);
+    }
+}
+
+.wp-block[data-type="core/columns"] {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
 h1.wp-block[data-type^="core/"] {
     @include font-size($font-size-h1);
     font-weight: 700;

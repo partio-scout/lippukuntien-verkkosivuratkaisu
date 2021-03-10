@@ -1,7 +1,11 @@
 .block-article-content {
 	position: relative;
 	overflow: hidden;
-	padding: 30px 0;
+	padding: 50px 0;
+
+	@include media-breakpoint-up(lg) {
+		padding-bottom: 86px;
+	}
 
 	.entry-date {
 		margin-bottom: 5px;
@@ -71,6 +75,20 @@
 
 			@include media-breakpoint-up(md) {
 				margin-right: 60px;
+			}
+		}
+	}
+}
+
+
+
+body:not(.home) {
+	.article-content {
+		article {
+			> .entry-content {
+				.block-article-content:first-child {
+					padding-top: 10px;
+				}
 			}
 		}
 	}

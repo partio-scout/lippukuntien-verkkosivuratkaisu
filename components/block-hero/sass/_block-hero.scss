@@ -86,7 +86,7 @@
 		.inner-blocks {
 			z-index: 1;			
 			width: 100%;
-			padding: 0 18px;
+			padding: 0 24px;
 
 			@include media-breakpoint-up(lg) {
 				@include primary-text-color();
@@ -99,18 +99,62 @@
 			}
 
 			h1, h2, h3, h4, h5, h6 {
-				@include primary-text-color();
+				@include secondary-color-text();
+
+				@include media-breakpoint-up(lg) {
+					@include primary-text-color();
+				}
 			}
 
-			.wp-block-buttons {
-				.wp-block-button {
-					.wp-block-button__link {
-						background-color: $clr-white;
-						border-color: $clr-white;
-						color: $clr-font-grey !important;
+			@include media-breakpoint-up(lg) {
+				.wp-block-buttons {
+					.wp-block-button {
+						.wp-block-button__link {
+							background-color: $clr-white;
+							border-color: $clr-white;
+							color: $clr-font-grey !important;
+						}
 					}
 				}
 			}
 		}
+	}
+
+	.breadcrumbs-container {
+		margin-bottom: 0;
+
+		#breadcrumbs {
+			padding: 34px 24px 0;
+			width: 100%;
+			@include font-size($font-size-base);
+		}
 	}	
+
+	& + .block-content-with-sidebar, & + .block-article-content {
+		@include media-breakpoint-down(md) {
+			padding-top: 0;
+		}
+	}
+
+	& + .block-content {
+		padding-top: 24px;
+
+		@include media-breakpoint-up(lg) {
+			padding-top: 58px !important;
+		}
+	}
+}
+
+body:not(.home) {
+	.page-content {
+		article {
+			> .entry-content {
+				.block-hero:first-child {
+					@include media-breakpoint-up(lg) {
+						padding-top: 10px;
+					}
+				}
+			}
+		}
+	}
 }

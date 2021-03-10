@@ -61,5 +61,21 @@ endif;
 				</div>
 			</div>
 		</div>
-	</div>			
+	</div>	
+
+	<?php
+	if(!is_admin()) {
+		if ( !is_front_page() && function_exists('yoast_breadcrumb') ){
+			global $post;         
+			$blocks = parse_blocks( $post->post_content );
+
+			if(!empty($blocks) && $blocks[0]['attrs']['id'] == $block['id']) {
+		        //Do nothing
+		        get_template_part('template-parts/partial', 'breadcrumbs', array(
+		        	'class' => 'mobile'
+		        ));
+			}
+		}
+	}
+	?>		
 </div>

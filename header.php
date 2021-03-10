@@ -51,8 +51,15 @@
                 <div id="content" class="site-content">
 
                     <?php
-                    if ( !is_front_page() && function_exists('yoast_breadcrumb') ) { ?>
-                    <div class="breadcrumbs-container container">
-                        <?php yoast_breadcrumb( '<div id="breadcrumbs">','</div>' ); ?>
-                    </div>
-                    <?php } ?>
+                    if ( !is_front_page() && function_exists('yoast_breadcrumb') ){
+                        global $post;         
+                        $blocks = parse_blocks( $post->post_content );
+
+                        if(!empty($blocks) && $blocks[0]['blockName'] == 'acf/block-hero') {
+                            get_template_part('template-parts/partial', 'breadcrumbs', array(
+                                'class' => 'has-hero desktop'
+                            ));
+                        } else {
+                            get_template_part('template-parts/partial', 'breadcrumbs');
+                        }
+                    }

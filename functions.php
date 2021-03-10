@@ -101,13 +101,12 @@ function ID_scripts()
   wp_register_script('intodigital-script', get_template_directory_uri() . '/js/app.js', array('jquery'), $version, true);
 
 
-  wp_localize_script('intodigital-script', 'ajaxurl', admin_url('admin-ajax.php'));
-  wp_localize_script('intodigital-script', 'resturl', get_rest_url(null, '/'));
-  wp_localize_script('intodigital-script', 'aria_open_menu', __('Avaa päävalikko', 'ID'));
-  wp_localize_script('intodigital-script', 'aria_close_menu', __('Sulje päävalikko', 'ID'));
-  wp_localize_script('intodigital-script', 'aria_open_submenu', __('Avaa alavalikko', 'ID'));
-  wp_localize_script('intodigital-script', 'aria_close_submenu', __('Sulje alavalikko', 'ID'));
-  wp_localize_script('intodigital-script', 'aria_socialmedia_image', __('Sosiaalisen median kuva', 'ID'));
+  wp_localize_script('intodigital-script', 'ajaxurl', array(admin_url('admin-ajax.php')));
+  wp_localize_script('intodigital-script', 'resturl', array(get_rest_url(null, '/')));
+  wp_localize_script('intodigital-script', 'aria_open_menu', array(__('Avaa päävalikko', 'ID')));
+  wp_localize_script('intodigital-script', 'aria_close_menu', array(__('Sulje päävalikko', 'ID')));
+  wp_localize_script('intodigital-script', 'aria_open_submenu', array(__('Avaa alavalikko', 'ID')));
+  wp_localize_script('intodigital-script', 'aria_close_submenu', array(__('Sulje alavalikko', 'ID')));
 
   global $wp_query; 
 
@@ -143,7 +142,7 @@ function ID_admin_scripts()
   }
 
   wp_register_script('intodigital-admin-script', get_template_directory_uri() . '/js/admin.js', array('jquery', 'wp-editor'), $version, true);
-  wp_localize_script('intodigital-admin-script', 'ajaxurl', admin_url('admin-ajax.php'));
+  wp_localize_script('intodigital-admin-script', 'ajaxurl', array(admin_url('admin-ajax.php')));
   wp_enqueue_script('intodigital-admin-script');
 }
 

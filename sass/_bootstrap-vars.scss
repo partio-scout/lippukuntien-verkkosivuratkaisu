@@ -31,7 +31,7 @@ $container-max-widths: (
 // Set the number of columns and specify the width of the gutters.
 
 //$grid-columns:                12;
-$grid-gutter-width:           30px;
+$grid-gutter-width:           48px;
 
 @function breakpoint($size) {
   @if map-has-key($grid-breakpoints, $size) {

@@ -5,6 +5,20 @@
 
 .breadcrumbs-container {
     margin-bottom: 32px;
+
+    &.mobile {
+        @include media-breakpoint-up(lg) {
+            display: none;
+        }
+    }
+
+    &.has-hero.desktop {
+        display: none;
+
+        @include media-breakpoint-up(lg) {
+            display: block;
+        }
+    }
     
     #breadcrumbs {
         @include font-size($font-size-s);
