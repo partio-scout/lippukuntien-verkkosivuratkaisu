@@ -1,3 +1,11 @@
+<?php
+if(ID_REQUIRE_LOGIN) {
+    if (!is_user_logged_in()) {
+        auth_redirect();
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
     <head>
