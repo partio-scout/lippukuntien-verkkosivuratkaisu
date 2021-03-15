@@ -70,3 +70,9 @@ function acf_load_gravity_forms( $field ) {
 }
 
 add_filter('acf/load_field/name=gravity_forms', 'acf_load_gravity_forms');
+
+
+
+
+//Disable gravityforms styles
+add_filter('pre_option_rg_gforms_disable_css', '__return_true');
