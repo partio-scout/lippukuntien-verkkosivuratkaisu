@@ -76,3 +76,13 @@ add_filter('acf/load_field/name=gravity_forms', 'acf_load_gravity_forms');
 
 //Disable gravityforms styles
 add_filter('pre_option_rg_gforms_disable_css', '__return_true');
+
+
+
+
+
+//Hide ACF from others than network admins
+add_filter('acf/settings/show_admin', 'my_acf_show_admin');
+function my_acf_show_admin( $show ) {    
+    return current_user_can('create_sites');    
+}
