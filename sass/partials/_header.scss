@@ -101,6 +101,7 @@ body.admin-bar {
             &:hover {
                 .language {
                     display: block !important;
+                    z-index: 11;
                 }
 
                 .active-lang {

@@ -151,6 +151,12 @@
 
 					> .sub-menu {
 						display: none;
+
+						.menu-item {
+							a {
+								font-weight: normal;
+							}
+						}
 					}
 				}
 			}
@@ -194,6 +200,7 @@
 
 					a {
 						color: $clr-font-grey;
+						font-weight: normal;
 
 						&:hover {
 							text-decoration: underline;
@@ -212,6 +219,14 @@
 			width: 10%;
 			background: transparent;
 			border: 0;
+		}
+	}
+
+	ul.secondary-menu {
+		.menu-item {
+			a {
+				font-weight: normal;
+			}
 		}
 	}
 }
