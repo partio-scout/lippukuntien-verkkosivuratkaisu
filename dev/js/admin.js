@@ -35,6 +35,7 @@ wp.domReady(function () {
   wp.blocks.unregisterBlockStyle('core/button', 'fill');
   wp.blocks.unregisterBlockStyle('core/table', 'stripes');
   wp.blocks.unregisterBlockStyle('core/table', 'regular');
+  wp.blocks.unregisterBlockStyle('core/image', 'rounded');
   wp.blocks.registerBlockStyle('core/button', {
     name: 'outline',
     label: 'Reunukset'

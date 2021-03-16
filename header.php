@@ -25,6 +25,15 @@ if(ID_REQUIRE_LOGIN) {
             
             <?php 
             $theme_colors = get_field('theme_colors', 'option');
+
+            if(empty($theme_colors)) {
+                $theme_colors = array(
+                    'primary_color' => '#253764',
+                    'secondary_color' => '#1c769d',
+                    'text_color_primary' => '#ffffff',
+                    'text_color_secondary' => '#ffffff',
+                );
+            }
             ?>
 
             :root {
@@ -60,8 +69,13 @@ if(ID_REQUIRE_LOGIN) {
 
                     <?php
                     if ( !is_front_page() && function_exists('yoast_breadcrumb') ){
-                        global $post;         
-                        $blocks = parse_blocks( $post->post_content );
+                        global $post;   
+
+                        if($post) {      
+                            $blocks = parse_blocks( $post->post_content );
+                        } else {
+                            $blocks = null;
+                        }
 
                         if(!empty($blocks) && $blocks[0]['blockName'] == 'acf/block-hero') {
                             get_template_part('template-parts/partial', 'breadcrumbs', array(

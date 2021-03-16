@@ -12,6 +12,7 @@ require get_template_directory() . '/inc/post-types.php';
 require get_template_directory() . '/inc/acf-helpers.php';
 
 require get_template_directory() . '/inc/menu-walker.php';
+require get_template_directory() . '/inc/new-site-init.php';
 
 
 /* Enable developer checklist in admin */

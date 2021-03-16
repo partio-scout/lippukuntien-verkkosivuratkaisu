@@ -13568,8 +13568,9 @@ body.admin-bar .site-header .site-header-main.floating {
             text-decoration: underline; }
     .site-header .header-helper .language-selector {
       position: relative;
-      margin-left: 24px;
       font-weight: bold; }
+      .site-header .header-helper .language-selector .active-lang {
+        margin-left: 24px; }
       .site-header .header-helper .language-selector:hover .language {
         display: block !important;
         z-index: 11; }

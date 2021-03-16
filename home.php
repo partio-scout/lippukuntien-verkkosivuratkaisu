@@ -4,7 +4,7 @@
     <main id="main" class="site-main container" role="main">
         <?php 
         if ( have_posts() ) : ?>
-        <header class="page-header">            
+        <header class="page-header">         
             <h1 class="page-title"><?php echo get_the_title(get_queried_object_id()); ?></h1>
         </header>
         <div class="row content-row static-card-wrapper">

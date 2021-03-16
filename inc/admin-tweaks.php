@@ -360,15 +360,22 @@ add_filter( 'excerpt_length', 'ID_custom_excerpt_length', 999 );
 add_action('admin_head', 'ID_admin_theme_colors');
 function ID_admin_theme_colors() {
 $theme_colors = get_field('theme_colors', 'option');
-  echo '<style>
+if(empty($theme_colors)) {
+    $theme_colors = array(
+        'primary_color' => '#253764',
+        'secondary_color' => '#1c769d',
+        'text_color_primary' => '#ffffff',
+        'text_color_secondary' => '#ffffff',
+    );
+}
+
+echo '<style>
     :root {
         --primary-color: ' . $theme_colors['primary_color'] . ';' .
         '--secondary-color: ' . $theme_colors['secondary_color'] . ';' .
         '--primary-text-color: ' . $theme_colors['text_color_primary'] . ';' .
         '--secondary-text-color: ' . $theme_colors['text_color_secondary'] . ';
     }
-  </style>';
+</style>';
 }
-
-
 ?>

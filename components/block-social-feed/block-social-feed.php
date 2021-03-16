@@ -45,6 +45,8 @@ endif;
 
 					function custom_juicer() {
 						$('.block-social-feed .juicer-feed .feed-item').each(function(e) {
+							//console.log($(this));
+
 							if($(this).find('.j-image').length !== 0) {
 								$(this).data('image', $(this).find('.j-image').data('image'));
 								$(this).data('image-link', $(this).find('.j-image').attr('href'));
@@ -65,16 +67,20 @@ endif;
 
 							let juicer_item = '<div class="card">';							
 
-							if($(this).data('image').length !== 0) {
+							if($(this).data('image') !== undefined) {
 								juicer_item += '<a target="_blank" rel="no-referer" href="' + $(this).data('image-link') + '"><img class="thumbnail" src="' + $(this).data('image') + '" alt="' + JSON.parse($(this).data('alt')) + '"></a>';
 							} else {
 								juicer_item += '<div class="no-image"></div>';
 							}
 
 							juicer_item += '<div class="content">';
-							juicer_item += '<div class="excerpt">' + JSON.parse($(this).data('message')) + '</div>';
+							if($(this).data('message') !== undefined) {
+								juicer_item += '<div class="excerpt">' + JSON.parse($(this).data('message')) + '</div>';
+							}
 							juicer_item += '<div class="user">';
-							juicer_item += '<img class="poster-thumb" src="' + $(this).data('poster-thumb') + '" alt="">';
+							if($(this).data('message') !== undefined) {
+								juicer_item += '<img class="poster-thumb" src="' + $(this).data('poster-thumb') + '" alt="">';
+							}
 							juicer_item += '<div class="user-meta">';
 							juicer_item += '<div><a target="_blank" rel="no-referer" href="' + $(this).data('poster-link') + '" class="username">' + JSON.parse($(this).data('poster-name')) + '</a></div>';
 							juicer_item += '<p class="time">' + JSON.parse($(this).data('date')) + '</p>';

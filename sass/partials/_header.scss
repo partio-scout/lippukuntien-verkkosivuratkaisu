@@ -95,8 +95,11 @@ body.admin-bar {
 
         .language-selector {
             position: relative;
-            margin-left: 24px;
             font-weight: bold;
+
+            .active-lang {
+                margin-left: 24px;
+            }
 
             &:hover {
                 .language {

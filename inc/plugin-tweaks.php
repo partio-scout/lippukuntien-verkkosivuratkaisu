@@ -83,6 +83,31 @@ add_filter('pre_option_rg_gforms_disable_css', '__return_true');
 
 //Hide ACF from others than network admins
 add_filter('acf/settings/show_admin', 'my_acf_show_admin');
-function my_acf_show_admin( $show ) {    
-    return current_user_can('create_sites');    
+function my_acf_show_admin( $show ) {   
+  if(is_multisite() && !current_user_can( 'create_sites' )) {
+    return;
+  }   
+
+  return $show;
 }
+
+
+//Hide gravityforms forms if not super admin
+function add_grav_forms_permissions(){   
+    if(is_multisite() && !current_user_can( 'create_sites' )) {
+        $user = wp_get_current_user();
+        
+        foreach ($user->roles as $user_role) {        
+            $role = get_role($user_role);
+
+            $role->add_cap('gravityforms_view_entries');
+            $role->add_cap('gravityforms_delete_entries');
+            $role->add_cap('gravityforms_view_entry_notes');
+            $role->add_cap('gravityforms_export_entries');
+            $role->add_cap('gravityforms_create_form', false);
+            $role->add_cap('gravityforms_edit_forms', false);
+            $role->add_cap('gravityforms_delete_forms', false);
+        }        
+    }
+}
+add_action('admin_init','add_grav_forms_permissions');
