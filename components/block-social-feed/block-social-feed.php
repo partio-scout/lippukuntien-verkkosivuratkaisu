@@ -78,7 +78,7 @@ endif;
 								juicer_item += '<div class="excerpt">' + JSON.parse($(this).data('message')) + '</div>';
 							}
 							juicer_item += '<div class="user">';
-							if($(this).data('message') !== undefined) {
+							if($(this).data('poster-thumb') !== undefined) {
 								juicer_item += '<img class="poster-thumb" src="' + $(this).data('poster-thumb') + '" alt="">';
 							}
 							juicer_item += '<div class="user-meta">';
