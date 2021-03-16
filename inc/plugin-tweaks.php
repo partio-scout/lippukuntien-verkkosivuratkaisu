@@ -94,6 +94,8 @@ function my_acf_show_admin( $show ) {
 
 //Hide gravityforms forms if not super admin
 function add_grav_forms_permissions(){   
+    var_dump(is_multisite());
+    var_dump(current_user_can( 'create_sites' ));
     if(is_multisite() && !current_user_can( 'create_sites' )) {
         $user = wp_get_current_user();
         
