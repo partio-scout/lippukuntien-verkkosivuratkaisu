@@ -1,7 +1,7 @@
 <?php
 require get_template_directory() . '/inc/default_content.php';
 
-do_action( 'wp_initialize_site', ID_init_site($homepage_content) );
+//do_action( 'wp_initialize_site', ID_init_site($homepage_content) );
 //ID_init_site($homepage_content);
 function ID_init_site($homepage_content = '') {
 	//Initialize empty menus
