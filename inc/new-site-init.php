@@ -50,7 +50,7 @@ function ID_init_site() {
     	wp_delete_post( $defaultPost->ID );
 	}
 }
-add_action( 'wp_initialize_site', 'ID_init_site', 999);
+add_action( 'wp_insert_site', 'ID_init_site', 999);
 
 /*
 function ID_init_site($homepage_content = '') {
