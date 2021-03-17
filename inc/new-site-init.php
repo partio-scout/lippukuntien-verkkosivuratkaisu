@@ -50,7 +50,22 @@ function ID_init_site() {
     	wp_delete_post( $defaultPost->ID );
 	}
 }
-//add_action( 'wp_insert_site', 'ID_init_site', 999);
+
+
+add_action( 'wp_initialize_site', 'ID_initialize_site', 900 );
+ 
+/**
+ * Fires when a site's initialization routine should be executed.
+ *
+ * @param WP_Site $new_site New site object.
+ */
+function ID_initialize_site( WP_Site $new_site ) : void {
+    switch_to_blog( $new_site->blog_id );
+ 
+ 	ID_init_site();
+ 
+    restore_current_blog();
+}
 
 /*
 function ID_init_site($homepage_content = '') {
