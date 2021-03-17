@@ -290,3 +290,12 @@ function ID_register_post_template() {
     );
 }
 add_action( 'init', 'ID_register_post_template' );
+
+
+add_filter(
+    'block_editor_settings',
+    function ($editor_settings) {
+        $editor_settings['__experimentalFeatures']['defaults']['typography']['dropCap'] = false;
+        return $editor_settings;
+    }
+);

@@ -14,6 +14,12 @@
     src: url("../fonts/Tondu/46dab5de-4f4f-47f3-bb3f-00027f6aa56c.woff2") format("woff2"), url("../fonts/Tondu/b25433a0-4ac7-4aa8-9d73-703ac130d5df.woff") format("woff");
 }
 
+#wpadminbar {
+    #wp-admin-bar-gform-forms {
+        display: none;
+    }
+}
+
 .block-editor {
     .interface-interface-skeleton__body, .block-editor-editor-skeleton__body {
         .edit-post-visual-editor {

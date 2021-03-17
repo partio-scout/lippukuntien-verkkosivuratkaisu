@@ -32,7 +32,7 @@
             "name": "site_logo_text",
             "type": "text",
             "instructions": "Tämä näytetään jos sivuston logoa ei ole asetettu.",
-            "required": 0,
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -111,7 +111,7 @@
                 },
                 {
                     "key": "field_603cc30995e46",
-                    "label": "Teksin väri päävärin päällä",
+                    "label": "Tekstin väri päävärin päällä",
                     "name": "text_color_primary",
                     "type": "color_picker",
                     "instructions": "",
@@ -126,7 +126,7 @@
                 },
                 {
                     "key": "field_603cc33295e47",
-                    "label": "Teksin väri apuvärin päällä",
+                    "label": "Tekstin väri apuvärin päällä",
                     "name": "text_color_secondary",
                     "type": "color_picker",
                     "instructions": "",
@@ -178,5 +178,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1614772099
+    "modified": 1615964834
 }

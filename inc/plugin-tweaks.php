@@ -93,21 +93,34 @@ function my_acf_show_admin( $show ) {
 
 
 //Hide gravityforms forms if not super admin
-function add_grav_forms_permissions(){   
-    if(is_multisite() && !current_user_can( 'create_sites' )) {
-        $user = wp_get_current_user();
-        
-        foreach ($user->roles as $user_role) {        
-            $role = get_role($user_role);
-
-            $role->add_cap('gravityforms_view_entries');
-            $role->add_cap('gravityforms_delete_entries');
-            $role->add_cap('gravityforms_view_entry_notes');
-            $role->add_cap('gravityforms_export_entries');
-            $role->add_cap('gravityforms_create_form', false);
-            $role->add_cap('gravityforms_edit_forms', false);
-            $role->add_cap('gravityforms_delete_forms', false);
-        }        
+function remove_gform_pages(){  
+  if(is_multisite()) {
+    if(!is_super_admin()) {
+      remove_submenu_page( 'gf_edit_forms', 'gf_new_form' );
+      remove_submenu_page( 'gf_edit_forms', 'gf_help' );
+      remove_submenu_page( 'gf_edit_forms', 'gf_settings' );
+      remove_submenu_page( 'gf_edit_forms', 'gf_edit_forms' );
+      remove_submenu_page( 'gf_edit_forms', 'gf_addons' );
+      remove_submenu_page( 'gf_edit_forms', 'gf_update' );
+      remove_submenu_page( 'gf_edit_forms', 'gf_new_formf_help' );
+      remove_submenu_page( 'gf_edit_forms', 'gf_system_status' );
+      remove_submenu_page( 'gf_edit_forms', 'gf_export' );
     }
+  }
 }
-add_action('admin_init','add_grav_forms_permissions');
+add_action('admin_init','remove_gform_pages');
+
+//Remove gform toolbar ribbon from admin panel
+add_filter( 'gform_toolbar_menu', 'ID_custom_gform_toolbar', 10, 2 );
+function ID_custom_gform_toolbar( $menu_items, $form_id ) { 
+  if(is_multisite()) {
+    if(!is_super_admin()) {
+      return;
+    }
+  }
+}
+
+function remove_toolbar_items($wp_adminbar) {
+  $wp_adminbar->remove_node('ddw-gravityforms-toolbar');
+}
+add_action('admin_bar_menu', 'remove_toolbar_items', 999);

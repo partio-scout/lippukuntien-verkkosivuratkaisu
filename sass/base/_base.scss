@@ -34,6 +34,10 @@ body {
 	@include media-breakpoint-down(md) {
 		position: fixed;
 	}
+
+	#wp-admin-bar-gform-forms {
+		display: none;
+	}
 }
 
 @include media-breakpoint-up(md) {

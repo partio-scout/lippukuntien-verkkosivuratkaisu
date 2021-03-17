@@ -11852,6 +11852,9 @@ body {
   #wpadminbar {
     position: fixed; } }
 
+#wpadminbar #wp-admin-bar-gform-forms {
+  display: none; }
+
 .cf:before, .cf:after {
   content: " ";
   display: table; }
@@ -14190,7 +14193,9 @@ body.admin-bar .header-mobile .site-header-main + .menu-overlay {
       .site-footer .footer-some .social-icons .social-icon.youtube::before {
         content: "\f167";
         font-family: 'Font Awesome 5 Brands';
-        font-weight: 400; }
+        font-weight: 400;
+        margin-right: -2px;
+        margin-top: 2px; }
       .site-footer .footer-some .social-icons .social-icon.linkedin::before {
         content: "\f0e1";
         font-family: 'Font Awesome 5 Brands';

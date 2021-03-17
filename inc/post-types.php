@@ -1,5 +1,16 @@
 <?php
 /**
+ * Remove excerpt support from posts.
+ */
+function ID_remove_post_type_support() {
+  remove_post_type_support( 'post', 'excerpt' );
+  unregister_taxonomy_for_object_type('post_tag', 'post');
+  unregister_taxonomy_for_object_type('category', 'post');
+}
+add_action( 'init', 'ID_remove_post_type_support' );
+
+
+/**
  * Modify custom post type order, etc.
  */
 function ID_pre_get_posts ( $query ) {
