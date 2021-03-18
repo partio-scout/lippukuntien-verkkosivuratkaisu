@@ -65,6 +65,10 @@ function ID_allowed_inner_blocks()
 
   //filter blocks
   foreach ($all_blocks as $blockname) {
+    if ($blockname === 'core/button') {
+      continue;
+    }
+
     if (strpos($blockname, 'acf/') === 0) {
       continue;
     }
