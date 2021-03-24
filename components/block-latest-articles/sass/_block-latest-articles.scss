@@ -48,4 +48,8 @@
 			margin-bottom: 0;
 		}
 	}
+
+	.block-social-feed + & {
+		margin-top: 64px;
+	}
 }

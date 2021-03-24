@@ -12969,6 +12969,8 @@ p { @include font-size($font-size-base); }
         @media (min-width: 992px) {
           .block-editor-block-list__layout.is-root-container .wp-block .acf-block-preview .block-latest-articles .article-card, .block-editor-block-list__layout .wp-block .acf-block-preview .block-latest-articles .article-card {
             margin-bottom: 0; } }
+      .block-social-feed + .block-editor-block-list__layout.is-root-container .wp-block .acf-block-preview .block-latest-articles, .block-social-feed + .block-editor-block-list__layout .wp-block .acf-block-preview .block-latest-articles {
+        margin-top: 64px; }
     .block-editor-block-list__layout.is-root-container .wp-block .acf-block-preview .block-image-beside-content, .block-editor-block-list__layout .wp-block .acf-block-preview .block-image-beside-content {
       padding: 72px 0; }
       @media (min-width: 992px) {

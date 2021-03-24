@@ -13247,6 +13247,8 @@ body:not(.home) .article-content article > .entry-content .block-article-content
     @media (min-width: 992px) {
       .block-latest-articles .article-card {
         margin-bottom: 0; } }
+  .block-social-feed + .block-latest-articles {
+    margin-top: 64px; }
 
 .block-image-beside-content {
   padding: 72px 0; }
