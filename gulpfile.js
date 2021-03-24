@@ -113,6 +113,10 @@ function devJs () {
         .pipe(gulp.dest(dir_dev+'js'));
 }
 
+function hyphenateJs() {    
+    return gulp.src('js/patterns/*.wasm').pipe(gulp.dest(dir_dev+'js/patterns'));
+}
+
 // Watch js and build to dev directory
 function watchJs () {
 
@@ -249,7 +253,7 @@ function distJs () {
         }
     }));
 
-    return gulp.src('js/*.js')
+    return gulp.src(['js/*.js'])
         .pipe(plumber({
             errorHandler: function (err) {
                 console.log(err);
@@ -261,7 +265,11 @@ function distJs () {
         .pipe(gulp.dest(dir_dist+'js'));
 }
 
+function hyphenateDistJs() {    
+    return gulp.src('js/patterns/*.wasm').pipe(gulp.dest(dir_dist+'js/patterns'));
+}
+
 gulp.task('init', gulp.parallel(devJs, devSass));
 gulp.task('admin', gulp.parallel(adminSass));
-gulp.task('publish', gulp.series(distClean, distCopy, distCopyFonts, adminSass, distCss, distImages, distJs));
-gulp.task('default', gulp.parallel(watch, watchJs, devSass));
+gulp.task('publish', gulp.series(distClean, distCopy, distCopyFonts, adminSass, distCss, distImages, distJs, hyphenateDistJs));
+gulp.task('default', gulp.parallel(watch, watchJs, hyphenateJs, devSass));

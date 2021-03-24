@@ -11971,10 +11971,18 @@ h1,
   margin: 0 0 24px;
   font-family: Tondu W05 Beta, sans-serif;
   text-transform: uppercase;
-  letter-spacing: 1.34px;
+  letter-spacing: .05em;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+  word-break: break-word;
   color: #253764 ;
   color: var(--primary-color) ; }
   @media screen and (min-width: 768px) {
+    h1,
+    .h1 {
+      font-size: 52px; } }
+  @media screen and (min-width: 992px) {
     h1,
     .h1 {
       font-size: 56px; } }
@@ -13005,10 +13013,16 @@ table {
           color: #fff ;
           color: var(--primary-text-color) ;
           width: auto;
-          padding: 0 116px 0 68px; } }
+          padding: 0 100px 0 60px; } }
       .block-hero .flex .inner-blocks h1, .block-hero .flex .inner-blocks h2 {
-        font-size: 48px; }
+        font-size: 42px; }
         @media screen and (min-width: 768px) {
+          .block-hero .flex .inner-blocks h1, .block-hero .flex .inner-blocks h2 {
+            font-size: 42px; } }
+        @media screen and (min-width: 992px) {
+          .block-hero .flex .inner-blocks h1, .block-hero .flex .inner-blocks h2 {
+            font-size: 42px; } }
+        @media screen and (min-width: 1500px) {
           .block-hero .flex .inner-blocks h1, .block-hero .flex .inner-blocks h2 {
             font-size: 56px; } }
       .block-hero .flex .inner-blocks h1, .block-hero .flex .inner-blocks h2, .block-hero .flex .inner-blocks h3, .block-hero .flex .inner-blocks h4, .block-hero .flex .inner-blocks h5, .block-hero .flex .inner-blocks h6 {

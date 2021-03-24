@@ -108,6 +108,7 @@ function ID_scripts()
   wp_localize_script('intodigital-script', 'aria_close_menu', array(__('Sulje päävalikko', 'ID')));
   wp_localize_script('intodigital-script', 'aria_open_submenu', array(__('Avaa alavalikko', 'ID')));
   wp_localize_script('intodigital-script', 'aria_close_submenu', array(__('Sulje alavalikko', 'ID')));
+  
 
   global $wp_query; 
 
@@ -117,8 +118,27 @@ function ID_scripts()
     'max_page' => $wp_query->max_num_pages
   ));
 
+  wp_register_script('hyphenopoly-loader', get_template_directory_uri() . '/js/Hyphenopoly_Loader.js', array(), $version, false);
+
   wp_enqueue_script('maps');
   wp_enqueue_script('intodigital-script');
+
+  wp_enqueue_script('hyphenopoly-loader');
+  wp_add_inline_script( 'hyphenopoly-loader', 'var Hyphenopoly = ' . json_encode( array(
+      'require' => array(
+        "fi" => "FORCEHYPHENOPOLY",
+      ),
+      'setup' => array(
+        'selectors' => array(
+          'h1' => array(
+            "leftmin" => 7,
+            "rightmin" => 4,
+            "minWordLength" => 8,
+            // "orphanControl" => 1
+          )
+        )
+      ),
+  ) ), 'before' );
 
   // WP Scripts
   if (is_singular() && comments_open() && get_option('thread_comments')) {

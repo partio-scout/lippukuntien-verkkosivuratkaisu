@@ -10348,10 +10348,19 @@ p { @include font-size($font-size-base); }
     margin: 0 0 24px;
     font-family: Tondu W05 Beta, sans-serif;
     text-transform: uppercase;
-    letter-spacing: 1.34px;
+    letter-spacing: .05em;
+    -webkit-hyphens: auto;
+        -ms-hyphens: auto;
+            hyphens: auto;
+    word-break: break-word;
     color: #253764 ;
     color: var(--primary-color) ; }
     @media screen and (min-width: 768px) {
+      .block-editor-block-list__layout.is-root-container .wp-block[data-type^="acf/"] .acf-block-preview h1,
+      .block-editor-block-list__layout.is-root-container .wp-block[data-type^="acf/"] .acf-block-preview .h1, .block-editor-block-list__layout .wp-block[data-type^="acf/"] .acf-block-preview h1,
+      .block-editor-block-list__layout .wp-block[data-type^="acf/"] .acf-block-preview .h1 {
+        font-size: 52px; } }
+    @media screen and (min-width: 992px) {
       .block-editor-block-list__layout.is-root-container .wp-block[data-type^="acf/"] .acf-block-preview h1,
       .block-editor-block-list__layout.is-root-container .wp-block[data-type^="acf/"] .acf-block-preview .h1, .block-editor-block-list__layout .wp-block[data-type^="acf/"] .acf-block-preview h1,
       .block-editor-block-list__layout .wp-block[data-type^="acf/"] .acf-block-preview .h1 {
@@ -10695,11 +10704,15 @@ p { @include font-size($font-size-base); }
   line-height: 1.2;
   margin: 0 0 24px;
   font-family: Tondu W05 Beta, sans-serif;
+  letter-spacing: .05em;
   text-transform: uppercase;
   letter-spacing: 1.34px;
   color: #253764 ;
   color: var(--primary-color) ; }
   @media screen and (min-width: 768px) {
+    .block-editor-block-list__layout.is-root-container h1.wp-block[data-type^="core/"], .block-editor-block-list__layout h1.wp-block[data-type^="core/"] {
+      font-size: 52px; } }
+  @media screen and (min-width: 992px) {
     .block-editor-block-list__layout.is-root-container h1.wp-block[data-type^="core/"], .block-editor-block-list__layout h1.wp-block[data-type^="core/"] {
       font-size: 56px; } }
 
@@ -12729,10 +12742,16 @@ p { @include font-size($font-size-base); }
               color: #fff ;
               color: var(--primary-text-color) ;
               width: auto;
-              padding: 0 116px 0 68px; } }
+              padding: 0 100px 0 60px; } }
           .block-editor-block-list__layout.is-root-container .wp-block .acf-block-preview .block-hero .flex .inner-blocks h1, .block-editor-block-list__layout.is-root-container .wp-block .acf-block-preview .block-hero .flex .inner-blocks h2, .block-editor-block-list__layout .wp-block .acf-block-preview .block-hero .flex .inner-blocks h1, .block-editor-block-list__layout .wp-block .acf-block-preview .block-hero .flex .inner-blocks h2 {
-            font-size: 48px; }
+            font-size: 42px; }
             @media screen and (min-width: 768px) {
+              .block-editor-block-list__layout.is-root-container .wp-block .acf-block-preview .block-hero .flex .inner-blocks h1, .block-editor-block-list__layout.is-root-container .wp-block .acf-block-preview .block-hero .flex .inner-blocks h2, .block-editor-block-list__layout .wp-block .acf-block-preview .block-hero .flex .inner-blocks h1, .block-editor-block-list__layout .wp-block .acf-block-preview .block-hero .flex .inner-blocks h2 {
+                font-size: 42px; } }
+            @media screen and (min-width: 992px) {
+              .block-editor-block-list__layout.is-root-container .wp-block .acf-block-preview .block-hero .flex .inner-blocks h1, .block-editor-block-list__layout.is-root-container .wp-block .acf-block-preview .block-hero .flex .inner-blocks h2, .block-editor-block-list__layout .wp-block .acf-block-preview .block-hero .flex .inner-blocks h1, .block-editor-block-list__layout .wp-block .acf-block-preview .block-hero .flex .inner-blocks h2 {
+                font-size: 42px; } }
+            @media screen and (min-width: 1500px) {
               .block-editor-block-list__layout.is-root-container .wp-block .acf-block-preview .block-hero .flex .inner-blocks h1, .block-editor-block-list__layout.is-root-container .wp-block .acf-block-preview .block-hero .flex .inner-blocks h2, .block-editor-block-list__layout .wp-block .acf-block-preview .block-hero .flex .inner-blocks h1, .block-editor-block-list__layout .wp-block .acf-block-preview .block-hero .flex .inner-blocks h2 {
                 font-size: 56px; } }
           .block-editor-block-list__layout.is-root-container .wp-block .acf-block-preview .block-hero .flex .inner-blocks h1, .block-editor-block-list__layout.is-root-container .wp-block .acf-block-preview .block-hero .flex .inner-blocks h2, .block-editor-block-list__layout.is-root-container .wp-block .acf-block-preview .block-hero .flex .inner-blocks h3, .block-editor-block-list__layout.is-root-container .wp-block .acf-block-preview .block-hero .flex .inner-blocks h4, .block-editor-block-list__layout.is-root-container .wp-block .acf-block-preview .block-hero .flex .inner-blocks h5, .block-editor-block-list__layout.is-root-container .wp-block .acf-block-preview .block-hero .flex .inner-blocks h6, .block-editor-block-list__layout .wp-block .acf-block-preview .block-hero .flex .inner-blocks h1, .block-editor-block-list__layout .wp-block .acf-block-preview .block-hero .flex .inner-blocks h2, .block-editor-block-list__layout .wp-block .acf-block-preview .block-hero .flex .inner-blocks h3, .block-editor-block-list__layout .wp-block .acf-block-preview .block-hero .flex .inner-blocks h4, .block-editor-block-list__layout .wp-block .acf-block-preview .block-hero .flex .inner-blocks h5, .block-editor-block-list__layout .wp-block .acf-block-preview .block-hero .flex .inner-blocks h6 {

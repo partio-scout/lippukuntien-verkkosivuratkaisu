@@ -10439,10 +10439,18 @@ h1,
   margin: 0 0 24px;
   font-family: Tondu W05 Beta, sans-serif;
   text-transform: uppercase;
-  letter-spacing: 1.34px;
+  letter-spacing: .05em;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+  word-break: break-word;
   color: #253764 ;
   color: var(--primary-color) ; }
   @media screen and (min-width: 768px) {
+    h1,
+    .h1 {
+      font-size: 52px; } }
+  @media screen and (min-width: 992px) {
     h1,
     .h1 {
       font-size: 56px; } }
