@@ -11802,19 +11802,19 @@ p { @include font-size($font-size-base); }
       .block-editor-block-list__layout .wp-block .acf-block-preview .wp-block-button__link:hover,
       .block-editor-block-list__layout .wp-block .acf-block-preview .wp-block-file a.wp-block-file__button:hover, .block-editor-block-list__layout .wp-block .acf-block-preview .wp-block-file__button:hover {
         opacity: 0.84; }
-    .block-editor-block-list__layout.is-root-container .wp-block .acf-block-preview .wp-block-button, .block-editor-block-list__layout .wp-block .acf-block-preview .wp-block-button {
+    .block-editor-block-list__layout.is-root-container .wp-block .acf-block-preview .wp-block-buttons > .wp-block-button, .block-editor-block-list__layout .wp-block .acf-block-preview .wp-block-buttons > .wp-block-button {
       margin-right: 24px !important; }
-      .block-editor-block-list__layout.is-root-container .wp-block .acf-block-preview .wp-block-button.is-style-outline .wp-block-button__link, .block-editor-block-list__layout .wp-block .acf-block-preview .wp-block-button.is-style-outline .wp-block-button__link {
-        background-color: transparent;
-        border-color: #2a2a2a;
-        color: #2a2a2a !important; }
-        .block-editor-block-list__layout.is-root-container .wp-block .acf-block-preview .wp-block-button.is-style-outline .wp-block-button__link:hover, .block-editor-block-list__layout .wp-block .acf-block-preview .wp-block-button.is-style-outline .wp-block-button__link:hover {
-          color: #fff !important;
-          color: var(--primary-text-color) !important;
-          background: #253764 !important;
-          background: var(--primary-color) !important;
-          border-color: #253764 !important;
-          border-color: var(--primary-color) !important; }
+    .block-editor-block-list__layout.is-root-container .wp-block .acf-block-preview .wp-block-button.is-style-outline .wp-block-button__link, .block-editor-block-list__layout .wp-block .acf-block-preview .wp-block-button.is-style-outline .wp-block-button__link {
+      background-color: transparent;
+      border-color: #2a2a2a;
+      color: #2a2a2a !important; }
+      .block-editor-block-list__layout.is-root-container .wp-block .acf-block-preview .wp-block-button.is-style-outline .wp-block-button__link:hover, .block-editor-block-list__layout .wp-block .acf-block-preview .wp-block-button.is-style-outline .wp-block-button__link:hover {
+        color: #fff !important;
+        color: var(--primary-text-color) !important;
+        background: #253764 !important;
+        background: var(--primary-color) !important;
+        border-color: #253764 !important;
+        border-color: var(--primary-color) !important; }
     .block-editor-block-list__layout.is-root-container .wp-block .acf-block-preview .form-group, .block-editor-block-list__layout .wp-block .acf-block-preview .form-group {
       margin-bottom: 24px; }
     .block-editor-block-list__layout.is-root-container .wp-block .acf-block-preview .form-control, .block-editor-block-list__layout.is-root-container .wp-block .gform_wrapper .gform_fields .gfield .acf-block-preview input[type="email"], .block-editor-block-list__layout.is-root-container .wp-block .gform_wrapper .gform_fields .gfield .acf-block-preview input[type="date"], .block-editor-block-list__layout.is-root-container .wp-block .gform_wrapper .gform_fields .gfield .acf-block-preview input[type="datetime"], .block-editor-block-list__layout.is-root-container .wp-block .gform_wrapper .gform_fields .gfield .acf-block-preview input[type="datetime-local"], .block-editor-block-list__layout.is-root-container .wp-block .gform_wrapper .gform_fields .gfield .acf-block-preview input[type="month"], .block-editor-block-list__layout.is-root-container .wp-block .gform_wrapper .gform_fields .gfield .acf-block-preview input[type="number"], .block-editor-block-list__layout.is-root-container .wp-block .gform_wrapper .gform_fields .gfield .acf-block-preview input[type="password"], .block-editor-block-list__layout.is-root-container .wp-block .gform_wrapper .gform_fields .gfield .acf-block-preview input[type="search"], .block-editor-block-list__layout.is-root-container .wp-block .gform_wrapper .gform_fields .gfield .acf-block-preview input[type="tel"], .block-editor-block-list__layout.is-root-container .wp-block .gform_wrapper .gform_fields .gfield .acf-block-preview input[type="text"], .block-editor-block-list__layout.is-root-container .wp-block .gform_wrapper .gform_fields .gfield .acf-block-preview input[type="time"], .block-editor-block-list__layout.is-root-container .wp-block .gform_wrapper .gform_fields .gfield .acf-block-preview input[type="week"], .block-editor-block-list__layout.is-root-container .wp-block .gform_wrapper .gform_fields .gfield .acf-block-preview input[type="url"], .block-editor-block-list__layout.is-root-container .wp-block .gform_wrapper .gform_fields .gfield .acf-block-preview select, .block-editor-block-list__layout.is-root-container .wp-block .gform_wrapper .gform_fields .gfield .acf-block-preview textarea, .block-editor-block-list__layout.is-root-container .wp-block .acf-block-preview .gform_wrapper .gform_fields .gfield input[type="email"],
