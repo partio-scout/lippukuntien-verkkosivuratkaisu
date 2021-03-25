@@ -63,7 +63,7 @@
 		position: relative;
 		overflow: hidden;
 
-		&:hover {
+		&:hover, &.hover {
 			img {
 				width: 104%;
 				left: -2%;
