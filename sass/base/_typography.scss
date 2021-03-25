@@ -256,12 +256,28 @@ a {
         padding-left: 0;
         padding-right: 0;
 
-        @media(min-width: 782px) {
-            & + .wp-block-column {
-                margin-left: 68px;
+        & + .wp-block-column {
+            @media(min-width: 782px) {
+                margin-left: 5%;
+            }
+            @include media-breakpoint-up(xl) {
+                margin-left: 5%;
             }
         }
     }
+    @media (min-width: 600px) and (max-width: 781px) {
+        .wp-block-column:not(:only-child) {
+            flex-basis: calc(33.33% - 1em)!important;
+            flex-grow: 0;
+        }
+        .wp-block-column {
+            margin-left: 1em;
+        }
+        .wp-block-column:nth-child(3n + 1) {
+            margin-left: 0;
+        }
+    }
+    
 
     figure.wp-caption {
 
