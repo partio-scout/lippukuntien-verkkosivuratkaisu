@@ -13291,14 +13291,25 @@ body:not(.home) .article-content article > .entry-content .block-article-content
     height: 0;
     padding-bottom: 66.7%;
     background-color: #f2f2f2;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 100%;
-    -webkit-transition: background-size 0.25s ease-in-out;
-    -o-transition: background-size 0.25s ease-in-out;
-    transition: background-size 0.25s ease-in-out; }
-    .block-image-beside-content .image:hover, .block-image-beside-content .image.hover {
-      background-size: 110%; }
+    position: relative;
+    overflow: hidden; }
+    .block-image-beside-content .image:hover img {
+      width: 104%;
+      left: -2%;
+      height: 104%;
+      top: -2%; }
+    .block-image-beside-content .image img {
+      -webkit-transition: all 0.35s ease-in-out;
+      -o-transition: all 0.35s ease-in-out;
+      transition: all 0.35s ease-in-out;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -o-object-fit: cover;
+         object-fit: cover;
+      left: 0;
+      top: 0;
+      max-width: inherit; }
   .block-image-beside-content .read-more {
     margin-top: 48px; }
     .block-image-beside-content .read-more.button {
