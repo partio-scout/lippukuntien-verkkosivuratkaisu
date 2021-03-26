@@ -90,6 +90,7 @@ function ID_admin_init() {
     /**
      * Let editor manage forms and yoast advanced tab
      */
+    // $role = get_role( 'administrator' );
     $role->add_cap( 'gravityforms_create_form' );
     $role->add_cap( 'gravityforms_delete_entries' );
     $role->add_cap( 'gravityforms_delete_forms' );
@@ -378,4 +379,30 @@ echo '<style>
     }
 </style>';
 }
+
+add_action( 'admin_menu', 'remove_links_menu_contributors' );
+function remove_links_menu_contributors() {
+	if(!current_user_can('create_sites')) {
+        // remove_menu_page('themes.php'); 
+        remove_menu_page('admin.php?page=acf-options-general'); // Remove ACF Options
+	}
+}
+
+// tests
+// function ID_modify_site_capabilities(){
+//     global $wp_roles; // global class wp-includes/capabilities.php
+    
+//     $role = 'administrator';
+//     $cap = 'switch_themes';
+//     $wp_roles->remove_cap( $role, $cap );
+
+//     // print_r($wp_roles);
+    
+// 	$user = wp_get_current_user(); // getting & setting the current user 
+// 	$roles = ( array ) $user->roles; // obtaining the role 
+//     // print_r($roles); // return the role for the current user 
+
+// }
+// add_action( 'init', 'ID_modify_site_capabilities' );
+
 ?>
