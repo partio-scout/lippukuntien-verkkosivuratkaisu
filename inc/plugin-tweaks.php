@@ -136,3 +136,11 @@ function before_email( $email ) {
     }
     return $email;
 }
+
+// add translation possibility to field
+add_filter( 'gform_field_content', function( $field_content, $field ) {
+  if ( $field->type == "html" && $field->cssClass == "privacy-policy-info" ) {
+      return __( $field_content, "ID" );
+  }
+  return $field_content;
+}, 10, 2 );
