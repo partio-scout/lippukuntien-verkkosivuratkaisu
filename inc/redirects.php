@@ -37,7 +37,6 @@ add_filter(
       if ($post->post_type !== 'post') {
           return $permalink;
       }
-
       return '/ajankohtaista/%postname%/';
   },
   10,

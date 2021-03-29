@@ -10632,8 +10632,19 @@ a {
 .entry-content .h2,
 .mceContentBody h2,
 .mceContentBody .h2 {
-  margin: 1em auto;
+  margin-left: auto;
+  margin-right: auto;
   clear: both; }
+  .entry-content h2:not(:first-child),
+  .entry-content .h2:not(:first-child),
+  .mceContentBody h2:not(:first-child),
+  .mceContentBody .h2:not(:first-child) {
+    margin-top: 1em; }
+  .entry-content h2:not(:last-child),
+  .entry-content .h2:not(:last-child),
+  .mceContentBody h2:not(:last-child),
+  .mceContentBody .h2:not(:last-child) {
+    margin-bottom: 1em; }
 
 .entry-content h3,
 .entry-content .h3,
@@ -10654,6 +10665,13 @@ a {
 .mceContentBody ul,
 .mceContentBody ol {
   margin-bottom: 1.5em; }
+  .entry-content p:empty,
+  .entry-content ul:empty,
+  .entry-content ol:empty,
+  .mceContentBody p:empty,
+  .mceContentBody ul:empty,
+  .mceContentBody ol:empty {
+    display: none; }
 
 .entry-content p.is-style-ingress,
 .mceContentBody p.is-style-ingress {

@@ -132,9 +132,14 @@ function ID_scripts()
         'selectors' => array(
           'h1' => array(
             "leftmin" => 7,
-            "rightmin" => 4,
+            "rightmin" => 3,
             "minWordLength" => 8,
             // "orphanControl" => 1
+          ),
+          'h2' => array(
+            "leftmin" => 7,
+            "rightmin" => 3,
+            "minWordLength" => 8
           )
         )
       ),
