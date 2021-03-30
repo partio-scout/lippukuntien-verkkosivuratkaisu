@@ -73,8 +73,8 @@
 	.menu-overlay {
 		position: fixed;
 		left: 0;
-		width: 100vw;
-		background-color: rgba(0,0,0,0.28);
+		width: 300vw;
+		background-color: rgba(0,0,0,0);
 		transform: translateX(-100%);
 		transition: transform 0.4s;
 		display: flex;
@@ -82,14 +82,23 @@
 		height: calc(100vh - 44px);
 
 		&.open {
-			transform: translateX(0);
+			transform: translateX(0);                
+			transition: transform .4s, background .4s ease;
+			background: rgba(0,0,0,.28);
 		}
 
 		.site-header-menu {
 			background-color: $clr-white;
-			width: 90%;
+			width: 90vw;
 			padding: 65px 18px 0;
 			overflow-y: auto;
+			
+			.menu-apuvalikko-container {
+				border-top: 1px solid #eee;
+				@include media-breakpoint-up(lg) {
+					border-top: 0;
+				}
+			}
 
 			.primary-menu {
 				> .menu-item {
@@ -146,6 +155,7 @@
 					&.open {
 						> .sub-menu {
 							display: block;
+							// padding-left: 8px;
 						}
 					}
 

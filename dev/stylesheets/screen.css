@@ -14042,8 +14042,8 @@ body.admin-bar .site-header .site-header-main.floating {
   .header-mobile .menu-overlay {
     position: fixed;
     left: 0;
-    width: 100vw;
-    background-color: rgba(0, 0, 0, 0.28);
+    width: 300vw;
+    background-color: rgba(0, 0, 0, 0);
     -webkit-transform: translateX(-100%);
         -ms-transform: translateX(-100%);
             transform: translateX(-100%);
@@ -14060,12 +14060,23 @@ body.admin-bar .site-header .site-header-main.floating {
     .header-mobile .menu-overlay.open {
       -webkit-transform: translateX(0);
           -ms-transform: translateX(0);
-              transform: translateX(0); }
+              transform: translateX(0);
+      -webkit-transition: background .4s ease, -webkit-transform .4s;
+      transition: background .4s ease, -webkit-transform .4s;
+      -o-transition: transform .4s, background .4s ease;
+      transition: transform .4s, background .4s ease;
+      transition: transform .4s, background .4s ease, -webkit-transform .4s;
+      background: rgba(0, 0, 0, 0.28); }
     .header-mobile .menu-overlay .site-header-menu {
       background-color: #fff;
-      width: 90%;
+      width: 90vw;
       padding: 65px 18px 0;
       overflow-y: auto; }
+      .header-mobile .menu-overlay .site-header-menu .menu-apuvalikko-container {
+        border-top: 1px solid #eee; }
+        @media (min-width: 992px) {
+          .header-mobile .menu-overlay .site-header-menu .menu-apuvalikko-container {
+            border-top: 0; } }
       .header-mobile .menu-overlay .site-header-menu .primary-menu > .menu-item > a {
         font-weight: bold;
         text-transform: uppercase; }
