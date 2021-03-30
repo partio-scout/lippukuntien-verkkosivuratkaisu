@@ -10811,7 +10811,9 @@ a.button,
   a.button:hover,
   .wp-block-button__link:hover,
   .wp-block-file a.wp-block-file__button:hover, .wp-block-file__button:hover {
-    opacity: 0.84; }
+    background-color: transparent;
+    border-color: #2a2a2a;
+    color: #2a2a2a !important; }
 
 .wp-block-buttons > .wp-block-button {
   margin-right: 24px !important; }
