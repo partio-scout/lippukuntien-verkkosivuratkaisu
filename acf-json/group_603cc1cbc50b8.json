@@ -47,7 +47,7 @@
         },
         {
             "key": "field_603cc3daa7feb",
-            "label": "Lippukunnan nimi",
+            "label": "Lippukunnan nimi \/ alue",
             "name": "scouts_group_name",
             "type": "text",
             "instructions": "",
@@ -196,5 +196,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1616767673
+    "modified": 1617103819
 }
