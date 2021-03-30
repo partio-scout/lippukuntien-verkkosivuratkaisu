@@ -9,6 +9,8 @@ $(document).ready(function() {
 // Deregister embed variations
 // They are not necessary and there are so many that custom blocks drop below fold
 wp.domReady(function () {
+  
+
   const allowedEmbedBlocks = [
     'vimeo',
     'youtube',
@@ -51,6 +53,7 @@ wp.domReady(function () {
     name: 'outline',
     label: 'Reunukset'
   });
+
 });
 
 //Define ACF color picker swatches
