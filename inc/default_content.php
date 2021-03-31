@@ -75,7 +75,7 @@ $homepage_content = '<!-- wp:acf/block-hero {
         "_image_on_right": "field_603f4c1b6d38b",
         "link": {
             "title": "Tietoa lippukunnasta",
-            "url": "http:\/\/localhost:8080\/lippukunnat\/tietoa-lippukunnasta\/",
+            "url": "",
             "target": ""
         },
         "_link": "field_603f49393df23",
@@ -104,7 +104,7 @@ $homepage_content = '<!-- wp:acf/block-hero {
         "_image_on_right": "field_603f4c1b6d38b",
         "link": {
             "title": "Tietoa lippukunnasta",
-            "url": "http:\/\/localhost:8080\/lippukunnat\/tietoa-lippukunnasta\/",
+            "url": "",
             "target": ""
         },
         "_link": "field_603f49393df23"

@@ -43,7 +43,7 @@ endif;
 				<div class="align-image">
 					<?php if(!empty($link)): ?>
 					<a class="image-link" href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>">			
-						<div class="image" aria-label="<?php echo $link['title']; ?>"><img src="<?php echo $image['url']; ?>"></div>
+						<div class="image" aria-label="<?php echo $link['title']; ?>"><?php if ($image) : ?><img src="<?php echo $image['url']; ?>"><?php endif; ?></div>
 					</a>
 					<?php else: ?>
 					<div class="image" aria-label="<?php echo $image['alt']; ?>"><img src="<?php echo $image['url']; ?>"></div>
