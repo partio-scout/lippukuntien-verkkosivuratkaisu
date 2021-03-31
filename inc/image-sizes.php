@@ -17,11 +17,10 @@ function ID_image_sizes ()
     add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 1200, 9999 );
 
-    add_image_size('nosto', 300, 140, true);
-    add_image_size('nosto@2x', 600, 280, true);
 
     add_filter('image_size_names_choose', 'ID_image_size_names_choose');
     */
+    add_image_size('nosto', 1200, 9999, false);
 }
 add_action( 'after_setup_theme', 'ID_image_sizes' );
 
@@ -31,8 +30,8 @@ add_action( 'after_setup_theme', 'ID_image_sizes' );
 function ID_image_size_names_choose ($sizes)
 {
     return array_merge($sizes, array(
-            'nosto@2x' => 'Nosto',
-           ));
+        'nosto@2x' => 'Nosto',
+    ));
 }
 
 /**

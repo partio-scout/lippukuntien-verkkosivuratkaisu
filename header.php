@@ -50,10 +50,12 @@ if(ID_REQUIRE_LOGIN) {
     $analytics = get_option('id_analytics', '');
     if ($analytics && strpos($analytics,'GTM') === 0) { ?>
         <!-- Google Tag Manager (noscript) -->
-        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=<?php echo $analytics; ?>"
-                          height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=<?php echo $analytics; ?>" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <!-- End Google Tag Manager (noscript) -->
-        <?php }
+        <?php } ?>
+        
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5Z3NTCW" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <?php
 }
         ?>
         <div id="page" class="site">
