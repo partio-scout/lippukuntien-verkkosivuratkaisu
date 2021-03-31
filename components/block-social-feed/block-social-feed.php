@@ -39,7 +39,7 @@ endif;
 				<?php if(!is_admin()): ?>
 				<script src="https://assets.juicer.io/embed.js" type="text/javascript"></script>
 				<link href="https://assets.juicer.io/embed.css" media="all" rel="stylesheet" type="text/css" />
-				<ul class="juicer-feed" data-feed-id="<?php echo $feed_id ?>" data-overlay="false" data-style="modern" data-after="custom_juicer()" data-gutter="48" data-per="6"><span class="referral"><a href="https://www.juicer.io">Powered by Juicer.io</a></span></ul>
+				<ul class="juicer-feed" data-feed-id="<?php echo $feed_id ?>" data-overlay="false" data-style="modern" data-after="custom_juicer()" data-gutter="48" data-per="6"><h1 class="referral"><a href="https://www.juicer.io">Powered by Juicer.io</a></h1></ul>
 				<script>
 					const $ = window.jQuery;
 
