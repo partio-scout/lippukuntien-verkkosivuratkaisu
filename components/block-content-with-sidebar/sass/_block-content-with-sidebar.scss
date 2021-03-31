@@ -18,9 +18,9 @@
 			margin: 72px -100px 0 auto;
 			width: 350px;
 		}
-		@include media-breakpoint-up(xxl) {
+		@include media-breakpoint-up(xxxl) {
 			position: absolute;
-			bottom: 0;
+			bottom: 20px;
 			right: 0;
 			width: 350px;
 			margin: 0;
