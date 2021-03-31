@@ -3,6 +3,8 @@ var __webpack_exports__ = {};
 /*!*********************!*\
   !*** ./js/admin.js ***!
   \*********************/
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
 var $ = window.jQuery;
 $(document).ready(function () {}); //Documentation for block-api https://developer.wordpress.org/block-editor/developers/block-api/
 // Deregister embed variations
@@ -10,11 +12,15 @@ $(document).ready(function () {}); //Documentation for block-api https://develop
 
 wp.domReady(function () {
   var allowedEmbedBlocks = ['vimeo', 'youtube'];
-  wp.blocks.getBlockVariations('core/embed').forEach(function (blockVariation) {
-    if (-1 === allowedEmbedBlocks.indexOf(blockVariation.name)) {
-      wp.blocks.unregisterBlockVariation('core/embed', blockVariation.name);
-    }
-  });
+
+  if (wp.blocks && wp.blocks.getBlockVariations('core/embed')) {
+    wp.blocks.getBlockVariations('core/embed').forEach(function (blockVariation) {
+      if (-1 === allowedEmbedBlocks.indexOf(blockVariation.name)) {
+        wp.blocks.unregisterBlockVariation('core/embed', blockVariation.name);
+      }
+    });
+  }
+
   wp.blocks.registerBlockStyle('core/paragraph', {
     name: 'ingress',
     label: 'Ingressi'
@@ -42,10 +48,12 @@ wp.domReady(function () {
   });
 }); //Define ACF color picker swatches
 
-acf.add_filter('color_picker_args', function (args, $field) {
-  args.palettes = ['#253764', '#1c769d', '#e9c46a', '#0a0a0a', '#2f575d', '#1e2c50', '#1a622d', '#2a2a2a', '#8c2a2d', '#333333'];
-  return args;
-});
+if ((typeof acf === "undefined" ? "undefined" : _typeof(acf)) != undefined) {
+  acf.add_filter('color_picker_args', function (args, $field) {
+    args.palettes = ['#253764', '#1c769d', '#e9c46a', '#0a0a0a', '#2f575d', '#1e2c50', '#1a622d', '#2a2a2a', '#8c2a2d', '#333333'];
+    return args;
+  });
+}
 /*
 // Register new block style that can be changed from Block-editor
 wp.blocks.registerBlockStyle( 'core/paragraph', {

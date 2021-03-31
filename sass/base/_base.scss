@@ -19,6 +19,15 @@ body {
 
 #page {
 	position: relative;
+	min-height: 100vh;
+	> .site-inner {
+		min-height: 100vh;
+		display: flex;
+		flex-direction: column;
+		.site-content {
+			flex-grow: 1;
+		}
+	}
 }
 
 .container-fluid, .container-lg {

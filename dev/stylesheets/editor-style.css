@@ -10439,10 +10439,18 @@ h1,
   margin: 0 0 24px;
   font-family: Tondu W05 Beta, sans-serif;
   text-transform: uppercase;
-  letter-spacing: 1.34px;
+  letter-spacing: .05em;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+  word-break: break-word;
   color: #253764 ;
   color: var(--primary-color) ; }
   @media screen and (min-width: 768px) {
+    h1,
+    .h1 {
+      font-size: 52px; } }
+  @media screen and (min-width: 992px) {
     h1,
     .h1 {
       font-size: 56px; } }
@@ -10624,8 +10632,19 @@ a {
 .entry-content .h2,
 .mceContentBody h2,
 .mceContentBody .h2 {
-  margin: 1em auto;
+  margin-left: auto;
+  margin-right: auto;
   clear: both; }
+  .entry-content h2:not(:first-child),
+  .entry-content .h2:not(:first-child),
+  .mceContentBody h2:not(:first-child),
+  .mceContentBody .h2:not(:first-child) {
+    margin-top: 1em; }
+  .entry-content h2:not(:last-child),
+  .entry-content .h2:not(:last-child),
+  .mceContentBody h2:not(:last-child),
+  .mceContentBody .h2:not(:last-child) {
+    margin-bottom: 1em; }
 
 .entry-content h3,
 .entry-content .h3,
@@ -10646,6 +10665,13 @@ a {
 .mceContentBody ul,
 .mceContentBody ol {
   margin-bottom: 1.5em; }
+  .entry-content p:empty,
+  .entry-content ul:empty,
+  .entry-content ol:empty,
+  .mceContentBody p:empty,
+  .mceContentBody ul:empty,
+  .mceContentBody ol:empty {
+    display: none; }
 
 .entry-content p.is-style-ingress,
 .mceContentBody p.is-style-ingress {
@@ -10714,7 +10740,26 @@ a {
   @media (min-width: 782px) {
     .entry-content .wp-block-column + .wp-block-column,
     .mceContentBody .wp-block-column + .wp-block-column {
-      margin-left: 68px; } }
+      margin-left: 5%; } }
+  @media (min-width: 1200px) {
+    .entry-content .wp-block-column + .wp-block-column,
+    .mceContentBody .wp-block-column + .wp-block-column {
+      margin-left: 5%; } }
+
+@media (min-width: 600px) and (max-width: 781px) {
+  .entry-content .wp-block-column:not(:only-child),
+  .mceContentBody .wp-block-column:not(:only-child) {
+    -ms-flex-preferred-size: calc(33.33% - 1em) !important;
+        flex-basis: calc(33.33% - 1em) !important;
+    -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+            flex-grow: 0; }
+  .entry-content .wp-block-column,
+  .mceContentBody .wp-block-column {
+    margin-left: 1em; }
+  .entry-content .wp-block-column:nth-child(3n + 1),
+  .mceContentBody .wp-block-column:nth-child(3n + 1) {
+    margin-left: 0; } }
 
 .entry-content > :last-child,
 .mceContentBody > :last-child {
@@ -10766,21 +10811,24 @@ a.button,
   a.button:hover,
   .wp-block-button__link:hover,
   .wp-block-file a.wp-block-file__button:hover, .wp-block-file__button:hover {
-    opacity: 0.84; }
-
-.wp-block-button {
-  margin-right: 24px !important; }
-  .wp-block-button.is-style-outline .wp-block-button__link {
     background-color: transparent;
     border-color: #2a2a2a;
     color: #2a2a2a !important; }
-    .wp-block-button.is-style-outline .wp-block-button__link:hover {
-      color: #fff !important;
-      color: var(--primary-text-color) !important;
-      background: #253764 !important;
-      background: var(--primary-color) !important;
-      border-color: #253764 !important;
-      border-color: var(--primary-color) !important; }
+
+.wp-block-buttons > .wp-block-button {
+  margin-right: 24px !important; }
+
+.wp-block-button.is-style-outline .wp-block-button__link {
+  background-color: transparent;
+  border-color: #2a2a2a;
+  color: #2a2a2a !important; }
+  .wp-block-button.is-style-outline .wp-block-button__link:hover {
+    color: #fff !important;
+    color: var(--primary-text-color) !important;
+    background: #253764 !important;
+    background: var(--primary-color) !important;
+    border-color: #253764 !important;
+    border-color: var(--primary-color) !important; }
 
 /* Bootstrap form classes
    These are extended to Gravity Forms below */

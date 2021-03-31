@@ -98,7 +98,7 @@ function ID_scripts()
   wp_enqueue_style('screen-stylesheet', get_template_directory_uri() . '/stylesheets/screen.css', array(), $version, 'all');
   wp_enqueue_style('print-stylesheet', get_template_directory_uri() . '/stylesheets/print.css', array(), $version, 'print');
 
-  wp_register_script('maps', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDU5fWMLds51kb-AxtLcTozIga7shuHge4', array(), false, true);
+  wp_register_script('maps', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDS4dFlcFRLsEhkuqC9gkBzwl1DwKvO4aA', array(), false, true);
   wp_register_script('intodigital-script', get_template_directory_uri() . '/js/app.js', array('jquery'), $version, true);
 
 
@@ -108,6 +108,7 @@ function ID_scripts()
   wp_localize_script('intodigital-script', 'aria_close_menu', array(__('Sulje päävalikko', 'ID')));
   wp_localize_script('intodigital-script', 'aria_open_submenu', array(__('Avaa alavalikko', 'ID')));
   wp_localize_script('intodigital-script', 'aria_close_submenu', array(__('Sulje alavalikko', 'ID')));
+  
 
   global $wp_query; 
 
@@ -117,8 +118,32 @@ function ID_scripts()
     'max_page' => $wp_query->max_num_pages
   ));
 
+  wp_register_script('hyphenopoly-loader', get_template_directory_uri() . '/js/Hyphenopoly_Loader.js', array(), $version, false);
+
   wp_enqueue_script('maps');
   wp_enqueue_script('intodigital-script');
+
+  wp_enqueue_script('hyphenopoly-loader');
+  wp_add_inline_script( 'hyphenopoly-loader', 'var Hyphenopoly = ' . json_encode( array(
+      'require' => array(
+        "fi" => "FORCEHYPHENOPOLY",
+      ),
+      'setup' => array(
+        'selectors' => array(
+          'h1' => array(
+            "leftmin" => 7,
+            "rightmin" => 3,
+            "minWordLength" => 8,
+            // "orphanControl" => 1
+          ),
+          'h2' => array(
+            "leftmin" => 7,
+            "rightmin" => 3,
+            "minWordLength" => 8
+          )
+        )
+      ),
+  ) ), 'before' );
 
   // WP Scripts
   if (is_singular() && comments_open() && get_option('thread_comments')) {
@@ -248,6 +273,16 @@ INLINE;
 
 INLINE;
     }
+    // network wide GTM is always injected
+    echo <<<INLINE
+    <!-- Network Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-5Z3NTCW');</script>
+    <!-- End Google Tag Manager -->
+INLINE;
   }
 }
 

@@ -124,3 +124,23 @@ function remove_toolbar_items($wp_adminbar) {
   $wp_adminbar->remove_node('ddw-gravityforms-toolbar');
 }
 add_action('admin_bar_menu', 'remove_toolbar_items', 999);
+
+// send GF email notification to email set in ACF options
+add_filter( 'gform_pre_send_email', 'before_email' );
+function before_email( $email ) {
+    if (function_exists('get_field')) {
+      $custom_notification_email = get_field('gf_admin_notification_email', 'option');
+      if ($custom_notification_email != "") {
+        $email['to'] = $custom_notification_email;
+      }
+    }
+    return $email;
+}
+
+// add translation possibility to field
+add_filter( 'gform_field_content', function( $field_content, $field ) {
+  if ( $field->type == "html" && $field->cssClass == "privacy-policy-info" ) {
+      return __( $field_content, "ID" );
+  }
+  return $field_content;
+}, 10, 2 );

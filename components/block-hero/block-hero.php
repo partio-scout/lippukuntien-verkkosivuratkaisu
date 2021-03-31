@@ -45,7 +45,7 @@ endif;
 						<?php if(!empty($image)): ?>
 						<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
 						<?php else: ?>
-							<?php if(is_admin): ?>
+							<?php if(is_admin()): ?>
 								<div class="admin-image-placeholder"></div>
 							<?php endif; ?>
 						<?php endif; ?>

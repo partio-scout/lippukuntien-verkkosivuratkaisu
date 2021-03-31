@@ -19,13 +19,17 @@ a.button,
     transition: 0.2s;
 
     &:hover {
-        opacity: 0.84;
+        // opacity: 0.84;
+        background-color: transparent;
+        border-color: $clr-font-grey;
+        color: $clr-font-grey !important;
     }
 }
 
-.wp-block-button {
+.wp-block-buttons > .wp-block-button {
     margin-right: 24px !important;
-
+}
+.wp-block-button {
     &.is-style-outline {
         .wp-block-button__link {
             background-color: transparent;

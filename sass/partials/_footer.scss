@@ -238,4 +238,10 @@
             }
         }
     }
+    .copyright {
+        font-size: 14px;
+        @include media-breakpoint-up(md) {
+            display: 16px;
+        }
+    }
 }

@@ -17,6 +17,7 @@ $template = array(
 );
 
 $hide_figure = get_field('hide_figure');
+$uniq_id = uniqid();
 ?>
 
 <?php 
@@ -37,7 +38,7 @@ endif;
 			</div>
 			<div class="col col-12 col-lg-8 col-xxl-7 offset-xxl-1">	
 				<p class="entry-date"><?php echo _x('Julkaistu', 'artikkeli', 'ID') . ' ' . get_the_date('j.n.Y', $post_id); ?></p>
-				<h1 class="entry-title"><?php echo get_the_title($post_id); ?></h1>
+				<h1 class="entry-title" id="entry-title-<?php echo $uniq_id; ?>"><?php echo get_the_title($post_id); ?></h1>
 				<div class="inner-blocks entry-content">
 					<?php if ( $is_preview && !empty($block['data']['preview']) ): ?>
 						<h1>Lorem ipsum dolor sit amet</h1>
@@ -60,4 +61,14 @@ endif;
 			</svg>
 		</div>
 	<?php endif; ?>
+	<?php if (is_admin()) { // jank fix for updating title in block when post title changes ?>
+	<script>
+		if (document.getElementById('post-title-0')) {
+			const blocktitle = document.getElementById('entry-title-<?php echo $uniq_id; ?>');
+			document.getElementById('post-title-0').addEventListener('keyup', function(e) { 
+				blocktitle.textContent = e.target.value;
+			})
+		}
+  	</script>
+	<?php } ?>
 </div>

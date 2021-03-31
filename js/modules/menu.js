@@ -38,15 +38,15 @@ $(document).ready(function() {
     $(window).on('scroll', function(e) {
         if($(window).width() >= 992) {
             if($(window).scrollTop() >= 52) {
-                $('.site-header-main').addClass('floating');
+                $('.site-header-main, .header-helper, .site-header').addClass('floating');
             } else {
-                $('.site-header-main').removeClass('floating');
+                $('.site-header-main, .header-helper, .site-header').removeClass('floating');
             }
         } else {
             if($(window).scrollTop() >= 44) {
-                $('.site-header-main').addClass('floating');
+                $('.site-header-main, .header-helper, .site-header').addClass('floating');
             } else {
-                $('.site-header-main').removeClass('floating');
+                $('.site-header-main, .header-helper, .site-header').removeClass('floating');
             }
         }
     });

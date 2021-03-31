@@ -51,7 +51,7 @@ endif;
 		</div>
 	</div>	
 	<?php if(!$hide_figure): ?>
-		<svg class="figure" xmlns="http://www.w3.org/2000/svg" width="107" height="47.043" viewBox="0 0 107 47.043">
+		<svg class="figure cross" xmlns="http://www.w3.org/2000/svg" width="107" height="47.043" viewBox="0 0 107 47.043">
 		    <g>
 		        <path d="M29.916 6.541L23.349 0l-8.39 8.417L6.541 0 0 6.541l8.39 8.417L0 23.375l6.541 6.541 8.417-8.39 8.39 8.39 6.568-6.541-8.416-8.417z" transform="rotate(-90 23.522 23.521) translate(17.127)"/>
 		        <path d="M15.253 11.446A24.159 24.159 0 0 1 9.034 0L0 2.064a33.488 33.488 0 0 0 8.632 15.87l.08.08s.617.617 1.474 1.662l7.238-5.79c-1.099-1.341-1.93-2.198-2.171-2.44z" transform="rotate(-90 23.522 23.521) translate(.429 60.519)"/>

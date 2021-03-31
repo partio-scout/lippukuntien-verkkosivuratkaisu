@@ -47,7 +47,7 @@
         },
         {
             "key": "field_603cc3daa7feb",
-            "label": "Lippukunnan nimi",
+            "label": "Lippukunnan nimi \/ alue",
             "name": "scouts_group_name",
             "type": "text",
             "instructions": "",
@@ -159,6 +159,24 @@
             "prepend": "",
             "append": "",
             "maxlength": ""
+        },
+        {
+            "key": "field_605de94cc7b24",
+            "label": "Sähköpostiosoite lomakeilmoituksille",
+            "name": "gf_admin_notification_email",
+            "type": "email",
+            "instructions": "Osoite johon lähetetään ilmoitus uusistä lomakkeen lähetyksistä. Ilmoitus lähetetään oletuksena pääylläpitäjän sähköpostiin. Voit yliajaa sen asettamalla tähän haluamasi sähköpostiosoitteen.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         }
     ],
     "location": [
@@ -178,5 +196,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1615964834
+    "modified": 1617103819
 }

@@ -2,6 +2,7 @@
 $screen-tablet: breakpoint(md);
 $screen-desktop: breakpoint(lg);
 $screen-lg-desktop: breakpoint(xl);
+$screen-xl-desktop: breakpoint(xxl);
 
 
 // Fonts
@@ -71,7 +72,8 @@ $font-size-h2: (
 
 $font-size-h1: (
 	  null  : 48px,
-	  $screen-tablet : 56px
+	  $screen-tablet : 52px,
+	  $screen-desktop : 56px
 );
 
 $font-size-nav: (
@@ -90,8 +92,10 @@ $font-size-block-title: (
 );
 
 $font-size-hero-h1: (
-	null  : 48px,
-	$screen-tablet : 56px
+	null  : 42px,
+	$screen-tablet : 42px,
+	$screen-desktop : 42px,
+	$screen-xl-desktop : 56px
 );
 
 $font-size-content-h1: (
