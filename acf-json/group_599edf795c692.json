@@ -162,6 +162,95 @@
                     "placeholder": ""
                 }
             ]
+        },
+        {
+            "key": "field_606574ac68c13",
+            "label": "Evästeet ja tietosuoja",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_606574c968c14",
+            "label": "Näytä evästeilmoitus",
+            "name": "cookies_show_notification",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_606574ef68c15",
+            "label": "Evästeilmoitus",
+            "name": "cookies_notification",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_606574c968c14",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Käytämme sivustolla evästeitä käyttäjäkokemuksen parantamiseksi. Käyttämällä palvelua hyväksyt evästeiden käytön. <a href=\\\"#\\\">Lue lisää<\\\/a>.",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
+            "key": "field_6065753c68c16",
+            "label": "Hyväksymispainikkeen teksti",
+            "name": "cookies_accept_text",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_606574c968c14",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Ok",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         }
     ],
     "location": [
@@ -181,5 +270,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1615812188
+    "modified": 1617261917
 }

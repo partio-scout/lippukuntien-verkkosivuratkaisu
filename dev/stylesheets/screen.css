@@ -15403,10 +15403,9 @@ body.admin-bar .header-mobile .site-header-main + .menu-overlay {
         -ms-flex-item-align: center;
             align-self: center; } }
     .cookie-notification .cookie-notification-content a {
-      color: #ff0000;
-      text-decoration: underline; }
+      color: var(--secondary-color); }
       .cookie-notification .cookie-notification-content a:hover {
-        color: #000; }
+        text-decoration: underline; }
     .cookie-notification .cookie-notification-content p {
       margin-bottom: 0.8em; }
   .cookie-notification .cookie-notification-buttons {

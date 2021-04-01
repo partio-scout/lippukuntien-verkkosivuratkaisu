@@ -47,7 +47,7 @@
 
 	</div><!-- .site-inner -->
 </div><!-- .site#page -->
-<?php //get_template_part('template-parts/block', 'cookie-notification'); ?>
+<?php get_template_part('template-parts/block', 'cookie-notification'); ?>
 <?php wp_footer(); ?>
 </body>
 </html>

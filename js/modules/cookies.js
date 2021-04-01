@@ -2,7 +2,7 @@ var $ = window.jQuery;
 
 $(document).ready(function() {
 
-    let sitename = 'into';
+    let sitename = 'partio';
     let cookiename = sitename + '-cookies-accepted';
 
     let accepted = cookies.get(cookiename);

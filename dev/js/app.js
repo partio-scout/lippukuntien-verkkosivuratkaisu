@@ -24,7 +24,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 var $ = window.jQuery;
 $(document).ready(function () {
-  var sitename = 'into';
+  var sitename = 'partio';
   var cookiename = sitename + '-cookies-accepted';
   var accepted = cookies.get(cookiename);
 

@@ -38,11 +38,11 @@ $cookies-clr-hover: $clr-black;
         }
 
         a {
-            color: $cookies-clr-link;
-            text-decoration: underline;
-
+            color: var(--secondary-color);
+            
             &:hover {
-                color: $cookies-clr-hover;
+                text-decoration: underline;
+                // color: $cookies-clr-hover;
             }
         }
 
