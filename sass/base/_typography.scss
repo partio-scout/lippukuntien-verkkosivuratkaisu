@@ -226,27 +226,30 @@ a {
     .wp-block-quote {
         position: relative;
         margin: 2em;
+        border: 0;
+        padding: 0;
 
         &::before {
-            content: '\0022';
+            @include fontawesome-icon('f10e');
             display: block;
             position: absolute;
-            top: 0;
+            top: 0.25em;
             left: -10px;
             transform: translateX(-100%);
-            font-size: 4em;
+            font-size: 1.25em;
             font-weight: 700;
             line-height: 0.7;
         }
 
         p {
-            @include font-size($font-size-h4);
+            @include font-size($font-size-h3);
             margin-bottom: 12px;
+            font-family: $font-tondu;
         }
 
         cite {
             font-style: normal;
-            @include font-size($font-size-s);
+            @include font-size($font-size-base);
         }
     }
 

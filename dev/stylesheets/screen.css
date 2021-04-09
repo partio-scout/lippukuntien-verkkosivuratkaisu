@@ -12829,36 +12829,41 @@ a {
 .entry-content .wp-block-quote,
 .mceContentBody .wp-block-quote {
   position: relative;
-  margin: 2em; }
+  margin: 2em;
+  border: 0;
+  padding: 0; }
   .entry-content .wp-block-quote::before,
   .mceContentBody .wp-block-quote::before {
-    content: '\0022';
+    content: "\f10e";
+    font-family: 'Font Awesome 5 Pro';
+    font-weight: 400;
     display: block;
     position: absolute;
-    top: 0;
+    top: 0.25em;
     left: -10px;
     -webkit-transform: translateX(-100%);
         -ms-transform: translateX(-100%);
             transform: translateX(-100%);
-    font-size: 4em;
+    font-size: 1.25em;
     font-weight: 700;
     line-height: 0.7; }
   .entry-content .wp-block-quote p,
   .mceContentBody .wp-block-quote p {
-    font-size: 24px;
-    margin-bottom: 12px; }
+    font-size: 28px;
+    margin-bottom: 12px;
+    font-family: Tondu W05 Beta, sans-serif; }
     @media screen and (min-width: 768px) {
       .entry-content .wp-block-quote p,
       .mceContentBody .wp-block-quote p {
-        font-size: 24px; } }
+        font-size: 32px; } }
   .entry-content .wp-block-quote cite,
   .mceContentBody .wp-block-quote cite {
     font-style: normal;
-    font-size: 14px; }
+    font-size: 16px; }
     @media screen and (min-width: 768px) {
       .entry-content .wp-block-quote cite,
       .mceContentBody .wp-block-quote cite {
-        font-size: 14px; } }
+        font-size: 16px; } }
 
 .entry-content .wp-block-image figcaption,
 .mceContentBody .wp-block-image figcaption {

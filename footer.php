@@ -37,7 +37,7 @@
                           ?>
                       </nav><!-- .main-navigation -->
                     </div>
-                    <div class="copyright">&copy; <?php echo date('Y') . ' ' . _x('Suomen partiolaiset ry', 'copyright', 'ID'); ?></div>
+                    <div class="copyright">&copy; <?php echo date('Y') . ' ' . _x('Suomen Partiolaiset – Finlands Scouter ry', 'copyright', 'ID'); ?></div>
                   </div>
                 </div>
               </div>

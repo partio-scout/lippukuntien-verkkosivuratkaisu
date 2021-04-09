@@ -19,7 +19,7 @@ function allowed_block_types() {
         //'core/video', // requires video file or url, does not support embedding
         'core/heading',
         'core/list',
-        //'core/quote',
+        'core/quote',
         //'core/freeform',
         //'core/subhead',
         'core/gallery',

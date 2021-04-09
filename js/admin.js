@@ -48,6 +48,7 @@ wp.domReady(function () {
   wp.blocks.unregisterBlockStyle( 'core/table', 'stripes' );
   wp.blocks.unregisterBlockStyle( 'core/table', 'regular' );
   wp.blocks.unregisterBlockStyle( 'core/image', 'rounded' );
+  wp.blocks.unregisterBlockStyle( 'core/quote', 'large' );
 
   wp.blocks.registerBlockStyle('core/button', {
     name: 'outline',
