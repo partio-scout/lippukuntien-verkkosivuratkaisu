@@ -161,6 +161,16 @@ function ID_init_site() {
 
 
 add_action( 'wp_initialize_site', 'ID_initialize_site', 900 );
+
+// https://wearnhardt.com/2019/06/forcing-new-sites-to-https-in-a-wordpress-multisite-subdomain-network/
+add_filter( 'wp_initialize_site_args', function( $args, $site ) {
+	$url = untrailingslashit( 'https://' . $site->domain . $site->path );
+
+	$args['options']['home']    = $url;
+	$args['options']['siteurl'] = $url;
+
+	return $args;
+}, 10, 2 );
  
 /**
  * Fires when a site's initialization routine should be executed.
