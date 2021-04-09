@@ -45,7 +45,13 @@ wp.domReady(function () {
   wp.blocks.registerBlockStyle('core/button', {
     name: 'outline',
     label: 'Reunukset'
-  });
+  }); //Change admin featured image preview size
+
+  var withImageSize = function withImageSize(size, mediaId, postId) {
+    return 'full';
+  };
+
+  wp.hooks.addFilter('editor.PostFeaturedImage.imageSize', 'my-plugin/with-image-size', withImageSize);
 }); //Define ACF color picker swatches
 
 if ((typeof acf === "undefined" ? "undefined" : _typeof(acf)) != undefined) {

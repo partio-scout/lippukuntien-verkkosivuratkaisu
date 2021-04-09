@@ -14037,7 +14037,8 @@ body:not(.home) .article-content article > .entry-content .block-article-content
     color: #fff ;
     color: var(--primary-text-color) ; }
   .block-social-feed .juicer-feed {
-    padding: 0 !important; }
+    padding: 0 !important;
+    max-height: none !important; }
     @media (max-width: 575.98px) {
       .block-social-feed .juicer-feed:not(.more) .j-stack :nth-child(4), .block-social-feed .juicer-feed:not(.more) .j-stack :nth-child(5), .block-social-feed .juicer-feed:not(.more) .j-stack :nth-child(6) {
         display: none; } }

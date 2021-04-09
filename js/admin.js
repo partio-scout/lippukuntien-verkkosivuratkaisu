@@ -54,6 +54,12 @@ wp.domReady(function () {
     label: 'Reunukset'
   });
 
+  //Change admin featured image preview size
+  var withImageSize = function( size, mediaId, postId ) {
+    return 'full';
+    };
+  wp.hooks.addFilter( 'editor.PostFeaturedImage.imageSize', 'my-plugin/with-image-size', withImageSize );
+
 });
 
 //Define ACF color picker swatches

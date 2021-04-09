@@ -17,6 +17,7 @@
 
 	.juicer-feed {
 		padding: 0 !important;
+		max-height: none !important;
 
 		@include media-breakpoint-down(xs) {
 			&:not(.more) {

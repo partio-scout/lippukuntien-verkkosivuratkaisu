@@ -144,3 +144,14 @@ add_filter( 'gform_field_content', function( $field_content, $field ) {
   }
   return $field_content;
 }, 10, 2 );
+
+
+
+// define the wpseo_breadcrumb_separator callback 
+function filter_wpseo_breadcrumb_separator( $this_options_breadcrumbs_sep ) { 
+    $this_options_breadcrumbs_sep = '&bull;';
+    return $this_options_breadcrumbs_sep; 
+}; 
+         
+// add the filter 
+add_filter( 'wpseo_breadcrumb_separator', 'filter_wpseo_breadcrumb_separator', 10, 1 ); 
