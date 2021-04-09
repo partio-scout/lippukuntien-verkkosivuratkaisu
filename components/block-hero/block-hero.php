@@ -43,7 +43,9 @@ endif;
 					<div class="accent desktop"></div>					
 					<div class="accent mobile">
 						<?php if(!empty($image)): ?>
-						<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
+						<div class="image-object-fit">
+							<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
+						</div>
 						<?php else: ?>
 							<?php if(is_admin()): ?>
 								<div class="admin-image-placeholder"></div>
