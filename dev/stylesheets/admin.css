@@ -14063,7 +14063,8 @@ p { @include font-size($font-size-base); }
         padding-bottom: 66.7%;
         background-color: #f2f2f2;
         position: relative;
-        overflow: hidden; }
+        overflow: hidden;
+        display: block; }
         .block-editor-block-list__layout.is-root-container .wp-block .acf-block-preview .block-image-beside-content .image:hover img, .block-editor-block-list__layout.is-root-container .wp-block .acf-block-preview .block-image-beside-content .image.hover img, .block-editor-block-list__layout .wp-block .acf-block-preview .block-image-beside-content .image:hover img, .block-editor-block-list__layout .wp-block .acf-block-preview .block-image-beside-content .image.hover img {
           width: 104%;
           left: -2%;

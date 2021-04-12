@@ -13968,7 +13968,8 @@ body:not(.home) .article-content article > .entry-content .block-article-content
     padding-bottom: 66.7%;
     background-color: #f2f2f2;
     position: relative;
-    overflow: hidden; }
+    overflow: hidden;
+    display: block; }
     .block-image-beside-content .image:hover img, .block-image-beside-content .image.hover img {
       width: 104%;
       left: -2%;
