@@ -71,6 +71,9 @@ if(ID_REQUIRE_LOGIN) {
 
                     <?php
                     if ( !is_front_page() && function_exists('yoast_breadcrumb') ){
+                        get_template_part('template-parts/partial', 'breadcrumbs');
+
+                        /*
                         global $post;   
 
                         if($post) {      
@@ -86,4 +89,5 @@ if(ID_REQUIRE_LOGIN) {
                         } else {
                             get_template_part('template-parts/partial', 'breadcrumbs');
                         }
+                        */
                     }
