@@ -14993,34 +14993,38 @@ body.admin-bar .header-mobile .site-header-main + .menu-overlay {
       .site-footer .copyright {
         display: 16px; } }
 
-.breadcrumbs-container {
-  margin-bottom: 32px; }
+@media (min-width: 992px) {
+  .breadcrumbs-container {
+    margin-bottom: 32px; } }
+
+@media (min-width: 992px) {
+  .breadcrumbs-container.mobile {
+    display: none; } }
+
+.breadcrumbs-container.has-hero.desktop {
+  display: none; }
   @media (min-width: 992px) {
-    .breadcrumbs-container.mobile {
-      display: none; } }
-  .breadcrumbs-container.has-hero.desktop {
-    display: none; }
-    @media (min-width: 992px) {
-      .breadcrumbs-container.has-hero.desktop {
-        display: block; } }
-  .breadcrumbs-container #breadcrumbs {
-    font-size: 14px;
-    padding: 12px 0; }
-    @media screen and (min-width: 768px) {
-      .breadcrumbs-container #breadcrumbs {
-        font-size: 14px; } }
-    .breadcrumbs-container #breadcrumbs a {
-      text-decoration: underline;
-      color: #1c769d ;
-      color: var(--secondary-color) ;
-      margin-right: 5px; }
-      .breadcrumbs-container #breadcrumbs a:hover {
-        color: #2a2a2a; }
-    .breadcrumbs-container #breadcrumbs span.breadcrumb_last {
-      color: #2a2a2a;
-      margin-left: 5px; }
-    .breadcrumbs-container #breadcrumbs span.bullet {
-      font-size: 0.8em; }
+    .breadcrumbs-container.has-hero.desktop {
+      display: block; } }
+
+.breadcrumbs-container #breadcrumbs {
+  font-size: 14px;
+  padding: 12px 0; }
+  @media screen and (min-width: 768px) {
+    .breadcrumbs-container #breadcrumbs {
+      font-size: 14px; } }
+  .breadcrumbs-container #breadcrumbs a {
+    text-decoration: underline;
+    color: #1c769d ;
+    color: var(--secondary-color) ;
+    margin-right: 5px; }
+    .breadcrumbs-container #breadcrumbs a:hover {
+      color: #2a2a2a; }
+  .breadcrumbs-container #breadcrumbs span.breadcrumb_last {
+    color: #2a2a2a;
+    margin-left: 5px; }
+  .breadcrumbs-container #breadcrumbs span.bullet {
+    font-size: 0.8em; }
 
 .error404 .entry-header,
 .error404 .page-header,

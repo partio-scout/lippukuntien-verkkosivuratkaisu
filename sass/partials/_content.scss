@@ -4,7 +4,9 @@
 }
 
 .breadcrumbs-container {
-    margin-bottom: 32px;
+    @include media-breakpoint-up(lg) {
+        margin-bottom: 32px;
+    }
 
     &.mobile {
         @include media-breakpoint-up(lg) {

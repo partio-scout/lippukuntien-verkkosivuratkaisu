@@ -70,6 +70,9 @@ if(ID_REQUIRE_LOGIN) {
                 <div id="content" class="site-content">
 
                     <?php
+                    get_template_part('template-parts/partial', 'breadcrumbs');
+
+                    /*
                     if ( !is_front_page() && function_exists('yoast_breadcrumb') ){
                         global $post;   
 
@@ -87,3 +90,4 @@ if(ID_REQUIRE_LOGIN) {
                             get_template_part('template-parts/partial', 'breadcrumbs');
                         }
                     }
+                    */

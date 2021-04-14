@@ -66,6 +66,7 @@ endif;
 	</div>	
 
 	<?php
+	/*
 	if(!is_admin()) {
 		if ( !is_front_page() && function_exists('yoast_breadcrumb') ){
 			global $post;         
@@ -79,5 +80,6 @@ endif;
 			}
 		}
 	}
+	*/
 	?>		
 </div>

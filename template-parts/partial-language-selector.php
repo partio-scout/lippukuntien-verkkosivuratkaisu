@@ -1,7 +1,7 @@
 <div class="language-selector">
 	<?php
 	if (function_exists('icl_get_languages')) {
-		$langs = icl_get_languages('skip_missing=0&link_empty_to='.site_url(). '/?lang={%lang}');
+		$langs = icl_get_languages('skip_missing=0&link_empty_to='.site_url(). '/{%lang}');
 
 		$active_lang = '';
 
