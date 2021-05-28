@@ -1,5 +1,5 @@
 <?php
-if(ID_REQUIRE_LOGIN) {
+if(defined('ID_REQUIRE_LOGIN') && ID_REQUIRE_LOGIN === true) {
     if (!is_user_logged_in()) {
         auth_redirect();
     }
