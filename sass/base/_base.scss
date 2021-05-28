@@ -49,6 +49,23 @@ body {
 	}
 }
 
+.oembed {
+	div[data-type="placeholder"] {
+		width: 100% !important;
+		max-width: 100% !important;
+		height: 100% !important;
+		position: absolute;
+
+		.klaro {
+			padding: 0;
+
+			.context-notice {
+				border-radius: 0;
+			}
+		}
+	}
+}
+
 @include media-breakpoint-up(md) {
 
 }

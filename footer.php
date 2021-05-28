@@ -17,6 +17,7 @@
                             ));
                             ?>
                   </nav><!-- .main-navigation -->
+                  <button type="button" class="cookie-settings-toggle"><?php _e('Evästeasetukset', 'ID'); ?></button>
                 </div>
               </div>
             </div>
@@ -36,6 +37,7 @@
                           ));
                           ?>
                       </nav><!-- .main-navigation -->
+                      <button type="button" class="cookie-settings-toggle"><?php _e('Evästeasetukset', 'ID'); ?></button>
                     </div>
                     <div class="copyright">&copy; <?php echo date('Y') . ' ' . _x('Suomen Partiolaiset – Finlands Scouter ry', 'copyright', 'ID'); ?></div>
                   </div>
@@ -47,7 +49,8 @@
 
 	</div><!-- .site-inner -->
 </div><!-- .site#page -->
-<?php get_template_part('template-parts/block', 'cookie-notification'); ?>
+<?php //get_template_part('template-parts/block', 'cookie-notification'); ?>
+
 <?php wp_footer(); ?>
 </body>
 </html>

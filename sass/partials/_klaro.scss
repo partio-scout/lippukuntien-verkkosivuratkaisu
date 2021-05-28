@@ -1,0 +1,110 @@
+.klaro {
+	.cookie-modal {
+		.cm-modal {
+			border-radius: 0 !important;
+
+			.cm-header {
+				padding: 30px 20px 20px !important;
+
+				.title {
+					font-family: $font-pt-sans !important;
+					color: $clr-black !important;
+					font-weight: 900 !important;
+				}
+			}
+
+			.cm-body {
+				padding: 30px 20px !important;
+
+				.cm-purposes {
+					.cm-purpose {
+						.cm-list-input:checked {
+							& + .cm-list-label {
+								.cm-switch {
+									.slider.active {
+										@include primary-color(true);
+									}
+								}
+							}
+						}
+
+						.cm-list-input {
+							&.only-required {
+								& + .cm-list-label {
+									.cm-switch {
+										.slider.active {
+											background-color: #f2f2f2 !important;
+										}
+									}
+								}
+							}
+						}						
+					}
+				}
+			}
+
+			.cm-footer {
+				padding: 30px 20px 30px !important;
+
+				.cm-footer-buttons {
+					justify-content: flex-end !important;
+				}
+
+				.cm-powered-by {
+					margin-top: 30px !important;
+				}
+			}
+		}
+	}
+
+	.cm-btn {
+		border-radius: 2px !important;
+		padding: 3px 15px !important;
+		font-family: $font-pt-sans !important;
+		font-weight: 700;
+		border: 2px solid $clr-black !important;
+		transition: 0.2s !important;
+
+		&.cm-btn-success {
+			@include primary-text-color(true);
+    		@include primary-color(true);
+    		@include primary-border-color(true);    		 		
+
+    		&:hover {
+    			background-color: transparent !important;
+    			@include primary-color-text(true);
+    		}
+		}
+
+		&.cm-btn-decline, &.cn-decline {
+			color: $clr-white !important;
+    		background-color: $clr-black !important;
+    		border-color: $clr-black !important;
+
+    		&:hover {
+    			color: $clr-black !important;
+    			background-color: transparent !important;
+    		}
+		}
+
+		&.cm-btn-success-var {
+			@include primary-text-color(true);
+    		@include primary-color(true);
+    		@include primary-border-color(true);    		 		
+
+    		&:hover {
+    			background-color: transparent !important;
+    			@include primary-color-text(true);
+    		}
+		}
+	}
+
+	a {
+		@include primary-color-text(true);
+		transition: 0.2s;
+
+		&:hover {
+			text-decoration: underline !important;
+		}
+	}
+}

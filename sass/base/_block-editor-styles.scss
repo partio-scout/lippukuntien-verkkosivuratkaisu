@@ -24,6 +24,10 @@
     padding-bottom: 20px;
 }
 
+.wp-block[data-type="core/embed"] {
+    background-color: #f2f2f2;
+}
+
 h1.wp-block[data-type^="core/"] {
     @include font-size($font-size-h1);
     font-weight: 700;

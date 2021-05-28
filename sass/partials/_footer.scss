@@ -199,14 +199,38 @@
 
                 a {
                     @include primary-text-color();
-                    margin-left: 48px;
+                    margin-left: 20px;
                     @include primary-text-color()
                     font-weight: normal;
 
                     &:hover {
                         text-decoration: underline;
                     }
+
+                    @include media-breakpoint-up(xl) {
+                        margin-left: 48px;
+                    }
                 }
+            }
+        }
+
+        .cookie-settings-toggle {
+            background-color: transparent;
+            padding: 0;
+            margin-left: 20px;
+            border: 0;
+            display: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+
+            @include media-breakpoint-up(lg) {
+                display: inline-block;
+            }
+
+            @include media-breakpoint-up(xl) {
+                margin-left: 48px;
             }
         }
     }
@@ -235,6 +259,22 @@
                         color: $clr-font-grey;
                     }
                 }
+            }
+        }
+
+        .cookie-settings-toggle {
+            background-color: transparent;
+            padding: 0;
+            border: 0;
+            display: block;
+            font-weight: 600;
+
+            &:hover {
+                text-decoration: underline;
+            }
+
+            @include media-breakpoint-up(lg) {
+                display: none;
             }
         }
     }

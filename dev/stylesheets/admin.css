@@ -11723,6 +11723,9 @@ p { @include font-size($font-size-base); }
   padding-top: 20px;
   padding-bottom: 20px; }
 
+.block-editor-block-list__layout.is-root-container .wp-block[data-type="core/embed"], .block-editor-block-list__layout .wp-block[data-type="core/embed"] {
+  background-color: #f2f2f2; }
+
 .block-editor-block-list__layout.is-root-container h1.wp-block[data-type^="core/"], .block-editor-block-list__layout h1.wp-block[data-type^="core/"] {
   font-size: 48px;
   font-weight: 700;

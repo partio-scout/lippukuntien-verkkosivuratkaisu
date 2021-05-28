@@ -108,6 +108,62 @@ function ID_scripts()
   wp_localize_script('intodigital-script', 'aria_close_menu', array(__('Sulje päävalikko', 'ID')));
   wp_localize_script('intodigital-script', 'aria_open_submenu', array(__('Avaa alavalikko', 'ID')));
   wp_localize_script('intodigital-script', 'aria_close_submenu', array(__('Sulje alavalikko', 'ID')));
+
+
+  $klaro = get_field('cookie_texts', 'option');
+
+  wp_localize_script('intodigital-script', 'klaro_texts', array(
+    'notice' => array(
+      'description' => klaro_text($klaro['notice_description'], _x('Käytämme sivustolla evästeitä käyttäjäkokemuksen parantamiseksi.', 'klaro_cookie_notice', 'ID')),
+      'learnMore' => klaro_text($klaro['notice_learn_more'], _x('Lue lisää', 'klaro_cookie_notice', 'ID'))
+    ),
+    'modal' => array(
+      'title' => klaro_text($klaro['modal_title'], _x('Evästeasetukset', 'klaro_cookie_modal', 'ID')),
+      'description' => klaro_text($klaro['modal_description'], _x('Käytämme sivustolla seuraavia evästeitä käyttäjäkokemuksen parantamiseksi. Evästeet on luokiteltu eri osa-alueisiin ja voit sallia niistä haluamasi, mutta parhaaan käyttäjäkokemuksen saamiseksi suosittelemme kaikkia. Tarvittaessa voit avata tämän näkymän uudestaan sivuston alalaidasta.', 'klaro_cookie_modal', 'ID'))
+    ),
+    'buttons' => array(
+      'ok' => klaro_text($klaro['ok'], _x('Salli kaikki', 'klaro_button', 'ID')),
+      'acceptSelected' => klaro_text($klaro['accept_selected'], _x('Salli valitut', 'klaro_button', 'ID')),
+      'acceptAll' => klaro_text($klaro['accept_all'], _x('Salli kaikki', 'klaro_button', 'ID')),
+      'decline' => klaro_text($klaro['decline'], _x('Salli pakolliset', 'klaro_button', 'ID')),
+    ),
+    'services' => array(
+      'required' => klaro_text($klaro['service_required'], _x('Pakollinen', 'klaro_tag', 'ID')),
+      'service' => klaro_text($klaro['purpose_service'], _x('Palvelu', 'klaro_tag', 'ID')),
+      'purpose' => klaro_text($klaro['purpose_service'], _x('Käyttötarkoitus', 'klaro_tag', 'ID')),
+      'disableAll' => array(
+        'title' => klaro_text($klaro['service_disable_all_title'], _x('Valitse kaikki evästeet', 'klaro_toggle', 'ID')),
+        'description' => klaro_text($klaro['service_disable_all_description'], _x('Valitse kaikki evästeet', 'klaro_toggle', 'ID')),
+      )
+    ),
+    'privacyPolicy' => array(
+      'text' => klaro_text($klaro['privacy_policy_text'], '' . _x('Lue', 'klaro_privacy_policy', 'ID') . ' {privacyPolicy}'),
+      'name' => klaro_text($klaro['privacy_policy_name'], _x('tietosuojaseloste.', 'klaro_privacy_policy', 'ID')),
+      'url' => klaro_text($klaro['privacy_policy_link'], '/#tietosuojaseloste')
+    ),
+    'cookies' => array(
+      'analytics' => array(
+        'title' => _x('Analytiikka', 'klaro_cookie_analytics', 'ID'),
+        'description' => _x('Näitä evästeitä käytetään muun muassa sivujen näyttökertojen seuraamiseen. Kaikki data on anonyymia, joten sillä ei seurata yksittäistä käyttäjää.', 'klaro_cookie_analytics', 'ID'),
+        'purpose' => _x('Analytiikkaevästeet', 'klaro_cookie_analytics', 'ID')
+      ),
+      'required' => array(
+        'title' => _x('Vaaditut evästeet', 'klaro_cookie_required', 'ID'),
+        'description' => _x('Nämä evästeet ovat sivuston perustoimintojen, kuten mahdollisen kieliversion, ylläpidon kannalta pakollisia.', 'klaro_cookie_required', 'ID'),
+        'purpose' => _x('Pakolliset evästeet', 'klaro_cookie_analytics', 'ID')
+      ),
+      'thirdParty' => array(
+        'title' => _x('Kolmannen osapuolen evästeet', 'klaro_cookie_third_party', 'ID'),
+        'description' => _x('Nämä evästeet ovat pakollisia joidenkin kolmannen osapuolen toimintojen, kuten YouTuben, kannalta pakollisia. Näitä evästeitä saatetaan käyttää käyttäjien seurantaan.', 'klaro_cookie_third_party', 'ID'),
+        'purpose' => _x('Kolmannen osapuolen evästeet', 'klaro_cookie_analytics', 'ID')
+      ),
+      'contextualConsent' => array(
+        'description' => _x('Tämä sisältö vaatii kolmannen osapuolen evästeiden hyväksymisen.', 'klaro_contextual_consent', 'ID'),
+        'acceptOnce' => _x('Salli kerran', 'klaro_contextual_consent', 'ID'),
+        'acceptAlways' => _x('Salli aina', 'klaro_contextual_consent', 'ID'),
+      )
+    ),
+  ));
   
 
   global $wp_query; 
@@ -211,6 +267,20 @@ function ID_oembed_thumbnail($url)
   return $thumbnail;
 }
 
+
+add_filter('oembed_result','oembed_result', 10, 3);
+function oembed_result($html, $url, $args) {
+
+    // $args includes custom argument
+    // modify $html as you need
+    $html = str_replace("src=\"", "data-src=\"", $html);
+    $html = str_replace("<iframe", "<iframe data-name=\"third_party\"", $html);
+
+    return $html;
+}
+
+
+
 /**
  * Registers a widget area.
  */
@@ -249,7 +319,7 @@ function ID_head()
       echo <<<INLINE
 
 		<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+<script type="text/plain" data-type="application/javascript" data-name="analytics">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
@@ -262,8 +332,8 @@ INLINE;
       echo <<<INLINE
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=$analytics" id="gtag" data-ua="$analytics"></script>
-    <script>
+    <script type="text/plain" data-type="application/javascript" data-name="analytics" async data-src="https://www.googletagmanager.com/gtag/js?id=$analytics" id="gtag" data-ua="$analytics"></script>
+    <script type="text/plain" data-type="application/javascript" data-name="analytics">
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
@@ -276,7 +346,7 @@ INLINE;
     // network wide GTM is always injected
     echo <<<INLINE
     <!-- Network Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    <script type="text/plain" data-type="application/javascript" data-name="analytics">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
       new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
@@ -507,3 +577,13 @@ function ID_loadmore_ajax_handler(){
  
 add_action('wp_ajax_loadmore', 'ID_loadmore_ajax_handler'); // wp_ajax_{action}
 add_action('wp_ajax_nopriv_loadmore', 'ID_loadmore_ajax_handler'); // wp_ajax_nopriv_{action}
+
+
+
+function klaro_text($field, $default) {
+  if(empty($field)) {
+    return $default;
+  }
+
+  return $field;
+}

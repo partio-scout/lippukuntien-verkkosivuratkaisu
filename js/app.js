@@ -8,6 +8,8 @@
 //import 'slick-carousel';
 //import 'magnific-popup';
 
+import * as Klaro from "klaro";
+
 // Custom modules
 import "./modules/input-detection";
 import "./modules/menu";
@@ -20,6 +22,101 @@ import "./modules/load-more";
 import components from './components/all';
 
 const $ = window.jQuery;
+
+const config = {
+	lang: 'en',
+	acceptAll: true,
+	mustConsent: false,
+	disablePoweredBy: false,
+	styling: {
+        theme: ['light'],
+    },
+    translations: {
+        en: {
+        	privacyPolicyUrl: klaro_texts.privacyPolicy.url,
+        	privacyPolicy: {
+        		name: klaro_texts.privacyPolicy.name,
+        		text: klaro_texts.privacyPolicy.text
+        	},
+        	acceptAll: klaro_texts.buttons.acceptAll,
+        	acceptSelected: klaro_texts.buttons.acceptSelected,
+        	decline: klaro_texts.buttons.decline,
+        	ok: klaro_texts.buttons.ok,
+        	purposeItem: {
+        		service: klaro_texts.services.service
+        	},
+        	service: {
+                purpose: klaro_texts.services.purpose,
+        		required: {
+        			title: klaro_texts.services.required
+        		},
+        		disableAll: {
+					title: klaro_texts.services.disableAll.title,
+					description: klaro_texts.services.disableAll.description
+				}
+        	},
+        	//Bottom right popup
+        	consentNotice: {
+                description: klaro_texts.notice.description, 
+                learnMore: klaro_texts.notice.learnMore,               
+            },
+            //Consent modal
+        	consentModal: {
+	            title: klaro_texts.modal.title,
+	            description: klaro_texts.modal.description,
+	        },
+            analytics: {
+                title: klaro_texts.cookies.analytics.title,
+                description: klaro_texts.cookies.analytics.description,
+            },
+            required_cookies: {
+            	title: klaro_texts.cookies.required.title,
+            	description: klaro_texts.cookies.required.description
+            },            
+            third_party: {
+            	title: klaro_texts.cookies.thirdParty.title,
+            	description: klaro_texts.cookies.thirdParty.description
+            },            
+            purposes: {
+                analytics: klaro_texts.cookies.analytics.purpose,
+                required_cookies: klaro_texts.cookies.required.purpose,
+                third_party: klaro_texts.cookies.thirdParty.purpose
+            },
+            contextualConsent: {
+            	description: klaro_texts.cookies.contextualConsent.description,
+            	acceptOnce: klaro_texts.cookies.contextualConsent.acceptOnce,
+            	acceptAlways: klaro_texts.cookies.contextualConsent.acceptAlways
+            }
+        }
+    },
+    services: [
+    	{
+            name: "required_cookies",
+            purposes: ["required_cookies"],
+            required: true,
+        },
+        {
+            name: "analytics",
+            purposes: ["analytics"],
+        },
+        {
+            name: "third_party",
+            purposes: ["third_party"],
+        },
+    ],
+};
+
+// we assign the Klaro module to the window, so that we can access it in JS
+window.klaro = Klaro;
+window.klaroConfig = config;
+// we set up Klaro with the config
+Klaro.setup(config);
+
+$('.cookie-settings-toggle').on('click', function() {
+    klaro.show();
+});
+
+
 
 $(document).ready(function() {
     $('.acf-map').each(function(){
