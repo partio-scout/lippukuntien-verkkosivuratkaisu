@@ -77,13 +77,13 @@
 		}
 
 		&.cm-btn-decline, &.cn-decline {
-			color: $clr-white !important;
-    		background-color: $clr-black !important;
+			color: $clr-black !important;
+    		background-color: transparent !important;
     		border-color: $clr-black !important;
 
     		&:hover {
-    			color: $clr-black !important;
-    			background-color: transparent !important;
+    			color: $clr-white !important;
+    			background-color: $clr-black !important;
     		}
 		}
 

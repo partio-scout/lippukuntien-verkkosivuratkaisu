@@ -15481,12 +15481,12 @@ body.admin-bar .header-mobile .site-header-main + .menu-overlay {
       color: #253764 !important;
       color: var(--primary-color) !important; }
   .klaro .cm-btn.cm-btn-decline, .klaro .cm-btn.cn-decline {
-    color: #fff !important;
-    background-color: #000 !important;
+    color: #000 !important;
+    background-color: transparent !important;
     border-color: #000 !important; }
     .klaro .cm-btn.cm-btn-decline:hover, .klaro .cm-btn.cn-decline:hover {
-      color: #000 !important;
-      background-color: transparent !important; }
+      color: #fff !important;
+      background-color: #000 !important; }
   .klaro .cm-btn.cm-btn-success-var {
     color: #fff !important;
     color: var(--primary-text-color) !important;

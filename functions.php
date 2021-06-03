@@ -114,18 +114,18 @@ function ID_scripts()
 
   wp_localize_script('intodigital-script', 'klaro_texts', array(
     'notice' => array(
-      'description' => klaro_text($klaro['notice_description'], _x('Käytämme sivustolla evästeitä käyttäjäkokemuksen parantamiseksi.', 'klaro_cookie_notice', 'ID')),
+      'description' => klaro_text($klaro['notice_description'], _x('Tällä sivustolla käytetään evästeitä sivuston toiminnan varmistamiseksi. Evästeitä käytetään asetuksiesi (kuten kielivalinnan) tallentamiseen, tilastointiin ja analytiikkaan sekä videoupotuksiin.', 'klaro_cookie_notice', 'ID')),
       'learnMore' => klaro_text($klaro['notice_learn_more'], _x('Lue lisää', 'klaro_cookie_notice', 'ID'))
     ),
     'modal' => array(
       'title' => klaro_text($klaro['modal_title'], _x('Evästeasetukset', 'klaro_cookie_modal', 'ID')),
-      'description' => klaro_text($klaro['modal_description'], _x('Käytämme sivustolla seuraavia evästeitä käyttäjäkokemuksen parantamiseksi. Evästeet on luokiteltu eri osa-alueisiin ja voit sallia niistä haluamasi, mutta parhaaan käyttäjäkokemuksen saamiseksi suosittelemme kaikkia. Tarvittaessa voit avata tämän näkymän uudestaan sivuston alalaidasta.', 'klaro_cookie_modal', 'ID'))
+      'description' => klaro_text($klaro['modal_description'], _x('Tällä sivustolla käytetään evästeitä sivuston toiminnan varmistamiseksi. Evästeitä käytetään asetuksiesi (kuten kielivalinnan) tallentamiseen, tilastointiin ja analytiikkaan sekä videoupotuksiin. Evästeet on luokiteltu eri osa-alueisiin ja voit sallia niistä haluamasi, mutta parhaaan käyttäjäkokemuksen saamiseksi suosittelemme kaikkia. Tarvittaessa voit avata tämän näkymän uudestaan sivuston alalaidasta.', 'klaro_cookie_modal', 'ID'))
     ),
     'buttons' => array(
-      'ok' => klaro_text($klaro['ok'], _x('Salli kaikki', 'klaro_button', 'ID')),
-      'acceptSelected' => klaro_text($klaro['accept_selected'], _x('Salli valitut', 'klaro_button', 'ID')),
-      'acceptAll' => klaro_text($klaro['accept_all'], _x('Salli kaikki', 'klaro_button', 'ID')),
-      'decline' => klaro_text($klaro['decline'], _x('Salli pakolliset', 'klaro_button', 'ID')),
+      'ok' => klaro_text($klaro['ok'], _x('Hyväksy kaikki', 'klaro_button', 'ID')),
+      'acceptSelected' => klaro_text($klaro['accept_selected'], _x('Hyväksy valitut', 'klaro_button', 'ID')),
+      'acceptAll' => klaro_text($klaro['accept_all'], _x('Hyväksy kaikki', 'klaro_button', 'ID')),
+      'decline' => klaro_text($klaro['decline'], _x('Jatka välttämättömillä', 'klaro_button', 'ID')),
     ),
     'services' => array(
       'required' => klaro_text($klaro['service_required'], _x('Pakollinen', 'klaro_tag', 'ID')),
