@@ -118,7 +118,7 @@ function ID_scripts()
       'learnMore' => klaro_text($klaro['notice_learn_more'], _x('Lue lisää', 'klaro_cookie_notice', 'ID'))
     ),
     'modal' => array(
-      'title' => klaro_text($klaro['modal_title'], _x('Evästeasetukset', 'klaro_cookie_modal', 'ID')),
+      'title' => klaro_text($klaro['modal_title'], _x('Käytämme evästeitä', 'klaro_cookie_modal', 'ID')),
       'description' => klaro_text($klaro['modal_description'], _x('Tällä sivustolla käytetään evästeitä sivuston toiminnan varmistamiseksi. Evästeitä käytetään asetuksiesi (kuten kielivalinnan) tallentamiseen, tilastointiin ja analytiikkaan sekä videoupotuksiin. Evästeet on luokiteltu eri osa-alueisiin ja voit sallia niistä haluamasi, mutta parhaaan käyttäjäkokemuksen saamiseksi suosittelemme kaikkia. Tarvittaessa voit avata tämän näkymän uudestaan sivuston alalaidasta.', 'klaro_cookie_modal', 'ID'))
     ),
     'buttons' => array(
