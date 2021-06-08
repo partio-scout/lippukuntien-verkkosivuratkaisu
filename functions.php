@@ -112,55 +112,65 @@ function ID_scripts()
 
   $klaro = get_field('cookie_texts', 'option');
 
+  if (is_multisite() && get_current_blog_id() != 1) {
+    switch_to_blog(1);
+  }
+
+  $klaro_g = get_field('cookie_texts_g', 'option');
+
+  if (is_multisite() && ms_is_switched()) {
+    restore_current_blog();
+  }
+
   wp_localize_script('intodigital-script', 'klaro_texts', array(
     'notice' => array(
-      'description' => klaro_text($klaro['notice_description'], _x('Tällä sivustolla käytetään evästeitä sivuston toiminnan varmistamiseksi. Evästeitä käytetään asetuksiesi (kuten kielivalinnan) tallentamiseen, tilastointiin ja analytiikkaan sekä videoupotuksiin.', 'klaro_cookie_notice', 'ID')),
-      'learnMore' => klaro_text($klaro['notice_learn_more'], _x('Lue lisää', 'klaro_cookie_notice', 'ID'))
+      'description' => klaro_text($klaro['notice_description'], $klaro_g['notice_description']),
+      'learnMore' => klaro_text($klaro['notice_learn_more'], $klaro_g['notice_learn_more'])
     ),
     'modal' => array(
-      'title' => klaro_text($klaro['modal_title'], _x('Käytämme evästeitä', 'klaro_cookie_modal', 'ID')),
-      'description' => klaro_text($klaro['modal_description'], _x('Tällä sivustolla käytetään evästeitä sivuston toiminnan varmistamiseksi. Evästeitä käytetään asetuksiesi (kuten kielivalinnan) tallentamiseen, tilastointiin ja analytiikkaan sekä videoupotuksiin. Evästeet on luokiteltu eri osa-alueisiin ja voit sallia niistä haluamasi, mutta parhaaan käyttäjäkokemuksen saamiseksi suosittelemme kaikkia. Tarvittaessa voit avata tämän näkymän uudestaan sivuston alalaidasta.', 'klaro_cookie_modal', 'ID'))
+      'title' => klaro_text($klaro['modal_title'], $klaro_g['modal_title']),
+      'description' => klaro_text($klaro['modal_description'], $klaro_g['modal_description'])
     ),
     'buttons' => array(
-      'ok' => klaro_text($klaro['ok'], _x('Hyväksy kaikki', 'klaro_button', 'ID')),
-      'acceptSelected' => klaro_text($klaro['accept_selected'], _x('Hyväksy valitut', 'klaro_button', 'ID')),
-      'acceptAll' => klaro_text($klaro['accept_all'], _x('Hyväksy kaikki', 'klaro_button', 'ID')),
-      'decline' => klaro_text($klaro['decline'], _x('Jatka välttämättömillä', 'klaro_button', 'ID')),
+      'ok' => klaro_text($klaro['ok'], $klaro_g['ok']),
+      'acceptSelected' => klaro_text($klaro['accept_selected'], $klaro_g['accept_selected']),
+      'acceptAll' => klaro_text($klaro['accept_all'], $klaro_g['accept_all']),
+      'decline' => klaro_text($klaro['decline'], $klaro_g['decline']),
     ),
     'services' => array(
-      'required' => klaro_text($klaro['service_required'], _x('Pakollinen', 'klaro_tag', 'ID')),
-      'service' => klaro_text($klaro['purpose_service'], _x('Palvelu', 'klaro_tag', 'ID')),
-      'purpose' => klaro_text($klaro['purpose_service'], _x('Käyttötarkoitus', 'klaro_tag', 'ID')),
+      'required' => klaro_text($klaro['service_required'], $klaro_g['service_required']),
+      'service' => klaro_text($klaro['purpose_service'], $klaro_g['purpose_service']),
+      'purpose' => klaro_text($klaro['purpose_service'], $klaro_g['purpose_service']),
       'disableAll' => array(
-        'title' => klaro_text($klaro['service_disable_all_title'], _x('Valitse kaikki evästeet', 'klaro_toggle', 'ID')),
-        'description' => klaro_text($klaro['service_disable_all_description'], _x('Valitse kaikki evästeet', 'klaro_toggle', 'ID')),
+        'title' => klaro_text($klaro['service_disable_all_title'], $klaro_g['service_disable_all_title']),
+        'description' => klaro_text($klaro['service_disable_all_description'], $klaro_g['service_disable_all_description']),
       )
     ),
     'privacyPolicy' => array(
-      'text' => klaro_text($klaro['privacy_policy_text'], '' . _x('Lue', 'klaro_privacy_policy', 'ID') . ' {privacyPolicy}'),
-      'name' => klaro_text($klaro['privacy_policy_name'], _x('tietosuojaseloste.', 'klaro_privacy_policy', 'ID')),
-      'url' => klaro_text($klaro['privacy_policy_link'], '/#tietosuojaseloste')
+      'text' => klaro_text($klaro['privacy_policy_text'], $klaro_g['privacy_policy_text']),
+      'name' => klaro_text($klaro['privacy_policy_name'], $klaro_g['privacy_policy_name']),
+      'url' => klaro_text($klaro['privacy_policy_link'], $klaro_g['privacy_policy_link'])
     ),
     'cookies' => array(
       'analytics' => array(
-        'title' => _x('Analytiikka', 'klaro_cookie_analytics', 'ID'),
-        'description' => _x('Näitä evästeitä käytetään muun muassa sivujen näyttökertojen seuraamiseen. Kaikki data on anonyymia, joten sillä ei seurata yksittäistä käyttäjää.', 'klaro_cookie_analytics', 'ID'),
-        'purpose' => _x('Analytiikkaevästeet', 'klaro_cookie_analytics', 'ID')
+        'title' => $klaro_g['analytic_cookie_title'],
+        'description' => $klaro_g['analytic_cookie_description'],
+        'purpose' => $klaro_g['analytic_cookie_purpose']
       ),
       'required' => array(
-        'title' => _x('Vaaditut evästeet', 'klaro_cookie_required', 'ID'),
-        'description' => _x('Nämä evästeet ovat sivuston perustoimintojen, kuten mahdollisen kieliversion, ylläpidon kannalta pakollisia.', 'klaro_cookie_required', 'ID'),
-        'purpose' => _x('Pakolliset evästeet', 'klaro_cookie_analytics', 'ID')
+        'title' => $klaro_g['required_cookie_title'],
+        'description' => $klaro_g['required_cookie_description'],
+        'purpose' => $klaro_g['required_cookie_purpose']
       ),
       'thirdParty' => array(
-        'title' => _x('Kolmannen osapuolen evästeet', 'klaro_cookie_third_party', 'ID'),
-        'description' => _x('Nämä evästeet ovat pakollisia joidenkin kolmannen osapuolen toimintojen, kuten YouTuben, kannalta pakollisia. Näitä evästeitä saatetaan käyttää käyttäjien seurantaan.', 'klaro_cookie_third_party', 'ID'),
-        'purpose' => _x('Kolmannen osapuolen evästeet', 'klaro_cookie_analytics', 'ID')
+        'title' => $klaro_g['third_party_cookie_title'],
+        'description' => $klaro_g['third_party_cookie_description'],
+        'purpose' => $klaro_g['third_party_cookie_purpose']
       ),
       'contextualConsent' => array(
-        'description' => _x('Tämä sisältö vaatii kolmannen osapuolen evästeiden hyväksymisen.', 'klaro_contextual_consent', 'ID'),
-        'acceptOnce' => _x('Salli kerran', 'klaro_contextual_consent', 'ID'),
-        'acceptAlways' => _x('Salli aina', 'klaro_contextual_consent', 'ID'),
+        'description' => $klaro_g['contextual_consent_description'],
+        'acceptOnce' => $klaro_g['contextual_consent_accept_once'],
+        'acceptAlways' => $klaro_g['contextual_consent_accept_always'],
       )
     ),
   ));

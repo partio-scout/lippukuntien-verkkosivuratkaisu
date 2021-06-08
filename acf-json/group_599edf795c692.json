@@ -416,7 +416,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "default_value": "Palvelu",
+                    "default_value": "",
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
@@ -435,7 +435,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "default_value": "Pakollinen",
+                    "default_value": "",
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
@@ -499,5 +499,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1622033181
+    "modified": 1623137703
 }
