@@ -557,7 +557,7 @@
                 {
                     "key": "field_60bf1b76df518",
                     "label": "Hyväksy aina",
-                    "name": "contextual_consent_accept_alwray",
+                    "name": "contextual_consent_accept_always",
                     "type": "text",
                     "instructions": "",
                     "required": 0,
@@ -705,5 +705,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1623139808
+    "modified": 1623143035
 }
