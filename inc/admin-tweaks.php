@@ -31,15 +31,27 @@ if( function_exists('acf_add_options_page') ) {
         'position'    => 3
     ));
 
-    acf_add_options_page(array(
-        'page_title'    => __('Evästeasetukset', 'ID_admin'),
-        'menu_title'    => __('Evästeasetukset', 'ID_admin'),
-        'menu_slug'     => 'global-cookie-settings',
-        'capability'    => 'delete_sites',
-        //'capability'    => 'delete_pages',
-        'redirect'      => false,
-        'position'    => 4
-    ));
+    if(is_multisite()) {
+        acf_add_options_page(array(
+            'page_title'    => __('Evästeasetukset', 'ID_admin'),
+            'menu_title'    => __('Evästeasetukset', 'ID_admin'),
+            'menu_slug'     => 'global-cookie-settings',
+            'capability'    => 'delete_sites',
+            //'capability'    => 'delete_pages',
+            'redirect'      => false,
+            'position'    => 4
+        ));
+    } else {
+        acf_add_options_page(array(
+            'page_title'    => __('Evästeasetukset', 'ID_admin'),
+            'menu_title'    => __('Evästeasetukset', 'ID_admin'),
+            'menu_slug'     => 'global-cookie-settings',
+            //'capability'    => 'delete_sites',
+            'capability'    => 'delete_pages',
+            'redirect'      => false,
+            'position'    => 4
+        ));
+    }
 
 }
 
