@@ -70,7 +70,7 @@ function ID_users_export_plugin() {
     );
     */
 
-    add_options_page( 
+    add_submenu_page( 
         'settings.php',
         __('Vie käyttäjät', 'ID_admin'),
         __('Vie käyttäjät', 'ID_admin'),
