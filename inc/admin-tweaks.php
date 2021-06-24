@@ -108,7 +108,7 @@ function ID_export_users() {
             $users = get_users( $args );
 
             if(!empty($users)) {
-                $fp = fopen('file.csv', 'w');
+                $fp = fopen('users.csv', 'w');
 
                 foreach($users as $user) {
                     if(in_array($user->user_email, array('janne.hyyrylainen@into-digital.fi', 'janne.hyyrylainen@gmail.com', 'pekka.suopellonmaki@into-digital.fi', 'katri.jarvenpaa@partio.fi', 'terhi.takkinen@partio.fi', 'anni.rissanen@partio.fi', 'rita.javola@partio.fi', 'viestinta@partio.fi'))) {
@@ -122,12 +122,12 @@ function ID_export_users() {
 
 
                 header('Content-Type: application/octet-stream');
-                header('Content-Disposition: attachment; filename='.basename('file.csv'));
+                header('Content-Disposition: attachment; filename='.basename('users.csv'));
                 header('Expires: 0');
                 header('Cache-Control: must-revalidate');
                 header('Pragma: public');
-                header('Content-Length: ' . filesize('file.csv'));
-                readfile('file.csv');
+                header('Content-Length: ' . filesize('users.csv'));
+                readfile('users.csv');
                 exit;
             }
 
