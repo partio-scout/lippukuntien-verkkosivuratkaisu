@@ -68,7 +68,7 @@ function ID_users_export_plugin() {
         7
     );
 }
-add_action( 'admin_menu', 'ID_users_export_plugin');
+add_action( 'network_admin_menu', 'ID_users_export_plugin');
 
 
 function user_export_plugin() {
@@ -99,6 +99,10 @@ function ID_export_users() {
                 $fp = fopen('file.csv', 'w');
 
                 foreach($users as $user) {
+                    if(in_array($user->user_email, array('janne.hyyrylainen@into-digital.fi', 'janne.hyyrylainen@gmail.com', 'pekka.suopellonmaki@into-digital.fi', 'katri.jarvenpaa@partio.fi', 'terhi.takkinen@partio.fi', 'anni.rissanen@partio.fi', 'rita.javola@partio.fi', 'viestinta@partio.fi'))) {
+                        continue;
+                    }
+
                     fputcsv($fp, array($user->user_email));
                 }
 
