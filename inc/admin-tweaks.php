@@ -59,7 +59,19 @@ if( function_exists('acf_add_options_page') ) {
 
 
 function ID_users_export_plugin() {
+    /*
     add_options_page( 
+        __('Vie käyttäjät', 'ID_admin'),
+        __('Vie käyttäjät', 'ID_admin'),
+        'delete_sites',
+        'user-export',
+        'user_export_plugin',
+        7
+    );
+    */
+
+    add_options_page( 
+        'settings.php',
         __('Vie käyttäjät', 'ID_admin'),
         __('Vie käyttäjät', 'ID_admin'),
         'delete_sites',
