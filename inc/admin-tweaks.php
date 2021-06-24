@@ -88,7 +88,7 @@ function user_export_plugin() {
     <div class="wrap">
     <h1>Vie käyttäjät</h1>
 
-    <form method="post" action="<?php echo wp_nonce_url('options-general.php?page=user-export&id-export-users', 'id-user-export', 'id-user-export'); ?>">        
+    <form method="post" action="<?php echo wp_nonce_url('settings.php?page=user-export&id-export-users', 'id-user-export', 'id-user-export'); ?>">        
         <?php 
         settings_fields( 'ID_export_users' );
         submit_button('Vie käyttäjät');
