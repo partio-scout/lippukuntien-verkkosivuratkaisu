@@ -15500,8 +15500,7 @@ body.admin-bar .header-mobile .site-header-main + .menu-overlay {
       color: var(--primary-color) !important; }
 
 .klaro a {
-  color: #253764 !important;
-  color: var(--primary-color) !important;
+  color: #000 !important;
   -webkit-transition: 0.2s;
   -o-transition: 0.2s;
   transition: 0.2s; }

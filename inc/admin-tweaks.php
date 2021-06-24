@@ -41,19 +41,88 @@ if( function_exists('acf_add_options_page') ) {
             'redirect'      => false,
             'position'    => 4
         ));
+
     } else {
         acf_add_options_page(array(
             'page_title'    => __('Evästeasetukset', 'ID_admin'),
             'menu_title'    => __('Evästeasetukset', 'ID_admin'),
             'menu_slug'     => 'global-cookie-settings',
             //'capability'    => 'delete_sites',
-            'capability'    => 'delete_pages',
+            'capability'    => 'delete_site',
             'redirect'      => false,
             'position'    => 4
         ));
     }
 
 }
+
+
+
+function ID_users_export_plugin() {
+    add_options_page( 
+        __('Vie käyttäjät', 'ID_admin'),
+        __('Vie käyttäjät', 'ID_admin'),
+        'delete_sites',
+        'user-export',
+        'user_export_plugin',
+        7
+    );
+}
+add_action( 'admin_menu', 'ID_users_export_plugin');
+
+
+function user_export_plugin() {
+    ?>
+    <div class="wrap">
+    <h1>Vie käyttäjät</h1>
+
+    <form method="post" action="<?php echo wp_nonce_url('options-general.php?page=user-export&id-export-users', 'id-user-export', 'id-user-export'); ?>">        
+        <?php 
+        settings_fields( 'ID_export_users' );
+        submit_button('Vie käyttäjät');
+        ?>
+    </form>
+    </div>
+    <?php
+}
+
+
+add_action( 'admin_init', 'ID_export_users' );
+function ID_export_users() {
+    if(isset($_GET['id-export-users']) && isset($_GET['id-user-export']) && wp_verify_nonce($_GET['id-user-export'], 'id-user-export')) {
+
+        if(current_user_can('delete_sites')) {
+            $args = array( 'blog_id' => 0 );
+            $users = get_users( $args );
+
+            if(!empty($users)) {
+                $fp = fopen('file.csv', 'w');
+
+                foreach($users as $user) {
+                    fputcsv($fp, array($user->user_email));
+                }
+
+                fclose($fp);
+
+
+                header('Content-Type: application/octet-stream');
+                header('Content-Disposition: attachment; filename='.basename('file.csv'));
+                header('Expires: 0');
+                header('Cache-Control: must-revalidate');
+                header('Pragma: public');
+                header('Content-Length: ' . filesize('file.csv'));
+                readfile('file.csv');
+                exit;
+            }
+
+            echo 'users exported';
+        } else {
+            echo 'error';
+        }
+    }
+}
+
+
 
 /**
  * Add analytics to default settings

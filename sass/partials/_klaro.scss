@@ -100,7 +100,7 @@
 	}
 
 	a {
-		@include primary-color-text(true);
+		color: $clr-black !important;
 		transition: 0.2s;
 
 		&:hover {
