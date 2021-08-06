@@ -192,6 +192,8 @@ function ID_admin_init() {
 
     $role = get_role( 'editor' );
     $role->add_cap( 'edit_theme_options' ); //for menu editing
+    $role->add_cap( 'manage_privacy_options', true );
+    $role->add_cap( 'manage_options' ); // this needs to be active in order that before cap works
 
 
     /**
@@ -253,6 +255,21 @@ function ID_admin_init() {
 
     }
     */
+}
+
+add_action('map_meta_cap', 'ID_manage_privacy_options', 1, 4);
+function ID_manage_privacy_options($caps, $cap, $user_id, $args)
+{
+  if (!is_user_logged_in()) return $caps;
+
+  $user_meta = get_userdata($user_id);
+  if (array_intersect(['editor', 'administrator'], (array)$user_meta->roles)) {
+    if ('manage_privacy_options' === $cap) {
+      $manage_name = is_multisite() ? 'manage_network' : 'manage_options';
+      $caps = array_diff($caps, [ $manage_name ]);
+    }
+  }
+  return $caps;
 }
 
 /**
