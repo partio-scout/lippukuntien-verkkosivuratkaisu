@@ -11418,7 +11418,8 @@ a.button,
 .wp-block-button.is-style-outline .wp-block-button__link {
   background-color: transparent;
   border-color: #2a2a2a;
-  color: #2a2a2a !important; }
+  color: #2a2a2a !important;
+  padding: 16px 32px; }
   .wp-block-button.is-style-outline .wp-block-button__link:hover {
     color: #fff !important;
     color: var(--primary-text-color) !important;
