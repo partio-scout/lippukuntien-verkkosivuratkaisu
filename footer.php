@@ -15,7 +15,7 @@
                               'theme_location' => 'footer-extra',
                               'menu_class'     => 'footer-helper',
                             ));
-                            ?>
+                            ?> 
                   </nav><!-- .main-navigation -->
                   <button type="button" class="cookie-settings-toggle"><?php _e('Evästeasetukset', 'ID'); ?></button>
                 </div>
