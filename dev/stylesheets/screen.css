@@ -15065,6 +15065,21 @@ body.admin-bar .header-mobile .site-header-main + .menu-overlay {
   .breadcrumbs-container #breadcrumbs span.bullet {
     font-size: 0.8em; }
 
+.breadcrumbs-container .wp-activate-container {
+  max-width: 540px; }
+  @media (min-width: 768px) {
+    .breadcrumbs-container .wp-activate-container {
+      max-width: 720px; } }
+  @media (min-width: 992px) {
+    .breadcrumbs-container .wp-activate-container {
+      max-width: 960px; } }
+  @media (min-width: 1200px) {
+    .breadcrumbs-container .wp-activate-container {
+      max-width: 1024px; } }
+  @media (min-width: 1500px) {
+    .breadcrumbs-container .wp-activate-container {
+      max-width: 1344px; } }
+
 .error404 .entry-header,
 .error404 .page-header,
 .page .entry-header,

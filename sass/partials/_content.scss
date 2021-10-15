@@ -45,6 +45,25 @@
             font-size: 0.8em;
         }
     }
+
+
+    .wp-activate-container {
+        max-width: 540px;
+        margin-top: 100px;
+
+        @include media-breakpoint-up(md) {
+            max-width: 720px;
+        }
+        @include media-breakpoint-up(lg) {
+            max-width: 960px;
+        }
+        @include media-breakpoint-up(xl) {
+            max-width: 1024px;
+        }
+        @include media-breakpoint-up(xxl) {
+            max-width: 1344px;
+        }
+    }
 }
 
 .error404,
