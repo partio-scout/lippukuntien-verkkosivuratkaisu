@@ -18,6 +18,7 @@
 	.juicer-feed {
 		padding: 0 !important;
 		max-height: none !important;
+		overflow: initial !important;
 
 		@include media-breakpoint-down(xs) {
 			&:not(.more) {
@@ -30,6 +31,11 @@
 		}
 
 		@include media-breakpoint-down(md) {
+			.j-stacker-wrapper {
+				margin-left: -10px !important;
+				margin-right: -10px !important;
+			}
+
 			.j-stack {
 				padding-left: 10px !important;
 				padding-right: 10px !important;

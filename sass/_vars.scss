@@ -76,6 +76,12 @@ $font-size-h1: (
 	  $screen-desktop : 56px
 );
 
+$font-size-h1-archive: (
+	  null  : 32px,
+	  $screen-tablet : 52px,
+	  $screen-desktop : 56px
+);
+
 $font-size-nav: (
 	  null  : 16px,
 	  $screen-tablet : 14px

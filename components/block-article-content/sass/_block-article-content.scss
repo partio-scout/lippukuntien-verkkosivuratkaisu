@@ -18,6 +18,7 @@
 		font-weight: bold;
 		line-height: 1.2;
 		@include primary-color-text();
+		@include font-size($font-size-h2);
 	}
 
 	.entry-content {

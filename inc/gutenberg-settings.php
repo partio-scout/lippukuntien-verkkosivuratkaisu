@@ -11,7 +11,7 @@ add_theme_support( 'editor-font-sizes', array() );
 
 
 //Allowed Gutenberg blocks. Full list of core/blocks found at the bottom of this file
-add_filter( 'allowed_block_types', 'allowed_block_types', 10, 2 );
+add_filter( 'allowed_block_types_all', 'allowed_block_types', 10, 2 );
 function allowed_block_types() {
     $block_types =  array( 
         'core/paragraph',
@@ -93,7 +93,7 @@ function ID_custom_block_categories( $categories ) {
         )
     );
 }
-add_filter( 'block_categories', 'ID_custom_block_categories', 10, 2 );
+add_filter( 'block_categories_all', 'ID_custom_block_categories', 10, 2 );
 
 
 
@@ -297,7 +297,7 @@ add_action( 'init', 'ID_register_post_template' );
 
 
 add_filter(
-    'block_editor_settings',
+    'block_editor_settings_all',
     function ($editor_settings) {
         $editor_settings['__experimentalFeatures']['defaults']['typography']['dropCap'] = false;
         return $editor_settings;

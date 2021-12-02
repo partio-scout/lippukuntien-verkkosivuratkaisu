@@ -1,7 +1,52 @@
 {
     "key": "group_603f928cc0606",
     "title": "Block \/ Content with sidebar",
-    "fields": [],
+    "fields": [
+        {
+            "key": "field_61a87ef5c492c",
+            "label": "Kuvio",
+            "name": "shape",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "path": "Polku",
+                "mountain": "Vuori"
+            },
+            "default_value": "path",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_61a87ee0c492b",
+            "label": "Piilota kuvio",
+            "name": "hide_figure",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        }
+    ],
     "location": [
         [
             {
@@ -19,5 +64,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1614779031
+    "modified": 1638432692
 }

@@ -5,7 +5,7 @@
         <?php 
         if ( have_posts() ) : ?>
         <header class="page-header">         
-            <h1 class="page-title"><?php echo get_the_title(get_queried_object_id()); ?></h1>
+            <h1 class="page-title archive-title"><?php echo get_the_title(get_queried_object_id()); ?></h1>
         </header>
         <div class="row content-row static-card-wrapper">
             <?php while ( have_posts() ) : the_post(); ?>

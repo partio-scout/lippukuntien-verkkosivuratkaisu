@@ -64,12 +64,13 @@ body.admin-bar {
     .header-helper {
         @include primary-color();
         @include primary-text-color();
-        height: 44px;
+        min-height: 44px;
         display: flex;
         align-items: center;
+        padding: 5px 0;
 
         @include media-breakpoint-up(lg) {
-            height: 52px;
+            min-height: 52px;
         }
 
         .flex {

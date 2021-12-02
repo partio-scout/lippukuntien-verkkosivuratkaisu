@@ -302,15 +302,21 @@ $(document).ready(function () {
     }
   }); //Float only main menu area
 
+  var helperHeight;
   $(window).on('scroll', function (e) {
+    //console.log($(window).scrollTop())
     if ($(window).width() >= 992) {
-      if ($(window).scrollTop() >= 52) {
+      helperHeight = $('.header-desktop .header-helper').outerHeight(); //console.log(helperHeight)
+
+      if ($(window).scrollTop() >= helperHeight) {
         $('.site-header-main, .header-helper, .site-header').addClass('floating');
       } else {
         $('.site-header-main, .header-helper, .site-header').removeClass('floating');
       }
     } else {
-      if ($(window).scrollTop() >= 44) {
+      helperHeight = $('.header-mobile .header-helper').outerHeight(); //console.log(helperHeight)
+
+      if ($(window).scrollTop() >= helperHeight) {
         $('.site-header-main, .header-helper, .site-header').addClass('floating');
       } else {
         $('.site-header-main, .header-helper, .site-header').removeClass('floating');

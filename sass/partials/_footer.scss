@@ -177,9 +177,19 @@
         display: flex;
         align-items: center;
 
+        @media (max-width: 524px) {
+            min-height: 64px;
+            height: auto;
+            padding: 24px 0;
+        }
+
         .partio-logo {
             width: 74px;
             height: auto;
+
+            @media (max-width: 524px) {
+                margin-bottom: 15px;
+            }
 
             path {
                 @include primary-text-color-fill();
@@ -190,6 +200,12 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+        }
+
+        .mobile-col {
+            @media (max-width: 524px) {
+                flex-direction: column;
+            }
         }
 
         .footer-helper {

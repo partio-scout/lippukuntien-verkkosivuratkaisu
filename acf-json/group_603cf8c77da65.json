@@ -3,6 +3,31 @@
     "title": "Block \/ Content",
     "fields": [
         {
+            "key": "field_61a8813f21a93",
+            "label": "Kuvio",
+            "name": "shape",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "path": "Polku",
+                "mountain": "Vuori"
+            },
+            "default_value": "path",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
             "key": "field_603cf8d5b9d04",
             "label": "Piilota kuvio",
             "name": "hide_figure",
@@ -39,5 +64,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1614608618
+    "modified": 1638433101
 }

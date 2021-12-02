@@ -26,7 +26,7 @@
             <div class="container-lg">
               <div class="row">
                 <div class="col">
-                  <div class="flex">
+                  <div class="flex mobile-col">
                     <div class="flex">
                       <?php get_template_part('template-parts/partial', 'partio-logo'); ?>
                       <nav id="footer-navigation mobile" class="footer-navigation desktop" role="navigation" aria-label="<?php esc_attr_e('Apuvalikko', 'ID'); ?>">
