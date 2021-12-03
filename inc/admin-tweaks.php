@@ -111,7 +111,7 @@ function ID_export_users() {
                 $fp = fopen('users.csv', 'w');
 
                 foreach($users as $user) {
-                    if(in_array($user->user_email, array('janne.hyyrylainen@into-digital.fi', 'janne.hyyrylainen@gmail.com', 'pekka.suopellonmaki@into-digital.fi', 'katri.jarvenpaa@partio.fi', 'terhi.takkinen@partio.fi', 'anni.rissanen@partio.fi', 'rita.javola@partio.fi', 'viestinta@partio.fi'))) {
+                    if(in_array($user->user_email, array('janne.hyyrylainen@into-digital.fi', 'janne.hyyrylainen@gmail.com', 'pekka.suopellonmaki@into-digital.fi', 'katri.jarvenpaa@partio.fi'))) {
                         continue;
                     }
 
