@@ -20,7 +20,7 @@ $template = array(
 );
 
 $hide_figure = get_field('hide_figure');
-$shape = get_field('shape');
+$shape = get_field('content_shape', 'option');
 
 if(empty($shape)) {
 	$shape = 'path';
