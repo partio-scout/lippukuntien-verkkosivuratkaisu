@@ -37,7 +37,7 @@ return;
 endif; 
 ?>
 
-<div class="block-content-with-sidebar full-width id-block<?php if(isset($block['className'])) echo ' ' . $block['className']; ?>">
+<div class="block-content-with-sidebar full-width id-block<?php if(isset($block['className'])) echo ' ' . $block['className']; ?><?php if($hide_figure) echo ' no-figure'; ?>">
 	<div class="container-lg">
 		<div class="row">
 			<div class="col d-none d-lg-block col-lg-4 col-xxl-3">
