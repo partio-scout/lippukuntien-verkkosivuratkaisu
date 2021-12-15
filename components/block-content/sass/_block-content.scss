@@ -42,6 +42,11 @@
 				margin: 72px -40px 0 auto;
 				width: 300px;
 			}
+
+			@include media-breakpoint-up(xxl) {
+				width: 350px;
+			}
+
 			@include media-breakpoint-up(xxl) {
 				position: absolute;
 				bottom: 0;

@@ -13856,10 +13856,13 @@ p { @include font-size($font-size-base); }
     .block-editor-block-list__layout.is-root-container .wp-block .acf-block-preview .block-content-with-sidebar, .block-editor-block-list__layout .wp-block .acf-block-preview .block-content-with-sidebar {
       position: relative;
       overflow: hidden;
-      padding: 50px 0 72px; }
+      padding: 50px 0 72px;
+      margin-bottom: 58px; }
       @media (min-width: 992px) {
         .block-editor-block-list__layout.is-root-container .wp-block .acf-block-preview .block-content-with-sidebar, .block-editor-block-list__layout .wp-block .acf-block-preview .block-content-with-sidebar {
           padding-bottom: 86px; } }
+      .block-editor-block-list__layout.is-root-container .wp-block .acf-block-preview .block-content-with-sidebar.no-figure, .block-editor-block-list__layout .wp-block .acf-block-preview .block-content-with-sidebar.no-figure {
+        margin-bottom: 0; }
       .block-editor-block-list__layout.is-root-container .wp-block .acf-block-preview .block-content-with-sidebar .figure, .block-editor-block-list__layout .wp-block .acf-block-preview .block-content-with-sidebar .figure {
         z-index: -1; }
         .block-editor-block-list__layout.is-root-container .wp-block .acf-block-preview .block-content-with-sidebar .figure.cross, .block-editor-block-list__layout .wp-block .acf-block-preview .block-content-with-sidebar .figure.cross {
@@ -14041,6 +14044,9 @@ p { @include font-size($font-size-base); }
           .block-editor-block-list__layout.is-root-container .wp-block .acf-block-preview .block-content .figure.mountain, .block-editor-block-list__layout .wp-block .acf-block-preview .block-content .figure.mountain {
             margin: 72px -40px 0 auto;
             width: 300px; } }
+        @media (min-width: 1500px) {
+          .block-editor-block-list__layout.is-root-container .wp-block .acf-block-preview .block-content .figure.mountain, .block-editor-block-list__layout .wp-block .acf-block-preview .block-content .figure.mountain {
+            width: 350px; } }
         @media (min-width: 1500px) {
           .block-editor-block-list__layout.is-root-container .wp-block .acf-block-preview .block-content .figure.mountain, .block-editor-block-list__layout .wp-block .acf-block-preview .block-content .figure.mountain {
             position: absolute;

@@ -13748,10 +13748,13 @@ table {
 .block-content-with-sidebar {
   position: relative;
   overflow: hidden;
-  padding: 50px 0 72px; }
+  padding: 50px 0 72px;
+  margin-bottom: 58px; }
   @media (min-width: 992px) {
     .block-content-with-sidebar {
       padding-bottom: 86px; } }
+  .block-content-with-sidebar.no-figure {
+    margin-bottom: 0; }
   .block-content-with-sidebar .figure {
     z-index: -1; }
     .block-content-with-sidebar .figure.cross {
@@ -13937,6 +13940,9 @@ body:not(.home) .article-content article > .entry-content .block-article-content
       .block-content .figure.mountain {
         margin: 72px -40px 0 auto;
         width: 300px; } }
+    @media (min-width: 1500px) {
+      .block-content .figure.mountain {
+        width: 350px; } }
     @media (min-width: 1500px) {
       .block-content .figure.mountain {
         position: absolute;

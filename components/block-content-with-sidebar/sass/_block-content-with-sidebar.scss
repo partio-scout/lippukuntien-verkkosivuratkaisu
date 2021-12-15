@@ -2,9 +2,14 @@
 	position: relative;
 	overflow: hidden;
 	padding: 50px 0 72px;
+	margin-bottom: 58px;
 
 	@include media-breakpoint-up(lg) {
 		padding-bottom: 86px;
+	}
+
+	&.no-figure {
+		margin-bottom: 0;
 	}
 
 
@@ -53,6 +58,7 @@
 				width: 350px;
 			}
 
+			
 			@media (min-width: 1800px) {
 				position: absolute;
 				bottom: 0;
