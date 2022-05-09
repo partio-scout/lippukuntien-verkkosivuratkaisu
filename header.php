@@ -18,6 +18,16 @@ if(defined('ID_REQUIRE_LOGIN') && ID_REQUIRE_LOGIN === true) {
         <?php endif; ?>
         <?php wp_head(); ?>
 
+        <?php
+        $pass_master_post = get_post();
+        if ( post_password_required($pass_master_post->ID) )
+        {
+            header('Cache-Control: no-cache, no-store, must-revalidate');
+            header('Pragma: no-cache');
+            header('Expires: 0');
+        }
+        ?>
+
         <style>
             /*
             This CSS resource incorporates links to font software which is the valuable copyrighted property of Monotype and/or its suppliers. You may not attempt to copy, install, redistribute, convert, modify or reverse engineer this font software. Please contact Monotype with any questions regarding Web Fonts: http://www.fonts.com
