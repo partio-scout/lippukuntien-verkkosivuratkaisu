@@ -22,6 +22,10 @@ if(defined('ID_REQUIRE_LOGIN') && ID_REQUIRE_LOGIN === true) {
         $pass_master_post = get_post();
         if ( post_password_required($pass_master_post->ID) )
         {
+            if (function_exists('run_litespeed_cache')) {
+                do_action( 'litespeed_control_set_nocache', 'NOCACHE due to password protected page' );
+            }
+
             header('Cache-Control: no-cache, no-store, must-revalidate');
             header('Pragma: no-cache');
             header('Expires: 0');
