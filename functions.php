@@ -519,7 +519,7 @@ function ID_unregister_taxonomy(){
 add_action('init', 'ID_unregister_taxonomy');
 */
 
-
+// Create default menu items
 function create_default_menu($menu_name, $page_names = false) {
 	$menu = wp_get_nav_menu_object( $menu_name );
 	if(!$menu || $menu->count < 1) {
