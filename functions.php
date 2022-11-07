@@ -126,32 +126,32 @@ function ID_scripts()
 
   wp_localize_script('intodigital-script', 'klaro_texts', array(
     'notice' => array(
-      'description' => klaro_text($klaro['notice_description'], $klaro_g['notice_description']),
-      'learnMore' => klaro_text($klaro['notice_learn_more'], $klaro_g['notice_learn_more'])
+      'description' => klaro_text(@$klaro['notice_description'], $klaro_g['notice_description']),
+      'learnMore' => klaro_text(@$klaro['notice_learn_more'], $klaro_g['notice_learn_more'])
     ),
     'modal' => array(
-      'title' => klaro_text($klaro['modal_title'], $klaro_g['modal_title']),
-      'description' => klaro_text($klaro['modal_description'], $klaro_g['modal_description'])
+      'title' => klaro_text(@$klaro['modal_title'], $klaro_g['modal_title']),
+      'description' => klaro_text(@$klaro['modal_description'], $klaro_g['modal_description'])
     ),
     'buttons' => array(
-      'ok' => klaro_text($klaro['ok'], $klaro_g['ok']),
-      'acceptSelected' => klaro_text($klaro['accept_selected'], $klaro_g['accept_selected']),
-      'acceptAll' => klaro_text($klaro['accept_all'], $klaro_g['accept_all']),
-      'decline' => klaro_text($klaro['decline'], $klaro_g['decline']),
+      'ok' => klaro_text(@$klaro['ok'], $klaro_g['ok']),
+      'acceptSelected' => klaro_text(@$klaro['accept_selected'], $klaro_g['accept_selected']),
+      'acceptAll' => klaro_text(@$klaro['accept_all'], $klaro_g['accept_all']),
+      'decline' => klaro_text(@$klaro['decline'], $klaro_g['decline']),
     ),
     'services' => array(
-      'required' => klaro_text($klaro['service_required'], $klaro_g['service_required']),
-      'service' => klaro_text($klaro['purpose_service'], $klaro_g['purpose_service']),
-      'purpose' => klaro_text($klaro['purpose_service'], $klaro_g['purpose_service']),
+      'required' => klaro_text(@$klaro['service_required'], $klaro_g['service_required']),
+      'service' => klaro_text(@$klaro['purpose_service'], $klaro_g['purpose_service']),
+      'purpose' => klaro_text(@$klaro['purpose_service'], $klaro_g['purpose_service']),
       'disableAll' => array(
-        'title' => klaro_text($klaro['service_disable_all_title'], $klaro_g['service_disable_all_title']),
-        'description' => klaro_text($klaro['service_disable_all_description'], $klaro_g['service_disable_all_description']),
+        'title' => klaro_text(@$klaro['service_disable_all_title'], $klaro_g['service_disable_all_title']),
+        'description' => klaro_text(@$klaro['service_disable_all_description'], $klaro_g['service_disable_all_description']),
       )
     ),
     'privacyPolicy' => array(
-      'text' => klaro_text($klaro['privacy_policy_text'], $klaro_g['privacy_policy_text']),
-      'name' => klaro_text($klaro['privacy_policy_name'], $klaro_g['privacy_policy_name']),
-      'url' => klaro_text($klaro['privacy_policy_link'], $klaro_g['privacy_policy_link'])
+      'text' => klaro_text(@$klaro['privacy_policy_text'], $klaro_g['privacy_policy_text']),
+      'name' => klaro_text(@$klaro['privacy_policy_name'], $klaro_g['privacy_policy_name']),
+      'url' => klaro_text(@$klaro['privacy_policy_link'], $klaro_g['privacy_policy_link'])
     ),
     'cookies' => array(
       'analytics' => array(
@@ -520,9 +520,46 @@ add_action('init', 'ID_unregister_taxonomy');
 */
 
 
+function create_default_menu($menu_name, $page_names = false) {
+	$menu = wp_get_nav_menu_object( $menu_name );
+	if(!$menu || $menu->count < 1) {
+    if ($menu_name == 'Footer apuvalikko') {
+      $item_id = wp_update_nav_menu_item($menu->term_id, 0, array(
+        'menu-item-title' =>  __('Tietosuojaseloste', 'ID'),
+        'menu-item-classes' => 'home',
+        'menu-item-url' => network_site_url( '/tietosuojaseloste' ), 
+        'menu-item-status' => 'publish'));
+      wp_set_object_terms($item_id, $menu->term_id, 'nav_menu');
+    } else {
+      foreach ($page_names as $page_name) {
+        $page_to_add = get_page_by_title($page_name);
+        if ($page_to_add) {
+          $item_id = wp_update_nav_menu_item($menu->term_id, 0, array(
+            'menu-item-title' => __($page_name, 'ID'),
+            'menu-item-object' => 'page',
+            'menu-item-object-id' => $page_to_add->ID,
+            'menu-item-type' => 'post_type',
+            'menu-item-status' => 'publish'));
+          wp_set_object_terms($item_id, $menu->term_id, 'nav_menu');
+        }
+      }
+    }
+  }
+}
+add_action('wp_loaded', function () {
+  $menu_initialized = get_blog_option(get_current_blog_id(), 'menu_initialized');
+  if (empty($menu_initialized)) {
+    create_default_menu('Päävalikko', array('Tule mukaan', 'Jäsenelle','Tietoa lippukunnasta','Tapahtumat'));
+    create_default_menu('Apuvalikko', array('Ajankohtaiset uutiset', 'Yhteystiedot'));
+    create_default_menu('Footer',     array('Tule mukaan', 'Jäsenelle', 'Tietoa lippukunnasta', 'Tapahtumat', 'Yhteystiedot'));
+    create_default_menu('Footer apuvalikko');
+    update_blog_option(get_current_blog_id(), 'menu_initialized', 1);
+  }
+});
 
 //Disable comments
 add_action('admin_init', function () {
+
     // Redirect any user trying to access comments page
     global $pagenow;
     

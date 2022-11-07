@@ -39,106 +39,106 @@ function ID_init_site() {
 	// Update menus
 	// Main menu
 	$main_menu_id = ID_init_menu('Päävalikko', 'primary');
-	$item_id = wp_update_nav_menu_item($main_menu_id, 0, array(
-		'menu-item-title' => __('Tule mukaan', 'ID'),
-		'menu-item-object' => 'page',
-		'menu-item-object-id' => $join_page,
-		'menu-item-type' => 'post_type',
-		'menu-item-status' => 'publish'));
-	wp_set_object_terms($item_id, $main_menu_id, 'nav_menu');
+	// $item_id = wp_update_nav_menu_item($main_menu_id, 0, array(
+	// 	'menu-item-title' => __('Tule mukaan', 'ID'),
+	// 	'menu-item-object' => 'page',
+	// 	'menu-item-object-id' => $join_page,
+	// 	'menu-item-type' => 'post_type',
+	// 	'menu-item-status' => 'publish'));
+	// wp_set_object_terms($item_id, $main_menu_id, 'nav_menu');
 
-	$item_id = wp_update_nav_menu_item($main_menu_id, 0, array(
-		'menu-item-title' => __('Jäsenelle', 'ID'),
-		'menu-item-object' => 'page',
-		'menu-item-object-id' => $members_page,
-		'menu-item-type' => 'post_type',
-		'menu-item-status' => 'publish'));
-	wp_set_object_terms($item_id, $main_menu_id, 'nav_menu');
+	// $item_id = wp_update_nav_menu_item($main_menu_id, 0, array(
+	// 	'menu-item-title' => __('Jäsenelle', 'ID'),
+	// 	'menu-item-object' => 'page',
+	// 	'menu-item-object-id' => $members_page,
+	// 	'menu-item-type' => 'post_type',
+	// 	'menu-item-status' => 'publish'));
+	// wp_set_object_terms($item_id, $main_menu_id, 'nav_menu');
 
-	$item_id = wp_update_nav_menu_item($main_menu_id, 0, array(
-		'menu-item-title' => __('Tietoa lippukunnasta', 'ID'),
-		'menu-item-object' => 'page',
-		'menu-item-object-id' => $info_page,
-		'menu-item-type' => 'post_type',
-		'menu-item-status' => 'publish'));
-	wp_set_object_terms($item_id, $main_menu_id, 'nav_menu');
+	// $item_id = wp_update_nav_menu_item($main_menu_id, 0, array(
+	// 	'menu-item-title' => __('Tietoa lippukunnasta', 'ID'),
+	// 	'menu-item-object' => 'page',
+	// 	'menu-item-object-id' => $info_page,
+	// 	'menu-item-type' => 'post_type',
+	// 	'menu-item-status' => 'publish'));
+	// wp_set_object_terms($item_id, $main_menu_id, 'nav_menu');
 
-	$item_id = wp_update_nav_menu_item($main_menu_id, 0, array(
-		'menu-item-title' => __('Tapahtumat', 'ID'),
-		'menu-item-object' => 'page',
-		'menu-item-object-id' => $events_page,
-		'menu-item-type' => 'post_type',
-		'menu-item-status' => 'publish'));
-	wp_set_object_terms($item_id, $main_menu_id, 'nav_menu');
+	// $item_id = wp_update_nav_menu_item($main_menu_id, 0, array(
+	// 	'menu-item-title' => __('Tapahtumat', 'ID'),
+	// 	'menu-item-object' => 'page',
+	// 	'menu-item-object-id' => $events_page,
+	// 	'menu-item-type' => 'post_type',
+	// 	'menu-item-status' => 'publish'));
+	// wp_set_object_terms($item_id, $main_menu_id, 'nav_menu');
 	
 	// Helper menu
 	$help_menu_id = ID_init_menu('Apuvalikko', 'secondary');
-	$item_id = wp_update_nav_menu_item($help_menu_id, 0, array(
-		'menu-item-title' => __('Ajankohtaiset uutiset', 'ID'),
-		'menu-item-object' => 'page',
-		'menu-item-object-id' => $latest_posts,
-		'menu-item-type' => 'post_type',
-		'menu-item-status' => 'publish'));
-	wp_set_object_terms($item_id, $help_menu_id, 'nav_menu');
+	// $item_id = wp_update_nav_menu_item($help_menu_id, 0, array(
+	// 	'menu-item-title' => __('Ajankohtaiset uutiset', 'ID'),
+	// 	'menu-item-object' => 'page',
+	// 	'menu-item-object-id' => $latest_posts,
+	// 	'menu-item-type' => 'post_type',
+	// 	'menu-item-status' => 'publish'));
+	// wp_set_object_terms($item_id, $help_menu_id, 'nav_menu');
 
-	$item_id = wp_update_nav_menu_item($help_menu_id, 0, array(
-		'menu-item-title' => __('Yhteystiedot', 'ID'),
-		'menu-item-object' => 'page',
-		'menu-item-object-id' => $contact_page,
-		'menu-item-type' => 'post_type',
-		'menu-item-status' => 'publish'));
-	wp_set_object_terms($item_id, $help_menu_id, 'nav_menu');
+	// $item_id = wp_update_nav_menu_item($help_menu_id, 0, array(
+	// 	'menu-item-title' => __('Yhteystiedot', 'ID'),
+	// 	'menu-item-object' => 'page',
+	// 	'menu-item-object-id' => $contact_page,
+	// 	'menu-item-type' => 'post_type',
+	// 	'menu-item-status' => 'publish'));
+	// wp_set_object_terms($item_id, $help_menu_id, 'nav_menu');
 		
 	// Footer menu
 	$footer_main_menu_id = ID_init_menu('Footer', 'footer');
-	$item_id = wp_update_nav_menu_item($footer_main_menu_id, 0, array(
-		'menu-item-title' => __('Tule mukaan', 'ID'),
-		'menu-item-object' => 'page',
-		'menu-item-object-id' => $join_page,
-		'menu-item-type' => 'post_type',
-		'menu-item-status' => 'publish'));
-	wp_set_object_terms($item_id, $footer_main_menu_id, 'nav_menu');
+	// $item_id = wp_update_nav_menu_item($footer_main_menu_id, 0, array(
+	// 	'menu-item-title' => __('Tule mukaan', 'ID'),
+	// 	'menu-item-object' => 'page',
+	// 	'menu-item-object-id' => $join_page,
+	// 	'menu-item-type' => 'post_type',
+	// 	'menu-item-status' => 'publish'));
+	// wp_set_object_terms($item_id, $footer_main_menu_id, 'nav_menu');
 
-	$item_id = wp_update_nav_menu_item($footer_main_menu_id, 0, array(
-		'menu-item-title' => __('Jäsenelle', 'ID'),
-		'menu-item-object' => 'page',
-		'menu-item-object-id' => $members_page,
-		'menu-item-type' => 'post_type',
-		'menu-item-status' => 'publish'));
-	wp_set_object_terms($item_id, $footer_main_menu_id, 'nav_menu');
+	// $item_id = wp_update_nav_menu_item($footer_main_menu_id, 0, array(
+	// 	'menu-item-title' => __('Jäsenelle', 'ID'),
+	// 	'menu-item-object' => 'page',
+	// 	'menu-item-object-id' => $members_page,
+	// 	'menu-item-type' => 'post_type',
+	// 	'menu-item-status' => 'publish'));
+	// wp_set_object_terms($item_id, $footer_main_menu_id, 'nav_menu');
 
-	$item_id = wp_update_nav_menu_item($footer_main_menu_id, 0, array(
-		'menu-item-title' => __('Tietoa lippukunnasta', 'ID'),
-		'menu-item-object' => 'page',
-		'menu-item-object-id' => $info_page,
-		'menu-item-type' => 'post_type',
-		'menu-item-status' => 'publish'));
-	wp_set_object_terms($item_id, $footer_main_menu_id, 'nav_menu');
+	// $item_id = wp_update_nav_menu_item($footer_main_menu_id, 0, array(
+	// 	'menu-item-title' => __('Tietoa lippukunnasta', 'ID'),
+	// 	'menu-item-object' => 'page',
+	// 	'menu-item-object-id' => $info_page,
+	// 	'menu-item-type' => 'post_type',
+	// 	'menu-item-status' => 'publish'));
+	// wp_set_object_terms($item_id, $footer_main_menu_id, 'nav_menu');
 
-	$item_id = wp_update_nav_menu_item($footer_main_menu_id, 0, array(
-		'menu-item-title' => __('Tapahtumat', 'ID'),
-		'menu-item-object' => 'page',
-		'menu-item-object-id' => $events_page,
-		'menu-item-type' => 'post_type',
-		'menu-item-status' => 'publish'));
-	wp_set_object_terms($item_id, $footer_main_menu_id, 'nav_menu');
+	// $item_id = wp_update_nav_menu_item($footer_main_menu_id, 0, array(
+	// 	'menu-item-title' => __('Tapahtumat', 'ID'),
+	// 	'menu-item-object' => 'page',
+	// 	'menu-item-object-id' => $events_page,
+	// 	'menu-item-type' => 'post_type',
+	// 	'menu-item-status' => 'publish'));
+	// wp_set_object_terms($item_id, $footer_main_menu_id, 'nav_menu');
 
-	$item_id = wp_update_nav_menu_item($footer_main_menu_id, 0, array(
-		'menu-item-title' => __('Yhteystiedot', 'ID'),
-		'menu-item-object' => 'page',
-		'menu-item-object-id' => $contact_page,
-		'menu-item-type' => 'post_type',
-		'menu-item-status' => 'publish'));
-	wp_set_object_terms($item_id, $footer_main_menu_id, 'nav_menu');
+	// $item_id = wp_update_nav_menu_item($footer_main_menu_id, 0, array(
+	// 	'menu-item-title' => __('Yhteystiedot', 'ID'),
+	// 	'menu-item-object' => 'page',
+	// 	'menu-item-object-id' => $contact_page,
+	// 	'menu-item-type' => 'post_type',
+	// 	'menu-item-status' => 'publish'));
+	// wp_set_object_terms($item_id, $footer_main_menu_id, 'nav_menu');
 		
 	// Footer helper menu
 	$footer_help_menu_id = ID_init_menu('Footer apuvalikko', 'footer-extra');
-	$item_id = wp_update_nav_menu_item($footer_help_menu_id, 0, array(
-		'menu-item-title' =>  __('Tietosuojaseloste', 'ID'),
-		'menu-item-classes' => 'home',
-		'menu-item-url' => network_site_url( '/tietosuojaseloste' ), 
-		'menu-item-status' => 'publish'));
-	wp_set_object_terms($item_id, $footer_help_menu_id, 'nav_menu');
+	// $item_id = wp_update_nav_menu_item($footer_help_menu_id, 0, array(
+	// 	'menu-item-title' =>  __('Tietosuojaseloste', 'ID'),
+	// 	'menu-item-classes' => 'home',
+	// 	'menu-item-url' => network_site_url( '/tietosuojaseloste' ), 
+	// 	'menu-item-status' => 'publish'));
+	// wp_set_object_terms($item_id, $footer_help_menu_id, 'nav_menu');
 	
 	
 	//Set front page and page for posts
