@@ -546,7 +546,7 @@ function create_default_menu($menu_name, $page_names = false) {
     }
   }
 }
-add_action('wp_loaded', function () {
+add_action('admin_init', function () {
   $menu_initialized = get_blog_option(get_current_blog_id(), 'menu_initialized');
   if (empty($menu_initialized)) {
     create_default_menu('Päävalikko', array('Tule mukaan', 'Jäsenelle','Tietoa lippukunnasta','Tapahtumat'));
