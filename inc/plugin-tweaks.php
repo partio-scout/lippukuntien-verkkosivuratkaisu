@@ -155,3 +155,22 @@ function filter_wpseo_breadcrumb_separator( $this_options_breadcrumbs_sep ) {
          
 // add the filter 
 add_filter( 'wpseo_breadcrumb_separator', 'filter_wpseo_breadcrumb_separator', 10, 1 ); 
+
+
+
+add_filter( 'wp_kses_allowed_html', 'acf_add_allowed_iframe_tag', 10, 2 );
+function acf_add_allowed_iframe_tag( $tags, $context ) {
+    if ( $context === 'acf' ) {
+        $tags['iframe'] = array(
+            'src'             => true,
+            'height'          => true,
+            'width'           => true,
+            'frameborder'     => true,
+            'allowfullscreen' => true,
+            'style' => true,
+            'scrolling' => true
+        );
+    }
+
+    return $tags;
+}

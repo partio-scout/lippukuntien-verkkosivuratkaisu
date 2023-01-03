@@ -20,6 +20,7 @@ function allowed_block_types() {
         'core/heading',
         'core/list',
         'core/quote',
+        //'core/html',
         //'core/freeform',
         //'core/subhead',
         'core/gallery',

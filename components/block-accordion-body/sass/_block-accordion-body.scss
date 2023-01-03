@@ -1,0 +1,70 @@
+.block-content {
+	padding: 58px 0;
+	position: relative;
+	overflow: hidden;
+	margin-bottom: 58px;
+
+	&.no-figure {
+		margin-bottom: 0;
+	}
+
+	.figure {
+		&.cross {
+			display: block;
+			margin: 40px -50px 0 auto;
+			width: 150px;
+			height: auto;
+
+			@include media-breakpoint-up(md) {
+				margin: 72px -100px 0 auto;
+				width: 350px;
+			}
+			@include media-breakpoint-up(xxl) {
+				position: absolute;
+				bottom: 0;
+				right: 0;
+				width: 350px;
+				margin: 0;
+			}
+
+			path {
+				@include secondary-color-fill();
+			}
+		}
+
+		&.mountain {
+			display: block;
+			margin: 40px -15px 0 auto;
+			width: 200px;
+			height: auto;
+
+			@include media-breakpoint-up(md) {
+				margin: 72px -40px 0 auto;
+				width: 300px;
+			}
+
+			@include media-breakpoint-up(xxl) {
+				width: 350px;
+			}
+
+			@include media-breakpoint-up(xxl) {
+				position: absolute;
+				bottom: 0;
+				right: 0;
+				width: 350px;
+				margin: 0;
+				margin-right: -25px
+			}
+
+			path {
+				@include secondary-color-fill();
+			}
+		}
+	}
+
+	.inner-blocks {
+		h1, h2, h3, h4, h5, h6 {
+			@include secondary-color-text();
+		}
+	}
+}

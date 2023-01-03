@@ -5,7 +5,7 @@
 
 // Libraries should be imported in a module using them
 //import Vue from 'vue';
-//import 'slick-carousel';
+import 'slick-carousel';
 //import 'magnific-popup';
 
 import * as Klaro from "klaro";

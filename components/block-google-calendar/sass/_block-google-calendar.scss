@@ -1,0 +1,7 @@
+.block-google-calendar {
+	padding: 72px 0;
+
+	@include media-breakpoint-up(lg) {
+		padding: 116px 0;
+	}
+}

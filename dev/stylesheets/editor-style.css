@@ -11282,7 +11282,7 @@ a {
   @media screen and (min-width: 768px) {
     .entry-content p.is-style-ingress,
     .mceContentBody p.is-style-ingress {
-      font-size: 18px; } }
+      font-size: 20px; } }
 
 .entry-content p.has-drop-cap:not(:focus):first-letter,
 .mceContentBody p.has-drop-cap:not(:focus):first-letter {

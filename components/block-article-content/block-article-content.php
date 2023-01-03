@@ -9,7 +9,9 @@
  */
 
 $allowed_blocks = array_merge(ID_allowed_inner_blocks(), array(
-	'acf/block-map'
+	'acf/block-map',
+	'acf/block-accordion',
+	'acf/block-google-calendar-inner'
 ));
 
 $template = array(

@@ -124,6 +124,10 @@ function ID_scripts()
     restore_current_blog();
   }
 
+  if(empty($klaro)) {
+    $klaro = $klaro_g;
+  }
+
   wp_localize_script('intodigital-script', 'klaro_texts', array(
     'notice' => array(
       'description' => klaro_text(@$klaro['notice_description'], $klaro_g['notice_description']),
@@ -176,7 +180,6 @@ function ID_scripts()
       )
     ),
   ));
-  
 
   global $wp_query; 
 
