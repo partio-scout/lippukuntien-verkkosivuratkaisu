@@ -33,7 +33,13 @@ endif;
 	<div class="container-lg">
 		<div class="row">
 			<div class="col d-flex justify-content-center">
-				<?php echo $embed_code_sanitized; ?>
+				<?php 
+				if(is_admin()) {
+					echo '<div class="admin-message">' . __('Tässä näytetään Google kalenteri', 'ID_admin') . '</div>'; 
+				} else {
+					echo $embed_code_sanitized; 
+				}
+				?>
 			</div>
 		</div>
 	</div>

@@ -53,6 +53,9 @@
 			}
 
 			.wp-block-buttons {
+				column-gap: 12px;
+				row-gap: 24px;
+
 				.wp-block-button {
 					width: 100%;
 					margin-right: 0 !important;
@@ -153,7 +156,12 @@
 			}
 
 			.wp-block-buttons {
+				column-gap: 24px;
+				row-gap: 24px;
+
 				.wp-block-button {
+					margin-right: 0 !important;
+
 					.wp-block-button__link {
 						background-color: $clr-white;
 						border-color: $clr-white;

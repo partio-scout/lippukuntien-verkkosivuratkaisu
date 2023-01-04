@@ -31,5 +31,11 @@ endif;
 ?>
 
 <div class="block-google-calendar-inner id-inner-block admin<?php if(isset($block['className'])) echo ' ' . $block['className']; ?>">
-	<?php echo $embed_code_sanitized; ?>
+	<?php 
+	if(is_admin()) {
+		echo '<div class="admin-message">' . __('Tässä näytetään Google kalenteri', 'ID_admin') . '</div>'; 
+	} else {
+		echo $embed_code_sanitized; 
+	}
+	?>
 </div>

@@ -13961,14 +13961,19 @@ table {
         margin-top: 0; }
       .block-hero-carousel-slide .entry-content :last-child {
         margin-bottom: 0; }
-      .block-hero-carousel-slide .entry-content .wp-block-buttons .wp-block-button {
-        width: 100%;
-        margin-right: 0 !important; }
-        .block-hero-carousel-slide .entry-content .wp-block-buttons .wp-block-button .wp-block-button__link {
+      .block-hero-carousel-slide .entry-content .wp-block-buttons {
+        -webkit-column-gap: 12px;
+           -moz-column-gap: 12px;
+                column-gap: 12px;
+        row-gap: 24px; }
+        .block-hero-carousel-slide .entry-content .wp-block-buttons .wp-block-button {
           width: 100%;
-          background-color: #fff;
-          border-color: #fff;
-          color: #2a2a2a !important; } }
+          margin-right: 0 !important; }
+          .block-hero-carousel-slide .entry-content .wp-block-buttons .wp-block-button .wp-block-button__link {
+            width: 100%;
+            background-color: #fff;
+            border-color: #fff;
+            color: #2a2a2a !important; } }
 
 @media (min-width: 1200px) {
   .block-hero-carousel-slide {
@@ -14058,10 +14063,17 @@ table {
         margin-top: 0; }
       .block-hero-carousel-slide .entry-content :last-child {
         margin-bottom: 0; }
-      .block-hero-carousel-slide .entry-content .wp-block-buttons .wp-block-button .wp-block-button__link {
-        background-color: #fff;
-        border-color: #fff;
-        color: #2a2a2a !important; } }
+      .block-hero-carousel-slide .entry-content .wp-block-buttons {
+        -webkit-column-gap: 24px;
+           -moz-column-gap: 24px;
+                column-gap: 24px;
+        row-gap: 24px; }
+        .block-hero-carousel-slide .entry-content .wp-block-buttons .wp-block-button {
+          margin-right: 0 !important; }
+          .block-hero-carousel-slide .entry-content .wp-block-buttons .wp-block-button .wp-block-button__link {
+            background-color: #fff;
+            border-color: #fff;
+            color: #2a2a2a !important; } }
 
 .block-content-with-sidebar {
   position: relative;
@@ -14654,9 +14666,17 @@ body:not(.home) .article-content article > .entry-content .block-article-content
   @media (min-width: 992px) {
     .block-google-calendar {
       padding: 116px 0; } }
+  .block-google-calendar .admin-message {
+    background-color: #ccc;
+    text-align: center;
+    padding: 30px; }
 
 .block-google-calendar-inner {
   margin-bottom: 1rem; }
+  .block-google-calendar-inner .admin-message {
+    background-color: #ccc;
+    text-align: center;
+    padding: 30px; }
 
 .id-block.full-width {
   margin-left: calc(-100vw / 2 + 100% / 2);

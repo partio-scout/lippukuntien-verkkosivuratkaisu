@@ -4,4 +4,10 @@
 	@include media-breakpoint-up(lg) {
 		padding: 116px 0;
 	}
+
+	.admin-message {
+		background-color: #ccc;
+		text-align: center;
+		padding: 30px;
+	}
 }
