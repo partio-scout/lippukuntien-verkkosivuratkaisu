@@ -16,7 +16,6 @@ require get_template_directory() . '/inc/new-site-init.php';
 
 require get_template_directory() . '/inc/users-export.php';
 
-
 /* Enable developer checklist in admin */
 if (is_admin()) {
   require get_template_directory() . '/inc/checklist.php';

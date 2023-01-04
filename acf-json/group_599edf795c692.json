@@ -6,6 +6,7 @@
             "key": "field_603df0f784ebe",
             "label": "Valikko",
             "name": "",
+            "aria-label": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -22,6 +23,7 @@
             "key": "field_603df10784ebf",
             "label": "Call to action -nappi",
             "name": "nav_call_to_action",
+            "aria-label": "",
             "type": "link",
             "instructions": "",
             "required": 0,
@@ -37,6 +39,7 @@
             "key": "field_5f34e1a3cf6f4",
             "label": "Sosiaalinen media",
             "name": "",
+            "aria-label": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -53,6 +56,7 @@
             "key": "field_5f34e22dcf6f9",
             "label": "Ohje",
             "name": "",
+            "aria-label": "",
             "type": "message",
             "instructions": "",
             "required": 0,
@@ -70,6 +74,7 @@
             "key": "field_5f34e2db51fe7",
             "label": "Sosiaalinen media",
             "name": "social_media",
+            "aria-label": "",
             "type": "group",
             "instructions": "",
             "required": 0,
@@ -85,6 +90,7 @@
                     "key": "field_5f34e1f9cf6f6",
                     "label": "Instagram",
                     "name": "instagram",
+                    "aria-label": "",
                     "type": "url",
                     "instructions": "",
                     "required": 0,
@@ -101,6 +107,7 @@
                     "key": "field_5f34e20acf6f7",
                     "label": "Twitter",
                     "name": "twitter",
+                    "aria-label": "",
                     "type": "url",
                     "instructions": "",
                     "required": 0,
@@ -117,6 +124,7 @@
                     "key": "field_5f34e215cf6f8",
                     "label": "Facebook",
                     "name": "facebook",
+                    "aria-label": "",
                     "type": "url",
                     "instructions": "",
                     "required": 0,
@@ -133,6 +141,7 @@
                     "key": "field_5f34e2c0701bb",
                     "label": "LinkedIn",
                     "name": "linkedin",
+                    "aria-label": "",
                     "type": "url",
                     "instructions": "",
                     "required": 0,
@@ -149,6 +158,7 @@
                     "key": "field_5f34e2ca701bc",
                     "label": "YouTube",
                     "name": "youtube",
+                    "aria-label": "",
                     "type": "url",
                     "instructions": "",
                     "required": 0,
@@ -162,6 +172,43 @@
                     "placeholder": ""
                 }
             ]
+        },
+        {
+            "key": "field_63b5306f01ac7",
+            "label": "Footer",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "left",
+            "endpoint": 0
+        },
+        {
+            "key": "field_63b5308001ac8",
+            "label": "Footer tekstisisältö",
+            "name": "footer_text_area",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "visual",
+            "toolbar": "stripped",
+            "media_upload": 1,
+            "delay": 0
         }
     ],
     "location": [
@@ -182,5 +229,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1666766532
+    "modified": 1672819091
 }

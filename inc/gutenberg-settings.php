@@ -1,4 +1,7 @@
 <?php
+//Dynamiclly load core block styles
+add_filter( 'should_load_separate_core_block_assets', '__return_true' );
+
 //Theme support
 add_theme_support( 'align-wide' );
 add_theme_support( 'align-full' );
@@ -19,6 +22,7 @@ function allowed_block_types() {
         //'core/video', // requires video file or url, does not support embedding
         'core/heading',
         'core/list',
+        'core/list-item',
         'core/quote',
         //'core/html',
         //'core/freeform',

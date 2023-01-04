@@ -164,12 +164,12 @@ function ID_acf_wysiwyg_toolbars($toolbars)
   */
 
   $toolbars['Stripped'] = array();
-  $toolbars['Stripped'][1] = array('bold', 'link', 'unlink', 'spellchecker', 'dfw', 'wp_adv');
-  $toolbars['Stripped'][2] = array('pastetext', 'removeformat', 'charmap', 'undo', 'redo', 'wp_help');
+  $toolbars['Stripped'][1] = array('bold', 'link', 'unlink', 'bullist', 'align', 'spellchecker', 'dfw', 'wp_adv');
+  $toolbars['Stripped'][2] = array('formatselect', 'styleselect', 'pastetext', 'removeformat', 'charmap', 'undo', 'redo', 'wp_help');
 
   return $toolbars;
 }
-//add_filter( 'acf/fields/wysiwyg/toolbars' , 'ID_acf_wysiwyg_toolbars'  );
+add_filter( 'acf/fields/wysiwyg/toolbars' , 'ID_acf_wysiwyg_toolbars'  );
 
 
 /**

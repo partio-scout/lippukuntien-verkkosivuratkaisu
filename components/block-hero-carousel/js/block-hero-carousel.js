@@ -17,7 +17,8 @@ $(document).ready(function() {
             autoplaySpeed: 8000,
             pauseOnFocus: true,
             pauseOnHover: true,
-            pauseOnDotsHover: false
+            pauseOnDotsHover: false,
+            adaptiveHeight: true
         });
     });
 })

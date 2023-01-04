@@ -311,6 +311,130 @@ a {
     }
 }
 
+//Root level blocks on editor
+.wp-block-post-content.block-editor-block-list__layout {
+    > h1,
+    > .h1 {
+        margin: 0 auto 24px;
+        clear: both;
+    }
+
+    > h2,
+    > .h2 {
+        margin-left: auto;
+        margin-right: auto;
+        &:not(:first-child) {
+            margin-top: 1em;
+        }
+        &:not(:last-child) {
+            margin-bottom: 1em;
+        }
+        clear: both;
+    }
+
+    > h3,
+    > .h3 {
+        margin: 1em auto;
+    }
+
+    > h4,
+    > .h4 {
+        margin: 1em auto;
+    }
+
+    > p,
+    > ul,
+    > ol {
+        margin-bottom: 1.5em;
+        &:empty {
+            display: none;
+        }
+    }
+
+    > .wp-block-buttons {
+        margin-bottom: 1em;
+        padding-right: 0;
+        padding-left: 0;
+    }
+    
+    > a {
+        text-decoration: underline;
+        @include secondary-color-text();
+        font-weight: bold;
+
+        &:hover {
+            color: $clr-link-hover;
+        }
+    }
+    
+    > ul {
+        list-style: disc;
+    }
+    
+    > h1, > h2, > h3, > h4, > h5, > h6 {
+        &.is-style-primary {
+            @include primary-color-text(true);
+        }
+
+        &.is-style-secondary {
+            @include secondary-color-text(true);
+        }
+    }
+
+    > p.is-style-ingress {
+        @include font-size($font-size-ingress);
+    }
+
+    > p.has-drop-cap {
+        &:not(:focus):first-letter {
+            font-size: 4em;
+            font-weight: 900;
+        }
+    }
+
+    > .wp-block-quote {
+        position: relative;
+        margin: 2em;
+        border: 0;
+        padding: 0;
+
+        &::before {
+            @include fontawesome-icon('f10e');
+            display: block;
+            position: absolute;
+            top: 0.25em;
+            left: -10px;
+            transform: translateX(-100%);
+            font-size: 1.25em;
+            font-weight: 700;
+            line-height: 0.7;
+        }
+
+        p {
+            @include font-size($font-size-h3);
+            margin-bottom: 12px;
+            font-family: $font-tondu;
+        }
+
+        cite {
+            font-style: normal;
+            @include font-size($font-size-base);
+        }
+    }
+
+    > .wp-block-image {
+
+        figcaption {
+            @include font-size($font-size-s);
+            text-align: center;
+        }
+    }
+
+    > .wp-block-embed {
+        margin: 2em 0;
+    }
+}
+
 img {
     height: auto;
     max-width: 100%;
