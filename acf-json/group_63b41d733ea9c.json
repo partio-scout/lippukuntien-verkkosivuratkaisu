@@ -4,11 +4,11 @@
     "fields": [
         {
             "key": "field_63b41d7398d89",
-            "label": "Embed Code",
+            "label": "Kalenterin julkinen osoite",
             "name": "embed_code",
             "aria-label": "",
             "type": "url",
-            "instructions": "",
+            "instructions": "Löydät tämän osoitteen Google-kalenterin asetuksista kohdasta \"Public URL to this calendar\". Muista asettaa kalenterin tapahtumat myös julkisiksi kohdasta \"Access permissions for events\".",
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
@@ -203,5 +203,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1672913210
+    "modified": 1672914242
 }
