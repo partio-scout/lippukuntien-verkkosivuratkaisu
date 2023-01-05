@@ -13977,7 +13977,8 @@ table {
 
 @media (min-width: 1200px) {
   .block-hero-carousel-slide {
-    margin-bottom: 64px; }
+    margin-bottom: 64px;
+    margin-top: 64px; }
     .block-hero-carousel-slide .flex {
       margin-left: auto;
       margin-right: auto;
@@ -14670,6 +14671,8 @@ body:not(.home) .article-content article > .entry-content .block-article-content
     background-color: #ccc;
     text-align: center;
     padding: 30px; }
+  .block-google-calendar [data-type="placeholder"] {
+    width: 100%; }
 
 .block-google-calendar-inner {
   margin-bottom: 1rem; }
@@ -14677,6 +14680,8 @@ body:not(.home) .article-content article > .entry-content .block-article-content
     background-color: #ccc;
     text-align: center;
     padding: 30px; }
+  .block-google-calendar-inner [data-type="placeholder"] {
+    width: 100%; }
 
 .id-block.full-width {
   margin-left: calc(-100vw / 2 + 100% / 2);
