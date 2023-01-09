@@ -40,6 +40,17 @@ endif;
 			</div>
 			<div class="col col-12 col-lg-8 col-xxl-7 offset-xxl-1">	
 				<p class="entry-date"><?php echo _x('Julkaistu', 'artikkeli', 'ID') . ' ' . get_the_date('j.n.Y', $post_id); ?></p>
+				<?php
+				$terms = wp_get_post_terms($post_id, 'category');
+
+				if(!empty($terms)):
+				?>
+				<ul class="post-terms">
+					<?php foreach($terms as $term): ?>
+						<li><?php echo $term->name; ?></li>
+					<?php endforeach; ?>
+				</ul>
+				<?php endif; ?>
 				<h1 class="entry-title" id="entry-title-<?php echo $uniq_id; ?>"><?php echo get_the_title($post_id); ?></h1>
 				<div class="inner-blocks entry-content">
 					<?php if ( $is_preview && !empty($block['data']['preview']) ): ?>

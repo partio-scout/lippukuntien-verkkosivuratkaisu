@@ -37,7 +37,7 @@ $(document).ready(function () {
     var hero = $(this);
     $(this).find('.slides').slick({
       dots: true,
-      arrows: false,
+      arrows: true,
       infinite: true,
       speed: 500,
       fade: true,

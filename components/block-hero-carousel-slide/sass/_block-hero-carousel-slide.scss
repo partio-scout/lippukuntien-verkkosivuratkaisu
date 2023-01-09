@@ -2,6 +2,12 @@
 	@include media-breakpoint-down(lg) {
 		margin-bottom: 36px;
 
+		.container {
+			max-width: none !important;
+			padding-left: 0 !important;
+			padding-right: 0 !important;
+		}
+
 		.image {
 			width: calc(100% + 48px);
 			margin-left: -24px;
@@ -83,8 +89,8 @@
 		}
 
 		.img-wrap {
-			width: 50vw;
-			padding-right: 64px;
+			width: 50%;
+			//padding-right: 64px;
 			display: flex;
 			align-items: center;
 		}
@@ -95,10 +101,9 @@
 			flex-shrink: 0;
 			z-index: 1;
 			width: 100%;
-			max-width: calc(1344px / 2);
+			max-width: 50%;
 
 			.content-shift {
-				padding-left: 24px;
 				display: flex;
 				align-items: center;
 				padding-top: 64px;
@@ -119,7 +124,7 @@
 		.image {
 			width: calc(100% + 64px);
 			height: 0;
-			padding-bottom: 75.10%;
+			padding-bottom: 100%;
 			background-color: #eee;
 			position: relative;
 			flex-shrink: 0;

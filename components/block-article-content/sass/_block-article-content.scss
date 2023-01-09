@@ -12,6 +12,27 @@
 		text-transform: uppercase;
 	}
 
+	.post-terms {
+		display: flex;
+		list-style: none;
+		padding-left: 0 !important;
+		column-gap: 4px;
+		row-gap: 4px;
+		margin-bottom: 1rem;
+
+		li {
+			padding-left: 0;
+			margin-bottom: 0;
+			font-weight: 600;
+
+			&:not(:last-child) {
+				&::after {
+					content: ',';
+				}
+			}
+		}
+	}
+
 	.entry-title {
 		margin-top: 0;
 		text-transform: uppercase;
