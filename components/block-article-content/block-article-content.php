@@ -47,7 +47,7 @@ endif;
 				?>
 				<ul class="post-terms">
 					<?php foreach($terms as $term): ?>
-						<li><?php echo $term->name; ?></li>
+						<li><a href="<?= get_term_link($term); ?>"><?php echo $term->name; ?></a></li>
 					<?php endforeach; ?>
 				</ul>
 				<?php endif; ?>
