@@ -4,11 +4,10 @@
  * Makes administration harder by hiding front-end admin bar
  * Styles for fixed header in sass/partials/_header
  */
-/*
-if (!is_admin()) {
-    add_filter('show_admin_bar', '__return_false');
+
+if (!is_admin() && current_user_can( 'edit_posts' )) {
+    add_filter('show_admin_bar', '__return_true');
 }
-*/
 
 //Add General custom fields
 if( function_exists('acf_add_options_page') ) {

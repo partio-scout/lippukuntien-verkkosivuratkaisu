@@ -11492,6 +11492,9 @@ img {
   height: auto;
   max-width: 100%; }
 
+.block-editor-block-list__block {
+  list-style: disc; }
+
 .button,
 button.button,
 a.button,
