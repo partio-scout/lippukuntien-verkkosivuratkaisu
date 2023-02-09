@@ -1,4 +1,6 @@
 @import "../../../components/block-hero/sass/block-hero";
+@import "../../../components/block-hero-carousel/sass/block-hero-carousel";
+@import "../../../components/block-hero-carousel-slide/sass/block-hero-carousel-slide";
 @import "../../../components/block-content-with-sidebar/sass/block-content-with-sidebar";
 @import "../../../components/block-article-content/sass/block-article-content";
 @import "../../../components/block-content/sass/block-content";
@@ -7,6 +9,9 @@
 @import "../../../components/block-social-feed/sass/block-social-feed";
 @import "../../../components/block-map/sass/block-map";
 @import "../../../components/block-form/sass/block-form";
+@import "../../../components/block-accordion/sass/block-accordion";
+@import "../../../components/block-google-calendar/sass/block-google-calendar";
+@import "../../../components/block-google-calendar-inner/sass/block-google-calendar-inner";
 
 .id-block {    
     &.full-width {

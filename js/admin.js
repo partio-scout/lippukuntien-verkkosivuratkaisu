@@ -1,6 +1,18 @@
 var $ = window.jQuery;
 $(document).ready(function() {
 
+  //Edit WYSIWYG heading levels for specific editor
+  if (typeof acf != undefined) {
+    acf.add_filter('wysiwyg_tinymce_settings', function( mceInit, id, field ){
+      // do something to mceInit
+      if(field && field[0] && field[0].dataset.name === 'footer_text_area') {
+        mceInit.block_formats = 'Paragraph=p;Heading=h2';
+      }
+  
+      // return
+      return mceInit;
+    });
+  }
 
 });
 

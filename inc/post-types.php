@@ -5,7 +5,7 @@
 function ID_remove_post_type_support() {
   remove_post_type_support( 'post', 'excerpt' );
   unregister_taxonomy_for_object_type('post_tag', 'post');
-  unregister_taxonomy_for_object_type('category', 'post');
+  //unregister_taxonomy_for_object_type('category', 'post');
 }
 add_action( 'init', 'ID_remove_post_type_support' );
 

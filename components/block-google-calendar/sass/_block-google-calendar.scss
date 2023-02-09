@@ -1,0 +1,17 @@
+.block-google-calendar {
+	padding: 72px 0;
+
+	@include media-breakpoint-up(lg) {
+		padding: 116px 0;
+	}
+
+	.admin-message {
+		background-color: #ccc;
+		text-align: center;
+		padding: 30px;
+	}
+
+	[data-type="placeholder"] {
+		width: 100%;
+	}
+}

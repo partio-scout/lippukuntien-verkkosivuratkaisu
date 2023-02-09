@@ -6,6 +6,7 @@
             "key": "field_603f35ce07673",
             "label": "Otsikko",
             "name": "title",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -20,6 +21,29 @@
             "prepend": "",
             "append": "",
             "maxlength": ""
+        },
+        {
+            "key": "field_63b40b91fbc31",
+            "label": "Kategoria",
+            "name": "category",
+            "aria-label": "",
+            "type": "taxonomy",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "category",
+            "add_term": 1,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "id",
+            "field_type": "multi_select",
+            "allow_null": 1,
+            "multiple": 0
         }
     ],
     "location": [
@@ -39,5 +63,6 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1614755313
+    "show_in_rest": 0,
+    "modified": 1672744128
 }

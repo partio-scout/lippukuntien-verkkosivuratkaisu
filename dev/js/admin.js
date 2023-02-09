@@ -6,7 +6,20 @@ var __webpack_exports__ = {};
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 var $ = window.jQuery;
-$(document).ready(function () {}); //Documentation for block-api https://developer.wordpress.org/block-editor/developers/block-api/
+$(document).ready(function () {
+  //Edit WYSIWYG heading levels for specific editor
+  if ((typeof acf === "undefined" ? "undefined" : _typeof(acf)) != undefined) {
+    acf.add_filter('wysiwyg_tinymce_settings', function (mceInit, id, field) {
+      // do something to mceInit
+      if (field && field[0] && field[0].dataset.name === 'footer_text_area') {
+        mceInit.block_formats = 'Paragraph=p;Heading=h2';
+      } // return
+
+
+      return mceInit;
+    });
+  }
+}); //Documentation for block-api https://developer.wordpress.org/block-editor/developers/block-api/
 // Deregister embed variations
 // They are not necessary and there are so many that custom blocks drop below fold
 

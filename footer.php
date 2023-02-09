@@ -7,7 +7,12 @@
                 <div class="col-12"><div class="border-top"></div></div>
                 <div class="col-12 col-lg-3 footer-col footer-brand-col"><?php get_template_part('template-parts/partial', 'footer-brand'); ?></div>
                 <div class="col-12 col-lg-6 footer-col footer-nav-col"><?php get_template_part('template-parts/partial', 'footer-menu'); ?></div>
-                <div class="col-12 col-lg-3 footer-col footer-some"><?php get_template_part('template-parts/partial', 'footer-some'); ?></div>
+                <div class="col-12 col-lg-3 footer-col footer-some">
+                  <?php if(!empty(get_field('footer_text_area', 'option'))): ?>
+                    <div class="footer-text-area entry-content"><?= get_field('footer_text_area', 'option'); ?></div>
+                  <?php endif; ?>
+                  <?php get_template_part('template-parts/partial', 'footer-some'); ?>
+                </div>
                 <div class="col-12 footer-navigation-wrapper mobile footer-col">
                   <nav id="footer-navigation" class="footer-navigation" role="navigation" aria-label="<?php esc_attr_e('Apuvalikko', 'ID'); ?>">
                           <?php

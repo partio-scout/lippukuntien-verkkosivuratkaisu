@@ -1,0 +1,98 @@
+.block-hero-carousel {
+    position: relative;
+
+    .controls {
+        position: absolute;
+        display: flex;
+        z-index: 1;
+
+        @include media-breakpoint-down(lg) {
+            top: calc(100vw * 0.7487 - 48px - 6px + 32px);
+            left: 50%;
+            transform: translateX(-50%);
+            column-gap: 12px;
+            align-items: center;
+        }
+
+        @include media-breakpoint-up(xl) {
+            bottom: calc(64px + 64px + 32px);
+            right: 50%;
+            transform: translateY(50%) translateX(-24px);
+            align-items: center;
+            column-gap: 12px;
+        }
+
+        .slick-arrow {
+            padding: 0;
+            background-color: transparent;
+            border: 0;
+            @include primary-text-color(true);
+            font-size: 0;
+            line-height: 1;
+
+            &.slick-next {
+                @include media-breakpoint-up(xl) {
+                }
+
+                &::after {
+                    @include fontawesome-icon('f054', 'far');
+                    font-size: 1rem;
+                }
+            }
+
+            &.slick-prev {
+                @include media-breakpoint-up(xl) {
+                }
+
+                &::after {
+                    @include fontawesome-icon('f053', 'far');
+                    font-size: 1rem;
+                }
+            }
+        }
+
+        .dots {
+            .slick-dots {
+                list-style: none;
+                display: flex;
+                padding-left: 0;
+                margin-bottom: 0;
+                column-gap: 6px;
+
+                @include media-breakpoint-up(xl) {
+                    //flex-direction: column;
+                    align-items: center;
+                    row-gap: 6px;
+                }
+
+                li {
+                    margin-bottom: 0;
+                    font-size: 0;
+                    line-height: 0;
+                    color: transparent;
+
+                    button {
+                        display: block;
+                        width: 12px;
+                        height: 12px;
+                        border-radius: 50%;
+                        background-color: #fff;
+                        opacity: 0.48;
+                        border: 0;
+
+                        @include media-breakpoint-up(xl) {
+                            width: 16px;
+                            height: 16px;
+                        }
+                    }
+
+                    &.slick-active {
+                        button {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

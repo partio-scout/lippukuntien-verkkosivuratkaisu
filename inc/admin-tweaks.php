@@ -4,11 +4,10 @@
  * Makes administration harder by hiding front-end admin bar
  * Styles for fixed header in sass/partials/_header
  */
-/*
-if (!is_admin()) {
-    add_filter('show_admin_bar', '__return_false');
+
+if (!is_admin() && current_user_can( 'edit_posts' )) {
+    add_filter('show_admin_bar', '__return_true');
 }
-*/
 
 //Add General custom fields
 if( function_exists('acf_add_options_page') ) {
@@ -396,8 +395,8 @@ function ID_mce_buttons_2($buttons) {
  * Also defines custom style formats if styleselect button is enabled
  */
 
-add_filter( 'tiny_mce_before_init', 'ID_mce_before_init_insert_formats' );
-function ID_mce_before_init_insert_formats( $init_array ) {
+add_filter( 'tiny_mce_before_init', 'ID_mce_before_init_insert_formats', 10, 2 );
+function ID_mce_before_init_insert_formats( $init_array, $editor_id ) {
 
     // Define the style_formats array
     $style_formats = array(

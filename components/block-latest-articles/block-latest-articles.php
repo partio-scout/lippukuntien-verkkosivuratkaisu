@@ -9,6 +9,7 @@
  */
 
 $title = get_field('title');
+$category = get_field('category');
 
 if(empty($title)) {
 	$title = _x('Ajankohtaista', 'Viimeisimmät artikkelit otsikko', 'ID');
@@ -39,6 +40,11 @@ endif;
 				'post_type' => 'post',
 				'posts_per_page' => 3
 			);
+
+			if(!empty($category)) {
+				$args['cat'] = $category;
+			}
+
 			$posts_query = new WP_Query($args);
 			if ($posts_query->have_posts()):
 			while ($posts_query->have_posts()):

@@ -12,6 +12,8 @@ $allowed_blocks = array(
     'core/paragraph',
     'core/heading',
     'core/buttons',
+	'acf/block-accordion',
+	'acf/block-google-calendar-inner'
 );
 
 $template = array(
